@@ -1,0 +1,21 @@
+plugin.tx_gomapsext {
+	view {
+		templateRootPath = {$plugin.tx_gomapsext.view.templateRootPath}
+		partialRootPath = {$plugin.tx_gomapsext.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_gomapsext.view.layoutRootPath}
+	}
+	settings {
+		storagePid = {$plugin.tx_gomapsext.settings.storagePid}
+		infoWindow {
+			openByClick = {$plugin.tx_gomapsext.settings.infoWindow.openByClick}
+			closeByClick = {$plugin.tx_gomapsext.settings.infoWindow.closeByClick}	
+		}
+	}
+	
+	#Fix Twitter Bootstrap
+  	_CSS_DEFAULT_STYLE (
+		.tx-go-maps-ext img {
+			max-width: none;
+		}
+  	)
+}

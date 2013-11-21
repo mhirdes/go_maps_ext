@@ -1,0 +1,35 @@
+{namespace gomapsext=Tx_GoMapsExt_ViewHelpers} 
+<f:if condition="{map.markerSearch}">
+	<form id="{map.title}-search" method="post">
+		<input type="text" name="sword" class="gme-sword" value="{request.sword}" />
+		<input type="submit" class="gme-submit" name="submitSearch" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submitSearch')}" />
+	</form>
+</f:if>
+<f:form id="{map.title}-form" method="post">
+	<f:if condition="{map.calcRoute}">
+		<f:form.textfield name="saddress" class="gme-saddress" value="{request.saddress}" />
+	</f:if>
+	<f:if condition="{map.travelMode} == 1">
+		<gomapsext:format.hideInFrontend>
+			<!-- 
+			Possible options for the Travel Mode are
+			0:map.travelModes.0 == Driving
+			2:map.travelModes.2 == Bicycling
+			3:map.travelModes.3 == Transit
+			4:map.travelModes.4 == Walking
+			-->
+		</gomapsext:format.hideInFrontend>
+		<f:form.select name="travelmode" value="{f:if(condition:request.travelmode,then:request.travelmode,else:2)}" class="gme-travelmode" options="{0:map.travelModes.0, 3:map.travelModes.3, 4:map.travelModes.4}" size="1" />
+	</f:if>
+	<f:if condition="{map.unitSystem} == 1">
+		<gomapsext:format.hideInFrontend>
+			<!-- 
+			Possible options for the Unit System are
+			1:map.unitSystems.2 == Metric (km)
+			2:map.unitSystems.3 == Imperial (mil)
+			-->
+		</gomapsext:format.hideInFrontend>
+		<f:form.select name="unitsystem" value="{f:if(condition:request.unitsystem,then:request.unitsystem,else:2)}" class="gme-unitsystem" options="{map.unitSystems}" size="1" />
+	</f:if>
+	<f:form.submit class="gme-submit" name="submit" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submit')}" />
+</f:form>

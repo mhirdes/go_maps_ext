@@ -1,0 +1,20 @@
+plugin.tx_gomapsext {
+	view {
+		# cat=plugin.tx_gomapsext/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:go_maps_ext/Resources/Private/Templates/
+		# cat=plugin.tx_gomapsext/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:go_maps_ext/Resources/Private/Partials/
+		# cat=plugin.tx_gomapsext/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:go_maps_ext/Resources/Private/Layouts/
+	}
+	settings {
+		# cat=plugin.tx_gomapsext//a; type=text+; label = Show Addresses from this PIDs
+		storagePid =
+		infoWindow {
+			# cat=plugin.tx_gomapsext//b; type=boolean; label = Open Infowindows By Click
+			openByClick = 0
+			# cat=plugin.tx_gomapsext//c; type=boolean; label = Close Infowindows By Click
+			closeByClick = 0
+		}
+	}
+}

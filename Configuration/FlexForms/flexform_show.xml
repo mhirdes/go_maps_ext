@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<T3DataStructure>
+  <meta>
+        <langDisable>1</langDisable>
+        <langChildren>1</langChildren>
+  </meta>
+  <sheets>
+    <sDEF>
+      <ROOT>
+        <TCEforms>
+          <sheetTitle>LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xml:tx_gomapsext_flexform_settings</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+          <settings.map>
+            <TCEforms>
+              <label>LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xml:tx_gomapsext_flexform_settings.map</label>
+              <config>
+                <type>group</type>
+				<internal_type>db</internal_type>
+				<allowed>tx_gomapsext_domain_model_map</allowed>
+				<size>1</size>
+				<minitems>1</minitems>
+				<maxitems>1</maxitems>
+              </config>
+            </TCEforms>
+          </settings.map>
+        </el>
+      </ROOT>
+    </sDEF>
+  </sheets>
+</T3DataStructure>

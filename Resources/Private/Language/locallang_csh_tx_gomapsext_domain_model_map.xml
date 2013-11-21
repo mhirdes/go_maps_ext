@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
+		<type>CSH</type>
+		<csh_table>tx_gomapsext_domain_model_map</csh_table>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title.description">Will be used as ID (without space character, special character!).</label>
+			<label index="tooltip_title.description">Shown by mouse over.</label>
+			<label index="class.description">The class of the map container</label>
+			<label index="width.description">Set the width of the map. Default in px, for percentages enter %, e.g. '100%'.</label>
+			<label index="height.description">Set the height of the map. Default in px, for percentages enter %, e.g. '100%'.</label>
+			<label index="zoom.description">Only need to set if default zoom is wrong.</label>
+			<label index="addresses.description">You can choose, create or edit an address. New addresses will be saved on the current page.</label>
+			<label index="kml_url.description">Enter an URL of a KML file, e.g. "http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml".</label>
+			<label index="kml_local.description">The KML file is stored on this server. The specified path is relative. Only markers appear.</label>
+			<label index="kml_preserve_viewport.description">The viewport of the kml file will be ignored. Set zoom and at least one address to configure the viewport.</label>
+			<label index="scroll_zoom.description">Enables zoom with scroll wheel. </label>
+			<label index="draggable.description">Position of the map can be changed.</label>
+			<label index="double_click_zoom.description">A double click on the map zooms in. Draggable map has to be enabled!</label>
+			<label index="marker_cluster.description">Many markers in the same region will be summarized and appear as a cluster.</label>
+			<label index="marker_cluster_zoom.description">Up to this zoom level the Clusters are displayed.</label>
+			<label index="marker_cluster_size.description">The size of the Clusters, like a radius.</label>
+			<label index="marker_search.description">Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</label>
+			<label index="default_type.description">Maptype on the beginning.</label>
+			<label index="pan_control.description">Show arrows to change the position of the map.</label>
+			<label index="scale_control.description">Displays a measure.</label>
+			<label index="streetview_control.description">Shows an icon to enable the streetview.</label>
+			<label index="zoom_control.description">Enable buttons to change the zoom.</label>
+			<label index="zoom_control_type.description">Choose beetween large and small.</label>
+			<label index="map_type_control.description">Shows a control to change the map type.</label>
+			<label index="map_types.description">Possible map types to choose. Map type control has to be enabled.</label>
+			<label index="show_route.description">2 address records needed! Shows the route between the given points.</label>
+			<label index="calc_route.description">Only 1 address used as destination. Display an text input for enter a starting point.</label>
+			<label index="travel_mode.description">Select a travel mode or let the frontend user select one.</label>
+			<label index="unit_system.description">Select a unit system or let the frontend user select one.</label>
+			<label index="styled_map_name.description">Shown in the map type control.</label>
+			<label index="styled_map_code.description">JSON, e.g. from http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="title.description">Wird als ID genutzt (ohne Sonder- und Leerzeichen!).</label>
+			<label index="tooltip_title.description">Wird bei Mouseover angezeigt.</label>
+			<label index="class.description">Die CSS-Klasse des DIV-Containers.</label>
+			<label index="width.description">Die Breite der Karte. Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</label>
+			<label index="height.description">Die Höhe der Karte Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</label>
+			<label index="zoom.description">Sollte nur gesetzt werden, wenn der Standardzoom nicht gewünscht ist.</label>
+			<label index="addresses.description">Datensätze können ausgewählt, angelegt oder bearbeitet werden. Neue Addressen werden auf der aktuellen Seite gespeichert.</label>
+			<label index="kml_url.description">Geben Sie die URL einer KML-Datei an, z.B. "http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml".</label>
+			<label index="kml_local.description">Die KML Datei ist auf diesem Server gespeichert. Der angegeben Pfad ist relativ. Nur Marker werden angezeigt.</label>
+			<label index="kml_preserve_viewport.description">Der Kartenbereich der KML-Datei wird ignoriert. Mindestens eine Adresse ist erforderlich, um die Karte richtig zu zentrieren.</label>
+			<label index="scroll_zoom.description">Aktiviert die Zoomkontrolle via Scrollrad.</label>
+			<label index="draggable.description">Die Position der Karte kann verändert werden.</label>
+			<label index="double_click_zoom.description">Bei Doppelklick wird hereingezoomt. Verschiebbare Karte muss aktiviert sein!</label>
+			<label index="marker_cluster.description">Viele Marker in der gleichen Region werden zusammengefasst und als ein Cluster dargestellt.</label>
+			<label index="marker_cluster_zoom.description">Bis zu diesdem Zoom-Level werden die Cluster dargsetellt.</label>
+			<label index="marker_cluster_size.description">Die Größe bzw. der Radius der Cluster.</label>
+			<label index="marker_search.description">Zeigt ein Formular im Frontend, wo der Nutzer ein Suchwort eingeben kann. Durchsucht werden Titel und Info-Fenster Inhalt der Marker. Das Info-Fenster des zuerst gefundenen Markers öffnet sich.</label>
+			<label index="default_type.description">Typ der Karte am Anfang.</label>
+			<label index="pan_control.description">Zeigt Pfeil zum navigieren an.</label>
+			<label index="scale_control.description">Zeigt einen Maßstab.</label>
+			<label index="streetview_control.description">Zeigt einen Icon zum aktivieren der StreetView.</label>
+			<label index="zoom_control.description">Zeigt Buttons zum ändern der Zoomstufe.</label>
+			<label index="zoom_control_type.description">Größe der Zoomsteuerung einstellen.</label>
+			<label index="map_type_control.description">Ermöglicht das Ändern der Kartentypen.</label>
+			<label index="map_types.description">Mögliche Kartentypen. Kartentyp-Steuerung muss aktiviert sein.</label>
+			<label index="show_route.description">2 Adress-Datensätze werden benötigt! Zeigt die Route zwischen den beiden Punkten.</label>
+			<label index="calc_route.description">Nur eine Zieladresse muss angegeben werden. Zeigt einen Textinput für Startangabe.</label>
+			<label index="travel_mode.description">Wählen Sie einen Reisemodi oder lassen Sie den Frontend Nutzer einen aussuchen.</label>
+			<label index="unit_system.description">Wählen Sie eine Einheit oder lassen Sie den Frontend Nutzer eine aussuchen.</label>
+			<label index="styled_map_name.description">Wird in der Kartensteuerung angezeigt.</label>
+			<label index="styled_map_code.description">JSON, z.B. von http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</label>
+		</languageKey>
+		<languageKey index="pl" type="array">
+			<label index="title.description">Będzie użyty jako ID (bez spacji i znaków specjalnych!).</label>
+			<label index="tooltip_title.description">Pokazywany po najechaniu myszką.</label>
+			<label index="class.description">Klasa dla kontenera mapy</label>
+			<label index="width.description">Ustaw szerokość mapy w pikselach.</label>
+			<label index="height.description">Ustaw wysokość mapy w pikselach.</label>
+			<label index="zoom.description">Wymaga podania tylko jeżeli domyślne przybliżenie jest nieprawidłowe.</label>
+			<label index="addresses.description">Możesz wybrać, utworzyć lub edytować adres. Nowy adres zostanie zapisany na aktualnej stronie.</label>
+			<label index="kml_url.description">Podaj adres URL do pliku KML, np. "http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml".</label>
+			<label index="kml_preserve_viewport.description">Obszar widzenia pliku kml będzie ignorowany. Ustaw przybliżenie Ustaw przybliżenie i przynajmniej jeden adres aby skonfigurować obszar widzenia.</label>
+			<label index="scroll_zoom.description">Włącz przybliżanie przy użyciu rolki myszki. </label>
+			<label index="draggable.description">Pozycja mapy może być zmieniana.</label>
+			<label index="double_click_zoom.description">Podwójne kliknięcie na mapie przybliża widok. Musi być włączona opcja przeciągania!</label>
+			<label index="default_type.description">Rodzaj mapy po wczytaniu.</label>
+			<label index="pan_control.description">Pokazuje strzałki do zmiany pozycji mapy.</label>
+			<label index="scale_control.description">Wyświetla miarkę.</label>
+			<label index="streetview_control.description">Pokazuje ikonę do włączenia Street View.</label>
+			<label index="zoom_control.description">Włącz przyciski do kontroli przybliżenia.</label>
+			<label index="zoom_control_type.description">Wybierz pomiędzy dużym i małym.</label>
+			<label index="map_type_control.description">Wyświetla kontrolki do zmiany rodzaju mapy.</label>
+			<label index="map_types.description">Możliwe rodzaje map do wyboru. Sterowanie rodzajem mapy musi być włączone.</label>
+			<label index="show_route.description">Tylko 2 adresy użyte. Ignoruje niektóre z kolejnych opcji.</label>
+			<label index="calc_route.description">Tylko 1 adres użyty. Wyświetl pole tekstowe do wprowadzania punkty początkowego.</label>
+			<label index="travel_mode.description">Wybierz tryb podróży lub pozostaw wybów użytkownikowi.</label>
+			<label index="unit_system.description">Wybierz system jednostek lub pozostaw wybór użytkownikowi.</label>
+			<label index="styled_map_name.description">Pokazywany na liście wyboru rodzaju mapy.</label>
+			<label index="styled_map_code.description">JSON, np. z http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</label>
+		</languageKey>	
+	</data>
+</T3locallang>

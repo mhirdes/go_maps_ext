@@ -1,0 +1,11 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:if condition="{map.showForm}">
+		<f:render partial="Map/Form" arguments="{map:map, request:request}"/>
+	</f:if>
+	<div id="{map.title}" class="gme-map"> </div>
+	<script type="text/javascript">
+		<f:render partial="Map/Assign" arguments="{request:request, map:map, settings:settings, addresses:addresses}" />
+	</script>
+</f:section>
