@@ -1,4 +1,5 @@
 <?php
+namespace TYPO3\GoMapsExt\Domain\Model;
 
 /***************************************************************
  *  Copyright notice
@@ -31,12 +32,12 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEntity {
+class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * Title* (without space character, special character!)
 	 *
-	 * @var string
+	 * @var \string
 	 * @validate NotEmpty
 	 */
 	protected $title;
@@ -44,21 +45,21 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * tooltipTitle
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $tooltipTitle;
 
 	/**
 	 * class
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $class;
 
 	/**
 	 * in px or %
 	 *
-	 * @var string
+	 * @var \string
 	 * @validate NotEmpty
 	 */
 	protected $width;
@@ -74,14 +75,14 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * zoom
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $zoom;
 	
 	/**
 	 * addresses
 	 *
-	 * @var Tx_Extbase_Persistence_ObjectStorage<Tx_GoMapsExt_Domain_Model_Address>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Address>
 	 * @lazy
 	 */
 	protected $addresses;
@@ -89,7 +90,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * kmlUrl
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $kmlUrl;
 	
@@ -138,14 +139,14 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * markerClusterZoom
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $markerClusterZoom;
 	
 	/**
 	 * markerClusterSize
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $markerClusterSize;
 	
@@ -159,7 +160,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * defaultType
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $defaultType;
 
@@ -194,7 +195,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * zoomControlType
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $zoomControlType;
 
@@ -208,7 +209,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * mapTypes
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $mapTypes;
 
@@ -229,28 +230,28 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * travelMode
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $travelMode;
 	
 	/**
 	 * unitSystem
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $unitSystem;
 	
 	/**
 	 * styledMapName
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $styledMapName;
 
 	/**
 	 * styledMapCode
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $styledMapCode;
 	
@@ -264,14 +265,14 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * travelModes
 	 *
-	 * @var array
+	 * @var \array
 	 */
 	protected $travelModes = array();
 	
 	/**
 	 * unitSystems
 	 *
-	 * @var array
+	 * @var \array
 	 */
 	protected $unitSystems = array();
 	
@@ -286,7 +287,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	}
 
 	/**
-	 * Initializes all Tx_Extbase_Persistence_ObjectStorage properties.
+	 * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
 	 *
 	 * @return void
 	 */
@@ -296,13 +297,13 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 		 * It will be rewritten on each save in the extension builder
 		 * You may modify the constructor of this class instead
 		 */
-		$this->addresses = new Tx_Extbase_Persistence_ObjectStorage();
+		$this->addresses = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
 	}
 
 	/**
 	 * Returns the title
 	 *
-	 * @return string $title
+	 * @return \string $title
 	 */
 	public function getTitle() {
 		return $this->title;
@@ -311,7 +312,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the title
 	 *
-	 * @param string $title
+	 * @param \string $title
 	 * @return void
 	 */
 	public function setTitle($title) {
@@ -321,7 +322,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the tooltipTitle
 	 *
-	 * @return string $tooltipTitle
+	 * @return \string $tooltipTitle
 	 */
 	public function getTooltipTitle() {
 		return $this->tooltipTitle;
@@ -330,7 +331,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the tooltipTitle
 	 *
-	 * @param string $tooltipTitle
+	 * @param \string $tooltipTitle
 	 * @return void
 	 */
 	public function setTooltipTitle($tooltipTitle) {
@@ -340,7 +341,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the class
 	 *
-	 * @return string $class
+	 * @return \string $class
 	 */
 	public function getClass() {
 		return $this->class;
@@ -349,7 +350,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the class
 	 *
-	 * @param string $class
+	 * @param \string $class
 	 * @return void
 	 */
 	public function setClass($class) {
@@ -359,7 +360,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the width
 	 *
-	 * @param string integer $width
+	 * @param \string integer $width
 	 */
 	public function getWidth() {
 		return is_numeric($this->width)?$this->width.'px':$this->width;
@@ -368,7 +369,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the width
 	 *
-	 * @param string $width
+	 * @param \string $width
 	 * @return void
 	 */
 	public function setWidth($width) {
@@ -378,7 +379,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the height
 	 *
-	 * @return string $height
+	 * @return \string $height
 	 */
 	public function getHeight() {
 		return is_numeric($this->height)?$this->height.'px':$this->height;
@@ -387,7 +388,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the height
 	 *
-	 * @param string $height
+	 * @param \string $height
 	 * @return void
 	 */
 	public function setHeight($height) {
@@ -397,7 +398,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the zoom
 	 *
-	 * @return integer $zoom
+	 * @return \integer $zoom
 	 */
 	public function getZoom() {
 		return $this->zoom;
@@ -406,7 +407,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the zoom
 	 *
-	 * @param integer $zoom
+	 * @param \integer $zoom
 	 * @return void
 	 */
 	public function setZoom($zoom) {
@@ -416,27 +417,27 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Adds a Address
 	 *
-	 * @param Tx_GoMapsExt_Domain_Model_Address $address
+	 * @param \TYPO3\GoMapsExt\Domain\Model\Address $address
 	 * @return void
 	 */
-	public function addAddress(Tx_GoMapsExt_Domain_Model_Address $address) {
+	public function addAddress(\TYPO3\GoMapsExt\Domain\Model\Address $address) {
 		$this->addresses->attach($address);
 	}
 
 	/**
 	 * Removes a Address
 	 *
-	 * @param Tx_GoMapsExt_Domain_Model_Address $addressToRemove The Address to be removed
+	 * @param \TYPO3\GoMapsExt\Domain\Model\Address $addressToRemove The Address to be removed
 	 * @return void
 	 */
-	public function removeAddress(Tx_GoMapsExt_Domain_Model_Address $addressToRemove) {
+	public function removeAddress(\TYPO3\GoMapsExt\Domain\Model\Address $addressToRemove) {
 		$this->addresses->detach($addressToRemove);
 	}
 
 	/**
 	 * Returns the addresses
 	 *
-	 * @return Tx_Extbase_Persistence_ObjectStorage<Tx_GoMapsExt_Domain_Model_Address> $addresses
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Address> $addresses
 	 */
 	public function getAddresses() {
 		return $this->addresses;
@@ -445,17 +446,17 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the addresses
 	 *
-	 * @param Tx_Extbase_Persistence_ObjectStorage<Tx_GoMapsExt_Domain_Model_Address> $addresses
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Address> $addresses
 	 * @return void
 	 */
-	public function setAddresses(Tx_Extbase_Persistence_ObjectStorage $addresses) {
+	public function setAddresses(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $addresses) {
 		$this->addresses = $addresses;
 	}
 
 	/**
 	 * Returns the kmlUrl
 	 *
-	 * @return string $kmlUrl
+	 * @return \string $kmlUrl
 	 */
 	public function getKmlUrl() {
 		return $this->kmlUrl;
@@ -464,7 +465,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the kmlUrl
 	 *
-	 * @param string $kmlUrl
+	 * @param \string $kmlUrl
 	 * @return void
 	 */
 	public function kmlUrl($kmlUrl) {
@@ -642,7 +643,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the markerClusterZoom
 	 *
-	 * @return integer $markerClusterZoom
+	 * @return \integer $markerClusterZoom
 	 */
 	public function getMarkerClusterZoom() {
 		return $this->markerClusterZoom;
@@ -651,7 +652,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the markerClusterZoom
 	 *
-	 * @param integer $markerClusterZoom
+	 * @param \integer $markerClusterZoom
 	 * @return void
 	 */
 	public function setMarkerClusterZoom($markerClusterZoom) {
@@ -661,7 +662,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the markerClusterSize
 	 *
-	 * @return integer $markerClusterSize
+	 * @return \integer $markerClusterSize
 	 */
 	public function getMarkerClusterSize() {
 		return $this->markerClusterSize;
@@ -670,7 +671,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the markerClusterSize
 	 *
-	 * @param integer $markerClusterSize
+	 * @param \integer $markerClusterSize
 	 * @return void
 	 */
 	public function setMarkerClusterSize($markerClusterSize) {
@@ -708,7 +709,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the defaultType
 	 *
-	 * @return integer $defaultType
+	 * @return \integer $defaultType
 	 */
 	public function getDefaultType() {
 		return $this->defaultType;
@@ -717,7 +718,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the defaultType
 	 *
-	 * @param integer $defaultType
+	 * @param \integer $defaultType
 	 * @return void
 	 */
 	public function setDefaultType($defaultType) {
@@ -839,7 +840,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the zoomControlType
 	 *
-	 * @return string $zoomControlType
+	 * @return \string $zoomControlType
 	 */
 	public function getZoomControlType() {
 		return $this->zoomControlType;
@@ -848,7 +849,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the zoomControlType
 	 *
-	 * @param string $zoomControlType
+	 * @param \string $zoomControlType
 	 * @return void
 	 */
 	public function setZoomControlType($zoomControlType) {
@@ -886,7 +887,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the mapTypes
 	 *
-	 * @return string $mapTypes
+	 * @return \string $mapTypes
 	 */
 	public function getMapTypes() {
 		return explode(",", $this->mapTypes);
@@ -895,7 +896,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the mapTypes
 	 *
-	 * @param string $mapTypes
+	 * @param \string $mapTypes
 	 * @return void
 	 */
 	public function setMapTypes($mapTypes) {
@@ -961,7 +962,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the travelMode
 	 *
-	 * @return integer $travelMode
+	 * @return \integer $travelMode
 	 */
 	public function getTravelMode() {
 		return $this->travelMode;
@@ -970,7 +971,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the travelMode
 	 *
-	 * @param integer $travelMode
+	 * @param \integer $travelMode
 	 * @return void
 	 */
 	public function setTravelMode($travelMode) {
@@ -980,7 +981,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the unitSystem
 	 *
-	 * @return integer $unitSystem
+	 * @return \integer $unitSystem
 	 */
 	public function getUnitSystem() {
 		return $this->unitSystem;
@@ -989,7 +990,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the unitSystem
 	 *
-	 * @param integer $travelMode
+	 * @param \integer $travelMode
 	 * @return void
 	 */
 	public function setUnitSystem($unitSystem) {
@@ -999,7 +1000,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the styledMapName
 	 *
-	 * @return string $styledMapName
+	 * @return \string $styledMapName
 	 */
 	public function getStyledMapName() {
 		return $this->styledMapName;
@@ -1008,7 +1009,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the styledMapName
 	 *
-	 * @param string $styledMapName
+	 * @param \string $styledMapName
 	 * @return void
 	 */
 	public function setStyledMapName($styledMapName) {
@@ -1018,7 +1019,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the styledMapCode
 	 *
-	 * @return string $styledMapCode
+	 * @return \string $styledMapCode
 	 */
 	public function getStyledMapCode() {
 		return $this->styledMapCode;
@@ -1027,7 +1028,7 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Sets the styledMapCode
 	 *
-	 * @param string $styledMapCode
+	 * @param \string $styledMapCode
 	 * @return void
 	 */
 	public function setStyledMapCode($styledMapCode) {
@@ -1050,11 +1051,11 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the travelModes
 	 *
-	 * @return array $travelModes
+	 * @return \array $travelModes
 	 */
 	public function getTravelModes() {
 		for($i=0; $i<=4; $i++) { 
-			$travelModes[$i] = Tx_Extbase_Utility_Localization::translate('tx_gomapsext_domain_model_map.travel_mode.' . $i, 'go_maps_ext');
+			$travelModes[$i] = TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.travel_mode.' . $i, 'go_maps_ext');
 		}
 		return $travelModes;
 	}
@@ -1062,11 +1063,11 @@ class Tx_GoMapsExt_Domain_Model_Map extends Tx_Extbase_DomainObject_AbstractEnti
 	/**
 	 * Returns the unitSystems
 	 *
-	 * @return array $unitSystems
+	 * @return \array $unitSystems
 	 */
 	public function getUnitSystems() {
 		for($i=2; $i<=3; $i++) { 
-			$unitSystems[$i] = Tx_Extbase_Utility_Localization::translate('tx_gomapsext_domain_model_map.unit_system.' . $i, 'go_maps_ext');
+			$unitSystems[$i] = TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.unit_system.' . $i, 'go_maps_ext');
 		}
 		return $unitSystems;
 	}

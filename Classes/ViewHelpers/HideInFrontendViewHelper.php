@@ -1,5 +1,5 @@
 <?php
-
+namespace TYPO3\GoMapsExt\ViewHelpers;
 /*                                                                                                    
  *  Copyright notice
  *
@@ -28,36 +28,24 @@
  */
 
 /**
- * Renders a HTML-script value by passing it and escape ' to pretend for errors.
+ * Renders Nothing
  *
  * == Examples ==
  *
  * <code title="Default parameters">
- * <gomapsext:format.escape>function('');</gomapsext:format.escape>
+ * <gomapsext:format.comment>'foo <b>bar</b>.'</gomapsext:format.comment>
  * </code>
  * <output>
- *function(\'\');
  * </output>
- *
- * <code title="Inline notation">
- * {some'Text' -> gomapsext:format.escape}
- * </code>
- * <output>
- * some\'Text\'
- * </output>
- *
  */
 
-class Tx_GoMapsExt_ViewHelpers_Format_EscapeViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class HideInFrontendViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 	
 	/**
-	 * @return The parsed string.
+	 * @return nothing.
 	 * @author Marc Hirdes <marc_hirdes@gmx.de>
 	 */
 	public function render() {
-		$value = $this->renderChildren();
-		
-		return str_replace("'", "\'", $value);
 	}
 }
 

@@ -1,5 +1,5 @@
 <?php
-
+namespace TYPO3\GoMapsExt\ViewHelpers;
 /*                                                                                                    
  *  Copyright notice
  *
@@ -28,29 +28,27 @@
  */
 
 /**
- * Renders a HTML-script value by passing it in CDATA and escape closing tags for valid HTML.
+ * Renders a HTML-script value by passing it and escape ' to pretend for errors.
  *
  * == Examples ==
  *
  * <code title="Default parameters">
- * <gomapsext:format.script>'foo <b>bar</b>.'</gomapsext:format.script>
+ * <gomapsext:format.escape>function('');</gomapsext:format.escape>
  * </code>
  * <output>
- * <![CDATA[ 
- * 		foo <b>bar<\/b>
- * ]]>
+ *function(\'\');
  * </output>
  *
  * <code title="Inline notation">
- * {someText -> gomapsext:format.script}
+ * {some'Text' -> gomapsext:format.escape}
  * </code>
  * <output>
- * /*<![CDATA[*\/ foo <b>bar<\/b>  /*]]>*\/
+ * some\'Text\'
  * </output>
  *
  */
 
-class Tx_GoMapsExt_ViewHelpers_Format_ScriptViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class EscapeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
 	
 	/**
 	 * @return The parsed string.
@@ -59,7 +57,7 @@ class Tx_GoMapsExt_ViewHelpers_Format_ScriptViewHelper extends Tx_Fluid_Core_Vie
 	public function render() {
 		$value = $this->renderChildren();
 		
-		return '/*<![CDATA[*/' . str_replace('</', '<\/', $value) . '/*]]>*/';
+		return str_replace("'", "\'", $value);
 	}
 }
 

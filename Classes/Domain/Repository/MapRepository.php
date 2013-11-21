@@ -1,4 +1,5 @@
 <?php
+namespace TYPO3\GoMapsExt\Domain\Repository;
 
 /***************************************************************
  *  Copyright notice
@@ -31,6 +32,6 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_GoMapsExt_Domain_Repository_MapRepository extends Tx_Extbase_Persistence_Repository {
+class MapRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 }
 ?>

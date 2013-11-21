@@ -1,4 +1,5 @@
 <?php
+namespace TYPO3\GoMapsExt\Domain\Model;
 
 /***************************************************************
  *  Copyright notice
@@ -31,12 +32,12 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_AbstractEntity {
+class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 	/**
 	 * title
 	 *
-	 * @var string
+	 * @var \string
 	 * @validate NotEmpty
 	 */
 	protected $title;
@@ -44,35 +45,35 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * configurationMap
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $configurationMap;
 
 	/**
 	 * latitude
 	 *
-	 * @var float
+	 * @var \float
 	 */
 	protected $latitude;
 
 	/**
 	 * longitude
 	 *
-	 * @var float
+	 * @var \float
 	 */
 	protected $longitude;
 
 	/**
 	 * address
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $address;
 
 	/**
 	 * marker
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $marker;
 
@@ -86,21 +87,21 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * imageWidth
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $imageWidth;
 
 	/**
 	 * imageHeight
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $imageHeight;
 
 	/**
 	 * shadow
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $shadow;
 
@@ -114,28 +115,28 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * shadowWidth
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $shadowWidth;
 
 	/**
 	 * shadowHeight
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $shadowHeight;
 
 	/**
 	 * infoWindowContent
 	 *
-	 * @var string
+	 * @var \string
 	 */
 	protected $infoWindowContent;
 
 	/**
 	 * infoWindowLink
 	 *
-	 * @var integer
+	 * @var \integer
 	 */
 	protected $infoWindowLink;
 
@@ -163,7 +164,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the title
 	 *
-	 * @return string $title
+	 * @return \string $title
 	 */
 	public function getTitle() {
 		return $this->title;
@@ -173,7 +174,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	 * Sets the title
 	 *
 	 * @param string $title
-	 * @return void
+	 * @return \void
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
@@ -182,7 +183,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the configurationMap
 	 *
-	 * @return string $configurationMap
+	 * @return \string $configurationMap
 	 */
 	public function getConfigurationMap() {
 		return $this->configurationMap;
@@ -192,7 +193,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	 * Sets the configurationMap
 	 *
 	 * @param string $configurationMap
-	 * @return void
+	 * @return \void
 	 */
 	public function setConfigurationMap($configurationMap) {
 		$this->configurationMap = $configurationMap;
@@ -201,7 +202,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the latitude
 	 *
-	 * @return float $latitude
+	 * @return \float $latitude
 	 */
 	public function getLatitude() {
 		return $this->latitude;
@@ -210,7 +211,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the latitude
 	 *
-	 * @param float $latitude
+	 * @param \float $latitude
 	 * @return void
 	 */
 	public function setLatitude($latitude) {
@@ -220,7 +221,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the longitude
 	 *
-	 * @return float $longitude
+	 * @return \float $longitude
 	 */
 	public function getLongitude() {
 		return $this->longitude;
@@ -229,7 +230,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the longitude
 	 *
-	 * @param float $longitude
+	 * @param \float $longitude
 	 * @return void
 	 */
 	public function setLongitude($longitude) {
@@ -239,7 +240,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the address
 	 *
-	 * @return string $address
+	 * @return \string $address
 	 */
 	public function getAddress() {
 		return $this->address;
@@ -248,7 +249,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the address
 	 *
-	 * @param string $address
+	 * @param \string $address
 	 * @return void
 	 */
 	public function setAddress($address) {
@@ -258,7 +259,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the marker
 	 *
-	 * @return string $marker
+	 * @return \string $marker
 	 */
 	public function getMarker() {
 		return $this->marker;
@@ -305,7 +306,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the imageWidth
 	 *
-	 * @return integer $imageWidth
+	 * @return \integer $imageWidth
 	 */
 	public function getImageWidth() {
 		return $this->imageWidth;
@@ -314,7 +315,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the imageWidth
 	 *
-	 * @param integer $imageWidth
+	 * @param \integer $imageWidth
 	 * @return void
 	 */
 	public function setImageWidth($imageWidth) {
@@ -324,7 +325,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the imageHeight
 	 *
-	 * @return integer $imageHeight
+	 * @return \integer $imageHeight
 	 */
 	public function getImageHeight() {
 		return $this->imageHeight;
@@ -333,7 +334,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the imageHeight
 	 *
-	 * @param integer $imageHeight
+	 * @param \integer $imageHeight
 	 * @return void
 	 */
 	public function setImageHeight($imageHeight) {
@@ -343,7 +344,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the shadow
 	 *
-	 * @return string $shadow
+	 * @return \string $shadow
 	 */
 	public function getShadow() {
 		return $this->shadow;
@@ -352,7 +353,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the shadow
 	 *
-	 * @param string $shadow
+	 * @param \string $shadow
 	 * @return void
 	 */
 	public function setShadow($shadow) {
@@ -390,7 +391,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the shadowWidth
 	 *
-	 * @return integer $shadowWidth
+	 * @return \integer $shadowWidth
 	 */
 	public function getShadowWidth() {
 		return $this->shadowWidth;
@@ -399,7 +400,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the shadowWidth
 	 *
-	 * @param integer $shadowWidth
+	 * @param \integer $shadowWidth
 	 * @return void
 	 */
 	public function setShadowWidth($shadowWidth) {
@@ -409,7 +410,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the shadowHeight
 	 *
-	 * @return integer $shadowHeight
+	 * @return \integer $shadowHeight
 	 */
 	public function getShadowHeight() {
 		return $this->shadowHeight;
@@ -418,7 +419,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the shadowHeight
 	 *
-	 * @param integer $shadowHeight
+	 * @param \integer $shadowHeight
 	 * @return void
 	 */
 	public function setShadowHeight($shadowHeight) {
@@ -428,7 +429,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the infoWindowContent
 	 *
-	 * @return string $infoWindowContent
+	 * @return \string $infoWindowContent
 	 */
 	public function getInfoWindowContent() {
 		return preg_replace("/\r\n|\r/", '</p><p class="bodytext">', $this->infoWindowContent);
@@ -437,7 +438,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the infoWindowContent
 	 *
-	 * @param string $infoWindowContent
+	 * @param \string $infoWindowContent
 	 * @return void
 	 */
 	public function setInfoWindowContent($infoWindowContent) {
@@ -447,7 +448,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Returns the infoWindowLink
 	 *
-	 * @return integer $infoWindowLink
+	 * @return \integer $infoWindowLink
 	 */
 	public function getInfoWindowLink() {
 		return $this->infoWindowLink;
@@ -456,7 +457,7 @@ class Tx_GoMapsExt_Domain_Model_Address extends Tx_Extbase_DomainObject_Abstract
 	/**
 	 * Sets the infoWindowLink
 	 *
-	 * @param integer $infoWindowLink
+	 * @param \integer $infoWindowLink
 	 * @return void
 	 */
 	public function setInfoWindowLink($infoWindowLink) {

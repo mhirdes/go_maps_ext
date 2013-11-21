@@ -1,5 +1,5 @@
-{namespace gomapsext=Tx_GoMapsExt_ViewHelpers} 
-<gomapsext:format.script>
+{namespace gomapsext=TYPO3\GoMapsExt\ViewHelpers}
+<gomapsext:script>
 function get{map.title}Settings() {
 var gme = new Object();
 
@@ -13,8 +13,8 @@ gme.defaultMapTypes = new Array(google.maps.MapTypeId.ROADMAP,
 				"{map.styledMapName}");
 				
 gme.mapSettings = <![CDATA[{]]>
-		title: '<gomapsext:format.escape>{map.title}</gomapsext:format.escape>',
-		tooltipTitle: '<gomapsext:format.escape>{map.tooltipTitle}</gomapsext:format.escape>',
+		title: '<gomapsext:escape>{map.title}</gomapsext:escape>',
+		tooltipTitle: '<gomapsext:escape>{map.tooltipTitle}</gomapsext:escape>',
 		CSSClass: '{map.class}',
 		width: '{map.width}',
 		height: '{map.height}',
@@ -67,7 +67,7 @@ gme.request['{k}'] = '{item}';
 gme.addresses = new Array();
 <f:for each="{addresses}" as="address" iteration="i">
 	gme.addresses[{i.index}]  = <![CDATA[{]]>
-		title: '<gomapsext:format.escape>{address.title}</gomapsext:format.escape>',
+		title: '<gomapsext:escape>{address.title}</gomapsext:escape>',
 		latitude: {address.latitude},
 		longitude: {address.longitude},
 		address: '{address.address}',
@@ -79,7 +79,7 @@ gme.addresses = new Array();
 		shadowSize: {f:if(condition:"{address.shadowSize}", then:"1", else:"0")},
 		shadowWidth: {address.shadowWidth},
 		shadowHeight: {address.shadowHeight},
-		infoWindowContent: '<gomapsext:format.escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:format.escape>',
+		infoWindowContent: '<gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape>',
 		infoWindowLink: {address.infoWindowLink},
 		<f:if condition="{settings.openByClick}">
 			<f:then>
@@ -113,4 +113,4 @@ gme.addresses = new Array();
 	var gme = get{map.title}Settings();
 	initMap(gme);
 });
-</gomapsext:format.script>
+</gomapsext:script>

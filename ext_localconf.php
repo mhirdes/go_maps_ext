@@ -3,8 +3,8 @@ if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
-Tx_Extbase_Utility_Extension::configurePlugin(
-	$_EXTKEY,
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'TYPO3.' . $_EXTKEY,
 	'Show',
 	array(
 		'Map' => 'show',

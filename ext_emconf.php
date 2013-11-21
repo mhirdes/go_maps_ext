@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Google Maps API Extbase',
-	'description' => 'Extbase Version of go_maps_ap. Simply instert a google map Version 3, jQuery, MooTools, Calculate Route, Image for Markers, Style Maps, KML,...',
+	'description' => 'Extbase Version of go_maps_ap. Simply instert a google map Version 3, jQuery, Calculate Route, Image for Markers, Style Maps, KML,...',
 	'category' => 'plugin',
 	'shy' => 0,
 	'version' => '1.2.1',
@@ -36,9 +36,9 @@ $EM_CONF[$_EXTKEY] = array (
 	array (
 		'depends' => 
 		array (
-			'extbase' => '1.3',
-			'fluid' => '1.3',
-			'typo3' => '4.5-0.0.0',
+			'extbase' => '6.0',
+			'fluid' => '6.0',
+			'typo3' => '6.0-0.0.0',
 		),
 		'conflicts' => 
 		array (

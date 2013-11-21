@@ -1,0 +1,13 @@
+config.tx_extbase{
+    persistence{
+        classes{
+
+            TYPO3\GoMapsExt\Domain\Model\Map {
+                mapping {
+                    
+                }
+            }
+            
+    	}
+    }
+}

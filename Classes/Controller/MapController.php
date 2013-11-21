@@ -1,5 +1,5 @@
 <?php
-
+namespace TYPO3\GoMapsExt\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -31,39 +31,39 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class Tx_GoMapsExt_Controller_MapController extends Tx_Extbase_MVC_Controller_ActionController {
+class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
 	 * mapRepository
 	 *
-	 * @var Tx_GoMapsExt_Domain_Repository_MapRepository
+	 * @var \TYPO3\GoMapsExt\Domain\Repository\MapRepository
 	 */
 	protected $mapRepository;
 	
 	/**
 	 * addressRepository
 	 *
-	 * @var Tx_GoMapsExt_Domain_Repository_AddressRepository
+	 * @var \TYPO3\GoMapsExt\Domain\Repository\AddressRepository
 	 */
 	protected $addressRepository;
 
 	/**
 	 * injectMapRepository
 	 *
-	 * @param Tx_GoMapsExt_Domain_Repository_MapRepository $mapRepository
+	 * @param \TYPO3\GoMapsExt\Domain\Repository\MapRepository $mapRepository
 	 * @return void
 	 */
-	public function injectMapRepository(Tx_GoMapsExt_Domain_Repository_MapRepository $mapRepository) {
+	public function injectMapRepository(\TYPO3\GoMapsExt\Domain\Repository\MapRepository $mapRepository) {
 		$this->mapRepository = $mapRepository;
 	} 
 	
 	/**
 	 * injectAddressRepository
 	 *
-	 * @param Tx_GoMapsExt_Domain_Repository_AddressRepository $addressRepository
+	 * @param \TYPO3\GoMapsExt\Domain\Repository\AddressRepository $addressRepository
 	 * @return void
 	 */
-	public function injectAddressRepository(Tx_GoMapsExt_Domain_Repository_AddressRepository $addressRepository) {
+	public function injectAddressRepository(\TYPO3\GoMapsExt\Domain\Repository\AddressRepository $addressRepository) {
 		$this->addressRepository = $addressRepository;
 	} 
 	
@@ -79,22 +79,22 @@ class Tx_GoMapsExt_Controller_MapController extends Tx_Extbase_MVC_Controller_Ac
 		
 		if($this->extConf['include_library'] == 1) {
 			if($this->extConf['jQuery'] == 1) {
-				$headerData .= '<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery-1.9.1.min.js"></script>
+				$headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery-1.9.1.min.js"></script>
 				';
 			} else {
-				$headerData .= '<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/mootools-1.4.5-core.js"></script>
+				$headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/mootools-1.4.5-core.js"></script>
 				';	
 			}
 		}
 
-		$headerData .= '<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js"></script>
+		$headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js"></script>
 		';
 		
 		if($this->extConf['jQuery'] == 1) {
-			$headerData .= '<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js"></script>
+			$headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js"></script>
 			';
 		} else {
-			$headerData .= '<script type="text/javascript" src="' . t3lib_extMgm::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/mootools.gomapsext.js"></script>
+			$headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/mootools.gomapsext.js"></script>
 			';	
 		}
 		
@@ -108,10 +108,10 @@ class Tx_GoMapsExt_Controller_MapController extends Tx_Extbase_MVC_Controller_Ac
 	/**
 	 * action show
 	 *
-	 * @param Tx_GoMapsExt_Domain_Model_Map $map
+	 * @param \TYPO3\GoMapsExt\Domain\Model\Map $map
 	 * @return void
 	 */
-	public function showAction(Tx_GoMapsExt_Domain_Model_Map $map = NULL) {
+	public function showAction(\TYPO3\GoMapsExt\Domain\Model\Map $map = NULL) {
 		$map = $this->mapRepository->findByUid($this->settings['map']);
 		
 		if($this->settings['storagePid']) {
