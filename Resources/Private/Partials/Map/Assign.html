@@ -109,7 +109,7 @@ gme.addresses = new Array();
 	return gme;
 }
 
-<f:if condition="{settings.jQuery}" then="jQuery(document).ready(function(){" else="window.addEvent('domready', function(){" />
+jQuery(document).ready(function() {
 	var gme = get{map.title}Settings();
 	initMap(gme);
 });

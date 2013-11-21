@@ -3,7 +3,8 @@ namespace TYPO3\GoMapsExt\ViewHelpers;
 /*                                                                                                    
  *  Copyright notice
  *
- *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
+ *  (c) 2013 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
+ *  (c) 2013 Mathias Brodala <mbrodala@pagemachine.de>, PAGEmachine AG
  *  
  *  All rights reserved
  *
@@ -28,24 +29,25 @@ namespace TYPO3\GoMapsExt\ViewHelpers;
  */
 
 /**
- * Renders a HTML-script value by passing it in CDATA and escape closing tags for valid HTML.
+ * Renders a HTML-script value by moving it into a temporary file and adding it to the page
  *
  * == Examples ==
  *
  * <code title="Default parameters">
- * <gomapsext:format.script>'foo <b>bar</b>.'</gomapsext:format.script>
+ * <gomapsext:script>'foo <b>bar</b>.'</gomapsext:script>
  * </code>
  * <output>
- * <![CDATA[ 
+ * <script type="text/javascript">
  * 		foo <b>bar<\/b>
- * ]]>
- * </output>
+ * </script>
  *
  * <code title="Inline notation">
- * {someText -> gomapsext:format.script}
+ * {someText -> gomapsext:script}
  * </code>
  * <output>
- * /*<![CDATA[*\/ foo <b>bar<\/b>  /*]]>*\/
+ * <script type="text/javascript">
+ *  someText
+ * </script>
  * </output>
  *
  */
@@ -57,9 +59,10 @@ class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 	 * @author Marc Hirdes <marc_hirdes@gmx.de>
 	 */
 	public function render() {
-		$value = $this->renderChildren();
+        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer->addJsFooterFile(\TYPO3\CMS\Frontend\Page\PageGenerator::inline2TempFile($this->renderChildren(), 'js'));
 		
-		return '/*<![CDATA[*/' . str_replace('</', '<\/', $value) . '/*]]>*/';
+		return '';
 	}
 }
 

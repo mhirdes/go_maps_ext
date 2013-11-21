@@ -1,7 +1,7 @@
 # cat=basic; type=boolean; label = Use jQuery Library from Extension
 include_library =
 
-# cat=basic; type=boolean; label = Add JavaScript to Footer (buggy)
+# cat=basic; type=boolean; label = Add JavaScript to Footer
 footerJS =
 
 # cat=basic; type=string; label = URL to Google Maps API: Default is current version

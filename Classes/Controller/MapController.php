@@ -4,6 +4,7 @@ namespace TYPO3\GoMapsExt\Controller;
  *  Copyright notice
  *
  *  (c) 2013 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
+ *  (c) 2013 Mathias Brodala <mbrodala@pagemachine.de>, PAGEmachine AG
  *  
  *  All rights reserved
  *
@@ -69,29 +70,32 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	
 	public function initializeAction() {
 		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
-		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ? 
+        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$addJsFileMethod = 'addJsFile';
+
+        if($this->extConf['footerJS'] == 1) {
+            $addJsFileMethod = 'addJsFooterFile';
+        }
+
+		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ?
 			htmlentities($this->extConf['googleMapsLibrary']) : 
-			'http://maps.google.com/maps/api/js?v=3.13&amp;sensor=false';
-		$headerData = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>
-					 	';
+			'http://maps.google.com/maps/api/js?v=3.13&sensor=false';
+        $pageRenderer->{$addJsFileMethod}($googleMapsLibrary, 'text/javascript', FALSE, FALSE, '', TRUE);
+
 		$this->extConf['openByClick'] = $this->settings['infoWindow']['openByClick'];
 		$this->extConf['closeByClick'] = $this->settings['infoWindow']['closeByClick'];
 		
 		if($this->extConf['include_library'] == 1) {
-            $headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery-1.9.1.min.js"></script>
-            ';
+            $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.min.js';
 		}
 
-		$headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js"></script>
-		';
-        $headerData .= '<script type="text/javascript" src="' . \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js"></script>
-		';
-		
-		if($this->extConf['footerJS'] == 1) {
-			$GLOBALS['TSFE']->additionalFooterData['tx_gomapsap'] = $headerData;
-		} else {
-			$GLOBALS['TSFE']->additionalHeaderData['tx_gomapsap'] = $headerData;
-		}
+        $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
+
+        $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js';
+
+        foreach ($scripts as $script) {
+            $pageRenderer->{$addJsFileMethod}($script);
+        }
 	}
 	
 	/**
