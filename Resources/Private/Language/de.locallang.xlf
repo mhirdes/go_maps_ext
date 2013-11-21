@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2013-11-21T11:33:06Z">
+		<header>
+			<description>Language labels for the Google Maps API Extbase extension in the FRONTEND</description>
+			<authorName>Marc Hirdes</authorName>
+			<authorEmail>marc_hirdes@gmx.de</authorEmail>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0" approved="yes" xml:space="preserve">
+			<source>Driving</source>
+			<target>Mit dem Auto</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2" approved="yes" xml:space="preserve">
+			<source>Bicycling</source>
+			<target>Mit dem Fahrrad</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3" approved="yes" xml:space="preserve">
+			<source>Transit</source>
+			<target>Öffentliche Verkehrsmittel</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4" approved="yes" xml:space="preserve">
+			<source>Walking</source>
+			<target>Zu Fuß</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2" approved="yes" xml:space="preserve">
+			<source>km</source>
+			<target>km</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3" approved="yes" xml:space="preserve">
+			<source>mil</source>
+			<target>mil</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_flexform_settings" approved="yes" xml:space="preserve">
+			<source>Settings</source>
+			<target>Einstellungen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_flexform_settings.map" approved="yes" xml:space="preserve">
+			<source>Map</source>
+			<target>Karte</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_partials_map_assign.alert" approved="yes" xml:space="preserve">
+			<source>Please enter a valid address.</source>
+			<target>Bitte geben Sie eine gültige Adresse ein.</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText" approved="yes" xml:space="preserve">
+			<source>Calculate Route</source>
+			<target>Route berechnen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults" approved="yes" xml:space="preserve">
+			<source>No results found.</source>
+			<target>Die Suche liefert keine Ergebnisse.</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_partials_map_assign.submit" approved="yes" xml:space="preserve">
+			<source>Calculate Route</source>
+			<target>Route berechnen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" approved="yes" xml:space="preserve">
+			<source>Search</source>
+			<target>Suchen</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2013-11-21T11:34:06Z">
+		<header>
+			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_address</description>
+			<type>CSH</type>
+			<csh_table>tx_gomapsext_domain_model_address</csh_table>
+			<authorName>Marc Hirdes</authorName>
+			<authorEmail>marc_hirdes@gmx.de</authorEmail>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="address.description" approved="yes" xml:space="preserve">
+			<source>Please enter an address or coordinates on the position field above and press update.</source>
+			<target>Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
+		</trans-unit>
+		<trans-unit id="close_by_click.description" approved="yes" xml:space="preserve">
+			<source>Close InfoWindow by click instead of mouse out.</source>
+			<target>Info-Fenster mit Klicken statt Mouseout schließen.</target>
+		</trans-unit>
+		<trans-unit id="configuration_map.description" approved="yes" xml:space="preserve">
+			<source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
+			<target>Geben Sie eine Adresse [Straße Nr., PLZ Ort] oder Koordinaten [Latitude,Longitude] ein und drücken Sie 'Update' oder verschieben Sie den Marker.</target>
+		</trans-unit>
+		<trans-unit id="image_height.description" approved="yes" xml:space="preserve">
+			<source>Costum image height in pixel.</source>
+			<target>Benutzerdefinierte Höhe des Markers in Pixeln.</target>
+		</trans-unit>
+		<trans-unit id="image_size.description" approved="yes" xml:space="preserve">
+			<source>Check if the image has a different size then default.</source>
+			<target>Aktivieren Sie die Checkbox, wenn die Größe des Markers von der Standardgröße abweicht.</target>
+		</trans-unit>
+		<trans-unit id="image_width.description" approved="yes" xml:space="preserve">
+			<source>Costum image width in pixel.</source>
+			<target>Benutzerdefinierte Breite des Markers in Pixeln.</target>
+		</trans-unit>
+		<trans-unit id="info_window_content.description" approved="yes" xml:space="preserve">
+			<source>This will be displayed in the InfoWindow of this marker.</source>
+			<target>Der Text, welcher im Info-Fenster dargstellt wird.</target>
+		</trans-unit>
+		<trans-unit id="info_window_link.description" approved="yes" xml:space="preserve">
+			<source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
+			<target>Link zur Routenberechnung auf Google Maps wird an das Ende des Info-Fenster-Texts angehängt.</target>
+		</trans-unit>
+		<trans-unit id="latitude.description" approved="yes" xml:space="preserve">
+			<source>Please enter an address or coordinates on the position field above and press update.</source>
+			<target>Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
+		</trans-unit>
+		<trans-unit id="longitude.description" approved="yes" xml:space="preserve">
+			<source>Please enter an address or coordinates on the position field above and press update.</source>
+			<target>Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
+		</trans-unit>
+		<trans-unit id="marker.description" approved="yes" xml:space="preserve">
+			<source>Choose a costum image for the pin.</source>
+			<target>Wählen Sie ein indiduelles Bild für den Marker.</target>
+		</trans-unit>
+		<trans-unit id="open_by_click.description" approved="yes" xml:space="preserve">
+			<source>Open InfoWindow by click instead of mouse over.</source>
+			<target>Info-Fenster mit Klicken statt Mouseover öffnen.</target>
+		</trans-unit>
+		<trans-unit id="opened.description" approved="yes" xml:space="preserve">
+			<source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
+			<target>Das Info-Fenster ist geöffnet, wenn die Karte erscheint. Es wird je Karte nur ein Info-Fenster geöffnet erscheinen.</target>
+		</trans-unit>
+		<trans-unit id="shadow.description" approved="yes" xml:space="preserve">
+			<source>Choose a costum shadow for the pin.</source>
+			<target>Wählen Sie einen indiduellen Schatten für den Marker.</target>
+		</trans-unit>
+		<trans-unit id="shadow_height.description" approved="yes" xml:space="preserve">
+			<source>Costum shadow height in pixel.</source>
+			<target>Benutzerdefinierte Höhe des Schattens in Pixeln.</target>
+		</trans-unit>
+		<trans-unit id="shadow_size.description" approved="yes" xml:space="preserve">
+			<source>Check if the shadow has a different size then default.</source>
+			<target>Aktivieren Sie die Checkbox, wenn die Größe des Schattens von der Standardgröße abweicht.</target>
+		</trans-unit>
+		<trans-unit id="shadow_width.description" approved="yes" xml:space="preserve">
+			<source>Costum shadow width in pixel.</source>
+			<target>Benutzerdefinierte Breite des Schattens in Pixeln.</target>
+		</trans-unit>
+		<trans-unit id="title.description" approved="yes" xml:space="preserve">
+			<source>Only for internal usage.</source>
+			<target>Nur für die interne Verwendung.</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

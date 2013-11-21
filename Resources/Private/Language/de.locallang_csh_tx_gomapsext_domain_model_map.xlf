@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2013-11-21T11:31:58Z">
+		<header>
+			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
+			<type>CSH</type>
+			<csh_table>tx_gomapsext_domain_model_map</csh_table>
+			<authorName>Marc Hirdes</authorName>
+			<authorEmail>marc_hirdes@gmx.de</authorEmail>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="addresses.description" approved="yes" xml:space="preserve">
+			<source>You can choose, create or edit an address. New addresses will be saved on the current page.</source>
+			<target>Datensätze können ausgewählt, angelegt oder bearbeitet werden. Neue Addressen werden auf der aktuellen Seite gespeichert.</target>
+		</trans-unit>
+		<trans-unit id="calc_route.description" approved="yes" xml:space="preserve">
+			<source>Only 1 address used as destination. Display an text input for enter a starting point.</source>
+			<target>Nur eine Zieladresse muss angegeben werden. Zeigt einen Textinput für Startangabe.</target>
+		</trans-unit>
+		<trans-unit id="class.description" approved="yes" xml:space="preserve">
+			<source>The class of the map container</source>
+			<target>Die CSS-Klasse des DIV-Containers.</target>
+		</trans-unit>
+		<trans-unit id="default_type.description" approved="yes" xml:space="preserve">
+			<source>Maptype on the beginning.</source>
+			<target>Typ der Karte am Anfang.</target>
+		</trans-unit>
+		<trans-unit id="double_click_zoom.description" approved="yes" xml:space="preserve">
+			<source>A double click on the map zooms in. Draggable map has to be enabled!</source>
+			<target>Bei Doppelklick wird hereingezoomt. Verschiebbare Karte muss aktiviert sein!</target>
+		</trans-unit>
+		<trans-unit id="draggable.description" approved="yes" xml:space="preserve">
+			<source>Position of the map can be changed.</source>
+			<target>Die Position der Karte kann verändert werden.</target>
+		</trans-unit>
+		<trans-unit id="height.description" approved="yes" xml:space="preserve">
+			<source>Set the height of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
+			<target>Die Höhe der Karte Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</target>
+		</trans-unit>
+		<trans-unit id="kml_local.description" approved="yes" xml:space="preserve">
+			<source>The KML file is stored on this server. The specified path is relative. Only markers appear.</source>
+			<target>Die KML Datei ist auf diesem Server gespeichert. Der angegeben Pfad ist relativ. Nur Marker werden angezeigt.</target>
+		</trans-unit>
+		<trans-unit id="kml_preserve_viewport.description" approved="yes" xml:space="preserve">
+			<source>The viewport of the kml file will be ignored. Set zoom and at least one address to configure the viewport.</source>
+			<target>Der Kartenbereich der KML-Datei wird ignoriert. Mindestens eine Adresse ist erforderlich, um die Karte richtig zu zentrieren.</target>
+		</trans-unit>
+		<trans-unit id="kml_url.description" approved="yes" xml:space="preserve">
+			<source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
+			<target>Geben Sie die URL einer KML-Datei an, z.B. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</target>
+		</trans-unit>
+		<trans-unit id="map_type_control.description" approved="yes" xml:space="preserve">
+			<source>Shows a control to change the map type.</source>
+			<target>Ermöglicht das Ändern der Kartentypen.</target>
+		</trans-unit>
+		<trans-unit id="map_types.description" approved="yes" xml:space="preserve">
+			<source>Possible map types to choose. Map type control has to be enabled.</source>
+			<target>Mögliche Kartentypen. Kartentyp-Steuerung muss aktiviert sein.</target>
+		</trans-unit>
+		<trans-unit id="marker_cluster.description" approved="yes" xml:space="preserve">
+			<source>Many markers in the same region will be summarized and appear as a cluster.</source>
+			<target>Viele Marker in der gleichen Region werden zusammengefasst und als ein Cluster dargestellt.</target>
+		</trans-unit>
+		<trans-unit id="marker_cluster_size.description" approved="yes" xml:space="preserve">
+			<source>The size of the Clusters, like a radius.</source>
+			<target>Die Größe bzw. der Radius der Cluster.</target>
+		</trans-unit>
+		<trans-unit id="marker_cluster_zoom.description" approved="yes" xml:space="preserve">
+			<source>Up to this zoom level the Clusters are displayed.</source>
+			<target>Bis zu diesdem Zoom-Level werden die Cluster dargsetellt.</target>
+		</trans-unit>
+		<trans-unit id="marker_search.description" approved="yes" xml:space="preserve">
+			<source>Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</source>
+			<target>Zeigt ein Formular im Frontend, wo der Nutzer ein Suchwort eingeben kann. Durchsucht werden Titel und Info-Fenster Inhalt der Marker. Das Info-Fenster des zuerst gefundenen Markers öffnet sich.</target>
+		</trans-unit>
+		<trans-unit id="pan_control.description" approved="yes" xml:space="preserve">
+			<source>Show arrows to change the position of the map.</source>
+			<target>Zeigt Pfeil zum navigieren an.</target>
+		</trans-unit>
+		<trans-unit id="scale_control.description" approved="yes" xml:space="preserve">
+			<source>Displays a measure.</source>
+			<target>Zeigt einen Maßstab.</target>
+		</trans-unit>
+		<trans-unit id="scroll_zoom.description" approved="yes" xml:space="preserve">
+			<source>Enables zoom with scroll wheel. </source>
+			<target>Aktiviert die Zoomkontrolle via Scrollrad.</target>
+		</trans-unit>
+		<trans-unit id="show_route.description" approved="yes" xml:space="preserve">
+			<source>2 address records needed! Shows the route between the given points.</source>
+			<target>2 Adress-Datensätze werden benötigt! Zeigt die Route zwischen den beiden Punkten.</target>
+		</trans-unit>
+		<trans-unit id="streetview_control.description" approved="yes" xml:space="preserve">
+			<source>Shows an icon to enable the streetview.</source>
+			<target>Zeigt einen Icon zum aktivieren der StreetView.</target>
+		</trans-unit>
+		<trans-unit id="styled_map_code.description" approved="yes" xml:space="preserve">
+			<source>JSON, e.g. from http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</source>
+			<target>JSON, z.B. von http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</target>
+		</trans-unit>
+		<trans-unit id="styled_map_name.description" approved="yes" xml:space="preserve">
+			<source>Shown in the map type control.</source>
+			<target>Wird in der Kartensteuerung angezeigt.</target>
+		</trans-unit>
+		<trans-unit id="title.description" approved="yes" xml:space="preserve">
+			<source>Will be used as ID (without space character, special character!).</source>
+			<target>Wird als ID genutzt (ohne Sonder- und Leerzeichen!).</target>
+		</trans-unit>
+		<trans-unit id="tooltip_title.description" approved="yes" xml:space="preserve">
+			<source>Shown by mouse over.</source>
+			<target>Wird bei Mouseover angezeigt.</target>
+		</trans-unit>
+		<trans-unit id="travel_mode.description" approved="yes" xml:space="preserve">
+			<source>Select a travel mode or let the frontend user select one.</source>
+			<target>Wählen Sie einen Reisemodi oder lassen Sie den Frontend Nutzer einen aussuchen.</target>
+		</trans-unit>
+		<trans-unit id="unit_system.description" approved="yes" xml:space="preserve">
+			<source>Select a unit system or let the frontend user select one.</source>
+			<target>Wählen Sie eine Einheit oder lassen Sie den Frontend Nutzer eine aussuchen.</target>
+		</trans-unit>
+		<trans-unit id="width.description" approved="yes" xml:space="preserve">
+			<source>Set the width of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
+			<target>Die Breite der Karte. Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</target>
+		</trans-unit>
+		<trans-unit id="zoom.description" approved="yes" xml:space="preserve">
+			<source>Only need to set if default zoom is wrong.</source>
+			<target>Sollte nur gesetzt werden, wenn der Standardzoom nicht gewünscht ist.</target>
+		</trans-unit>
+		<trans-unit id="zoom_control.description" approved="yes" xml:space="preserve">
+			<source>Enable buttons to change the zoom.</source>
+			<target>Zeigt Buttons zum ändern der Zoomstufe.</target>
+		</trans-unit>
+		<trans-unit id="zoom_control_type.description" approved="yes" xml:space="preserve">
+			<source>Choose beetween large and small.</source>
+			<target>Größe der Zoomsteuerung einstellen.</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

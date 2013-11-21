@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2013-11-21T11:34:06Z">
+		<header>
+			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_address</description>
+			<type>CSH</type>
+			<csh_table>tx_gomapsext_domain_model_address</csh_table>
+			<authorName>Marc Hirdes</authorName>
+			<authorEmail>marc_hirdes@gmx.de</authorEmail>
+			<generator>LFEditor</generator>
+		</header>
+		<body>
+		<trans-unit id="address.description" approved="yes" xml:space="preserve">
+			<source>Please enter an address or coordinates on the position field above and press update.</source>
+			<target>Wprowadź adres lub współrzędne w powyższym polu pozycji i naciśnij przycisk aktualizacji.</target>
+		</trans-unit>
+		<trans-unit id="close_by_click.description" approved="yes" xml:space="preserve">
+			<source>Close InfoWindow by click instead of mouse out.</source>
+			<target>Zamknij dymek informacyjny po kliknięciu zamiast odjechaniu kursorem.</target>
+		</trans-unit>
+		<trans-unit id="configuration_map.description" approved="yes" xml:space="preserve">
+			<source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
+			<target>Wprowadź adres [numer ulicy, kod pocztowy, miasto] lub wspołrzędne [szerokość,długość] i naciśnij 'Aktualizuj' lub przeciągnij i upuść marker.</target>
+		</trans-unit>
+		<trans-unit id="image_height.description" approved="yes" xml:space="preserve">
+			<source>Costum image height in pixel.</source>
+			<target>Własna wysokość grafiki podana w pikselach.</target>
+		</trans-unit>
+		<trans-unit id="image_size.description" approved="yes" xml:space="preserve">
+			<source>Check if the image has a different size then default.</source>
+			<target>Zaznacz jeżeli rozmar grafiki różni się od domyślnego.</target>
+		</trans-unit>
+		<trans-unit id="image_width.description" approved="yes" xml:space="preserve">
+			<source>Costum image width in pixel.</source>
+			<target>Własna szerokość grafiki podana w piksleach.</target>
+		</trans-unit>
+		<trans-unit id="info_window_content.description" approved="yes" xml:space="preserve">
+			<source>This will be displayed in the InfoWindow of this marker.</source>
+			<target>Treść ta będzie wyświetlona w dymku informacyjnym tego markera.</target>
+		</trans-unit>
+		<trans-unit id="info_window_link.description" approved="yes" xml:space="preserve">
+			<source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
+			<target>Attachs an optional automatic generated link to calculate a route on Google Maps.</target>
+		</trans-unit>
+		<trans-unit id="latitude.description" approved="yes" xml:space="preserve">
+			<source>Please enter an address or coordinates on the position field above and press update.</source>
+			<target>Wprowadź adres lub współrzędne w powyższym polu pozycji i naciśnij przycisk aktualizacji.</target>
+		</trans-unit>
+		<trans-unit id="longitude.description" approved="yes" xml:space="preserve">
+			<source>Please enter an address or coordinates on the position field above and press update.</source>
+			<target>Wprowadź adres lub współrzędne w powyższym polu pozycji i naciśnij przycisk aktualizacji.</target>
+		</trans-unit>
+		<trans-unit id="marker.description" approved="yes" xml:space="preserve">
+			<source>Choose a costum image for the pin.</source>
+			<target>Wybierz własną grafikę dla pineski.</target>
+		</trans-unit>
+		<trans-unit id="open_by_click.description" approved="yes" xml:space="preserve">
+			<source>Open InfoWindow by click instead of mouse over.</source>
+			<target>Otwórz dymek po kliknięciu zamiast po najechaniu kursorem.</target>
+		</trans-unit>
+		<trans-unit id="opened.description" approved="yes" xml:space="preserve">
+			<source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
+			<target>Dymek informacyjny jest otwierany po załadowaniu mapy. Dla każdej mapy będzie tylko jeden otwarty dymek informacyjny.</target>
+		</trans-unit>
+		<trans-unit id="shadow.description" approved="yes" xml:space="preserve">
+			<source>Choose a costum shadow for the pin.</source>
+			<target>Wybierz własny cień dla pineski.</target>
+		</trans-unit>
+		<trans-unit id="shadow_height.description" approved="yes" xml:space="preserve">
+			<source>Costum shadow height in pixel.</source>
+			<target>Własna wysokość cienia podana w pikselach.</target>
+		</trans-unit>
+		<trans-unit id="shadow_size.description" approved="yes" xml:space="preserve">
+			<source>Check if the shadow has a different size then default.</source>
+			<target>Zaznacz jeżeli cień ma inny rozmiar niż domyślny.</target>
+		</trans-unit>
+		<trans-unit id="shadow_width.description" approved="yes" xml:space="preserve">
+			<source>Costum shadow width in pixel.</source>
+			<target>Własna szerokość cienia podana w pikselach.</target>
+		</trans-unit>
+		<trans-unit id="title.description" approved="yes" xml:space="preserve">
+			<source>Only for internal usage.</source>
+			<target>Wyłącznie do wewnętrznego uzytku.</target>
+		</trans-unit>
+		</body>
+	</file>
+</xliff>

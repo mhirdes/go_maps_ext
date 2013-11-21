@@ -8,13 +8,13 @@
     <sDEF>
       <ROOT>
         <TCEforms>
-          <sheetTitle>LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xml:tx_gomapsext_flexform_settings</sheetTitle>
+          <sheetTitle>LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_flexform_settings</sheetTitle>
         </TCEforms>
         <type>array</type>
         <el>
           <settings.map>
             <TCEforms>
-              <label>LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xml:tx_gomapsext_flexform_settings.map</label>
+              <label>LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_flexform_settings.map</label>
               <config>
                 <type>group</type>
 				<internal_type>db</internal_type>
