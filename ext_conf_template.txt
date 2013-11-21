@@ -1,8 +1,5 @@
-# cat=basic; type=boolean; label = Use JavaScript Library from Extension: MooTools Core 1.4.5 with compatibility, YUI Compressor or jQuery 1.8.0 min
+# cat=basic; type=boolean; label = Use jQuery Library from Extension
 include_library =
-
-# cat=basic; type=boolean; label = Use jQuery instead of Mootools
-jQuery =
 
 # cat=basic; type=boolean; label = Add JavaScript to Footer (buggy)
 footerJS =
