@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-21T11:33:25Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-25T10:38:14Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -14,6 +14,9 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.address" xml:space="preserve">
 			<source>Address</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_address.categories" xml:space="preserve">
+			<source>Categories</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.close_by_click" xml:space="preserve">
 			<source>Close InfoWindow by click</source>
@@ -63,6 +66,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_address.opened" xml:space="preserve">
 			<source>Opened</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_address.others" xml:space="preserve">
+			<source>Others</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.shadow" xml:space="preserve">
 			<source>Shadow</source>
 		</trans-unit>
@@ -80,6 +86,15 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.title" xml:space="preserve">
 			<source>Title</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_category" xml:space="preserve">
+			<source>Category</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_category.name" xml:space="preserve">
+			<source>Name</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_category.others" xml:space="preserve">
+			<source>Etc.</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map" xml:space="preserve">
 			<source>Map</source>
@@ -182,6 +197,9 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.scroll_zoom" xml:space="preserve">
 			<source>Scroll zoom</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.show_categories" xml:space="preserve">
+			<source>Show Categories</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.show_route" xml:space="preserve">
 			<source>Show route</source>

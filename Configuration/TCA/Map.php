@@ -10,7 +10,7 @@ $TCA['tx_gomapsext_domain_model_map'] = array(
 	),
 	'types' => array (
 		'0' => array('showitem' => 'title, tooltip_title, class, width, height, zoom, addresses, kml_url;;1, 
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display,scroll_zoom, draggable, double_click_zoom, marker_cluster;;2, marker_search, default_type,
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display,show_categories,scroll_zoom, draggable, double_click_zoom, marker_cluster;;2, marker_search, default_type,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.controls, pan_control, scale_control, streetview_control, zoom_control, zoom_control_type, map_type_control, map_types,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.route, show_route, calc_route, travel_mode, unit_system,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map, styled_map_name, styled_map_code,
@@ -219,6 +219,14 @@ $TCA['tx_gomapsext_domain_model_map'] = array(
 				'default' => 0
 			),
 		),
+        'show_categories' => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_categories',
+            'config' => array(
+                'type' => 'check',
+                'default' => 0
+            ),
+        ),
 		'scroll_zoom' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.scroll_zoom',

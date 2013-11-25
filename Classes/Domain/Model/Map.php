@@ -108,6 +108,13 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $kmlLocal = FALSE;
 
+    /**
+     * showCategories
+     *
+     * @var boolean
+     */
+    protected $showCategories = FALSE;
+
 	/**
 	 * scrollZoom
 	 *
@@ -527,6 +534,34 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function isKmlLocal() {
 		return $this->getKmlLocal();
 	}
+
+    /**
+     * Returns the showCategories
+     *
+     * @return boolean $showCategories
+     */
+    public function getShowCategories() {
+        return $this->showCategories;
+    }
+
+    /**
+     * Sets the showCategories
+     *
+     * @param boolean $showCategories
+     * @return void
+     */
+    public function setShowCategories($showCategories) {
+        $this->showCategories = $showCategories;
+    }
+
+    /**
+     * Returns the boolean state of showCategories
+     *
+     * @return boolean
+     */
+    public function isShowCategories() {
+        return $this->getShowCategories();
+    }
 
 	/**
 	 * Returns the scrollZoom

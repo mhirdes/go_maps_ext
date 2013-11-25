@@ -106,19 +106,26 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 */
 	public function showAction(\TYPO3\GoMapsExt\Domain\Model\Map $map = NULL) {
 		$map = $this->mapRepository->findByUid($this->settings['map']);
-		
-		if($this->settings['storagePid']) {
-			$addresses = $this->addressRepository->findAllAddresses($map, $this->settings['storagePid']);
-			} else {
-			$addresses = $map->getAddresses();	
-		}
-		
+        $pid = $this->settings['storagePid'];
+        $categoriesArray = array();
+
+        $addresses = $this->addressRepository->findAllAddresses($map, $pid);
+
+        if($map->isShowCategories()) {
+            foreach($addresses as $address) {
+                $addrCats = $address->getCategories();
+                foreach($addrCats as $addrCat) {
+                    $categoriesArray[$addrCat->getUid()] = $addrCat->getName();
+                }
+            }
+        }
 		
 		$this->view->assignMultiple(array(
 			'request' => $this->request->getArguments(),
 			'map' => $map,
 			'addresses' => $addresses,
-			'settings' => $this->extConf
+			'settings' => $this->extConf,
+            'categories' => $categoriesArray
 		));
 	} 
 

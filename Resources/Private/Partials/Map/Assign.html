@@ -41,6 +41,7 @@ gme.mapSettings = <![CDATA[{]]>
 		travelMode: {map.travelMode},
 		unitSystem: {map.unitSystem},
 		showForm: {f:if(condition:"{map.showForm}", then:"1", else:"0")},
+        showCategories: {f:if(condition:"{map.showCategories}", then:"1", else:"0")},
 		styledMapName: '{map.styledMapName}',
 		<f:if condition="{map.styledMapCode}">
 			<f:then>
@@ -97,7 +98,8 @@ gme.addresses = new Array();
 		closeByClick: {f:if(condition:"{address.closeByClick}", then:"1", else:"0")},
 			</f:else>
 		</f:if>
-		opened: {f:if(condition:"{address.opened}", then:"1", else:"0")}
+		opened: {f:if(condition:"{address.opened}", then:"1", else:"0")},
+        categories: '<f:for each="{address.categories}" as="category" iteration="icat">{category.uid}{f:if(condition:icat.isLast,then:'',else:',')}</f:for>'
 	<![CDATA[}]]>
 </f:for>
 	

@@ -42,15 +42,25 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface The addresses
 	 */
 	function findAllAddresses(\TYPO3\GoMapsExt\Domain\Model\Map $map, $pid) {
-		$query = $this->createQuery();
-		$statement = "SELECT * 
-						FROM tx_gomapsext_domain_model_address 
-						LEFT JOIN tx_gomapsext_map_address_mm 
-						ON tx_gomapsext_domain_model_address.uid = tx_gomapsext_map_address_mm.uid_foreign
-						WHERE (tx_gomapsext_domain_model_address.pid IN (" . $pid . ")
-						OR tx_gomapsext_map_address_mm.uid_local = " . $map->getUid() . ")";
-		$query->statement($statement);
-		return $query->execute();
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(FALSE);
+
+        $or = array();
+        $and = array();
+        if($pid) {
+            $or[] = $query->equals('pid', $pid);
+        }
+        if($map) {
+            $or[] = $query->contains('map', $map);
+        }
+        $and[] = $query->logicalOr($or);
+
+        return $query->matching(
+            $query->logicalAnd(
+                $and
+            )
+        )
+            ->execute();
 	}
 }
 ?>

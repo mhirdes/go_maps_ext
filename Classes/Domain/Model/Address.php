@@ -160,7 +160,39 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var boolean
 	 */
 	protected $opened = FALSE;
-	
+
+    /**
+     * categories
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Category>
+     * @lazy
+     */
+    protected $categories;
+
+    /**
+     * __construct
+     *
+     * @return void
+     */
+    public function __construct() {
+        //Do not remove the next line: It would break the functionality
+        $this->initStorageObjects();
+    }
+
+    /**
+     * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
+     *
+     * @return void
+     */
+    protected function initStorageObjects() {
+        /**
+         * Do not modify this method!
+         * It will be rewritten on each save in the extension builder
+         * You may modify the constructor of this class instead
+         */
+        $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+    }
+
 	/**
 	 * Returns the title
 	 *
@@ -547,6 +579,45 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function isOpened() {
 		return $this->getOpened();
 	}
+
+    /**
+     * Adds a Category
+     *
+     * @param \TYPO3\GoMapsExt\Domain\Model\Category $category
+     * @return void
+     */
+    public function addAddress(\TYPO3\GoMapsExt\Domain\Model\Category $category) {
+        $this->addresses->attach($category);
+    }
+
+    /**
+     * Removes a Category
+     *
+     * @param \TYPO3\GoMapsExt\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @return void
+     */
+    public function removeAddress(\TYPO3\GoMapsExt\Domain\Model\Category $categoryToRemove) {
+        $this->addresses->detach($categoryToRemove);
+    }
+
+    /**
+     * Returns the Categories
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Category> $categories
+     */
+    public function getCategories() {
+        return $this->categories;
+    }
+
+    /**
+     * Sets the Categories
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Category> $categories
+     * @return void
+     */
+    public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories) {
+        $this->categories = $categories;
+    }
 
 }
 ?>
