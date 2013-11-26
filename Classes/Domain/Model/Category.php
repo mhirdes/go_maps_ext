@@ -88,7 +88,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param \string $name
 	 * @return void
 	 */
-	public function setTitle($name) {
+	public function setName($name) {
 		$this->name = $name;
 	}
 	

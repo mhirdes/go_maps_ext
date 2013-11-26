@@ -10,7 +10,8 @@ $TCA['tx_gomapsext_domain_model_category'] = array(
 	),
 	'types' => array (
 		'0' => array('showitem' => 'name,
-									--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xml:tx_gomapsext_domain_model_category.others,sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden,starttime, endtime')
+									--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xml:tx_gomapsext_domain_model_category.others,
+									sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden,starttime, endtime')
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -114,7 +115,7 @@ $TCA['tx_gomapsext_domain_model_category'] = array(
 				'maxitems' => 9999,
 				'multiple' => 0,
 				'wizards' => array(
-					'_POSITION' => "right",
+					'_POSITION' => 'right',
 					'_PADDING' => 4,
 					'_VERTICAL' => 0,
 					'_DISTANCE' => 2,

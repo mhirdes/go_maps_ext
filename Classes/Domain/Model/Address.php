@@ -170,6 +170,14 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     protected $categories;
 
     /**
+     * map
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Map>
+     * @lazy
+     */
+    protected $map;
+
+    /**
      * __construct
      *
      * @return void
@@ -191,6 +199,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
          * You may modify the constructor of this class instead
          */
         $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->map = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
 	/**
@@ -619,5 +628,23 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
         $this->categories = $categories;
     }
 
+    /**
+     * Returns the Map
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Map> $map
+     */
+    public function getMap() {
+        return $this->map;
+    }
+
+    /**
+     * Sets the Map
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Map> $map
+     * @return void
+     */
+    public function setMap(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $map) {
+        $this->map = $map;
+    }
 }
 ?>

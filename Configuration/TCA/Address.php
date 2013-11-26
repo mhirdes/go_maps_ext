@@ -6,13 +6,19 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_gomapsext_domain_model_address'] = array(
 	'ctrl' => $TCA['tx_gomapsext_domain_model_address']['ctrl'],
 	'interface' => array(
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, categories, configuration_map, latitude, longitude, address, marker, image_size, image_width, image_height, shadow, shadow_size, shadow_width, shadow_height, info_window_content, info_window_link, close_by_click, open_by_click',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, categories,
+                                  configuration_map, latitude, longitude, address, marker, image_size, image_width,
+                                  image_height, shadow, shadow_size, shadow_width, shadow_height, info_window_content,
+                                  info_window_link, close_by_click, open_by_click',
 	),
 	'types' => array (
 		'0' => array('showitem' => 'title,configuration_map;;1,
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.style,marker,image_size;;2, shadow, shadow_size;;3,
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window,info_window_content;;4;richtext[]:rte_transform[mode=ts_css|imgpath=uploads/tx_gomapsap/rte/], open_by_click, close_by_click, opened,
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.others,sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;5,categories')
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.style,
+					marker,image_size;;2, shadow, shadow_size;;3,
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window,
+					info_window_content;;4;richtext[]:rte_transform[mode=ts_css|imgpath=uploads/tx_gomapsap/rte/], open_by_click, close_by_click, opened,
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.others,
+					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;5,categories')
 	),
 	'palettes' => array (
 		'1' => array('showitem' => 'latitude, longitude, address'),
@@ -123,7 +129,7 @@ $TCA['tx_gomapsext_domain_model_address'] = array(
                 'maxitems' => 9999,
                 'multiple' => 1,
                 'wizards' => array(
-                    '_POSITION' => "right",
+                    '_POSITION' => 'right',
                     '_PADDING' => 4,
                     '_VERTICAL' => 0,
                     '_DISTANCE' => 2,
@@ -335,7 +341,7 @@ $TCA['tx_gomapsext_domain_model_address'] = array(
                 'MM' => 'tx_gomapsext_map_address_mm',
                 'MM_opposite_field' => 'map',
             ),
-        ),manual.sxw
+        ),
 	),
 );
 

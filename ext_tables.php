@@ -9,7 +9,7 @@ if (!defined('TYPO3_MODE')) {
 	'Google Map'
 );
 
-$pluginSignature = str_replace('_','',$_EXTKEY) . '_show';
+$pluginSignature = str_replace('_', '', $_EXTKEY) . '_show';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 $TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature]='code,layout,select_key,pages,recursive';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_show.xlf');
@@ -39,7 +39,7 @@ $TCA['tx_gomapsext_domain_model_address'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'title,configuration_map,latitude,longitude,address,marker,image_size,image_width,image_height,shadow,shadow_size,shadow_width,shadow_height,info_window_content,info_window_link,close_by_click,open_by_click,',
+		'searchFields' => 'title,latitude,longitude,address,marker,image_size,shadow,info_window_content',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Address.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_gomapsext_domain_model_address.png'
 	),
@@ -68,7 +68,7 @@ $TCA['tx_gomapsext_domain_model_map'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'title,tooltip_title,class,width,height,zoom,addresses,show_route,calc_route,scroll_zoom,draggable,doubleclick_zoom,default_type,pan_control,scale_control,streetview_control,zoom_control,zoom_control_type,map_type_control,map_types,styled_map_name,styled_map_code,adresses,',
+		'searchFields' => 'title,tooltip_title,class,styled_map_name',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Map.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_gomapsext_domain_model_map.png'
 	),

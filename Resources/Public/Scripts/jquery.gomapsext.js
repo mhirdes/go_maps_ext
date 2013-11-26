@@ -1,7 +1,7 @@
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
+ *  (c) 2013 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
  *
  *  All rights reserved
  *
@@ -82,6 +82,17 @@ function setMapPoint(pointDescription, Route, element, infoWindow, position, gme
     }else{
         var marker = new google.maps.Marker({position: position, map: element.data("map")});
     };
+
+    if(gme.mapSettings.markerCluster == 1) {
+        google.maps.event.addListener(marker, 'visible_changed', function(){
+            if ( marker.getVisible() ) {
+                element.markerCluster.addMarker(marker, true);
+            } else {
+                element.markerCluster.removeMarker(marker, true);
+            }
+        });
+    }
+
     var closeInfoWindows = function() {
         infoWindowsArray.each(function(index, infoWindow) {
             infoWindow.close();
@@ -119,8 +130,11 @@ function setMapPoint(pointDescription, Route, element, infoWindow, position, gme
             });
         }
         if(pointDescription.opened) {
-            infoWindow.setContent(infoWindowContent);
-            infoWindow.open(element.data("map"), marker);
+
+            element.off("openinfo").on("openinfo", function() {
+                infoWindow.setContent(infoWindowContent);
+                infoWindow.open(element.data("map"), marker);
+            });
             gme.infoWindow = marker.getPosition();
         }
     };
@@ -169,6 +183,10 @@ function refreshMap(element, gme) {
     }
     element.data("map").fitBounds(element.data("bounds"));
 
+    refreshCluster(element, gme);
+}
+
+function refreshCluster (element, gme) {
     //cluster
     if(gme.mapSettings.markerCluster == 1) {
         if(element.markerCluster != null) {
@@ -398,6 +416,12 @@ function initMap(gme) {
         google.maps.event.trigger(infoWindow, 'content_changed');
     });
 
+    // open info window
+    window.setTimeout(function() {
+        element.trigger("openinfo");
+    },2000);
+
+    // categories checkboxes
     var setCategories = function(selectedCats) {
         jQuery.each(element.data("markers"), function(key, marker) {
             marker.setVisible(false);
@@ -408,8 +432,12 @@ function initMap(gme) {
                 }
             });
         });
+        if(element.markerCluster) {
+            element.markerCluster.repaint();
+        }
     }
 
+    // set categories
     var getCats = getURLParameter('tx_gomapsext_show\\[cat\\]');
     if(getCats) {
         getCats = getCats.split(",");

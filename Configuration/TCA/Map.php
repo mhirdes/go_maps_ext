@@ -6,15 +6,25 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_gomapsext_domain_model_map'] = array(
 	'ctrl' => $TCA['tx_gomapsext_domain_model_map']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title, class, width, height, zoom, addresses, kml_url, kml_local, show_route, calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster, marker_cluster_zoom, marker_cluster_size, marker_search, default_type, pan_control, scale_control, streetview_control, zoom_control, zoom_control_type, map_type_control, map_types, styled_map_name, styled_map_code',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
+		                          class, width, height, zoom, addresses, kml_url, kml_local, show_route,
+		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
+		                          marker_cluster_zoom, marker_cluster_size, marker_search, default_type,
+		                          pan_control, scale_control, streetview_control, zoom_control, zoom_control_type,
+		                          map_type_control, map_types, styled_map_name, styled_map_code',
 	),
 	'types' => array (
 		'0' => array('showitem' => 'title, tooltip_title, class, width, height, zoom, addresses, kml_url;;1, 
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display,show_categories,scroll_zoom, draggable, double_click_zoom, marker_cluster;;2, marker_search, default_type,
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.controls, pan_control, scale_control, streetview_control, zoom_control, zoom_control_type, map_type_control, map_types,
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.route, show_route, calc_route, travel_mode, unit_system,
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map, styled_map_name, styled_map_code,
-					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.others,sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden,starttime, endtime')
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display,
+					show_categories,scroll_zoom, draggable, double_click_zoom, marker_cluster;;2, marker_search, default_type,
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.controls,
+					pan_control, scale_control, streetview_control, zoom_control, zoom_control_type, map_type_control, map_types,
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.route,
+					show_route, calc_route, travel_mode, unit_system,
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map,
+					styled_map_name, styled_map_code,
+					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.others,
+					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden,starttime, endtime')
 	),
 	'palettes' => array(
 		'1' => array('showitem' => 'kml_preserve_viewport, kml_local'),
@@ -167,7 +177,7 @@ $TCA['tx_gomapsext_domain_model_map'] = array(
 				'maxitems' => 9999,
 				'multiple' => 0,
 				'wizards' => array(
-					'_POSITION' => "right",
+					'_POSITION' => 'right',
 					'_PADDING' => 4,
 					'_VERTICAL' => 0,
 					'_DISTANCE' => 2,
@@ -438,7 +448,7 @@ $TCA['tx_gomapsext_domain_model_map'] = array(
 				'rows' => 15,
 				'eval' => 'trim',
 				'wizards' => array(
-					'_POSITION' => "right",
+					'_POSITION' => 'right',
 					'_PADDING' => 4,
 					'_VERTICAL' => 0,
 					'_DISTANCE' => 2,
