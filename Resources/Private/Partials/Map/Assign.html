@@ -1,118 +1,113 @@
 {namespace gomapsext=TYPO3\GoMapsExt\ViewHelpers}
 <gomapsext:script>
-function get{map.title}Settings() {
-var gme = new Object();
+    jQuery(document).ready(function() {
+    var gme = new Object();
 
-gme.zoomTypes = new Array(google.maps.ZoomControlStyle.DEFAULT, 
-				google.maps.ZoomControlStyle.SMALL, 
-				google.maps.ZoomControlStyle.LARGE);
-gme.defaultMapTypes = new Array(google.maps.MapTypeId.ROADMAP,
-				google.maps.MapTypeId.SATELLITE,
-				google.maps.MapTypeId.HYBRID,
-				google.maps.MapTypeId.TERRAIN,
-				"{map.styledMapName}");
-				
-gme.mapSettings = <![CDATA[{]]>
-		title: '<gomapsext:escape>{map.title}</gomapsext:escape>',
-		tooltipTitle: '<gomapsext:escape>{map.tooltipTitle}</gomapsext:escape>',
-		CSSClass: '{map.class}',
-		width: '{map.width}',
-		height: '{map.height}',
-		zoom: {f:if(condition:"{map.zoom}", then:"{map.zoom}", else:"0")},
-		kmlUrl: '{map.kmlUrl}',
-		kmlPreserveViewport: {f:if(condition:"{map.kmlPreserveViewport}", then:"true", else:"false")},
-		kmlLocal: {f:if(condition:"{map.kmlLocal}", then:"1", else:"0")},
-		scrollZoom: {f:if(condition:"{map.scrollZoom}", then:"1", else:"0")},
-		draggable: {f:if(condition:"{map.draggable}", then:"1", else:"0")},
-		doubleClickZoom: {f:if(condition:"{map.doubleClickZoom}", then:"0", else:"1")},
-		markerCluster: {f:if(condition:"{map.markerCluster}", then:"1", else:"0")},
-		markerClusterZoom: {f:if(condition:"{map.markerClusterZoom} > 0", then:"{map.markerClusterZoom}", else:"null")},
-		markerClusterSize: {f:if(condition:"{map.markerClusterSize} > 0", then:"{map.markerClusterSize}", else:"null")},
-		markerSearch: {f:if(condition:"{map.markerSearch}", then:"1", else:"0")},
-		defaultType: {map.defaultType},
-		panControl: {f:if(condition:"{map.panControl}", then:"1", else:"0")},
-		scaleControl: {f:if(condition:"{map.scaleControl}", then:"1", else:"0")},
-		streetviewControl: {f:if(condition:"{map.streetviewControl}", then:"1", else:"0")},
-		zoomControl: {f:if(condition:"{map.zoomControl}", then:"1", else:"0")},
-		zoomControlType: {map.zoomControlType},
-		mapTypeControl: {f:if(condition:"{map.mapTypeControl}", then:"1", else:"0")},
-		showRoute: {f:if(condition:"{map.showRoute}", then:"1", else:"0")},
-		calcRoute: {f:if(condition:"{map.calcRoute}", then:"1", else:"0")},
-		travelMode: {map.travelMode},
-		unitSystem: {map.unitSystem},
-		showForm: {f:if(condition:"{map.showForm}", then:"1", else:"0")},
-        showCategories: {f:if(condition:"{map.showCategories}", then:"1", else:"0")},
-		styledMapName: '{map.styledMapName}',
-		<f:if condition="{map.styledMapCode}">
-			<f:then>
-		styledMapCode: <f:format.html parseFuncTSPath="">{map.styledMapCode}</f:format.html>,
-			</f:then>
-			<f:else>
-		styledMapCode: '',
-			</f:else>
-		</f:if>
-		defaultZoom: 11
-<![CDATA[}]]>
+    gme.zoomTypes = new Array(google.maps.ZoomControlStyle.DEFAULT,
+                    google.maps.ZoomControlStyle.SMALL,
+                    google.maps.ZoomControlStyle.LARGE);
+    gme.defaultMapTypes = new Array(google.maps.MapTypeId.ROADMAP,
+                    google.maps.MapTypeId.SATELLITE,
+                    google.maps.MapTypeId.HYBRID,
+                    google.maps.MapTypeId.TERRAIN,
+                    "{map.styledMapName}");
 
-gme.mapSettings.mapTypes = new Array();
-<f:for each="{map.mapTypes}" as="type" iteration="i">
-	gme.mapSettings.mapTypes[{i.index}] = gme.defaultMapTypes[{type}];
-</f:for>
+    gme.mapSettings = <![CDATA[{]]>
+            title: '<gomapsext:escape>{map.title}</gomapsext:escape>',
+            tooltipTitle: '<gomapsext:escape>{map.tooltipTitle}</gomapsext:escape>',
+            CSSClass: '{map.class}',
+            width: '{map.width}',
+            height: '{map.height}',
+            zoom: {f:if(condition:"{map.zoom}", then:"{map.zoom}", else:"0")},
+            kmlUrl: '{map.kmlUrl}',
+            kmlPreserveViewport: {f:if(condition:"{map.kmlPreserveViewport}", then:"true", else:"false")},
+            kmlLocal: {f:if(condition:"{map.kmlLocal}", then:"1", else:"0")},
+            scrollZoom: {f:if(condition:"{map.scrollZoom}", then:"1", else:"0")},
+            draggable: {f:if(condition:"{map.draggable}", then:"1", else:"0")},
+            doubleClickZoom: {f:if(condition:"{map.doubleClickZoom}", then:"0", else:"1")},
+            markerCluster: {f:if(condition:"{map.markerCluster}", then:"1", else:"0")},
+            markerClusterZoom: {f:if(condition:"{map.markerClusterZoom} > 0", then:"{map.markerClusterZoom}", else:"null")},
+            markerClusterSize: {f:if(condition:"{map.markerClusterSize} > 0", then:"{map.markerClusterSize}", else:"null")},
+            markerSearch: {f:if(condition:"{map.markerSearch}", then:"1", else:"0")},
+            defaultType: {map.defaultType},
+            panControl: {f:if(condition:"{map.panControl}", then:"1", else:"0")},
+            scaleControl: {f:if(condition:"{map.scaleControl}", then:"1", else:"0")},
+            streetviewControl: {f:if(condition:"{map.streetviewControl}", then:"1", else:"0")},
+            zoomControl: {f:if(condition:"{map.zoomControl}", then:"1", else:"0")},
+            zoomControlType: {map.zoomControlType},
+            mapTypeControl: {f:if(condition:"{map.mapTypeControl}", then:"1", else:"0")},
+            showRoute: {f:if(condition:"{map.showRoute}", then:"1", else:"0")},
+            calcRoute: {f:if(condition:"{map.calcRoute}", then:"1", else:"0")},
+            travelMode: {map.travelMode},
+            unitSystem: {map.unitSystem},
+            showForm: {f:if(condition:"{map.showForm}", then:"1", else:"0")},
+            showCategories: {f:if(condition:"{map.showCategories}", then:"1", else:"0")},
+            styledMapName: '{map.styledMapName}',
+            <f:if condition="{map.styledMapCode}">
+                <f:then>
+            styledMapCode: <f:format.html parseFuncTSPath="">{map.styledMapCode}</f:format.html>,
+                </f:then>
+                <f:else>
+            styledMapCode: '',
+                </f:else>
+            </f:if>
+            defaultZoom: 11
+    <![CDATA[}]]>
 
-gme.request = new Array();
+    gme.mapSettings.mapTypes = new Array();
+    <f:for each="{map.mapTypes}" as="type" iteration="i">
+        gme.mapSettings.mapTypes[{i.index}] = gme.defaultMapTypes[{type}];
+    </f:for>
 
-<f:for each="{request}" as="item" iteration="i" key="k">
-gme.request['{k}'] = '{item}';
-</f:for>
+    gme.request = new Array();
 
-gme.addresses = new Array();
-<f:for each="{addresses}" as="address" iteration="i">
-	gme.addresses[{i.index}]  = <![CDATA[{]]>
-		title: '<gomapsext:escape>{address.title}</gomapsext:escape>',
-		latitude: {address.latitude},
-		longitude: {address.longitude},
-		address: '{address.address}',
-		marker: '{f:if(condition:"{address.marker}" then:"uploads/tx_gomapsext/{address.marker}")}',
-		imageSize: {f:if(condition:"{address.imageSize}", then:"1", else:"0")},
-		imageWidth: {address.imageWidth},
-		imageHeight: {address.imageHeight},
-		shadow: '{f:if(condition:"{address.shadow}" then:"uploads/tx_gomapsext/{address.shadow}")}',
-		shadowSize: {f:if(condition:"{address.shadowSize}", then:"1", else:"0")},
-		shadowWidth: {address.shadowWidth},
-		shadowHeight: {address.shadowHeight},
-		infoWindowContent: '<gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape>',
-		infoWindowLink: {address.infoWindowLink},
-		<f:if condition="{settings.openByClick}">
-			<f:then>
-		openByClick: 1,
-			</f:then>
-			<f:else>	
-		openByClick: {f:if(condition:"{address.openByClick}", then:"1", else:"0")},
-			</f:else>
-		</f:if>
-		<f:if condition="{settings.closeByClick}">
-			<f:then>
-		closeByClick: 1,
-			</f:then>
-			<f:else>	
-		closeByClick: {f:if(condition:"{address.closeByClick}", then:"1", else:"0")},
-			</f:else>
-		</f:if>
-		opened: {f:if(condition:"{address.opened}", then:"1", else:"0")},
-        categories: '<f:for each="{address.categories}" as="category" iteration="icat">{category.uid}{f:if(condition:icat.isLast,then:'',else:',')}</f:for>'
-	<![CDATA[}]]>
-</f:for>
-	
-	gme.ll = new Object();
-	gme.ll.alert = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.alert" />";
-	gme.ll.submit = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.submit" />";
-	gme.ll.noSearchResults = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.noSearchResults" />";
-	gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />"
-	return gme;
-}
+    <f:for each="{request}" as="item" iteration="i" key="k">
+    gme.request['{k}'] = '{item}';
+    </f:for>
 
-jQuery(document).ready(function() {
-	var gme = get{map.title}Settings();
-	initMap(gme);
+    gme.addresses = new Array();
+    <f:for each="{addresses}" as="address" iteration="i">
+        gme.addresses[{i.index}]  = <![CDATA[{]]>
+            title: '<gomapsext:escape>{address.title}</gomapsext:escape>',
+            latitude: {address.latitude},
+            longitude: {address.longitude},
+            address: '{address.address}',
+            marker: '{f:if(condition:"{address.marker}" then:"uploads/tx_gomapsext/{address.marker}")}',
+            imageSize: {f:if(condition:"{address.imageSize}", then:"1", else:"0")},
+            imageWidth: {address.imageWidth},
+            imageHeight: {address.imageHeight},
+            shadow: '{f:if(condition:"{address.shadow}" then:"uploads/tx_gomapsext/{address.shadow}")}',
+            shadowSize: {f:if(condition:"{address.shadowSize}", then:"1", else:"0")},
+            shadowWidth: {address.shadowWidth},
+            shadowHeight: {address.shadowHeight},
+            infoWindowContent: '<gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape>',
+            infoWindowLink: {address.infoWindowLink},
+            <f:if condition="{settings.openByClick}">
+                <f:then>
+            openByClick: 1,
+                </f:then>
+                <f:else>
+            openByClick: {f:if(condition:"{address.openByClick}", then:"1", else:"0")},
+                </f:else>
+            </f:if>
+            <f:if condition="{settings.closeByClick}">
+                <f:then>
+            closeByClick: 1,
+                </f:then>
+                <f:else>
+            closeByClick: {f:if(condition:"{address.closeByClick}", then:"1", else:"0")},
+                </f:else>
+            </f:if>
+            opened: {f:if(condition:"{address.opened}", then:"1", else:"0")},
+            categories: '<f:for each="{address.categories}" as="category" iteration="icat">{category.uid}{f:if(condition:icat.isLast,then:'',else:',')}</f:for>'
+        <![CDATA[}]]>
+    </f:for>
+
+    gme.ll = new Object();
+    gme.ll.alert = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.alert" />";
+    gme.ll.submit = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.submit" />";
+    gme.ll.noSearchResults = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.noSearchResults" />";
+    gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />"
+	jQuery("#{map.title}").gomapsext(gme);
 });
 </gomapsext:script>
