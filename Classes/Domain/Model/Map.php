@@ -1090,7 +1090,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getTravelModes() {
 		for($i=0; $i<=4; $i++) { 
-			$travelModes[$i] = TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.travel_mode.' . $i, 'go_maps_ext');
+			$travelModes[$i] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.travel_mode.' . $i, 'go_maps_ext');
 		}
 		return $travelModes;
 	}
@@ -1102,7 +1102,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function getUnitSystems() {
 		for($i=2; $i<=3; $i++) { 
-			$unitSystems[$i] = TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.unit_system.' . $i, 'go_maps_ext');
+			$unitSystems[$i] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.unit_system.' . $i, 'go_maps_ext');
 		}
 		return $unitSystems;
 	}

@@ -1,6 +1,8 @@
 {namespace gomapsext=TYPO3\GoMapsExt\ViewHelpers}
+
 <gomapsext:script>
-    jQuery(document).ready(function() {
+(function ($, window, document, undefined) {
+   $(function () {
     var gme = new Object();
 
     gme.zoomTypes = new Array(google.maps.ZoomControlStyle.DEFAULT,
@@ -103,11 +105,12 @@
         <![CDATA[}]]>
     </f:for>
 
-    gme.ll = new Object();
+    gme.ll = {};
     gme.ll.alert = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.alert" />";
     gme.ll.submit = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.submit" />";
     gme.ll.noSearchResults = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.noSearchResults" />";
-    gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />"
-	jQuery("#{map.title}").gomapsext(gme);
-});
+    gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />";
+    jQuery("#{map.title}").gomapsext(gme);
+  }); // end of closure
+})(jQuery, window, document);
 </gomapsext:script>
