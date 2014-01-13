@@ -44,6 +44,7 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	function findAllAddresses(\TYPO3\GoMapsExt\Domain\Model\Map $map, $pid) {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
+        $query->getQuerySettings()->setRespectSysLanguage(FALSE);
 
         $or = array();
         $and = array();
