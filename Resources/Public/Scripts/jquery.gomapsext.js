@@ -286,7 +286,7 @@
                 latitude = point[0].geometry.location.lat();
                 longitude = point[0].geometry.location.lng();
                 var position = new google.maps.LatLng(latitude, longitude);
-                setMapPoint(pointDescription, Route, element, infoWindow, position);
+                setMapPoint(pointDescription, Route, element, infoWindow, position, gme);
             });
             return;
         }
