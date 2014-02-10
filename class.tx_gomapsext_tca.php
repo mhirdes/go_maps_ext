@@ -162,8 +162,10 @@ TxClimbingSites.codeAddress = function() {
 		TxClimbingSites.geocoder.geocode({'address': address}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				// Get Position
-				lat = TxClimbingSites.marker.getPosition().lat().toFixed(6);
-				lng = TxClimbingSites.marker.getPosition().lng().toFixed(6);
+				//lat = TxClimbingSites.marker.getPosition().lat().toFixed(6);
+				//lng = TxClimbingSites.marker.getPosition().lng().toFixed(6);
+				lat = results[0].geometry.location.mb.toFixed(6);
+				lng = results[0].geometry.location.nb.toFixed(6);
 				formatedAddress = results[0].formatted_address
 				
 				// Update Map
