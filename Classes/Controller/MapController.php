@@ -80,6 +80,10 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ?
 			htmlentities($this->extConf['googleMapsLibrary']) : 
 			'http://maps.google.com/maps/api/js?v=3.13&sensor=false';
+        if($this->settings['language']) {
+            $googleMapsLibrary .= '&language=' . $this->settings['language'];
+        }
+
         $pageRenderer->{$addJsFileMethod}($googleMapsLibrary, 'text/javascript', FALSE, FALSE, '', TRUE);
 
 		$this->extConf['openByClick'] = $this->settings['infoWindow']['openByClick'];

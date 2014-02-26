@@ -10,6 +10,7 @@ plugin.tx_gomapsext {
 			openByClick = {$plugin.tx_gomapsext.settings.infoWindow.openByClick}
 			closeByClick = {$plugin.tx_gomapsext.settings.infoWindow.closeByClick}	
 		}
+		language < config.language
 	}
 	
 	#Fix Twitter Bootstrap
