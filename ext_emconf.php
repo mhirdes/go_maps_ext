@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "go_maps_ext".
  *
- * Auto generated 02-12-2013 09:28
+ * Auto generated 26-02-2014 14:19
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array (
 	'description' => 'Google Maps Extension. Simply instert a google map Version 3, jQuery, Calculate Route, Image for Markers, Style Maps, KML, Categories...',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '1.4.1',
+	'version' => '1.4.2',
 	'dependencies' => 'extbase,fluid',
 	'conflicts' => '',
 	'priority' => '',
@@ -38,7 +38,7 @@ $EM_CONF[$_EXTKEY] = array (
 		array (
 			'extbase' => '6.0',
 			'fluid' => '6.0',
-			'typo3' => '6.0.0-6.1.99',
+			'typo3' => '6.0.0-6.2.99',
 		),
 		'conflicts' => 
 		array (
