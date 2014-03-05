@@ -164,8 +164,14 @@ TxClimbingSites.codeAddress = function() {
 				// Get Position
 				//lat = TxClimbingSites.marker.getPosition().lat().toFixed(6);
 				//lng = TxClimbingSites.marker.getPosition().lng().toFixed(6);
-				lat = results[0].geometry.location.mb.toFixed(6);
-				lng = results[0].geometry.location.nb.toFixed(6);
+				if(results[0].geometry.location.mb) {
+				    lat = results[0].geometry.location.mb.toFixed(6);
+				    lng = results[0].geometry.location.nb.toFixed(6);
+				} else {
+				    lat = results[0].geometry.location.ob.toFixed(6);
+				    lng = results[0].geometry.location.pb.toFixed(6);
+				}
+
 				formatedAddress = results[0].formatted_address
 				
 				// Update Map
