@@ -193,7 +193,10 @@
 
             mapForm.submit(function () {
                 var formStartAddress = mapForm.find('.gme-saddress').val();
-                var formEndAddress = gme.addresses[0].address;
+                var endAddressIndex = mapForm.find('.gme-eaddress option:selected').val();
+                var formEndAddress = endAddressIndex ?
+                    gme.addresses[parseInt(endAddressIndex)].address :
+                    gme.addresses[0].address;
                 var formTravelMode = mapForm.find('.gme-travelmode').val();
                 var formUnitSystem = mapForm.find('.gme-unitsystem').val();
 

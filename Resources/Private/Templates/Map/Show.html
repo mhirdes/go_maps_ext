@@ -2,7 +2,7 @@
 
 <f:section name="main">
     <f:if condition="{map.showForm}">
-        <f:render partial="Map/Form" arguments="{map:map, request:request}"/>
+        <f:render partial="Map/Form" arguments="{map:map, request:request, addresses: addresses}"/>
     </f:if>
     <div id="{map.title}" class="gme-map"> </div>
     <f:render partial="Map/Assign" arguments="{request:request, map:map, settings:settings, addresses:addresses}" />

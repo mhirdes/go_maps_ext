@@ -8,6 +8,13 @@
 <f:form id="{map.title}-form" method="post">
 	<f:if condition="{map.calcRoute}">
 		<f:form.textfield name="saddress" class="gme-saddress" value="{request.saddress}" />
+        <f:if condition="{f:count(subject:addresses)} > 1">
+            <select name="eaddress" class="gme-eaddress" value="{request.eaddress}">
+                <f:for each="{addresses}" as="address" iteration="i">
+                    <option value="{i.index}">{address.title}</option>
+                </f:for>
+            </select>
+        </f:if>
 	</f:if>
 	<f:if condition="{map.travelMode} == 1">
 		<gomapsext:hideInFrontend>
