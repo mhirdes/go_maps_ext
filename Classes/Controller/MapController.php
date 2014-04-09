@@ -71,10 +71,10 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	public function initializeAction() {
 		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
         $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-		$addJsFileMethod = 'addJsFile';
+		$addJsMethod = 'addJs';
 
         if($this->extConf['footerJS'] == 1) {
-            $addJsFileMethod = 'addJsFooterFile';
+            $addJsMethod = 'addJsFooter';
         }
 
 		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ?
@@ -84,13 +84,13 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
             $googleMapsLibrary .= '&language=' . $this->settings['language'];
         }
 
-        $pageRenderer->{$addJsFileMethod}($googleMapsLibrary, 'text/javascript', FALSE, FALSE, '', TRUE);
+        $pageRenderer->{$addJsMethod . 'Library'}('googleMaps', $googleMapsLibrary, 'text/javascript', FALSE, FALSE, '', TRUE);
 
 		$this->extConf['openByClick'] = $this->settings['infoWindow']['openByClick'];
 		$this->extConf['closeByClick'] = $this->settings['infoWindow']['closeByClick'];
 		
 		if($this->extConf['include_library'] == 1) {
-            $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.min.js';
+            $pageRenderer->{$addJsMethod . 'Library'}('jQuery', \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.min.js');
 		}
 
         $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
@@ -98,7 +98,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
         $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
         foreach ($scripts as $script) {
-            $pageRenderer->{$addJsFileMethod}($script);
+            $pageRenderer->{$addJsMethod . 'File'}($script);
         }
 	}
 	
