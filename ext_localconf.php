@@ -11,10 +11,7 @@ if (!defined('TYPO3_MODE')) {
 		
 	),
 	// non-cacheable actions
-	array(
-		'Map' => 'show',
-		
-	)
+	array()
 );
 
 $TYPO3_CONF_VARS['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_map'][0] = array(
