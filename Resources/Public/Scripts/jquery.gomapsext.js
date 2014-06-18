@@ -271,6 +271,9 @@
             });
             setCategories(selectedCats);
         });
+
+        // trigger mapcreated on map
+        element.trigger("mapcreated");
     };
 
 
