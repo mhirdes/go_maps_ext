@@ -79,7 +79,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ?
 			htmlentities($this->extConf['googleMapsLibrary']) : 
-			'http://maps.google.com/maps/api/js?v=3.13&sensor=false';
+			'//maps.google.com/maps/api/js?v=3.13&sensor=false';
         if($this->settings['language']) {
             $googleMapsLibrary .= '&language=' . $this->settings['language'];
         }

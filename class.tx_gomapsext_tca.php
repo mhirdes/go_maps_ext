@@ -41,7 +41,7 @@ class tx_gomapsext_tca {
 	public function render(array &$PA, \TYPO3\CMS\Backend\Form\FormEngine $pObj) {
 		$version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
 		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
-		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ? $this->extConf['googleMapsLibrary'] :'http://maps.google.com/maps/api/js?v=3.12&amp;sensor=false';
+		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ? $this->extConf['googleMapsLibrary'] :'//maps.google.com/maps/api/js?v=3.12&amp;sensor=false';
 		if ($version < 4006000) {
 			$PA['parameters'] = array(
 				'latitude' => 'latitude',

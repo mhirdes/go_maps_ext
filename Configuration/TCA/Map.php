@@ -455,7 +455,7 @@ $TCA['tx_gomapsext_domain_model_map'] = array(
 					'link' => array(
 						'type' => 'popup',
 						'icon' => 'helpbubble.gif',
-						'script' => 'http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html',
+						'script' => 'gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html',
 						'params' => array(),
 					),
 				),
