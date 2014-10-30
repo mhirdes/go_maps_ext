@@ -76,10 +76,9 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
         if($this->extConf['footerJS'] == 1) {
             $addJsMethod = 'addJsFooter';
         }
-
-		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ?
-			htmlentities($this->extConf['googleMapsLibrary']) : 
-			'//maps.google.com/maps/api/js?v=3.13&sensor=false';
+		$googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
+			htmlentities($this->settings['googleMapsLibrary']) :
+			'//maps.google.com/maps/api/js?v=3.17&sensor=false';
         if($this->settings['language']) {
             $googleMapsLibrary .= '&language=' . $this->settings['language'];
         }

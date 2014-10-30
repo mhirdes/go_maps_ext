@@ -40,8 +40,10 @@ class tx_gomapsext_tca {
 	 */
 	public function render(array &$PA, \TYPO3\CMS\Backend\Form\FormEngine $pObj) {
 		$version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
-		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
-		$googleMapsLibrary = $this->extConf['googleMapsLibrary'] ? $this->extConf['googleMapsLibrary'] :'//maps.google.com/maps/api/js?v=3.12&amp;sensor=false';
+        $settings = $this->loadTS($PA['row']['pid']);
+		$googleMapsLibrary =  $settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary'] ?
+                                htmlentities($settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary']) :
+                                '//maps.google.com/maps/api/js?v=3.17&amp;sensor=false';
 		if ($version < 4006000) {
 			$PA['parameters'] = array(
 				'latitude' => 'latitude',
@@ -250,6 +252,17 @@ EOT;
 
 		return implode('', $out);
 	}
+
+    protected function loadTS($pageUid) {
+        $sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('\\TYPO3\\CMS\\Frontend\\Page\\PageRepository');
+        $rootLine = $sysPageObj->getRootLine($pageUid);
+        $TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('\\TYPO3\\CMS\\Core\\TypoScript\\ExtendedTemplateService');
+        $TSObj->tt_track = 0;
+        $TSObj->init();
+        $TSObj->runThroughTemplates($rootLine);
+        $TSObj->generateConfig();
+        return $TSObj->setup;
+    }
 }
 
 ?>

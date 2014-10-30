@@ -3,6 +3,3 @@ include_library = 0
 
 # cat=basic; type=boolean; label = Add JavaScript to Footer
 footerJS = 1
-
-# cat=basic; type=string; label = URL to Google Maps API: Default is current version
-googleMapsLibrary =
