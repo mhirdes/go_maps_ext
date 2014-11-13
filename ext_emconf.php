@@ -12,7 +12,7 @@
 
 $EM_CONF[$_EXTKEY] = array (
 	'title' => 'Google Maps API Extbase',
-	'description' => 'Google Maps Extension. Simply instert a google map Version 3, jQuery, Calculate Route, Image for Markers, Style Maps, KML, Categories...',
+	'description' => 'Google Maps Extension. Simply insert a google map Version 3, jQuery, Calculate Route, Image for Markers, Style Maps, KML, Categories...',
 	'category' => 'plugin',
 	'shy' => 0,
 	'version' => '1.4.6',

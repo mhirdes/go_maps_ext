@@ -1,0 +1,7 @@
+﻿.. |screenshot|      image:: ../Images/manual_html_20668ace.jpg
+   :height: 431
+   :width: 638
+.. :align: left
+.. :border: 1
+.. :name: Screenshot
+

@@ -362,7 +362,7 @@
             if (pointDescription.infoWindowLink > 0) {
                 var daddr = (pointDescription.infoWindowLink == 2) ? pointDescription.latitude + ", " + pointDescription.longitude : pointDescription.address;
                 daddr += " (" + pointDescription.title + ")";
-                infoWindowContent += '<p class="routeLink"><a href="//maps.google.com/maps?daddr=' + escape(daddr) + '" target="_blank">' + gme.ll.infoWindowLinkText + '<\/a><\/p>';
+                infoWindowContent += '<p class="routeLink"><a href="//maps.google.com/maps?daddr=' + encodeURI(daddr) + '" target="_blank">' + gme.ll.infoWindowLinkText + '<\/a><\/p>';
             }
             infoWindowContent = '<div class="gme-info-window">' + infoWindowContent + '</div>';
 
