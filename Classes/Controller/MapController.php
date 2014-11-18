@@ -112,7 +112,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
         // get current map
         $map = $map ?: $this->mapRepository->findByUid($this->settings['map']);
-        
+
         // find addresses
         $pid = $this->settings['storagePid'];
         if($pid) {

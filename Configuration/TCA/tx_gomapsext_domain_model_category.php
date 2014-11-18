@@ -10,8 +10,8 @@ return array(
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
+        'default_sortby' => 'ORDER BY name',
         'dividers2tabs' => TRUE,
-
         'versioningWS' => 2,
         'versioning_followPages' => TRUE,
         'origUid' => 't3_origuid',
