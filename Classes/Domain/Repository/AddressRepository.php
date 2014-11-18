@@ -48,9 +48,8 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 
         $or = array();
         $and = array();
-        if($pid) {
-            $or[] = $query->equals('pid', $pid);
-        }
+
+        $or[] = $query->equals('pid', $pid);
         if($map) {
             $or[] = $query->contains('map', $map);
         }

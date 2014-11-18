@@ -108,12 +108,20 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 * @return void
 	 */
 	public function showAction(\TYPO3\GoMapsExt\Domain\Model\Map $map = NULL) {
-		$map = $this->mapRepository->findByUid($this->settings['map']);
-        $pid = $this->settings['storagePid'];
         $categoriesArray = array();
 
-        $addresses = $this->addressRepository->findAllAddresses($map, $pid);
+        // get current map
+        $map = $map ?: $this->mapRepository->findByUid($this->settings['map']);
+        
+        // find addresses
+        $pid = $this->settings['storagePid'];
+        if($pid) {
+            $addresses = $this->addressRepository->findAllAddresses($map, $pid);
+        } else {
+            $addresses = $map->getAddresses();
+        }
 
+        // get categories
         if($map->isShowCategories()) {
             foreach($addresses as $address) {
                 $addrCats = $address->getCategories();
@@ -122,14 +130,14 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
                 }
             }
         }
-		
-		$this->view->assignMultiple(array(
-			'request' => $this->request->getArguments(),
-			'map' => $map,
-			'addresses' => $addresses,
-			'settings' => $this->extConf,
+
+        $this->view->assignMultiple(array(
+            'request' => $this->request->getArguments(),
+            'map' => $map,
+            'addresses' => $addresses,
+            'settings' => $this->extConf,
             'categories' => $categoriesArray
-		));
+        ));
 	} 
 
 }
