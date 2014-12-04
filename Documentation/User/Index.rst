@@ -19,7 +19,7 @@ Users Manual
 
 |img-4|
 
-1 Map
+Map
 """""
 
 One Map represents one Google Map in the frontend.
@@ -34,19 +34,10 @@ field.
 
 .. container:: table-row
 
-   a
-         Property:
-
-   b
-         Description:
-
-
-.. container:: table-row
-
-   a
+   Property
          title
 
-   b
+   Description
          Will be used as ID (without space character, special character!).
 
          [required]
@@ -54,58 +45,58 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          tooltipTitle
 
-   b
+   Description
          Shown by mouse over.
 
 
 .. container:: table-row
 
-   a
+   Property
          class
 
-   b
+   Description
          The class of the map container
 
 
 .. container:: table-row
 
-   a
+   Property
          width
 
-   b
+   Description
          Set the width of the map. Default in px, for percentages enter '%',
          e.g. '100%'.[required]
 
 
 .. container:: table-row
 
-   a
+   Property
          height
 
-   b
+   Description
          Set the width of the map. Default in px, for percentages enter '%',
          e.g. '100%'.[required]
 
 
 .. container:: table-row
 
-   a
+   Property
          addresses
 
-   b
+   Description
          You can choose, create or edit an address. New addresses will be saved
          on the current page.
 
 
 .. container:: table-row
 
-   a
+   Property
          kmlUrl
 
-   b
+   Description
          Enter an URL of a KML file, e.g. `http://gmaps-
          samples.googlecode.com/svn/trunk/ggeoxml/cta.kml <http://gmaps-
          samples.googlecode.com/svn/trunk/ggeoxml/cta.kml>`_
@@ -113,20 +104,20 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          kmlPreserveViewport
 
-   b
+   Description
          The viewport of the kml file will be ignored. Set zoom and at least
          one address to configure the viewport.
 
 
 .. container:: table-row
 
-   a
+   Property
          kmlLocal
 
-   b
+   Description
          The KML file is stored on this server. The specified path (kmlUrl) is
          relative. Only markers appear. Search and route are only available if
          the KML file is local.
@@ -134,38 +125,38 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          showCategories
 
-   b
+   Description
          Display a checkbox for each visible category. On change the points on
          the map will be enabled/disabled.
 
 
 .. container:: table-row
 
-   a
+   Property
          draggable
 
-   b
+   Description
          Position of the map can be changed.
 
 
 .. container:: table-row
 
-   a
+   Property
          doubleClickZoom
 
-   b
+   Description
          A double click on the map zooms in. Draggable map has to be enabled!
 
 
 .. container:: table-row
 
-   a
+   Property
          markerCluster
 
-   b
+   Description
          Many markers in the same region will be summarized and appear as a
          cluster. e.g.: `http://google-maps-utility-library-v3.googlecode.com/s
          vn/trunk/markerclusterer/examples/advanced\_example.html <http
@@ -175,30 +166,30 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          markerClusterZoom
 
-   b
+   Description
          Up to this zoom level the Clusters are displayed. Take a look at the
          example link above.
 
 
 .. container:: table-row
 
-   a
+   Property
          markerClusterSize
 
-   b
+   Description
          The size of the Clusters, like a radius. Take a look at the example
          link above.
 
 
 .. container:: table-row
 
-   a
+   Property
          markerSearch
 
-   b
+   Description
          Displays a form on the frontend, were the user can enter a search
          word. Searchs for InfoWindow content and title of a marker. The
          InfoWindow of the first found marker opens.
@@ -206,93 +197,93 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          defaultType
 
-   b
+   Description
          Maptype on the beginning.MAP, SATELLITE, HYBRID, TERRAIN and one
          individual type are possible.
 
 
 .. container:: table-row
 
-   a
+   Property
          panControl
 
-   b
+   Description
          Show arrows to change the position of the map.
 
 
 .. container:: table-row
 
-   a
+   Property
          scaleControl
 
-   b
+   Description
          Displays a measure.
 
 
 .. container:: table-row
 
-   a
+   Property
          streetviewControl
 
-   b
+   Description
          Shows an icon to enable the streetview.
 
 
 .. container:: table-row
 
-   a
+   Property
          zoomControl
 
-   b
+   Description
          Enable buttons to change the zoom.
 
 
 .. container:: table-row
 
-   a
+   Property
          zoomControlType
 
-   b
+   Description
          Choose beetween large and small.
 
 
 .. container:: table-row
 
-   a
+   Property
          mapTypeControl
 
-   b
+   Description
          Shows a control to change the map type.
 
 
 .. container:: table-row
 
-   a
+   Property
          mapTypes
 
-   b
+   Description
          Possible map types to choose. Map type control has to be enabled.MAP,
          SATELLITE, HYBRID, TERRAIN and one individual type are possible.
 
 
 .. container:: table-row
 
-   a
+   Property
          showRoute
 
-   b
+   Description
          2 address records needed! Shows the route between the given points
 
 
 .. container:: table-row
 
-   a
+   Property
          calcRoute
 
-   b
+   Description
          Only 1 address used as destination. Display an text input for enter a
          starting point.
 
@@ -303,10 +294,10 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          travelMode
 
-   b
+   Description
          Select a travel mode or let the frontend user select one.
 
          - Select by Frontend User (Creates a select box in the frontend. You can
@@ -329,10 +320,10 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          UnitSystem
 
-   b
+   Description
          Select a unit system or let the frontend user select one.
 
          - Default (No fix value)
@@ -349,19 +340,19 @@ field.
 
 .. container:: table-row
 
-   a
+   Property
          styledMapName
 
-   b
+   Description
          Shown in the map type control.
 
 
 .. container:: table-row
 
-   a
+   Property
          styledMapCode
 
-   b
+   Description
          JSON, e.g. from `http://gmaps-
          samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html <http
          ://gmaps-
@@ -371,7 +362,7 @@ field.
 .. ###### END~OF~TABLE ######
 
 
-2 Google Maps Address
+Google Maps Address
 """""""""""""""""""""
 
 A map represents addresses and/or a KML file. An address record mainly
@@ -383,15 +374,6 @@ configured via geocoding of the configuration map.
 Of course there are some more options...
 
 .. ### BEGIN~OF~TABLE ###
-
-.. container:: table-row
-
-   Property
-         Property:
-
-   Description
-         Description:
-
 
 .. container:: table-row
 
@@ -577,10 +559,3 @@ Of course there are some more options...
 
 
 .. ###### END~OF~TABLE ######
-
-.. _user-faq:
-
-FAQ
----
-
-- None.

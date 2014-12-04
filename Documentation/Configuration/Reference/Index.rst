@@ -1,43 +1,13 @@
-﻿
-
-.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. ==================================================
-.. DEFINE SOME TEXTROLES
-.. --------------------------------------------------
-.. role::   underline
-.. role::   typoscript(code)
-.. role::   ts(typoscript)
-   :class:  typoscript
-.. role::   php(code)
-
+﻿.. include:: ../../Includes.txt
 
 Reference
 ^^^^^^^^^
 
 
-1Extension Configurations
+Extension Configurations
 """""""""""""""""""""""""
 
 .. ### BEGIN~OF~TABLE ###
-
-.. container:: table-row
-
-   Property
-         Property:
-   
-   Data type
-         Data type:
-   
-   Description
-         Description:
-   
-   Default
-         Default:
-
 
 .. container:: table-row
 
@@ -48,8 +18,7 @@ Reference
          boolean
    
    Description
-         Use JavaScript Library from Extension: MooTools Core 1.4.5 with
-         compatibility, YUI Compressor or jQuery 1.8.2 min
+         Use JavaScript Library from Extension: jQuery
    
    Default
          0
@@ -73,25 +42,10 @@ Reference
 .. ###### END~OF~TABLE ######
 
 
-2Constants
+Constants
 """"""""""
 
 .. ### BEGIN~OF~TABLE ###
-
-.. container:: table-row
-
-   Property
-         Property:
-   
-   Data type
-         Data type:
-   
-   Description
-         Description:
-   
-   Default
-         Default:
-
 
 .. container:: table-row
 
