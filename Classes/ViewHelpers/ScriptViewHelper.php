@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\GoMapsExt\ViewHelpers;
+namespace Clickstorm\GoMapsExt\ViewHelpers;
 /*                                                                                                    
  *  Copyright notice
  *

@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\GoMapsExt\Domain\Model;
+namespace Clickstorm\GoMapsExt\Domain\Model;
 /***************************************************************
  *  Copyright notice
  *

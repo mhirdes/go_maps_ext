@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	$_EXTKEY,
+	'Clickstorm.' . $_EXTKEY,
 	'Show',
 	'Google Map'
 );
@@ -24,7 +24,5 @@ $TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature]='c
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_gomapsext_domain_model_category', 'EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_category.xlf');
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_gomapsext_domain_model_category');
-
-//include_once(t3lib_extMgm::extPath($_EXTKEY).'class.tx_gomapsext_tca.php'); 
 
 ?>

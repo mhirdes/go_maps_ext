@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\GoMapsExt\Controller;
+namespace Clickstorm\GoMapsExt\Controller;
 /***************************************************************
  *  Copyright notice
  *
