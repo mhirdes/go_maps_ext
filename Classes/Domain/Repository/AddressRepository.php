@@ -37,11 +37,11 @@ class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
 	/**
 	 * Finds all addresses by the specified map or the storage pid
 	 *
-	 * @param \TYPO3\GoMapsExt\Domain\Model\Map $map The map
+	 * @param \Clickstorm\GoMapsExt\Domain\Model\Map $map The map
 	 * @param \integer $pid The Storage Pid
 	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface The addresses
 	 */
-	function findAllAddresses(\TYPO3\GoMapsExt\Domain\Model\Map $map, $pid) {
+	function findAllAddresses(\Clickstorm\GoMapsExt\Domain\Model\Map $map, $pid) {
         $query = $this->createQuery();
         $query->getQuerySettings()->setRespectStoragePage(FALSE);
         $query->getQuerySettings()->setRespectSysLanguage(FALSE);

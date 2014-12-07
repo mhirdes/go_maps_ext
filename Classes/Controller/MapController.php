@@ -37,37 +37,19 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	/**
 	 * mapRepository
 	 *
-	 * @var \TYPO3\GoMapsExt\Domain\Repository\MapRepository
+	 * @var \Clickstorm\GoMapsExt\Domain\Repository\MapRepository
+     * @inject
 	 */
 	protected $mapRepository;
 	
 	/**
 	 * addressRepository
 	 *
-	 * @var \TYPO3\GoMapsExt\Domain\Repository\AddressRepository
+	 * @var \Clickstorm\GoMapsExt\Domain\Repository\AddressRepository
+     * @inject
 	 */
 	protected $addressRepository;
 
-	/**
-	 * injectMapRepository
-	 *
-	 * @param \TYPO3\GoMapsExt\Domain\Repository\MapRepository $mapRepository
-	 * @return void
-	 */
-	public function injectMapRepository(\TYPO3\GoMapsExt\Domain\Repository\MapRepository $mapRepository) {
-		$this->mapRepository = $mapRepository;
-	} 
-	
-	/**
-	 * injectAddressRepository
-	 *
-	 * @param \TYPO3\GoMapsExt\Domain\Repository\AddressRepository $addressRepository
-	 * @return void
-	 */
-	public function injectAddressRepository(\TYPO3\GoMapsExt\Domain\Repository\AddressRepository $addressRepository) {
-		$this->addressRepository = $addressRepository;
-	} 
-	
 	public function initializeAction() {
 		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
         $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
@@ -104,10 +86,10 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	/**
 	 * action show
 	 *
-	 * @param \TYPO3\GoMapsExt\Domain\Model\Map $map
+	 * @param \Clickstorm\GoMapsExt\Domain\Model\Map $map
 	 * @return void
 	 */
-	public function showAction(\TYPO3\GoMapsExt\Domain\Model\Map $map = NULL) {
+	public function showAction(\Clickstorm\GoMapsExt\Domain\Model\Map $map = NULL) {
         $categoriesArray = array();
 
         // get current map

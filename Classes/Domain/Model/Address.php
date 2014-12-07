@@ -164,7 +164,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * categories
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Category>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category>
      * @lazy
      */
     protected $categories;
@@ -172,7 +172,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * map
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Map>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map>
      * @lazy
      */
     protected $map;
@@ -592,27 +592,27 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Adds a Category
      *
-     * @param \TYPO3\GoMapsExt\Domain\Model\Category $category
+     * @param \Clickstorm\GoMapsExt\Domain\Model\Category $category
      * @return void
      */
-    public function addAddress(\TYPO3\GoMapsExt\Domain\Model\Category $category) {
+    public function addAddress(\Clickstorm\GoMapsExt\Domain\Model\Category $category) {
         $this->addresses->attach($category);
     }
 
     /**
      * Removes a Category
      *
-     * @param \TYPO3\GoMapsExt\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @param \Clickstorm\GoMapsExt\Domain\Model\Category $categoryToRemove The Category to be removed
      * @return void
      */
-    public function removeAddress(\TYPO3\GoMapsExt\Domain\Model\Category $categoryToRemove) {
+    public function removeAddress(\Clickstorm\GoMapsExt\Domain\Model\Category $categoryToRemove) {
         $this->addresses->detach($categoryToRemove);
     }
 
     /**
      * Returns the Categories
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Category> $categories
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category> $categories
      */
     public function getCategories() {
         return $this->categories;
@@ -621,7 +621,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Sets the Categories
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Category> $categories
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category> $categories
      * @return void
      */
     public function setCategories(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $categories) {
@@ -631,7 +631,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Returns the Map
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Map> $map
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map> $map
      */
     public function getMap() {
         return $this->map;
@@ -640,7 +640,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * Sets the Map
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Map> $map
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map> $map
      * @return void
      */
     public function setMap(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $map) {

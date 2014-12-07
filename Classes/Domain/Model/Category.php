@@ -44,7 +44,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * addresses
 	 *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Address>
+	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address>
 	 * @lazy
 	 */
 	protected $addresses;
@@ -95,27 +95,27 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Adds a Address
 	 *
-	 * @param \TYPO3\GoMapsExt\Domain\Model\Address $address
+	 * @param \Clickstorm\GoMapsExt\Domain\Model\Address $address
 	 * @return void
 	 */
-	public function addAddress(\TYPO3\GoMapsExt\Domain\Model\Address $address) {
+	public function addAddress(\Clickstorm\GoMapsExt\Domain\Model\Address $address) {
 		$this->addresses->attach($address);
 	}
 
 	/**
 	 * Removes a Address
 	 *
-	 * @param \TYPO3\GoMapsExt\Domain\Model\Address $addressToRemove The Address to be removed
+	 * @param \Clickstorm\GoMapsExt\Domain\Model\Address $addressToRemove The Address to be removed
 	 * @return void
 	 */
-	public function removeAddress(\TYPO3\GoMapsExt\Domain\Model\Address $addressToRemove) {
+	public function removeAddress(\Clickstorm\GoMapsExt\Domain\Model\Address $addressToRemove) {
 		$this->addresses->detach($addressToRemove);
 	}
 
 	/**
 	 * Returns the addresses
 	 *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Address> $addresses
+	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address> $addresses
 	 */
 	public function getAddresses() {
 		return $this->addresses;
@@ -124,7 +124,7 @@ class Category extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	/**
 	 * Sets the addresses
 	 *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\GoMapsExt\Domain\Model\Address> $addresses
+	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address> $addresses
 	 * @return void
 	 */
 	public function setAddresses(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $addresses) {
