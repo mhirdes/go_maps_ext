@@ -74,7 +74,7 @@
             title: '<gomapsext:escape>{address.title}</gomapsext:escape>',
             latitude: {address.latitude},
             longitude: {address.longitude},
-            address: '{address.address}',
+            address: '<gomapsext:escape>{address.address}</gomapsext:escape>',
             marker: '{f:if(condition:"{address.marker}" then:"uploads/tx_gomapsext/{address.marker}")}',
             imageSize: {f:if(condition:"{address.imageSize}", then:"1", else:"0")},
             imageWidth: {address.imageWidth},
