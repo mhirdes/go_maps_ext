@@ -128,7 +128,6 @@
                                 infoWindow.setContent(gme.addresses[i].infoWindowContent);
                                 infoWindow.open(element.data("map"), element.data("markers")[i]);
                                 element.data("map").setCenter(element.data("markers")[i].getPosition());
-                                element.data("map").setZoom(7);
                                 gme.infoWindow = element.data("markers")[i].getPosition();
                                 notFound = false;
                             }
