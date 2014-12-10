@@ -15,6 +15,7 @@
                     "{map.styledMapName}");
 
     gme.mapSettings = <![CDATA[{]]>
+            id: 'gme-' + {map.uid},
             title: '<gomapsext:escape>{map.title}</gomapsext:escape>',
             tooltipTitle: '<gomapsext:escape>{map.tooltipTitle}</gomapsext:escape>',
             CSSClass: '{map.class}',
@@ -110,7 +111,7 @@
     gme.ll.submit = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.submit" />";
     gme.ll.noSearchResults = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.noSearchResults" />";
     gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />";
-    jQuery("#{map.title}").gomapsext(gme);
+    jQuery("#" + gme.mapSettings.id).gomapsext(gme);
   }); // end of closure
 })(jQuery, window, document);
 </gomapsext:script>

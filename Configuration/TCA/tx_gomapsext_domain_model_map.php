@@ -137,7 +137,7 @@ return array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,nospace,alphanum,required'
+				'eval' => 'trim,required'
 			),
 		),
 		'tooltip_title' => array(

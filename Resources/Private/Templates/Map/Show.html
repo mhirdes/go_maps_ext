@@ -4,7 +4,7 @@
     <f:if condition="{map.showForm}">
         <f:render partial="Map/Form" arguments="{map:map, request:request, addresses: addresses}"/>
     </f:if>
-    <div id="{map.title}" class="gme-map"> </div>
+    <div id="gme-{map.uid}" class="gme-map"> </div>
     <f:render partial="Map/Assign" arguments="{request:request, map:map, settings:settings, addresses:addresses}" />
     <f:if condition="{map.showCategories}">
         <f:render partial="Map/Categories" arguments="{map:map, addresses:addresses, request:request, categories: categories}" />

@@ -57,7 +57,7 @@
             mapTypeControlOptions: {mapTypeIds: gme.mapSettings.mapTypes}
         }
 
-        element.data("map", new google.maps.Map(document.getElementById(gme.mapSettings.title), myOptions));
+        element.data("map", new google.maps.Map(document.getElementById(gme.mapSettings.id), myOptions));
         element.data("bounds", new google.maps.LatLngBounds());
 
         if (gme.mapSettings.styledMapName) {
@@ -116,7 +116,7 @@
 
         // Search
         if (gme.mapSettings.markerSearch == 1) {
-            var myForm = jQuery('#' + gme.mapSettings.title + '-search');
+            var myForm = jQuery('#' + gme.mapSettings.id + '-search');
             var searchIn = myForm.find('.gme-sword');
             myForm.submit(function () {
                 var submitValue = jQuery(searchIn).val().toLowerCase();
@@ -155,13 +155,13 @@
 
         // init Route function
         if (gme.mapSettings.showRoute == 1 || gme.mapSettings.calcRoute == 1) {
-            var panelHtml = jQuery('<div id="dPanel-' + gme.mapSettings.title + '"><\/div>');
+            var panelHtml = jQuery('<div id="dPanel-' + gme.mapSettings.id + '"><\/div>');
             panelHtml.insertAfter(element);
             var directionsService = new google.maps.DirectionsService();
             directionsDisplay = new google.maps.DirectionsRenderer();
             var renderRoute = function ($start, $end, $travelMode, $unitSystem) {
                 directionsDisplay.setMap(element.data("map"));
-                directionsDisplay.setPanel(document.getElementById("dPanel-" + gme.mapSettings.title));
+                directionsDisplay.setPanel(document.getElementById("dPanel-" + gme.mapSettings.id));
                 var unitSystem = getUnitSystem($unitSystem);
                 var request = {
                     origin: $start,
@@ -188,7 +188,7 @@
 
         // show route from frontend
         if (gme.mapSettings.showForm == 1) {
-            var mapForm = jQuery('#' + gme.mapSettings.title + '-form');
+            var mapForm = jQuery('#' + gme.mapSettings.id + '-form');
 
             mapForm.submit(function () {
                 var formStartAddress = mapForm.find('.gme-saddress').val();
