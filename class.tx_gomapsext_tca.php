@@ -254,9 +254,9 @@ EOT;
 	}
 
     protected function loadTS($pageUid) {
-        $sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('\\TYPO3\\CMS\\Frontend\\Page\\PageRepository');
+        $sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('TYPO3\\CMS\\Frontend\\Page\\PageRepository');
         $rootLine = $sysPageObj->getRootLine($pageUid);
-        $TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('\\TYPO3\\CMS\\Core\\TypoScript\\ExtendedTemplateService');
+        $TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('TYPO3\\CMS\\Core\\TypoScript\\ExtendedTemplateService');
         $TSObj->tt_track = 0;
         $TSObj->init();
         $TSObj->runThroughTemplates($rootLine);
