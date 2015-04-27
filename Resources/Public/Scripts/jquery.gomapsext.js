@@ -43,6 +43,8 @@
         // set map options
         var myOptions = {
             zoom: gme.mapSettings.defaultZoom,
+            minZoom: gme.mapSettings.minZoom,
+            maxZoom: gme.mapSettings.maxZoom,
             center: new google.maps.LatLng(0, 0),
             draggable: gme.mapSettings.draggable,
             disableDoubleClickZoom: gme.mapSettings.doubleClickZoom,

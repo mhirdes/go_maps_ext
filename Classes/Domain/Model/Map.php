@@ -78,6 +78,20 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var \integer
 	 */
 	protected $zoom;
+
+    /**
+     * zoomMin
+     *
+     * @var \integer
+     */
+    protected $zoomMin;
+
+    /**
+     * zoomMax
+     *
+     * @var \integer
+     */
+    protected $zoomMax;
 	
 	/**
 	 * addresses
@@ -420,6 +434,44 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setZoom($zoom) {
 		$this->zoom = $zoom;
 	}
+
+    /**
+     * Returns the zoomMin
+     *
+     * @return \integer $zoomMin
+     */
+    public function getZoomMin() {
+        return $this->zoomMin;
+    }
+
+    /**
+     * Sets the zoomMin
+     *
+     * @param \integer $zoomMin
+     * @return void
+     */
+    public function setZoomMin($zoomMin) {
+        $this->zoomMin = $zoomMin;
+    }
+
+    /**
+     * Returns the zoomMax
+     *
+     * @return \integer $zoomMax
+     */
+    public function getZoomMax() {
+        return $this->zoomMax;
+    }
+
+    /**
+     * Sets the zoomMax
+     *
+     * @param \integer $zoomMax
+     * @return void
+     */
+    public function setZoomMax($zoomMax) {
+        $this->zoomMax = $zoomMax;
+    }
 	
 	/**
 	 * Adds a Address

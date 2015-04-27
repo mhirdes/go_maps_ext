@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-21T11:31:58Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-27T11:59:48Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -10,98 +10,104 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-		<trans-unit id="addresses.description" xml:space="preserve">
+		<trans-unit id="addresses.description">
 			<source>You can choose, create or edit an address. New addresses will be saved on the current page.</source>
 		</trans-unit>
-		<trans-unit id="calc_route.description" xml:space="preserve">
+		<trans-unit id="calc_route.description">
 			<source>Only 1 address used as destination. Display an text input for enter a starting point.</source>
 		</trans-unit>
-		<trans-unit id="class.description" xml:space="preserve">
+		<trans-unit id="class.description">
 			<source>The class of the map container</source>
 		</trans-unit>
-		<trans-unit id="default_type.description" xml:space="preserve">
+		<trans-unit id="default_type.description">
 			<source>Maptype on the beginning.</source>
 		</trans-unit>
-		<trans-unit id="double_click_zoom.description" xml:space="preserve">
+		<trans-unit id="double_click_zoom.description">
 			<source>A double click on the map zooms in. Draggable map has to be enabled!</source>
 		</trans-unit>
-		<trans-unit id="draggable.description" xml:space="preserve">
+		<trans-unit id="draggable.description">
 			<source>Position of the map can be changed.</source>
 		</trans-unit>
-		<trans-unit id="height.description" xml:space="preserve">
+		<trans-unit id="height.description">
 			<source>Set the height of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
 		</trans-unit>
-		<trans-unit id="kml_local.description" xml:space="preserve">
+		<trans-unit id="kml_local.description">
 			<source>The KML file is stored on this server. The specified path is relative. Only markers appear.</source>
 		</trans-unit>
-		<trans-unit id="kml_preserve_viewport.description" xml:space="preserve">
+		<trans-unit id="kml_preserve_viewport.description">
 			<source>The viewport of the kml file will be ignored. Set zoom and at least one address to configure the viewport.</source>
 		</trans-unit>
-		<trans-unit id="kml_url.description" xml:space="preserve">
+		<trans-unit id="kml_url.description">
 			<source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
 		</trans-unit>
-		<trans-unit id="map_type_control.description" xml:space="preserve">
+		<trans-unit id="map_type_control.description">
 			<source>Shows a control to change the map type.</source>
 		</trans-unit>
-		<trans-unit id="map_types.description" xml:space="preserve">
+		<trans-unit id="map_types.description">
 			<source>Possible map types to choose. Map type control has to be enabled.</source>
 		</trans-unit>
-		<trans-unit id="marker_cluster.description" xml:space="preserve">
+		<trans-unit id="marker_cluster.description">
 			<source>Many markers in the same region will be summarized and appear as a cluster.</source>
 		</trans-unit>
-		<trans-unit id="marker_cluster_size.description" xml:space="preserve">
+		<trans-unit id="marker_cluster_size.description">
 			<source>The size of the Clusters, like a radius.</source>
 		</trans-unit>
-		<trans-unit id="marker_cluster_zoom.description" xml:space="preserve">
+		<trans-unit id="marker_cluster_zoom.description">
 			<source>Up to this zoom level the Clusters are displayed.</source>
 		</trans-unit>
-		<trans-unit id="marker_search.description" xml:space="preserve">
+		<trans-unit id="marker_search.description">
 			<source>Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</source>
 		</trans-unit>
-		<trans-unit id="pan_control.description" xml:space="preserve">
+		<trans-unit id="pan_control.description">
 			<source>Show arrows to change the position of the map.</source>
 		</trans-unit>
-		<trans-unit id="scale_control.description" xml:space="preserve">
+		<trans-unit id="scale_control.description">
 			<source>Displays a measure.</source>
 		</trans-unit>
-		<trans-unit id="scroll_zoom.description" xml:space="preserve">
+		<trans-unit id="scroll_zoom.description">
 			<source>Enables zoom with scroll wheel. </source>
 		</trans-unit>
-		<trans-unit id="show_route.description" xml:space="preserve">
+		<trans-unit id="show_route.description">
 			<source>2 address records needed! Shows the route between the given points.</source>
 		</trans-unit>
-		<trans-unit id="streetview_control.description" xml:space="preserve">
+		<trans-unit id="streetview_control.description">
 			<source>Shows an icon to enable the streetview.</source>
 		</trans-unit>
-		<trans-unit id="styled_map_code.description" xml:space="preserve">
+		<trans-unit id="styled_map_code.description">
 			<source>JSON, e.g. from http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</source>
 		</trans-unit>
-		<trans-unit id="styled_map_name.description" xml:space="preserve">
+		<trans-unit id="styled_map_name.description">
 			<source>Shown in the map type control.</source>
 		</trans-unit>
-		<trans-unit id="title.description" xml:space="preserve">
+		<trans-unit id="title.description">
 			<source>Will be used as ID (without space character, special character!).</source>
 		</trans-unit>
-		<trans-unit id="tooltip_title.description" xml:space="preserve">
+		<trans-unit id="tooltip_title.description">
 			<source>Shown by mouse over.</source>
 		</trans-unit>
-		<trans-unit id="travel_mode.description" xml:space="preserve">
+		<trans-unit id="travel_mode.description">
 			<source>Select a travel mode or let the frontend user select one.</source>
 		</trans-unit>
-		<trans-unit id="unit_system.description" xml:space="preserve">
+		<trans-unit id="unit_system.description">
 			<source>Select a unit system or let the frontend user select one.</source>
 		</trans-unit>
-		<trans-unit id="width.description" xml:space="preserve">
+		<trans-unit id="width.description">
 			<source>Set the width of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
 		</trans-unit>
-		<trans-unit id="zoom.description" xml:space="preserve">
+		<trans-unit id="zoom.description">
 			<source>Only need to set if default zoom is wrong.</source>
 		</trans-unit>
-		<trans-unit id="zoom_control.description" xml:space="preserve">
+		<trans-unit id="zoom_control.description">
 			<source>Enable buttons to change the zoom.</source>
 		</trans-unit>
-		<trans-unit id="zoom_control_type.description" xml:space="preserve">
+		<trans-unit id="zoom_control_type.description">
 			<source>Choose beetween large and small.</source>
+		</trans-unit>
+		<trans-unit id="zoom_max.description">
+			<source>The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.</source>
+		</trans-unit>
+		<trans-unit id="zoom_min.description">
+			<source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
 		</trans-unit>
 		</body>
 	</file>

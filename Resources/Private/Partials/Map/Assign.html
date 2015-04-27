@@ -22,6 +22,8 @@
             width: '{map.width}',
             height: '{map.height}',
             zoom: {f:if(condition:"{map.zoom}", then:"{map.zoom}", else:"0")},
+            minZoom: {f:if(condition:"{map.zoomMin}", then:"{map.zoomMin}", else:"0")},
+            maxZoom: {f:if(condition:"{map.zoomMax}", then:"{map.zoomMax}", else:"0")},
             kmlUrl: '{map.kmlUrl}',
             kmlPreserveViewport: {f:if(condition:"{map.kmlPreserveViewport}", then:"true", else:"false")},
             kmlLocal: {f:if(condition:"{map.kmlLocal}", then:"1", else:"0")},

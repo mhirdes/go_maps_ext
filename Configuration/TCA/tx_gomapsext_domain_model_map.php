@@ -29,14 +29,14 @@ return array(
     ),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
-		                          class, width, height, zoom, addresses, kml_url, kml_local, show_route,
+		                          class, width, height, zoom, zoom_min, zoom_max, addresses, kml_url, kml_local, show_route,
 		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
 		                          marker_cluster_zoom, marker_cluster_size, marker_search, default_type,
 		                          pan_control, scale_control, streetview_control, zoom_control, zoom_control_type,
 		                          map_type_control, map_types, styled_map_name, styled_map_code',
 	),
 	'types' => array (
-		'0' => array('showitem' => 'title, tooltip_title, class, width, height, zoom, addresses, kml_url;;1, 
+		'0' => array('showitem' => 'title, tooltip_title, class, width, height, zoom;;3, addresses, kml_url;;1,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display,
 					show_categories,scroll_zoom, draggable, double_click_zoom, marker_cluster;;2, marker_search, default_type,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.controls,
@@ -51,6 +51,7 @@ return array(
 	'palettes' => array(
 		'1' => array('showitem' => 'kml_preserve_viewport, kml_local'),
 		'2' => array('showitem' => 'marker_cluster_zoom, marker_cluster_size'),
+		'3' => array('showitem' => 'zoom_min, zoom_max'),
 	),
 	'columns' => array(
 		'sys_language_uid' => array(
@@ -185,6 +186,24 @@ return array(
 				'eval' => 'int'
 			),
 		),
+        'zoom_min' => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_min',
+            'config' => array(
+                'type' => 'input',
+                'size' => 4,
+                'eval' => 'int'
+            ),
+        ),
+        'zoom_max' => array(
+            'exclude' => 1,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_max',
+            'config' => array(
+                'type' => 'input',
+                'size' => 4,
+                'eval' => 'int'
+            ),
+        ),
 		'addresses' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.addresses',

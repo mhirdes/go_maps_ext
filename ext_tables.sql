@@ -78,6 +78,8 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	kml_preserve_viewport tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	kml_local tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	scroll_zoom tinyint(1) unsigned DEFAULT '0' NOT NULL,
+  zoom_min int(11) DEFAULT '0' NOT NULL,
+	zoom_max int(11) DEFAULT '0' NOT NULL,
 	draggable tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	double_click_zoom tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	marker_cluster tinyint(1) unsigned DEFAULT '0' NOT NULL,
