@@ -228,6 +228,7 @@
             if (gme.mapSettings.zoom > 0) {
                 element.data("map").setZoom(gme.mapSettings.zoom);
             }
+            refreshMap(element, gme);
             google.maps.event.trigger(infoWindow, 'content_changed');
         });
 

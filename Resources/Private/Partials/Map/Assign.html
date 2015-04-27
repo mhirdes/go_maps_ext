@@ -111,7 +111,14 @@
     gme.ll.submit = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.submit" />";
     gme.ll.noSearchResults = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.noSearchResults" />";
     gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />";
-    jQuery("#" + gme.mapSettings.id).gomapsext(gme);
+    var $element = jQuery("#" + gme.mapSettings.id);
+    $element.gomapsext(gme);
+    if(gme.mapSettings.width.indexOf('%') != -1) {
+        jQuery(window).resize(function() {
+            $element.trigger('mapresize');
+        });
+    }
+
   }); // end of closure
 })(jQuery, window, document);
 </gomapsext:script>
