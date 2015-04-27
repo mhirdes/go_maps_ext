@@ -1,8 +1,14 @@
 plugin.tx_gomapsext {
 	view {
-		templateRootPath = {$plugin.tx_gomapsext.view.templateRootPath}
-		partialRootPath = {$plugin.tx_gomapsext.view.partialRootPath}
-		layoutRootPath = {$plugin.tx_gomapsext.view.layoutRootPath}
+		templateRootPaths {
+            10 = {$plugin.tx_gomapsext.view.templateRootPath}
+        }
+        partialRootPaths {
+            10 = {$plugin.tx_gomapsext.view.partialRootPath}
+        }
+        layoutRootPaths {
+            10 = {$plugin.tx_gomapsext.view.layoutRootPath}
+        }
 	}
 	settings {
 		storagePid = {$plugin.tx_gomapsext.settings.storagePid}
