@@ -105,7 +105,8 @@
                         infoWindowLink: 0,
                         openByClick: 1,
                         closeByClick: 1,
-                        opened: 0
+                        opened: 0,
+                        categories: ''
                     };
                     addMapPoint(address, Route, element, infoWindow, gme);
                     gme.addresses.push(address);
