@@ -84,6 +84,32 @@ field.
 .. container:: table-row
 
    Property
+         zoom
+
+   Description
+         Only needed when the default zoom is wrong. Number between 0 and 23. 0 is the lowest zoom (whole world).
+
+.. container:: table-row
+
+   Property
+         zoom min
+
+   Description
+         The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum
+         zoom from the current map type is used instead.
+
+.. container:: table-row
+
+   Property
+         zoom max
+
+   Description
+         The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum
+         zoom from the current map type is used instead.
+
+.. container:: table-row
+
+   Property
          addresses
 
    Description
