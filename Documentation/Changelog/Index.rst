@@ -17,6 +17,21 @@ ChangeLog
    Changes
          Changes:
 
+.. container:: table-row
+
+   Version
+         1.6.0
+
+   Changes
+         Compability TYPO3 > 7.2, min- and max zoom, responsive center update
+
+.. container:: table-row
+
+   Version
+         1.5.0
+
+   Changes
+         Compability TYPO3 > 7.0, library path now in TS, respect scheme
 
 .. container:: table-row
 
