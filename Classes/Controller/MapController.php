@@ -52,31 +52,31 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	public function initializeAction() {
 		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
+
         $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
-		$addJsMethod = 'addJs';
+        $addJsMethod = 'addJs';
 
         if($this->extConf['footerJS'] == 1) {
             $addJsMethod = 'addJsFooter';
         }
-		$googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
-			htmlentities($this->settings['googleMapsLibrary']) :
-			'//maps.google.com/maps/api/js?v=3.17&sensor=false';
+        $googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
+            htmlentities($this->settings['googleMapsLibrary']) :
+            '//maps.google.com/maps/api/js?v=3.17&sensor=false';
         if($this->settings['language']) {
             $googleMapsLibrary .= '&language=' . $this->settings['language'];
         }
 
         $pageRenderer->{$addJsMethod . 'Library'}('googleMaps', $googleMapsLibrary, 'text/javascript', FALSE, FALSE, '', TRUE);
 
-		$this->extConf['openByClick'] = $this->settings['infoWindow']['openByClick'];
-		$this->extConf['closeByClick'] = $this->settings['infoWindow']['closeByClick'];
-		
-		if($this->extConf['include_library'] == 1) {
+        if($this->extConf['include_library'] == 1) {
             $pageRenderer->{$addJsMethod . 'Library'}('jQuery', \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.min.js');
-		}
+        }
 
-        $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
+        if($this->extConf['include_manually'] != 1) {
+            $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
 
-        $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js';
+            $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js';
+        }
 
         foreach ($scripts as $script) {
             $pageRenderer->{$addJsMethod . 'File'}($script);
