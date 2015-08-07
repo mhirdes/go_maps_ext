@@ -76,10 +76,10 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
             $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
 
             $scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath($this->request->getControllerExtensionKey()) . 'Resources/Public/Scripts/jquery.gomapsext.js';
-        }
 
-        foreach ($scripts as $script) {
-            $pageRenderer->{$addJsMethod . 'File'}($script);
+            foreach ($scripts as $script) {
+                $pageRenderer->{$addJsMethod . 'File'}($script);
+            }
         }
 	}
 	
