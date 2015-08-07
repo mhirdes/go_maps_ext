@@ -115,18 +115,16 @@ TxClimbingSites.init = function() {
 		position.value = lat + "," + lng;
 		
 		// Tell TYPO3 that fields were updated
-		{$updateLatitudeJs}
-		{$updateLongitudeJs}
-		{$updateAddressJs}
+		TxClimbingSites.positionChanged();
 	});
 	TxClimbingSites.geocoder = new google.maps.Geocoder();
 
-	// Make sure to refresh Google Map if corresponding tab is not yet active
-	TxClimbingSites.tabPrefix = Ext.fly('{$mapId}').findParentNode('[id$="-DIV"]').id;
-	TxClimbingSites.tabPrefix = Ext.util.Format.substr(TxClimbingSites.tabPrefix, 0, TxClimbingSites.tabPrefix.length - 4);
-	if (Ext.fly(TxClimbingSites.tabPrefix + '-DIV').getStyle('display') == 'none') {
-		Ext.fly(TxClimbingSites.tabPrefix + '-MENU').on('click', TxClimbingSites.refreshMap);
-	}
+//	// Make sure to refresh Google Map if corresponding tab is not yet active
+////	TxClimbingSites.tabPrefix = Ext.fly('{$mapId}').findParentNode('[id$="-DIV"]').id;
+//	TxClimbingSites.tabPrefix = Ext.util.Format.substr(TxClimbingSites.tabPrefix, 0, TxClimbingSites.tabPrefix.length - 4);
+//	if (Ext.fly(TxClimbingSites.tabPrefix + '-DIV').getStyle('display') == 'none') {
+//		Ext.fly(TxClimbingSites.tabPrefix + '-MENU').on('click', TxClimbingSites.refreshMap);
+//	}
 };
 
 TxClimbingSites.refreshMap = function() {
@@ -182,14 +180,20 @@ TxClimbingSites.codeAddress = function() {
 				document[TBE_EDITOR.formname]['{$latitudeField}'].value = lat;
 				document[TBE_EDITOR.formname]['{$longitudeField}'].value = lng;
 				document[TBE_EDITOR.formname]['{$addressField}'].value = formatedAddress;
+
+                TxClimbingSites.positionChanged();
 			} else {
 				alert("Geocode was not successful for the following reason: " + status);
 			}
 		});
 	}
-	{$updateLatitudeJs}
-	{$updateLongitudeJs}
-	{$updateAddressJs}
+}
+
+TxClimbingSites.positionChanged = function() {
+    {$updateLatitudeJs}
+    {$updateLongitudeJs}
+    {$updateAddressJs}
+    TYPO3.FormEngine.Validation.validate();
 }
 
 TxClimbingSites.setMarker = function(lat, lng) {
@@ -211,6 +215,7 @@ TxClimbingSites.reverseGeocode = function(latitude, longitude) {
 		if (status == google.maps.GeocoderStatus.OK && results[1]) {
 			document[TBE_EDITOR.formname]['{$addressField}'].value = results[1].formatted_address;
 			document[TBE_EDITOR.formname]['{$addressField}_hr'].value = results[1].formatted_address;
+			TxClimbingSites.positionChanged();
 		}
 	});
 }
