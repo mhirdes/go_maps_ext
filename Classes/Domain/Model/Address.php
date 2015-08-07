@@ -473,7 +473,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return \string $infoWindowContent
 	 */
 	public function getInfoWindowContent() {
-		return preg_replace("/\r\n|\r/", '</p><p class="bodytext">', $this->infoWindowContent);
+		return $this->infoWindowContent;
 	}
 
 	/**
