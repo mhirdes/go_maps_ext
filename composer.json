@@ -16,8 +16,5 @@
     "support": {
         "issues": "https://forge.typo3.org/projects/go_maps_ext"
     },
-    "require": {
-        "typo3/cms": "~6.2"
-    },
     "version": "1.7.0"
 }
