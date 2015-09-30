@@ -222,6 +222,9 @@ return array(
 					'_PADDING' => 4,
 					'_VERTICAL' => 0,
 					'_DISTANCE' => 2,
+                    'suggest' => array(
+                        'type' => 'suggest'
+                    ),
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
