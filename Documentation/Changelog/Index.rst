@@ -20,6 +20,14 @@ ChangeLog
 .. container:: table-row
 
    Version
+         1.8.0
+
+   Changes
+         Compatibility TYPO3 > 7.5, suggest wizard
+
+.. container:: table-row
+
+   Version
          1.7.0
 
    Changes

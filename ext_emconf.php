@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = array (
 	                  images for markers, style maps, KML, categories, responsive and many more.',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '1.7.1',
+	'version' => '1.8.0',
 	'dependencies' => 'extbase,fluid',
 	'conflicts' => '',
 	'priority' => '',
