@@ -16,5 +16,16 @@
     "support": {
         "issues": "https://forge.typo3.org/projects/go_maps_ext"
     },
-    "version": "1.8.0"
+    "version": "1.8.0",
+	"replace": {
+		"go_maps_ext": "*"
+	},
+	"require": {
+		"typo3/cms-core": "6.2.0 - 7.6.99"
+	},
+	"autoload": {
+		"psr-4": {
+			"Clickstorm\\GoMapsExt\\": "Classes/"
+		}
+	}
 }
