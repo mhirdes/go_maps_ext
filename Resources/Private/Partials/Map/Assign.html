@@ -87,7 +87,7 @@
             shadowHeight: {address.shadowHeight},
             infoWindowContent: '<gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape>',
             infoWindowLink: {address.infoWindowLink},
-            <f:if condition="{settings.openByClick}">
+            <f:if condition="{settings.infoWindow.openByClick}">
                 <f:then>
             openByClick: 1,
                 </f:then>
@@ -95,7 +95,7 @@
             openByClick: {f:if(condition:"{address.openByClick}", then:"1", else:"0")},
                 </f:else>
             </f:if>
-            <f:if condition="{settings.closeByClick}">
+            <f:if condition="{settings.infoWindow.closeByClick}">
                 <f:then>
             closeByClick: 1,
                 </f:then>

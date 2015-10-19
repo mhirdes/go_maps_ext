@@ -117,7 +117,6 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
             'request' => $this->request->getArguments(),
             'map' => $map,
             'addresses' => $addresses,
-            'settings' => $this->extConf,
             'categories' => $categoriesArray
         ));
 	} 
