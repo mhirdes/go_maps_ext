@@ -1,27 +1,31 @@
 <?php
+
+namespace Clickstorm\GoMapsExt\Utility;
+
 /***************************************************************
-*  Copyright notice
-*
-*  (c) 2011 Xavier Perseguers <xavier@causal.ch>, Causal S� rl
-*
-*  All rights reserved
-*
-*  This script is part of the TYPO3 project. The TYPO3 project is
-*  free software; you can redistribute it and/or modify
-*  it under the terms of the GNU General Public License as published by
-*  the Free Software Foundation; either version 3 of the License, or
-*  (at your option) any later version.
-*
-*  The GNU General Public License can be found at
-*  http://www.gnu.org/copyleft/gpl.html.
-*
-*  This script is distributed in the hope that it will be useful,
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-*  GNU General Public License for more details.
-*
-*  This copyright notice MUST APPEAR in all copies of the script!
-***************************************************************/
+ *  Copyright notice
+ *
+ *  (c) 2011 Xavier Perseguers <xavier@causal.ch>, Causal
+ *  (c) 2015 Marc Hirdes <hirdes@clicsktorm.de>, clickstorm GmbH
+ *
+ *  All rights reserved
+ *
+ *  This script is part of the TYPO3 project. The TYPO3 project is
+ *  free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  The GNU General Public License can be found at
+ *  http://www.gnu.org/copyleft/gpl.html.
+ *
+ *  This script is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  This copyright notice MUST APPEAR in all copies of the script!
+ ***************************************************************/
 
 /**
  * Google map.
@@ -29,7 +33,7 @@
  * @package climbing_sites
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-class tx_gomapsext_tca {
+class LocationUtility {
 
 	/**
 	 * Renders the Google map.
@@ -39,17 +43,17 @@ class tx_gomapsext_tca {
 	 * @return string
 	 */
 	public function render(array &$PA, $pObj) {
-        $version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
-        $settings = $this->loadTS($PA['row']['pid']);
-		$googleMapsLibrary =  $settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary'] ?
-                                htmlentities($settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary']) :
-                                '//maps.google.com/maps/api/js?v=3.17&amp;sensor=false';
+		$version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
+		$settings = $this->loadTS($PA['row']['pid']);
+		$googleMapsLibrary = $settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary'] ?
+			htmlentities($settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary']) :
+			'//maps.google.com/maps/api/js?v=3.17&amp;sensor=false';
 
 		$out = array();
-		$latitude = (float) $PA['row'][$PA['parameters']['latitude']];
-		$longitude = (float) $PA['row'][$PA['parameters']['longitude']];
-		$address =  $PA['row'][$PA['parameters']['address']];
-		
+		$latitude = (float)$PA['row'][$PA['parameters']['latitude']];
+		$longitude = (float)$PA['row'][$PA['parameters']['longitude']];
+		$address = $PA['row'][$PA['parameters']['address']];
+
 		$baseElementId = isset($PA['itemFormElID']) ? $PA['itemFormElID'] : $PA['table'] . '_map';
 		$addressId = $baseElementId . '_address';
 		$mapId = $baseElementId . '_map';
@@ -64,12 +68,29 @@ class tx_gomapsext_tca {
 		$addressField = $dataPrefix . '[' . $PA['parameters']['address'] . ']';
 
 
-
 		$updateJs = "TBE_EDITOR.fieldChanged('%s','%s','%s','%s');";
-		$updateLatitudeJs = sprintf($updateJs, $PA['table'], $PA['row']['uid'], $PA['parameters']['latitude'], $latitudeField);
-		$updateLongitudeJs = sprintf($updateJs, $PA['table'], $PA['row']['uid'], $PA['parameters']['longitude'], $longitudeField);
-		$updateAddressJs = sprintf($updateJs, $PA['table'], $PA['row']['uid'], $PA['parameters']['address'], $addressField);
-		
+		$updateLatitudeJs = sprintf(
+			$updateJs,
+			$PA['table'],
+			$PA['row']['uid'],
+			$PA['parameters']['latitude'],
+			$latitudeField
+		);
+		$updateLongitudeJs = sprintf(
+			$updateJs,
+			$PA['table'],
+			$PA['row']['uid'],
+			$PA['parameters']['longitude'],
+			$longitudeField
+		);
+		$updateAddressJs = sprintf(
+			$updateJs,
+			$PA['table'],
+			$PA['row']['uid'],
+			$PA['parameters']['address'],
+			$addressField
+		);
+
 		$out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
 		$out[] = '<script type="text/javascript">';
 		$out[] = <<<EOT
@@ -241,16 +262,21 @@ EOT;
 		return implode('', $out);
 	}
 
-    protected function loadTS($pageUid) {
-        $sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('TYPO3\\CMS\\Frontend\\Page\\PageRepository');
-        $rootLine = $sysPageObj->getRootLine($pageUid);
-        $TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance('TYPO3\\CMS\\Core\\TypoScript\\ExtendedTemplateService');
-        $TSObj->tt_track = 0;
-        $TSObj->init();
-        $TSObj->runThroughTemplates($rootLine);
-        $TSObj->generateConfig();
-        return $TSObj->setup;
-    }
+	protected function loadTS($pageUid) {
+		$sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance(
+			'TYPO3\\CMS\\Frontend\\Page\\PageRepository'
+		);
+		$rootLine = $sysPageObj->getRootLine($pageUid);
+		$TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance(
+			'TYPO3\\CMS\\Core\\TypoScript\\ExtendedTemplateService'
+		);
+		$TSObj->tt_track = 0;
+		$TSObj->init();
+		$TSObj->runThroughTemplates($rootLine);
+		$TSObj->generateConfig();
+
+		return $TSObj->setup;
+	}
 }
 
 ?>

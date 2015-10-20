@@ -38,7 +38,7 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  * </code>
  * <output>
  * <script type="text/javascript">
- * 		foo <b>bar<\/b>
+ *        foo <b>bar<\/b>
  * </script>
  *
  * <code title="Inline notation">
@@ -51,15 +51,14 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  * </output>
  *
  */
-
 class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
-	
+
 	/**
 	 * @return The parsed string.
 	 * @author Marc Hirdes <marc_hirdes@gmx.de>
 	 */
 	public function render() {
-        $pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
 		$pageRenderer->addJsFooterFile(
 			\TYPO3\CMS\Frontend\Page\PageGenerator::inline2TempFile($this->renderChildren(), 'js'),
 			'text/javascript', // $type
@@ -68,7 +67,7 @@ class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 			'', // $allWrap
 			true // $excludeFromConcatenation
 		);
-		
+
 		return '';
 	}
 }

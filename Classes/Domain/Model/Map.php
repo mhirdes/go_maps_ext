@@ -1,29 +1,29 @@
 <?php
 namespace Clickstorm\GoMapsExt\Domain\Model;
 
-/***************************************************************
- *  Copyright notice
- *
- *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
- *  
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
+	/***************************************************************
+	 *  Copyright notice
+	 *
+	 *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
+	 *
+	 *  All rights reserved
+	 *
+	 *  This script is part of the TYPO3 project. The TYPO3 project is
+	 *  free software; you can redistribute it and/or modify
+	 *  it under the terms of the GNU General Public License as published by
+	 *  the Free Software Foundation; either version 3 of the License, or
+	 *  (at your option) any later version.
+	 *
+	 *  The GNU General Public License can be found at
+	 *  http://www.gnu.org/copyleft/gpl.html.
+	 *
+	 *  This script is distributed in the hope that it will be useful,
+	 *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+	 *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	 *  GNU General Public License for more details.
+	 *
+	 *  This copyright notice MUST APPEAR in all copies of the script!
+	 ***************************************************************/
 
 /**
  *
@@ -79,20 +79,20 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $zoom;
 
-    /**
-     * zoomMin
-     *
-     * @var \integer
-     */
-    protected $zoomMin;
+	/**
+	 * zoomMin
+	 *
+	 * @var \integer
+	 */
+	protected $zoomMin;
 
-    /**
-     * zoomMax
-     *
-     * @var \integer
-     */
-    protected $zoomMax;
-	
+	/**
+	 * zoomMax
+	 *
+	 * @var \integer
+	 */
+	protected $zoomMax;
+
 	/**
 	 * addresses
 	 *
@@ -100,83 +100,83 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @lazy
 	 */
 	protected $addresses;
-	
+
 	/**
 	 * kmlUrl
 	 *
 	 * @var \string
 	 */
 	protected $kmlUrl;
-	
+
 	/**
 	 * kmlPreserveViewport
 	 *
 	 * @var boolean
 	 */
-	protected $kmlPreserveViewport = FALSE;
-	
+	protected $kmlPreserveViewport = false;
+
 	/**
 	 * kmlLocal
 	 *
 	 * @var boolean
 	 */
-	protected $kmlLocal = FALSE;
+	protected $kmlLocal = false;
 
-    /**
-     * showCategories
-     *
-     * @var boolean
-     */
-    protected $showCategories = FALSE;
+	/**
+	 * showCategories
+	 *
+	 * @var boolean
+	 */
+	protected $showCategories = false;
 
 	/**
 	 * scrollZoom
 	 *
 	 * @var boolean
 	 */
-	protected $scrollZoom = FALSE;
+	protected $scrollZoom = false;
 
 	/**
 	 * draggable
 	 *
 	 * @var boolean
 	 */
-	protected $draggable = FALSE;
+	protected $draggable = false;
 
 	/**
 	 * doubleClickZoom
 	 *
 	 * @var boolean
 	 */
-	protected $doubleClickZoom = FALSE;
-	
+	protected $doubleClickZoom = false;
+
 	/**
 	 * markerCluster
 	 *
 	 * @var boolean
 	 */
-	protected $markerCluster = FALSE;
-	
+	protected $markerCluster = false;
+
 	/**
 	 * markerClusterZoom
 	 *
 	 * @var \integer
 	 */
 	protected $markerClusterZoom;
-	
+
 	/**
 	 * markerClusterSize
 	 *
 	 * @var \integer
 	 */
 	protected $markerClusterSize;
-	
+
 	/**
 	 * markerSearch
 	 *
 	 * @var boolean
 	 */
-	protected $markerSearch = FALSE;
+	protected $markerSearch = false;
 
 	/**
 	 * defaultType
@@ -190,28 +190,28 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @var boolean
 	 */
-	protected $panControl = FALSE;
+	protected $panControl = false;
 
 	/**
 	 * scaleControl
 	 *
 	 * @var boolean
 	 */
-	protected $scaleControl = FALSE;
+	protected $scaleControl = false;
 
 	/**
 	 * streetviewControl
 	 *
 	 * @var boolean
 	 */
-	protected $streetviewControl = FALSE;
+	protected $streetviewControl = false;
 
 	/**
 	 * zoomControl
 	 *
 	 * @var boolean
 	 */
-	protected $zoomControl = FALSE;
+	protected $zoomControl = false;
 
 	/**
 	 * zoomControlType
@@ -225,7 +225,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @var boolean
 	 */
-	protected $mapTypeControl = FALSE;
+	protected $mapTypeControl = false;
 
 	/**
 	 * mapTypes
@@ -239,29 +239,29 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 *
 	 * @var boolean
 	 */
-	protected $showRoute = FALSE;
+	protected $showRoute = false;
 
 	/**
 	 * calcRoute
 	 *
 	 * @var boolean
 	 */
-	protected $calcRoute = FALSE;
-	
+	protected $calcRoute = false;
+
 	/**
 	 * travelMode
 	 *
 	 * @var \integer
 	 */
 	protected $travelMode;
-	
+
 	/**
 	 * unitSystem
 	 *
 	 * @var \integer
 	 */
 	protected $unitSystem;
-	
+
 	/**
 	 * styledMapName
 	 *
@@ -275,28 +275,28 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var \string
 	 */
 	protected $styledMapCode;
-	
+
 	/**
 	 * showForm
 	 *
 	 * @var boolean
 	 */
-	protected $showForm = FALSE;
-	
+	protected $showForm = false;
+
 	/**
 	 * travelModes
 	 *
 	 * @var \array
 	 */
 	protected $travelModes = array();
-	
+
 	/**
 	 * unitSystems
 	 *
 	 * @var \array
 	 */
 	protected $unitSystems = array();
-	
+
 	/**
 	 * __construct
 	 *
@@ -384,7 +384,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @param \string integer $width
 	 */
 	public function getWidth() {
-		return is_numeric($this->width)?$this->width.'px':$this->width;
+		return is_numeric($this->width) ? $this->width . 'px' : $this->width;
 	}
 
 	/**
@@ -403,7 +403,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @return \string $height
 	 */
 	public function getHeight() {
-		return is_numeric($this->height)?$this->height.'px':$this->height;
+		return is_numeric($this->height) ? $this->height . 'px' : $this->height;
 	}
 
 	/**
@@ -435,44 +435,44 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->zoom = $zoom;
 	}
 
-    /**
-     * Returns the zoomMin
-     *
-     * @return \integer $zoomMin
-     */
-    public function getZoomMin() {
-        return $this->zoomMin;
-    }
+	/**
+	 * Returns the zoomMin
+	 *
+	 * @return \integer $zoomMin
+	 */
+	public function getZoomMin() {
+		return $this->zoomMin;
+	}
 
-    /**
-     * Sets the zoomMin
-     *
-     * @param \integer $zoomMin
-     * @return void
-     */
-    public function setZoomMin($zoomMin) {
-        $this->zoomMin = $zoomMin;
-    }
+	/**
+	 * Sets the zoomMin
+	 *
+	 * @param \integer $zoomMin
+	 * @return void
+	 */
+	public function setZoomMin($zoomMin) {
+		$this->zoomMin = $zoomMin;
+	}
 
-    /**
-     * Returns the zoomMax
-     *
-     * @return \integer $zoomMax
-     */
-    public function getZoomMax() {
-        return $this->zoomMax;
-    }
+	/**
+	 * Returns the zoomMax
+	 *
+	 * @return \integer $zoomMax
+	 */
+	public function getZoomMax() {
+		return $this->zoomMax;
+	}
 
-    /**
-     * Sets the zoomMax
-     *
-     * @param \integer $zoomMax
-     * @return void
-     */
-    public function setZoomMax($zoomMax) {
-        $this->zoomMax = $zoomMax;
-    }
-	
+	/**
+	 * Sets the zoomMax
+	 *
+	 * @param \integer $zoomMax
+	 * @return void
+	 */
+	public function setZoomMax($zoomMax) {
+		$this->zoomMax = $zoomMax;
+	}
+
 	/**
 	 * Adds a Address
 	 *
@@ -530,7 +530,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function kmlUrl($kmlUrl) {
 		$this->kmlUrl = $kmlUrl;
 	}
-	
+
 	/**
 	 * Returns the kmlPreserveViewport
 	 *
@@ -549,7 +549,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setKmlPreserveViewport($kmlPreserveViewport) {
 		$this->kmlPreserveViewport = $kmlPreserveViewport;
 	}
-	
+
 	/**
 	 * Returns the boolean state of kmlPreserveViewport
 	 *
@@ -558,7 +558,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function isKmlPreserveViewport() {
 		return $this->getKmlPreserveViewport();
 	}
-	
+
 	/**
 	 * Returns the kmlLocal
 	 *
@@ -577,7 +577,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setKmlLocal($kmlLocal) {
 		$this->kmlLocal = $kmlLocal;
 	}
-	
+
 	/**
 	 * Returns the boolean state of kmlLocal
 	 *
@@ -587,33 +587,33 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $this->getKmlLocal();
 	}
 
-    /**
-     * Returns the showCategories
-     *
-     * @return boolean $showCategories
-     */
-    public function getShowCategories() {
-        return $this->showCategories;
-    }
+	/**
+	 * Returns the showCategories
+	 *
+	 * @return boolean $showCategories
+	 */
+	public function getShowCategories() {
+		return $this->showCategories;
+	}
 
-    /**
-     * Sets the showCategories
-     *
-     * @param boolean $showCategories
-     * @return void
-     */
-    public function setShowCategories($showCategories) {
-        $this->showCategories = $showCategories;
-    }
+	/**
+	 * Sets the showCategories
+	 *
+	 * @param boolean $showCategories
+	 * @return void
+	 */
+	public function setShowCategories($showCategories) {
+		$this->showCategories = $showCategories;
+	}
 
-    /**
-     * Returns the boolean state of showCategories
-     *
-     * @return boolean
-     */
-    public function isShowCategories() {
-        return $this->getShowCategories();
-    }
+	/**
+	 * Returns the boolean state of showCategories
+	 *
+	 * @return boolean
+	 */
+	public function isShowCategories() {
+		return $this->getShowCategories();
+	}
 
 	/**
 	 * Returns the scrollZoom
@@ -698,7 +698,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function isDoubleClickZoom() {
 		return $this->getDoubleClickZoom();
 	}
-	
+
 	/**
 	 * Returns the markerCluster
 	 *
@@ -726,7 +726,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function isMarkerCluster() {
 		return $this->getMarkerCluster();
 	}
-	
+
 	/**
 	 * Returns the markerClusterZoom
 	 *
@@ -745,7 +745,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setMarkerClusterZoom($markerClusterZoom) {
 		$this->markerClusterZoom = $markerClusterZoom;
 	}
-	
+
 	/**
 	 * Returns the markerClusterSize
 	 *
@@ -764,7 +764,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setMarkerClusterSize($markerClusterSize) {
 		$this->markerClusterSize = $markerClusterSize;
 	}
-	
+
 	/**
 	 * Returns the markerSearch
 	 *
@@ -989,7 +989,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setMapTypes($mapTypes) {
 		$this->mapTypes = $mapTypes;
 	}
-	
+
 	/**
 	 * Returns the showRoute
 	 *
@@ -1045,7 +1045,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function isCalcRoute() {
 		return $this->getCalcRoute();
 	}
-	
+
 	/**
 	 * Returns the travelMode
 	 *
@@ -1064,7 +1064,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setTravelMode($travelMode) {
 		$this->travelMode = $travelMode;
 	}
-	
+
 	/**
 	 * Returns the unitSystem
 	 *
@@ -1083,7 +1083,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setUnitSystem($unitSystem) {
 		$this->unitSystem = $unitSystem;
 	}
-	
+
 	/**
 	 * Returns the styledMapName
 	 *
@@ -1121,42 +1121,51 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	public function setStyledMapCode($styledMapCode) {
 		$this->styledMapCode = $styledMapCode;
 	}
-	
+
 	/**
 	 * Returns the setForm
 	 *
 	 * @return boolean $showForm
 	 */
 	public function getShowForm() {
-		if($this->getCalcRoute() == 1 || $this->getTravelMode() == 1 ||  $this->getUnitSystem() == 1) {
-			return true; 
+		if ($this->getCalcRoute() == 1 || $this->getTravelMode() == 1 || $this->getUnitSystem() == 1) {
+			return true;
 		} else {
 			return false;
 		}
 	}
-	
+
 	/**
 	 * Returns the travelModes
 	 *
 	 * @return \array $travelModes
 	 */
 	public function getTravelModes() {
-		for($i=0; $i<=4; $i++) { 
-			$travelModes[$i] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.travel_mode.' . $i, 'go_maps_ext');
+		for ($i = 0; $i <= 4; $i++) {
+			$travelModes[$i] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(
+				'tx_gomapsext_domain_model_map.travel_mode.' . $i,
+				'go_maps_ext'
+			);
 		}
+
 		return $travelModes;
 	}
-	
+
 	/**
 	 * Returns the unitSystems
 	 *
 	 * @return \array $unitSystems
 	 */
 	public function getUnitSystems() {
-		for($i=2; $i<=3; $i++) { 
-			$unitSystems[$i] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate('tx_gomapsext_domain_model_map.unit_system.' . $i, 'go_maps_ext');
+		for ($i = 2; $i <= 3; $i++) {
+			$unitSystems[$i] = \TYPO3\CMS\Extbase\Utility\LocalizationUtility::translate(
+				'tx_gomapsext_domain_model_map.unit_system.' . $i,
+				'go_maps_ext'
+			);
 		}
+
 		return $unitSystems;
 	}
 }
+
 ?>

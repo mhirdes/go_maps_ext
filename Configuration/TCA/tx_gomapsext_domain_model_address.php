@@ -185,7 +185,7 @@ return array(
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.configuration_map',
 			'config' => array(
 				'type' => 'user',
-				'userFunc' => 'tx_gomapsext_tca->render',
+				'userFunc' => 'Clickstorm\\GoMapsExt\\Utility\\LocationUtility->render',
 				'parameters' => array(
 					'longitude' => 'longitude',
 					'latitude' => 'latitude',
