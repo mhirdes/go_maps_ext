@@ -1,36 +1,36 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
+if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
 return array(
-    'ctrl' => array(
-        'title'	=> 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_category',
-        'label' => 'name',
-        'tstamp' => 'tstamp',
-        'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
-        'default_sortby' => 'ORDER BY name',
-        'dividers2tabs' => TRUE,
-        'versioningWS' => 2,
-        'versioning_followPages' => TRUE,
-        'origUid' => 't3_origuid',
-        'languageField' => 'sys_language_uid',
-        'transOrigPointerField' => 'l10n_parent',
-        'transOrigDiffSourceField' => 'l10n_diffsource',
-        'delete' => 'deleted',
-        'enablecolumns' => array(
-            'disabled' => 'hidden',
-            'starttime' => 'starttime',
-            'endtime' => 'endtime',
-        ),
-        'searchFields' => 'name',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('go_maps_ext') . 'Resources/Public/Icons/tx_gomapsext_domain_model_category.png'
-    ),
+	'ctrl' => array(
+		'title' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_category',
+		'label' => 'name',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'default_sortby' => 'ORDER BY name',
+		'dividers2tabs' => TRUE,
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
+		'origUid' => 't3_origuid',
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
+		),
+		'searchFields' => 'name',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('go_maps_ext') . 'Resources/Public/Icons/tx_gomapsext_domain_model_category.png'
+	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, addresses',
 	),
-	'types' => array (
+	'types' => array(
 		'0' => array('showitem' => 'name,
 									--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xml:tx_gomapsext_domain_model_category.others,
 									sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden,starttime, endtime')
@@ -144,13 +144,13 @@ return array(
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
-                        'module' => array(
-                            'name' => 'wizard_edit',
-                        ),
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-						),
+					),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
@@ -159,10 +159,10 @@ return array(
 							'table' => 'tx_gomapsext_domain_model_address',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
-							),
-                        'module' => array(
-                            'name' => 'wizard_add'
-                        )
+						),
+						'module' => array(
+							'name' => 'wizard_add'
+						)
 					),
 				),
 			),

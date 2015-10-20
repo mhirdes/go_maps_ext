@@ -1,32 +1,32 @@
 <?php
-if (!defined ('TYPO3_MODE')) {
+if (!defined('TYPO3_MODE')) {
 	die ('Access denied.');
 }
 
 return array(
-    'ctrl' => array(
-        'title'	=> 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map',
-        'label' => 'title',
-        'tstamp' => 'tstamp',
-        'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
-        'dividers2tabs' => TRUE,
-        'default_sortby' => 'ORDER BY title',
-        'versioningWS' => 2,
-        'versioning_followPages' => TRUE,
-        'origUid' => 't3_origuid',
-        'languageField' => 'sys_language_uid',
-        'transOrigPointerField' => 'l10n_parent',
-        'transOrigDiffSourceField' => 'l10n_diffsource',
-        'delete' => 'deleted',
-        'enablecolumns' => array(
-            'disabled' => 'hidden',
-            'starttime' => 'starttime',
-            'endtime' => 'endtime',
-        ),
-        'searchFields' => 'title,tooltip_title',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('go_maps_ext') . 'Resources/Public/Icons/tx_gomapsext_domain_model_map.png'
-    ),
+	'ctrl' => array(
+		'title' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map',
+		'label' => 'title',
+		'tstamp' => 'tstamp',
+		'crdate' => 'crdate',
+		'cruser_id' => 'cruser_id',
+		'dividers2tabs' => TRUE,
+		'default_sortby' => 'ORDER BY title',
+		'versioningWS' => 2,
+		'versioning_followPages' => TRUE,
+		'origUid' => 't3_origuid',
+		'languageField' => 'sys_language_uid',
+		'transOrigPointerField' => 'l10n_parent',
+		'transOrigDiffSourceField' => 'l10n_diffsource',
+		'delete' => 'deleted',
+		'enablecolumns' => array(
+			'disabled' => 'hidden',
+			'starttime' => 'starttime',
+			'endtime' => 'endtime',
+		),
+		'searchFields' => 'title,tooltip_title',
+		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('go_maps_ext') . 'Resources/Public/Icons/tx_gomapsext_domain_model_map.png'
+	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
 		                          class, width, height, zoom, zoom_min, zoom_max, addresses, kml_url, kml_local, show_route,
@@ -35,7 +35,7 @@ return array(
 		                          pan_control, scale_control, streetview_control, zoom_control, zoom_control_type,
 		                          map_type_control, map_types, styled_map_name, styled_map_code',
 	),
-	'types' => array (
+	'types' => array(
 		'0' => array('showitem' => 'title, tooltip_title, class, width, height, zoom;;3, addresses, kml_url;;1,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display,
 					show_categories,scroll_zoom, draggable, double_click_zoom, marker_cluster;;2, marker_search, default_type,
@@ -186,24 +186,24 @@ return array(
 				'eval' => 'int'
 			),
 		),
-        'zoom_min' => array(
-            'exclude' => 1,
-            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_min',
-            'config' => array(
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ),
-        ),
-        'zoom_max' => array(
-            'exclude' => 1,
-            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_max',
-            'config' => array(
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
-            ),
-        ),
+		'zoom_min' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_min',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			),
+		),
+		'zoom_max' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_max',
+			'config' => array(
+				'type' => 'input',
+				'size' => 4,
+				'eval' => 'int'
+			),
+		),
 		'addresses' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.addresses',
@@ -222,19 +222,19 @@ return array(
 					'_PADDING' => 4,
 					'_VERTICAL' => 0,
 					'_DISTANCE' => 2,
-                    'suggest' => array(
-                        'type' => 'suggest'
-                    ),
+					'suggest' => array(
+						'type' => 'suggest'
+					),
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
-                        'module' => array(
-                            'name' => 'wizard_edit',
-                        ),
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-						),
+					),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
@@ -243,10 +243,10 @@ return array(
 							'table' => 'tx_gomapsext_domain_model_address',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
-							),
-                        'module' => array(
-                            'name' => 'wizard_add',
-                        ),
+						),
+						'module' => array(
+							'name' => 'wizard_add',
+						),
 					),
 				),
 			),
@@ -277,14 +277,14 @@ return array(
 				'default' => 0
 			),
 		),
-        'show_categories' => array(
-            'exclude' => 1,
-            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_categories',
-            'config' => array(
-                'type' => 'check',
-                'default' => 0
-            ),
-        ),
+		'show_categories' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_categories',
+			'config' => array(
+				'type' => 'check',
+				'default' => 0
+			),
+		),
 		'scroll_zoom' => array(
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.scroll_zoom',
@@ -428,7 +428,7 @@ return array(
 				'default' => '0,1,2',
 				'maxitems' => 5,
 				'eval' => '',
-				
+
 			),
 		),
 		'show_route' => array(
