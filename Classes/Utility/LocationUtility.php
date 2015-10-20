@@ -39,7 +39,7 @@ class LocationUtility {
 	 * Renders the Google map.
 	 *
 	 * @param array $PA
-	 * @param t3lib_TCEforms $pObj
+	 * @param \TYPO3\CMS\Backend\Form\FormEngine $pObj
 	 * @return string
 	 */
 	public function render(array &$PA, $pObj) {
