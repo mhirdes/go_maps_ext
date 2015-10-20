@@ -15,31 +15,20 @@ $EM_CONF[$_EXTKEY] = array (
 	'description' => 'Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route,
 	                  images for markers, style maps, KML, categories, responsive and many more.',
 	'category' => 'plugin',
-	'shy' => 0,
-	'version' => '1.6.0',
-	'dependencies' => 'extbase,fluid',
-	'conflicts' => '',
-	'priority' => '',
-	'loadOrder' => '',
-	'module' => '',
+	'version' => '1.8.0',
 	'state' => 'stable',
 	'uploadfolder' => 1,
 	'createDirs' => 'uploads/tx_gomapsext',
 	'modify_tables' => '',
 	'clearcacheonload' => 1,
-	'lockType' => '',
 	'author' => 'Marc Hirdes',
 	'author_email' => 'Marc_Hirdes@gmx.de',
 	'author_company' => 'clickstorm GmbH',
-	'CGLcompliance' => NULL,
-	'CGLcompliance_note' => NULL,
 	'constraints' => 
 	array (
 		'depends' => 
 		array (
-			'extbase' => '6.2',
-			'fluid' => '6.2',
-			'typo3' => '6.2.0-7.9.99',
+			'typo3' => '6.2.0-7.6.99',
 		),
 		'conflicts' => 
 		array (

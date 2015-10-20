@@ -1,5 +1,8 @@
 # cat=basic; type=boolean; label = Use jQuery Library from Extension
 include_library = 0
 
+# cat=basic; type=boolean; label = Include JS from extension manually
+include_manually = 0
+
 # cat=basic; type=boolean; label = Add JavaScript to Footer
 footerJS = 1

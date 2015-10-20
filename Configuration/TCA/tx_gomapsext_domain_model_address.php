@@ -158,7 +158,9 @@ return array(
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
+						'module' => array(
+							'name' => 'wizard_edit',
+						),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
@@ -171,7 +173,9 @@ return array(
 							'table' => 'tx_gomapsext_domain_model_category',
 							'setValue' => 'prepend'
 						),
-						'script' => 'wizard_add.php',
+						'module' => array(
+							'name' => 'wizard_add'
+						)
 					),
 				),
 			),
@@ -309,7 +313,9 @@ return array(
 						'icon' => 'wizard_rte2.gif',
 						'notNewRecords'=> 1,
 						'RTEonly' => 1,
-						'script' => 'wizard_rte.php',
+						'module' => array(
+							'name' => 'wizard_rte'
+						),
 						'title' => 'LLL:EXT:cms/locallang_ttc.xlf:bodytext.W.RTE',
 						'type' => 'script'
 					)
@@ -366,5 +372,3 @@ return array(
 		),
 	),
 );
-
-?>

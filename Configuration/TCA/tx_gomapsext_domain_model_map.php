@@ -222,10 +222,15 @@ return array(
 					'_PADDING' => 4,
 					'_VERTICAL' => 0,
 					'_DISTANCE' => 2,
+                    'suggest' => array(
+                        'type' => 'suggest'
+                    ),
 					'edit' => array(
 						'type' => 'popup',
 						'title' => 'Edit',
-						'script' => 'wizard_edit.php',
+                        'module' => array(
+                            'name' => 'wizard_edit',
+                        ),
 						'icon' => 'edit2.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
@@ -239,7 +244,9 @@ return array(
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
 							),
-						'script' => 'wizard_add.php',
+                        'module' => array(
+                            'name' => 'wizard_add',
+                        ),
 					),
 				),
 			),
@@ -487,19 +494,7 @@ return array(
 				'type' => 'text',
 				'cols' => 40,
 				'rows' => 15,
-				'eval' => 'trim',
-				'wizards' => array(
-					'_POSITION' => 'right',
-					'_PADDING' => 4,
-					'_VERTICAL' => 0,
-					'_DISTANCE' => 2,
-					'link' => array(
-						'type' => 'popup',
-						'icon' => 'helpbubble.gif',
-						'script' => 'gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html',
-						'params' => array(),
-					),
-				),
+				'eval' => 'trim'
 			),
 		),
 	),

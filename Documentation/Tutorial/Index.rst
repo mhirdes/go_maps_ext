@@ -8,7 +8,7 @@ Tutorial
 
 #. Install the Extension.
 
-#. Check if the JavaScript library should be load from the extension.
+#. Check in the Extension Manager if the JavaScript library should be load from the extension.
 
 #. Include the TypoScript from go\_maps\_ext.
     |img-7| |img-8|

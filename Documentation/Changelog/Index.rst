@@ -20,10 +20,26 @@ ChangeLog
 .. container:: table-row
 
    Version
+         1.8.0
+
+   Changes
+         Compatibility TYPO3 > 7.5, suggest wizard
+
+.. container:: table-row
+
+   Version
+         1.7.0
+
+   Changes
+         Compatibility TYPO3 > 7.4, optional JS, bugfixes
+
+.. container:: table-row
+
+   Version
          1.6.0
 
    Changes
-         Compability TYPO3 > 7.2, min- and max zoom, responsive center update
+         Compatibility TYPO3 > 7.2, min- and max zoom, responsive center update
 
 .. container:: table-row
 
@@ -31,7 +47,7 @@ ChangeLog
          1.5.0
 
    Changes
-         Compability TYPO3 > 7.0, library path now in TS, respect scheme
+         Compatibility TYPO3 > 7.0, library path now in TS, respect scheme
 
 .. container:: table-row
 
@@ -39,7 +55,7 @@ ChangeLog
          1.4.0
    
    Changes
-         Compability TYPO3 > 6.0, js to footer
+         Compatibility TYPO3 > 6.0, js to footer
 
 
 .. container:: table-row

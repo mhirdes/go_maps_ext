@@ -38,19 +38,12 @@ class tx_gomapsext_tca {
 	 * @param t3lib_TCEforms $pObj
 	 * @return string
 	 */
-	public function render(array &$PA, \TYPO3\CMS\Backend\Form\FormEngine $pObj) {
-		$version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
+	public function render(array &$PA, $pObj) {
+        $version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
         $settings = $this->loadTS($PA['row']['pid']);
 		$googleMapsLibrary =  $settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary'] ?
                                 htmlentities($settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary']) :
                                 '//maps.google.com/maps/api/js?v=3.17&amp;sensor=false';
-		if ($version < 4006000) {
-			$PA['parameters'] = array(
-				'latitude' => 'latitude',
-				'longitude' => 'longitude',
-				'address' => 'address'
-			);
-		}
 
 		$out = array();
 		$latitude = (float) $PA['row'][$PA['parameters']['latitude']];
@@ -69,6 +62,8 @@ class tx_gomapsext_tca {
 		$latitudeField = $dataPrefix . '[' . $PA['parameters']['latitude'] . ']';
 		$longitudeField = $dataPrefix . '[' . $PA['parameters']['longitude'] . ']';
 		$addressField = $dataPrefix . '[' . $PA['parameters']['address'] . ']';
+
+
 
 		$updateJs = "TBE_EDITOR.fieldChanged('%s','%s','%s','%s');";
 		$updateLatitudeJs = sprintf($updateJs, $PA['table'], $PA['row']['uid'], $PA['parameters']['latitude'], $latitudeField);
@@ -99,13 +94,9 @@ TxClimbingSites.init = function() {
 		var lat = TxClimbingSites.marker.getPosition().lat().toFixed(6);
 		var lng = TxClimbingSites.marker.getPosition().lng().toFixed(6);
 
-		// Update visible fields
-		document[TBE_EDITOR.formname]['{$latitudeField}_hr'].value = lat;
-		document[TBE_EDITOR.formname]['{$longitudeField}_hr'].value = lng;
-
-		// Update hidden (real) fields
-		document[TBE_EDITOR.formname]['{$latitudeField}'].value = lat;
-		document[TBE_EDITOR.formname]['{$longitudeField}'].value = lng;
+        // update fields
+		TxClimbingSites.updateValue('{$latitudeField}', lat);
+        TxClimbingSites.updateValue('{$longitudeField}', lng);
 
 		// Update address
 		TxClimbingSites.reverseGeocode(TxClimbingSites.marker.getPosition().lat(), TxClimbingSites.marker.getPosition().lng());
@@ -115,18 +106,10 @@ TxClimbingSites.init = function() {
 		position.value = lat + "," + lng;
 		
 		// Tell TYPO3 that fields were updated
-		{$updateLatitudeJs}
-		{$updateLongitudeJs}
-		{$updateAddressJs}
+		TxClimbingSites.positionChanged();
 	});
 	TxClimbingSites.geocoder = new google.maps.Geocoder();
 
-	// Make sure to refresh Google Map if corresponding tab is not yet active
-	TxClimbingSites.tabPrefix = Ext.fly('{$mapId}').findParentNode('[id$="-DIV"]').id;
-	TxClimbingSites.tabPrefix = Ext.util.Format.substr(TxClimbingSites.tabPrefix, 0, TxClimbingSites.tabPrefix.length - 4);
-	if (Ext.fly(TxClimbingSites.tabPrefix + '-DIV').getStyle('display') == 'none') {
-		Ext.fly(TxClimbingSites.tabPrefix + '-MENU').on('click', TxClimbingSites.refreshMap);
-	}
 };
 
 TxClimbingSites.refreshMap = function() {
@@ -151,13 +134,9 @@ TxClimbingSites.codeAddress = function() {
 		TxClimbingSites.marker.setPosition(position);
 		
 		// Update visible fields
-		document[TBE_EDITOR.formname]['{$latitudeField}_hr'].value = lat;
-		document[TBE_EDITOR.formname]['{$longitudeField}_hr'].value = lng;
-				
-		// Update hidden (real) fields
-		document[TBE_EDITOR.formname]['{$latitudeField}'].value = lat;
-		document[TBE_EDITOR.formname]['{$longitudeField}'].value = lng;
-		
+		TxClimbingSites.updateValue('{$latitudeField}', lat);
+        TxClimbingSites.updateValue('{$longitudeField}', lng);
+
 		// Get Address
 		TxClimbingSites.reverseGeocode(lat, lng);
 	} else {
@@ -173,23 +152,34 @@ TxClimbingSites.codeAddress = function() {
 				TxClimbingSites.map.setCenter(results[0].geometry.location);
 				TxClimbingSites.marker.setPosition(results[0].geometry.location);
 				
-				// Update visible fields
-				document[TBE_EDITOR.formname]['{$latitudeField}_hr'].value = lat;
-				document[TBE_EDITOR.formname]['{$longitudeField}_hr'].value = lng;
-				document[TBE_EDITOR.formname]['{$addressField}_hr'].value = formatedAddress;
-				
-				// Update hidden (real) fields
-				document[TBE_EDITOR.formname]['{$latitudeField}'].value = lat;
-				document[TBE_EDITOR.formname]['{$longitudeField}'].value = lng;
-				document[TBE_EDITOR.formname]['{$addressField}'].value = formatedAddress;
+				// Update fields
+                TxClimbingSites.updateValue('{$latitudeField}', lat);
+                TxClimbingSites.updateValue('{$longitudeField}', lng);
+                TxClimbingSites.updateValue('{$addressField}', formatedAddress);
+
+                TxClimbingSites.positionChanged();
 			} else {
 				alert("Geocode was not successful for the following reason: " + status);
 			}
 		});
 	}
-	{$updateLatitudeJs}
-	{$updateLongitudeJs}
-	{$updateAddressJs}
+}
+
+TxClimbingSites.positionChanged = function() {
+    {$updateLatitudeJs}
+    {$updateLongitudeJs}
+    {$updateAddressJs}
+    TYPO3.FormEngine.Validation.validate();
+}
+
+TxClimbingSites.updateValue = function(fieldName, value) {
+    var version = {$version};
+    document[TBE_EDITOR.formname][fieldName].value = value;
+    if(version < 7005000) {
+        document[TBE_EDITOR.formname][fieldName + '_hr'].value = value;
+    } else {
+        TYPO3.jQuery('[data-formengine-input-name="' + fieldName + '"]').val(value);
+    }
 }
 
 TxClimbingSites.setMarker = function(lat, lng) {
@@ -209,8 +199,8 @@ TxClimbingSites.reverseGeocode = function(latitude, longitude) {
 	var latlng = new google.maps.LatLng(latitude, longitude);
 	TxClimbingSites.geocoder.geocode({'latLng': latlng}, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK && results[1]) {
-			document[TBE_EDITOR.formname]['{$addressField}'].value = results[1].formatted_address;
-			document[TBE_EDITOR.formname]['{$addressField}_hr'].value = results[1].formatted_address;
+		    TxClimbingSites.updateValue('{$addressField}', results[1].formatted_address);
+			TxClimbingSites.positionChanged();
 		}
 	});
 }
@@ -225,14 +215,12 @@ TxClimbingSites.convertAddress = function(addressOld) {
 			var lat = TxClimbingSites.marker.getPosition().lat().toFixed(6);
 			var lng = TxClimbingSites.marker.getPosition().lng().toFixed(6);
 
+            TxClimbingSites.updateValue('{$latitudeField}', lat);
+            TxClimbingSites.updateValue('{$longitudeField}', lng);
+
 			// Update visible fields
-			document[TBE_EDITOR.formname]['{$latitudeField}_hr'].value = lat;
-			document[TBE_EDITOR.formname]['{$longitudeField}_hr'].value = lng;
 			addressInput.value = addressOld;
 			
-			// Update hidden (real) fields
-			document[TBE_EDITOR.formname]['{$latitudeField}'].value = lat;
-			document[TBE_EDITOR.formname]['{$longitudeField}'].value = lng;
 		} else {
 			alert("Geocode was not successful for the following reason: " + status);
 		}
