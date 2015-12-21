@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-04-27T11:56:39Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-21T13:28:56Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -134,8 +134,8 @@
 			<target>Adressen</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.calc_route" approved="yes">
-			<source>Calc route</source>
-			<target>Benutzerdefinierte Route berechnen</target>
+			<source>Calc route form</source>
+			<target>Route berechnen Formular</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.class" approved="yes">
 			<source>Class</source>
@@ -245,6 +245,34 @@
 			<source>Record</source>
 			<target>Datensatz</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.additional" approved="yes">
+			<source>Additional</source>
+			<target>Zusätzliches</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.cluster" approved="yes">
+			<source>Cluster settings</source>
+			<target>Cluster Einstellungen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.container" approved="yes">
+			<source>Container</source>
+			<target>Container</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction" approved="yes">
+			<source>Interaction</source>
+			<target>Interaktionen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.kml" approved="yes">
+			<source>KML settings</source>
+			<target>KML Einstellungen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.size" approved="yes">
+			<source>Size</source>
+			<target>Maße</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom" approved="yes">
+			<source>Zoom settings</source>
+			<target>Zoom Einstellungen</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control" approved="yes">
 			<source>Pan control</source>
 			<target>Zeige Schwenksteuerung</target>
@@ -262,8 +290,8 @@
 			<target>Zeige Kategorieauswahl</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.show_route" approved="yes">
-			<source>Show route</source>
-			<target>Route anzeigen</target>
+			<source>Show particular route</source>
+			<target>Bestimmte Route anzeigen</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control" approved="yes">
 			<source>Streetview control</source>

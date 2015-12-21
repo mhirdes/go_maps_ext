@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2015-04-27T11:56:39Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2015-12-21T13:28:56Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -118,7 +118,7 @@
 			<target>Adresy</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.calc_route" approved="yes">
-			<source>Calc route</source>
+			<source>Calc route form</source>
 			<target>Wyznacz trasę</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.class" approved="yes">
@@ -246,7 +246,7 @@
 			<target>Przybliżanie rolką</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.show_route" approved="yes">
-			<source>Show route</source>
+			<source>Show particular route</source>
 			<target>Pokaż trasę</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control" approved="yes">

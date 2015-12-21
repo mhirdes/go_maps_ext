@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-04-27T11:56:39Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-21T13:28:56Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -103,7 +103,7 @@
 			<source>Addresses</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.calc_route">
-			<source>Calc route</source>
+			<source>Calc route form</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.class">
 			<source>Class</source>
@@ -186,6 +186,27 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.others">
 			<source>Record</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.additional">
+			<source>Additional</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.cluster">
+			<source>Cluster settings</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.container">
+			<source>Container</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction">
+			<source>Interaction</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.kml">
+			<source>KML settings</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.size">
+			<source>Size</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom">
+			<source>Zoom settings</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
 			<source>Pan control</source>
 		</trans-unit>
@@ -202,7 +223,7 @@
 			<source>Show Categories</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.show_route">
-			<source>Show route</source>
+			<source>Show particular route</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
 			<source>Streetview control</source>
