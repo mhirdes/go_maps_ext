@@ -34,20 +34,23 @@ return array(
                                   info_window_link, close_by_click, open_by_click',
 	),
 	'types' => array(
-		'0' => array('showitem' => 'title,configuration_map;;1,
+		'0' => array('showitem' => 'title,configuration_map;;data,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.style,
-					marker,image_size;;2, shadow, shadow_size;;3,
+					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.marker;marker,
+					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.shadow;shadow,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window,
-					info_window_content;;4;richtext[]:rte_transform[mode=ts_css|imgpath=uploads/tx_gomapsap/rte/], open_by_click, close_by_click, opened,
+					info_window_content;;link;richtext[]:rte_transform[mode=ts_css|imgpath=uploads/tx_gomapsap/rte/],
+					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.interaction;interaction,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.others,
-					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;5,categories')
+					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;time,categories')
 	),
 	'palettes' => array(
-		'1' => array('showitem' => 'latitude, longitude, address'),
-		'2' => array('showitem' => 'image_width, image_height'),
-		'3' => array('showitem' => 'shadow_width, shadow_height'),
-		'4' => array('showitem' => 'info_window_link'),
-		'5' => array('showitem' => 'starttime, endtime'),
+		'data' => array('showitem' => 'latitude, longitude, address'),
+		'interaction' => array('showitem' => 'open_by_click, close_by_click, opened'),
+		'link' => array('showitem' => 'info_window_link'),
+		'marker' => array('showitem' => 'marker, --linebreak--, image_size, image_width, image_height'),
+		'shadow' => array('showitem' => 'shadow, --linebreak--, shadow_size, shadow_width, shadow_height'),
+		'time' => array('showitem' => 'starttime, endtime'),
 	),
 	'columns' => array(
 		'sys_language_uid' => array(

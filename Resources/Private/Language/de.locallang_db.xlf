@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-21T13:28:56Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-21T13:40:31Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -88,6 +88,18 @@
 		<trans-unit id="tx_gomapsext_domain_model_address.others" approved="yes">
 			<source>Others</source>
 			<target>Sonstiges</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_address.palettes.interaction" approved="yes">
+			<source>Interaction</source>
+			<target>Interaktion</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_address.palettes.marker" approved="yes">
+			<source>Marker layout</source>
+			<target>Marker Aussehen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_address.palettes.shadow" approved="yes">
+			<source>Shadow layout</source>
+			<target>Schatten Aussehen</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.shadow" approved="yes">
 			<source>Shadow</source>
