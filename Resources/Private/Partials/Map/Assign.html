@@ -73,6 +73,7 @@
     gme.addresses = new Array();
     <f:for each="{addresses}" as="address" iteration="i">
         gme.addresses[{i.index}]  = <![CDATA[{]]>
+	        uid: {address.uid},
             title: '<gomapsext:escape>{address.title}</gomapsext:escape>',
             latitude: {address.latitude},
             longitude: {address.longitude},

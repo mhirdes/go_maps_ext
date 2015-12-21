@@ -267,13 +267,42 @@
                 }
             });
         }
+		// categories checkboxes
+	    jQuery('.gomapsext-cats INPUT').change(function () {
+		    var selectedCats = jQuery('.gomapsext-cats INPUT:checked').map(function () {
+			    return this.value;
+		    });
+		    setCategories(selectedCats);
+	    });
 
-        jQuery('.gomapsext-cats INPUT').change(function () {
-            var selectedCats = jQuery('.gomapsext-cats INPUT:checked').map(function () {
-                return this.value;
-            });
-            setCategories(selectedCats);
-        });
+	    // set Addresses
+	    var setAddresses = function (setAddresses) {
+		    jQuery.each(element.data("markers"), function (key, marker) {
+			    marker.setVisible(false);
+			    if (jQuery.inArray(marker.uid + "", setAddresses) != -1) {
+				    marker.setVisible(true);
+				    element.data("map").setCenter(marker.position);
+				    return true;
+			    }
+		    });
+		    element.data("map").setCenter();
+		    if (element.markerCluster) {
+			    element.markerCluster.repaint();
+		    }
+	    }
+
+	    var getAddresses = getURLParameter('tx_gomapsext_show\\[address\\]');
+	    if (getAddresses) {
+		    getAddresses = getAddresses.split(",");
+		    setAddresses(getAddresses);
+	    }
+
+	    jQuery('.gomapsext-addresses .js-address').click(function () {
+		    var selectedAddress = new Array(jQuery(this).attr('data-address'));
+		    setAddresses(selectedAddress);
+		    return false;
+	    });
+
 
         // trigger mapcreated on map
         element.trigger("mapcreated");
@@ -282,7 +311,8 @@
 
     // decode URL Parameter go_maps_ext[cat]
     function getURLParameter(name) {
-        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
+	    var uri = decodeURI(location.search);
+	    return (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(uri)||[,""])[1].replace(/\+/g, '%20')||null;
     }
 
     // add a point
@@ -402,6 +432,7 @@
         }
         ;
         marker.categories = pointDescription.categories.split(",");
+	    marker.uid = pointDescription.uid;
         element.data("markers").push(marker);
         element.data("bounds").extend(position);
     };
