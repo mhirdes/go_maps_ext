@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-04-27T11:59:48Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-21T14:45:31Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -85,6 +85,14 @@
 		<trans-unit id="scroll_zoom.description" approved="yes">
 			<source>Enables zoom with scroll wheel. </source>
 			<target>Aktiviert die Zoomkontrolle via Scrollrad.</target>
+		</trans-unit>
+		<trans-unit id="show_addresses.description" approved="yes">
+			<source>Displays a list with all addresses incl. a link. If you click the selected address will be centered.</source>
+			<target>Zeigt eine Liste mit allen Adressen inkl. Verlinkungen. Bei Klick wird die ausgewählte Adresse zentriert.</target>
+		</trans-unit>
+		<trans-unit id="show_categories.description" approved="yes">
+			<source>Displays for each category a checkbox. Only the selected categories will be shown.</source>
+			<target>Zeigt für jede Kategorie eine Checkbox an. Nur die ausgewählten Kategorien werden angezeigt.</target>
 		</trans-unit>
 		<trans-unit id="show_route.description" approved="yes">
 			<source>2 address records needed! Shows the route between the given points.</source>

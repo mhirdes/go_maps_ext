@@ -9,7 +9,7 @@
     <f:if condition="{map.showCategories}">
         <f:render partial="Map/Categories" arguments="{map:map, addresses:addresses, request:request, categories: categories}" />
     </f:if>
-	<f:if condition="2">
+	<f:if condition="{map.showAddresses}">
 		<f:render partial="Map/Addresses" arguments="{map:map, addresses:addresses, request:request, categories: categories}" />
 	</f:if>
 </f:section>

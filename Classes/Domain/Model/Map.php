@@ -123,6 +123,13 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	protected $kmlLocal = false;
 
 	/**
+	 * showAddresses
+	 *
+	 * @var boolean
+	 */
+	protected $showAddresses = false;
+
+	/**
 	 * showCategories
 	 *
 	 * @var boolean
@@ -585,6 +592,25 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	public function isKmlLocal() {
 		return $this->getKmlLocal();
+	}
+
+	/**
+	 * Returns the showAddresses
+	 *
+	 * @return boolean $showAddresses
+	 */
+	public function getShowAddresses() {
+		return $this->showAddresses;
+	}
+
+	/**
+	 * Sets the showAddresses
+	 *
+	 * @param boolean $showAddresses
+	 * @return void
+	 */
+	public function setShowAddresses($showAddresses) {
+		$this->showAddresses = $showAddresses;
 	}
 
 	/**

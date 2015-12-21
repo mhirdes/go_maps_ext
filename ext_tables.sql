@@ -73,6 +73,7 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	height varchar(11) DEFAULT '' NOT NULL,
 	zoom int(11) DEFAULT '0' NOT NULL,
 	addresses int(11) unsigned DEFAULT '0' NOT NULL,
+	show_addresses tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	show_categories tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	kml_url text NOT NULL,
 	kml_preserve_viewport tinyint(1) unsigned DEFAULT '0' NOT NULL,
