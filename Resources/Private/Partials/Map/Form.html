@@ -3,6 +3,7 @@
 	<form id="gme-{map.uid}-search" method="post">
 		<input type="text" name="sword" class="gme-sword" value="{request.sword}" />
 		<input type="submit" class="gme-submit" name="submitSearch" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submitSearch')}" />
+		<div class="error"><f:translate key="partials.map.form.error" /></div>
 	</form>
 </f:if>
 <f:form id="gme-{map.uid}-form" method="post">

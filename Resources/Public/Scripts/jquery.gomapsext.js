@@ -8,18 +8,17 @@
 	$.fn.gomapsext = function(gme) {
 		var element = $(this);
 
-		var Route = new Array();
-		var pointDescriptions = Array();
+		var Route = [];
 		var infoWindow = new google.maps.InfoWindow();
 		if(gme.mapSettings.CSSClass != '') {
-			element.addClass(gme.mapSettings.CSSClass)
+			element.addClass(gme.mapSettings.CSSClass);
 		}
 		if(gme.mapSettings.tooltipTitle != '') {
-			element.attr("title", gme.mapSettings.tooltipTitle)
+			element.attr("title", gme.mapSettings.tooltipTitle);
 		}
 		element.css("width", gme.mapSettings.width);
 		element.css("height", gme.mapSettings.height);
-		element.data("markers", Array());
+		element.data("markers", []);
 
 		// styled Map
 		if(gme.mapSettings.styledMapCode) {
@@ -34,7 +33,7 @@
 			var myMapType = new google.maps.StyledMapType(
 				myStyle,
 				styledMapOptions
-			)
+			);
 		}
 
 		// set map options
@@ -86,7 +85,7 @@
 					var place = jQuery(this).find("name").text();
 					var description = jQuery(this).find("description").text();
 					//store as JSON
-					var c = coords.split(",")
+					var c = coords.split(",");
 					var address = {
 						title: place,
 						latitude: c[1],
@@ -116,25 +115,27 @@
 		// Search
 		if(gme.mapSettings.markerSearch == 1) {
 			var myForm = jQuery('#' + gme.mapSettings.id + '-search');
+			myForm.find('.error').hide();
 			var searchIn = myForm.find('.gme-sword');
 			myForm.submit(function() {
 				var submitValue = jQuery(searchIn).val().toLowerCase();
 				var notFound = true;
-				for (var i = 0; i < gme.addresses.length; i++) {
-					jQuery.each(gme.addresses[i], function(index, val) {
+				jQuery.each(gme.addresses, function(i, address) {
+					jQuery.each(address, function(index, val) {
 						if(typeof val == "string" && (index == "title" || index == "infoWindowContent") && submitValue != "") {
 							if(val.toLowerCase().indexOf(submitValue) != -1) {
-								infoWindow.setContent(gme.addresses[i].infoWindowContent);
-								infoWindow.open(element.data("map"), element.data("markers")[i]);
+								if(element.data("markers")[i].infoWindow) {
+									element.data("markers")[i].infoWindow.open(element.data("map"), element.data("markers")[i]);
+								}
 								element.data("map").setCenter(element.data("markers")[i].getPosition());
 								gme.infoWindow = element.data("markers")[i].getPosition();
 								notFound = false;
 							}
 						}
 					});
-				}
+				});
 				if(notFound) {
-					alert('Die Suche liefert keine Ergebnisse.');
+					myForm.find('.error').show();
 				}
 				return false;
 			});
@@ -156,7 +157,7 @@
 			var panelHtml = jQuery('<div id="dPanel-' + gme.mapSettings.id + '"><\/div>');
 			panelHtml.insertAfter(element);
 			var directionsService = new google.maps.DirectionsService();
-			directionsDisplay = new google.maps.DirectionsRenderer();
+			var directionsDisplay = new google.maps.DirectionsRenderer();
 			var renderRoute = function($start, $end, $travelMode, $unitSystem) {
 				directionsDisplay.setMap(element.data("map"));
 				directionsDisplay.setPanel(document.getElementById("dPanel-" + gme.mapSettings.id));
@@ -362,27 +363,30 @@
 
 	// insert the point on the map
 	function setMapPoint(pointDescription, Route, element, infoWindow, position, gme) {
+		var marker;
 		if(pointDescription.marker != "") {
+			var Icon;
 			if(pointDescription.imageSize == 1) {
-				var Icon = new google.maps.MarkerImage(pointDescription.marker,
+				Icon = new google.maps.MarkerImage(pointDescription.marker,
 					new google.maps.Size(pointDescription.imageWidth, pointDescription.imageHeight),
 					new google.maps.Point(0, 0));
 				var Shape = {type: 'rectangle', coord: [0, 0, pointDescription.imageWidth, 0, pointDescription.imageWidth, pointDescription.imageHeight, 0, pointDescription.imageHeight, 0, 0]};
 			} else {
-				var Icon = new google.maps.MarkerImage(pointDescription.marker);
+				Icon = new google.maps.MarkerImage(pointDescription.marker);
 			}
 			if(pointDescription.shadow != "") {
+				var Shadow;
 				if(pointDescription.shadowSize == 1) {
-					var Shadow = new google.maps.MarkerImage(
+					Shadow = new google.maps.MarkerImage(
 						pointDescription.shadow,
 						new google.maps.Size(pointDescription.shadowWidth, pointDescription.shadowHeight),
 						new google.maps.Point(0, 0),
 						new google.maps.Point((pointDescription.imageWidth / 2), pointDescription.imageHeight)
 					);
 				} else {
-					var Shadow = new google.maps.MarkerImage(pointDescription.shadow);
+					Shadow = new google.maps.MarkerImage(pointDescription.shadow);
 				}
-				var marker = new google.maps.Marker({
+				marker = new google.maps.Marker({
 					position: position,
 					map: element.data("map"),
 					icon: Icon,
@@ -390,7 +394,7 @@
 					shadow: Shadow
 				});
 			} else {
-				var marker = new google.maps.Marker({
+				marker = new google.maps.Marker({
 					position: position,
 					map: element.data("map"),
 					icon: Icon,
@@ -398,7 +402,7 @@
 				});
 			}
 		} else {
-			var marker = new google.maps.Marker({position: position, map: element.data("map")});
+			marker = new google.maps.Marker({position: position, map: element.data("map")});
 		}
 
 		if(gme.mapSettings.markerCluster == 1) {
@@ -411,11 +415,6 @@
 			});
 		}
 
-		var closeInfoWindows = function() {
-			infoWindowsArray.each(function(index, infoWindow) {
-				infoWindow.close();
-			});
-		};
 		if(pointDescription.infoWindowContent != "" || pointDescription.infoWindowLink > 0) {
 			var infoWindowContent = pointDescription.infoWindowContent;
 			if(pointDescription.infoWindowLink > 0) {
