@@ -134,9 +134,7 @@
 						}
 					});
 				});
-				if(notFound) {
-					myForm.find('.error').show();
-				}
+				myForm.find('.error').toggle(notFound);
 				return false;
 			});
 		}

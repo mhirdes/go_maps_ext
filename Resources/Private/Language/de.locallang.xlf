@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2013-11-21T11:33:06Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-23T14:21:42Z">
 		<header>
 			<description>Language labels for the Google Maps API Extbase extension in the FRONTEND</description>
 			<authorName>Marc Hirdes</authorName>
@@ -8,55 +8,59 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0" approved="yes" xml:space="preserve">
+		<trans-unit id="partials.map.form.error" approved="yes">
+			<source>No addresses were found.</source>
+			<target>Es konnten keine Adressen gefunden werden.</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0" approved="yes">
 			<source>Driving</source>
 			<target>Mit dem Auto</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2" approved="yes">
 			<source>Bicycling</source>
 			<target>Mit dem Fahrrad</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3" approved="yes">
 			<source>Transit</source>
 			<target>Öffentliche Verkehrsmittel</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4" approved="yes">
 			<source>Walking</source>
 			<target>Zu Fuß</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2" approved="yes">
 			<source>km</source>
 			<target>km</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3" approved="yes">
 			<source>mil</source>
 			<target>mil</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_flexform_settings" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_flexform_settings" approved="yes">
 			<source>Settings</source>
 			<target>Einstellungen</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_flexform_settings.map" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_flexform_settings.map" approved="yes">
 			<source>Map</source>
 			<target>Karte</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.alert" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.alert" approved="yes">
 			<source>Please enter a valid address.</source>
 			<target>Bitte geben Sie eine gültige Adresse ein.</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText" approved="yes">
 			<source>Calculate Route</source>
 			<target>Route berechnen</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults" approved="yes">
 			<source>No results found.</source>
 			<target>Die Suche liefert keine Ergebnisse.</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.submit" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.submit" approved="yes">
 			<source>Calculate Route</source>
 			<target>Route berechnen</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" approved="yes" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" approved="yes">
 			<source>Search</source>
 			<target>Suchen</target>
 		</trans-unit>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-21T11:33:06Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-23T14:21:42Z">
 		<header>
 			<description>Language labels for the Google Maps API Extbase extension in the FRONTEND</description>
 			<authorName>Marc Hirdes</authorName>
@@ -8,169 +8,172 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-		<trans-unit id="tx_gomapsext_domain_model_address" xml:space="preserve">
+		<trans-unit id="partials.map.form.error">
+			<source>No addresses were found.</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_address">
 			<source>Google Maps Address</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.address" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.address">
 			<source>address</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.close_by_click" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.close_by_click">
 			<source>closeByClick</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.configuration_map" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.configuration_map">
 			<source>configurationMap</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_height" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.image_height">
 			<source>imageHeight</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_size" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.image_size">
 			<source>imageSize</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_width" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.image_width">
 			<source>imageWidth</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_content" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.info_window_content">
 			<source>infoWindowContent</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link">
 			<source>infoWindowLink</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.latitude" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.latitude">
 			<source>latitude</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.longitude" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.longitude">
 			<source>longitude</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.marker" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.marker">
 			<source>marker</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.open_by_click" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.open_by_click">
 			<source>openByClick</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.shadow">
 			<source>shadow</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_height" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.shadow_height">
 			<source>shadowHeight</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_size" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.shadow_size">
 			<source>shadowSize</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_width" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.shadow_width">
 			<source>shadowWidth</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.title" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_address.title">
 			<source>title</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map">
 			<source>Map</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.addresses" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.addresses">
 			<source>addresses</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.calc_route" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.calc_route">
 			<source>calcRoute</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.class" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.class">
 			<source>class</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.default_type" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.default_type">
 			<source>defaultType</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.double_click_zoom" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.double_click_zoom">
 			<source>doubleClickZoom</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.draggable" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.draggable">
 			<source>draggable</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.height" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.height">
 			<source>in px</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.kml_url" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.kml_url">
 			<source>kmlUrl</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_type_control" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.map_type_control">
 			<source>mapTypeControl</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.map_types">
 			<source>mapTypes</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.pan_control" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
 			<source>panControl</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.scale_control" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.scale_control">
 			<source>scaleControl</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.scroll_zoom" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.scroll_zoom">
 			<source>scrollZoom</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.show_route" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.show_route">
 			<source>showRoute</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
 			<source>streetviewControl</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code">
 			<source>styledMapCode</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name">
 			<source>styledMapName</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.title" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.title">
 			<source>Title* (without space character, special character!)</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tooltip_title" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.tooltip_title">
 			<source>tooltipTitle</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0">
 			<source>Driving</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2">
 			<source>Bicycling</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3">
 			<source>Transit</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4">
 			<source>Walking</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2">
 			<source>km</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3">
 			<source>mil</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.width" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.width">
 			<source>in px</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.zoom">
 			<source>zoom</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control">
 			<source>zoomControl</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type">
 			<source>zoomControlType</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_flexform_settings" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_flexform_settings">
 			<source>Settings</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_flexform_settings.map" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_flexform_settings.map">
 			<source>Map</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.alert" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.alert">
 			<source>Please enter a valid address.</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText">
 			<source>Calculate Route</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults">
 			<source>No results found.</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.submit" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.submit">
 			<source>Calculate Route</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" xml:space="preserve">
+		<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch">
 			<source>Search</source>
 		</trans-unit>
 		</body>
