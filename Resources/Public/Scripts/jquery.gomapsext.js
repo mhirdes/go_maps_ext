@@ -2,7 +2,6 @@
  * Created by mhirdes on 27.11.13.
  */
 (function($) {
-	// jQuery Plugin
 
 	// create a new Google Map
 	$.fn.gomapsext = function(gme) {
@@ -20,21 +19,6 @@
 		element.css("height", gme.mapSettings.height);
 		element.data("markers", []);
 
-		// styled Map
-		if(gme.mapSettings.styledMapCode) {
-			var myStyle = gme.mapSettings.styledMapCode;
-		}
-
-		if(gme.mapSettings.styledMapName) {
-			var styledMapOptions = {
-				name: gme.mapSettings.styledMapName,
-				alt: gme.mapSettings.tooltipTitle
-			};
-			var myMapType = new google.maps.StyledMapType(
-				myStyle,
-				styledMapOptions
-			);
-		}
 
 		// set map options
 		var myOptions = {
@@ -58,7 +42,17 @@
 		element.data("map", new google.maps.Map(document.getElementById(gme.mapSettings.id), myOptions));
 		element.data("bounds", new google.maps.LatLngBounds());
 
+		// styled map
 		if(gme.mapSettings.styledMapName) {
+			var myStyle = gme.mapSettings.styledMapCode;
+			var styledMapOptions = {
+				name: gme.mapSettings.styledMapName,
+				alt: gme.mapSettings.tooltipTitle
+			};
+			var myMapType = new google.maps.StyledMapType(
+				myStyle,
+				styledMapOptions
+			);
 			element.data("map").mapTypes.set(gme.mapSettings.styledMapName, myMapType);
 		}
 
@@ -74,16 +68,14 @@
 
 		// KML import local
 		if(gme.mapSettings.kmlUrl != '' && gme.mapSettings.kmlLocal == 1) {
-			jQuery.get(gme.mapSettings.kmlUrl, function(data) {
-
-				html = "";
+			$.get(gme.mapSettings.kmlUrl, function(data) {
 
 				//loop through placemarks tags
-				jQuery(data).find("Placemark").each(function(index, value) {
+				$(data).find("Placemark").each(function() {
 					//get coordinates and place name
-					var coords = jQuery(this).find("coordinates").text();
-					var place = jQuery(this).find("name").text();
-					var description = jQuery(this).find("description").text();
+					var coords = $(this).find("coordinates").text();
+					var place = $(this).find("name").text();
+					var description = $(this).find("description").text();
 					//store as JSON
 					var c = coords.split(",");
 					var address = {
@@ -114,14 +106,14 @@
 
 		// Search
 		if(gme.mapSettings.markerSearch == 1) {
-			var myForm = jQuery('#' + gme.mapSettings.id + '-search');
+			var myForm = $('#' + gme.mapSettings.id + '-search');
 			myForm.find('.error').hide();
 			var searchIn = myForm.find('.gme-sword');
 			myForm.submit(function() {
-				var submitValue = jQuery(searchIn).val().toLowerCase();
+				var submitValue = $(searchIn).val().toLowerCase();
 				var notFound = true;
-				jQuery.each(gme.addresses, function(i, address) {
-					jQuery.each(address, function(index, val) {
+				$.each(gme.addresses, function(i, address) {
+					$.each(address, function(index, val) {
 						if(typeof val == "string" && (index == "title" || index == "infoWindowContent") && submitValue != "") {
 							if(val.toLowerCase().indexOf(submitValue) != -1) {
 								if(element.data("markers")[i].infoWindow) {
@@ -143,16 +135,16 @@
 		if(gme.mapSettings.showRoute == 0) {
 			element.data("geocoder", new google.maps.Geocoder());
 			if(element.data("geocoder")) {
-				for (var i = 0; i < gme.addresses.length; i++) {
-					addMapPoint(gme.addresses[i], Route, element, infoWindow, gme);
-				}
+				$.each(gme.addresses, function(index, address) {
+					addMapPoint(address, Route, element, infoWindow, gme);
+				});
 
 			}
 		}
 
 		// init Route function
 		if(gme.mapSettings.showRoute == 1 || gme.mapSettings.calcRoute == 1) {
-			var panelHtml = jQuery('<div id="dPanel-' + gme.mapSettings.id + '"><\/div>');
+			var panelHtml = $('<div id="dPanel-' + gme.mapSettings.id + '"><\/div>');
 			panelHtml.insertAfter(element);
 			var directionsService = new google.maps.DirectionsService();
 			var directionsDisplay = new google.maps.DirectionsRenderer();
@@ -185,7 +177,7 @@
 
 		// show route from frontend
 		if(gme.mapSettings.showForm == 1) {
-			var mapForm = jQuery('#' + gme.mapSettings.id + '-form');
+			var mapForm = $('#' + gme.mapSettings.id + '-form');
 
 			mapForm.submit(function() {
 				var formStartAddress = mapForm.find('.gme-saddress').val();
@@ -235,10 +227,10 @@
 
 		// categories checkboxes
 		var setCategories = function(selectedCats) {
-			jQuery.each(element.data("markers"), function(key, marker) {
+			$.each(element.data("markers"), function(key, marker) {
 				marker.setVisible(false);
-				jQuery.each(marker.categories, function(keyM, category) {
-					if(jQuery.inArray(category, selectedCats) != -1) {
+				$.each(marker.categories, function(keyM, category) {
+					if($.inArray(category, selectedCats) != -1) {
 						marker.setVisible(true);
 						return true;
 					}
@@ -247,31 +239,31 @@
 			if(element.markerCluster) {
 				element.markerCluster.repaint();
 			}
-		}
+		};
 
 		// set categories
 		var getCats = getURLParameter('tx_gomapsext_show\\[cat\\]');
 		if(getCats) {
 			getCats = getCats.split(",");
 			setCategories(getCats);
-			jQuery('.gomapsext-cats INPUT').each(function(key, checkbox) {
-				if(jQuery.inArray(jQuery(checkbox).val(), getCats) != -1) {
-					jQuery(checkbox).attr('checked', true);
+			$('.gomapsext-cats INPUT').each(function(key, checkbox) {
+				if($.inArray($(checkbox).val(), getCats) != -1) {
+					$(checkbox).attr('checked', true);
 					return true;
 				}
 			});
 		}
 		// categories checkboxes
-		jQuery('.gomapsext-cats INPUT').change(function() {
-			var selectedCats = jQuery('.gomapsext-cats INPUT:checked').map(function() {
+		$('.gomapsext-cats INPUT').change(function() {
+			var selectedCats = $('.gomapsext-cats INPUT:checked').map(function() {
 				return this.value;
 			});
 			setCategories(selectedCats);
 		});
 
 
-		jQuery('.gomapsext-addresses .js-address').click(function() {
-			var selectedAddress = new Array(jQuery(this).attr('data-address'));
+		$('.gomapsext-addresses .js-address').click(function() {
+			var selectedAddress = [$(this).attr('data-address')];
 			focusAddress(selectedAddress, element, gme);
 			return false;
 		});
@@ -307,8 +299,8 @@
 	}
 
 	function focusAddress(addressUid, element, gme) {
-		jQuery.each(element.data("markers"), function(key, marker) {
-			if(jQuery.inArray(marker.uid + "", addressUid) != -1) {
+		$.each(element.data("markers"), function(key, marker) {
+			if($.inArray(marker.uid + "", addressUid) != -1) {
 				element.data("center", marker.position);
 				if(marker.infoWindow) {
 					marker.infoWindow.open(element.data("map"), marker);
@@ -325,7 +317,7 @@
 	// decode URL Parameter go_maps_ext[cat]
 	function getURLParameter(name) {
 		var uri = decodeURI(location.search);
-		return (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(uri) || [, ""])[1].replace(/\+/g, '%20') || null;
+		return (new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(uri) || ["",""])[1].replace(/\+/g, '%20') || null;
 	}
 
 	// get the travel mode
@@ -466,7 +458,7 @@
 	function refreshMap(element, gme) {
 		if(gme.mapSettings.zoom > 0 || gme.addresses.length == 1) {
 			google.maps.event.addListener(element.data("map"), "zoom_changed", function() {
-				var zoomChangeBoundsListener = google.maps.event.addListener(element.data("map"), "bounds_changed", function(event) {
+				var zoomChangeBoundsListener = google.maps.event.addListener(element.data("map"), "bounds_changed", function() {
 					if(this.initZoom == 1) {
 						this.setZoom((gme.mapSettings.zoom > 0) ? gme.mapSettings.zoom : gme.mapSettings.defaultZoom);
 						this.initZoom = 0;
@@ -498,4 +490,4 @@
 			});
 		}
 	}
-})(jQuery);
+}(jQuery));
