@@ -310,7 +310,10 @@
 	function focusAddress(addressUid, element, gme) {
 		jQuery.each(element.data("markers"), function(key, marker) {
 			if(jQuery.inArray(marker.uid + "", addressUid) != -1) {
-				element.data("center", marker.position)
+				element.data("center", marker.position);
+				if(marker.infoWindow) {
+					marker.infoWindow.open(element.data("map"), marker);
+				}
 				refreshMap(element, gme);
 				return true;
 			}
@@ -452,6 +455,9 @@
 				});
 				gme.infoWindow = marker.getPosition();
 			}
+
+			infoWindow.setContent(infoWindowContent);
+			marker.infoWindow = infoWindow;
 		}
 		marker.categories = pointDescription.categories.split(",");
 		marker.uid = pointDescription.uid;
