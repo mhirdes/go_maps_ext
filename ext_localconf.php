@@ -29,4 +29,7 @@ $TYPO3_CONF_VARS['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domai
 	'icon' => true
 );
 
+// here we register "tx_gomapsext_double6"
+$TYPO3_CONF_VARS['SC_OPTIONS']['tce']['formevals']['tx_gomapsext_double6'] = 'EXT:cs_templates/class.tx_gomapsext_double6.php';
+
 ?>

@@ -202,7 +202,7 @@ return array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'eval' => 'trim,required,tx_gomapsext_double6'
 			),
 		),
 		'longitude' => array(
@@ -211,7 +211,7 @@ return array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required'
+				'eval' => 'trim,required,tx_gomapsext_double6'
 			),
 		),
 		'address' => array(
