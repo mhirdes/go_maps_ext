@@ -90,8 +90,16 @@
             </f:if>
             imageWidth: {address.imageWidth},
             imageHeight: {address.imageHeight},
-            shadow: '{f:if(condition:"{address.shadow}" then:"uploads/tx_gomapsext/{address.shadow}")}',
-            shadowSize: {f:if(condition:"{address.shadowSize}", then:"1", else:"0")},
+            <f:if condition="{address.shadowSize}">
+                <f:then>
+                    shadow: '{f:if(condition:"{address.shadow}",then:"{f:uri.image(src:'uploads/tx_gomapsext/{address.shadow}',width:'{address.shadowWidth}',height:'{address.shadowHeight}c')}")}',
+                    shadowSize: 1,
+                </f:then>
+                <f:else>
+                    shadow: '{f:if(condition:"{address.shadow}" then:"uploads/tx_gomapsext/{address.shadow}")}',
+                    shadowSize: 0,
+                </f:else>
+            </f:if>
             shadowWidth: {address.shadowWidth},
             shadowHeight: {address.shadowHeight},
             infoWindowContent: '<gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape>',
