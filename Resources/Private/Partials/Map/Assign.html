@@ -78,8 +78,16 @@
             latitude: {address.latitude},
             longitude: {address.longitude},
             address: '<gomapsext:escape>{address.address}</gomapsext:escape>',
-            marker: '{f:if(condition:"{address.marker}" then:"uploads/tx_gomapsext/{address.marker}")}',
-            imageSize: {f:if(condition:"{address.imageSize}", then:"1", else:"0")},
+            <f:if condition="{address.imageSize}">
+                <f:then>
+                    marker: '{f:if(condition:"{address.marker}",then:"{f:uri.image(src:'uploads/tx_gomapsext/{address.marker}',width:'{address.imageWidth}',height:'{address.imageHeight}c')}")}',
+                    imageSize: 1,
+                </f:then>
+                <f:else>
+                    marker: '{f:if(condition:"{address.marker}" then:"uploads/tx_gomapsext/{address.marker}")}',
+                    imageSize: 0,
+                </f:else>
+            </f:if>
             imageWidth: {address.imageWidth},
             imageHeight: {address.imageHeight},
             shadow: '{f:if(condition:"{address.shadow}" then:"uploads/tx_gomapsext/{address.shadow}")}',
