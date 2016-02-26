@@ -121,11 +121,12 @@
 					$.each(address, function(index, val) {
 						if(typeof val == "string" && (index == "title" || index == "infoWindowContent") && submitValue != "") {
 							if(val.toLowerCase().indexOf(submitValue) != -1) {
-								if($element.data("markers")[i].infoWindow) {
-									$element.data("markers")[i].infoWindow.open($element.data("map"), $element.data("markers")[i]);
-								}
-								$element.data("map").setCenter($element.data("markers")[i].getPosition());
-								gme.infoWindow = $element.data("markers")[i].getPosition();
+                                focusAddress($element.data("markers")[i].uid, $element, gme);
+//								if($element.data("markers")[i].infoWindow) {
+//									$element.data("markers")[i].infoWindow.open($element.data("map"), $element.data("markers")[i]);
+//								}
+//								$element.data("map").setCenter($element.data("markers")[i].getPosition());
+//								gme.infoWindow = $element.data("markers")[i].getPosition();
 								notFound = false;
 							}
 						}
@@ -314,10 +315,11 @@
 
 	function focusAddress(addressUid, $element, gme) {
 		$.each($element.data("markers"), function(key, marker) {
-			if($.inArray(marker.uid + "", addressUid) != -1) {
+			if(marker.uid == addressUid) {
 				$element.data("center", marker.position);
 				if(marker.infoWindow) {
-					marker.infoWindow.open($element.data("map"), marker);
+                    marker.infoWindow.setContent(marker.infoWindowContent);
+                    marker.infoWindow.open($element.data("map"), marker);
 				}
 				refreshMap($element, gme);
 				return true;
@@ -460,6 +462,7 @@
 			}
 
 			infoWindow.setContent(infoWindowContent);
+			marker.infoWindowContent = infoWindowContent;
 			marker.infoWindow = infoWindow;
 		}
 		marker.categories = pointDescription.categories.split(",");
