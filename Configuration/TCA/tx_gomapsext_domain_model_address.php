@@ -152,7 +152,6 @@ return array(
 				'size' => 10,
 				'autoSizeMax' => 30,
 				'maxitems' => 9999,
-				'multiple' => 1,
 				'wizards' => array(
 					'_POSITION' => 'right',
 					'_PADDING' => 4,

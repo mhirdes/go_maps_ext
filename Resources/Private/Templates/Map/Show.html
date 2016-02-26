@@ -1,15 +1,20 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
 <f:layout name="Default" />
 
-<f:section name="main">
+<!-- Keep the id and the js-classes -->
+<f:section name="Main">
     <f:if condition="{map.showForm}">
         <f:render partial="Map/Form" arguments="{map:map, request:request, addresses: addresses}"/>
     </f:if>
-    <div id="gme-{map.uid}" class="gme-map"> </div>
+    <div class="js-map" id="gme-{map.uid}"> </div>
     <f:render partial="Map/Assign" arguments="{request:request, map:map, settings:settings, addresses:addresses}" />
     <f:if condition="{map.showCategories}">
         <f:render partial="Map/Categories" arguments="{map:map, addresses:addresses, request:request, categories: categories}" />
     </f:if>
-	<f:if condition="{map.showAddresses}">
-		<f:render partial="Map/Addresses" arguments="{map:map, addresses:addresses, request:request, categories: categories}" />
-	</f:if>
+    <f:if condition="{map.showAddresses}">
+        <f:render partial="Map/Addresses" arguments="{map:map, addresses:addresses, request:request, categories: categories}" />
+    </f:if>
 </f:section>
+</div>

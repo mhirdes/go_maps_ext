@@ -1,16 +1,16 @@
 {namespace gomapsext=Clickstorm\GoMapsExt\ViewHelpers}
 <f:if condition="{map.markerSearch}">
 	<form id="gme-{map.uid}-search" method="post">
-		<input type="text" name="sword" class="gme-sword" value="{request.sword}" />
-		<input type="submit" class="gme-submit" name="submitSearch" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submitSearch')}" />
-		<div class="error"><f:translate key="partials.map.form.error" /></div>
+		<input type="text" name="sword" class="js-gme-sword" value="{request.sword}" />
+		<input type="submit" class="js-gme-submit" name="submitSearch" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submitSearch')}" />
+		<div class="js-gme-error"><f:translate key="partials.map.form.error" /></div>
 	</form>
 </f:if>
 <f:form id="gme-{map.uid}-form" method="post">
 	<f:if condition="{map.calcRoute}">
-		<f:form.textfield name="saddress" class="gme-saddress" value="{request.saddress}" />
+		<f:form.textfield name="saddress" class="js-gme-saddress" value="{request.saddress}" />
         <f:if condition="{f:count(subject:addresses)} > 1">
-            <select name="eaddress" class="gme-eaddress" value="{request.eaddress}">
+            <select name="eaddress" class="js-gme-eaddress" value="{request.eaddress}">
                 <f:for each="{addresses}" as="address" iteration="i">
                     <option value="{i.index}">{address.title}</option>
                 </f:for>
@@ -27,7 +27,7 @@
 			4:map.travelModes.4 == Walking
 			-->
 		</gomapsext:hideInFrontend>
-		<f:form.select name="travelmode" value="{f:if(condition:request.travelmode,then:request.travelmode,else:2)}" class="gme-travelmode" options="{0:map.travelModes.0, 3:map.travelModes.3, 4:map.travelModes.4}" size="1" />
+		<f:form.select name="travelmode" value="{f:if(condition:request.travelmode,then:request.travelmode,else:2)}" class="js-gme-travelmode" options="{0:map.travelModes.0, 3:map.travelModes.3, 4:map.travelModes.4}" size="1" />
 	</f:if>
 	<f:if condition="{map.unitSystem} == 1">
 		<gomapsext:hideInFrontend>
@@ -37,7 +37,7 @@
 			2:map.unitSystems.3 == Imperial (mil)
 			-->
 		</gomapsext:hideInFrontend>
-		<f:form.select name="unitsystem" value="{f:if(condition:request.unitsystem,then:request.unitsystem,else:2)}" class="gme-unitsystem" options="{map.unitSystems}" size="1" />
+		<f:form.select name="unitsystem" value="{f:if(condition:request.unitsystem,then:request.unitsystem,else:2)}" class="js-gme-unitsystem" options="{map.unitSystems}" size="1" />
 	</f:if>
-	<f:form.submit class="gme-submit" name="submit" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submit')}" />
+	<f:form.submit class="js-gme-submit" name="submit" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submit')}" />
 </f:form>

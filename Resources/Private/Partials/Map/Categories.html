@@ -1,8 +1,8 @@
-<ul class="gomapsext-cats">
+<ul class="gme-cats">
 	<f:for each="{categories}" as="name" key="uid">
 		<li>
-			<f:form.checkbox id="gomapsext-cat-{uid}" name="tx_csgomapsext_show[cat]" value="{uid}" title="{name}" />
-			<label for="gomapsext-cat-{uid}">{name}</label>
+			<f:form.checkbox id="gme-cat-{uid}" name="tx_csgomapsext_show[cat]" value="{uid}" class="js-gme-cat" title="{name}" />
+			<label for="gme-cat-{uid}">{name}</label>
 		</li>
 	</f:for>
 </ul>

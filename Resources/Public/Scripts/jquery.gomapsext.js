@@ -110,9 +110,9 @@
 		// Search
 		if(gme.mapSettings.markerSearch == 1) {
 			var $myForm = $('#' + gme.mapSettings.id + '-search'),
-                searchIn = $myForm.find('.gme-sword');
+                searchIn = $myForm.find('.js-gme-sword');
 
-            $myForm.find('.error').hide();
+            $myForm.find('.js-gme-error').hide();
 
             $myForm.submit(function() {
 				var submitValue = $(searchIn).val().toLowerCase();
@@ -131,7 +131,7 @@
 						}
 					});
 				});
-				$myForm.find('.error').toggle(notFound);
+				$myForm.find('.js-gme-error').toggle(notFound);
 				return false;
 			});
 		}
@@ -190,13 +190,13 @@
 			var $mapForm = $('#' + gme.mapSettings.id + '-form');
 
 			$mapForm.submit(function() {
-				var formStartAddress = $mapForm.find('.gme-saddress').val(),
-                    endAddressIndex = $mapForm.find('.gme-eaddress option:selected').val(),
+				var formStartAddress = $mapForm.find('.js-gme-saddress').val(),
+                    endAddressIndex = $mapForm.find('.js-gme-eaddress option:selected').val(),
                     formEndAddress = endAddressIndex ?
 					gme.addresses[parseInt(endAddressIndex)].address :
 					gme.addresses[0].address,
-                    formTravelMode = $mapForm.find('.gme-travelmode').val(),
-                    formUnitSystem = $mapForm.find('.gme-unitsystem').val();
+                    formTravelMode = $mapForm.find('.js-gme-travelmode').val(),
+                    formUnitSystem = $mapForm.find('.js-gme-unitsystem').val();
 
 				if(formStartAddress == null) {
 					formStartAddress = gme.addresses[0].address;
@@ -256,7 +256,7 @@
 		if(getCats) {
 			getCats = getCats.split(",");
 			setCategories(getCats);
-			$('.gomapsext-cats input').each(function(key, checkbox) {
+			$('.js-gme-cat').each(function(key, checkbox) {
 				if($.inArray($(checkbox).val(), getCats) != -1) {
 					$(checkbox).attr('checked', true);
 					return true;
@@ -264,15 +264,15 @@
 			});
 		}
 		// categories checkboxes
-		$('.gomapsext-cats input').change(function() {
-			var selectedCats = $('.gomapsext-cats INPUT:checked').map(function() {
+		$('.js-gme-cat').change(function() {
+			var selectedCats = $('.js-gme-cat:checked').map(function() {
 				return this.value;
 			});
 			setCategories(selectedCats);
 		});
 
 
-		$('.gomapsext-addresses .js-address').click(function() {
+		$('.js-gme-address').click(function() {
 			var selectedAddress = [$(this).attr('data-address')];
 			focusAddress(selectedAddress, $element, gme);
 			return false;
