@@ -5,19 +5,22 @@
 
 	// create a new Google Map
 	$.fn.gomapsext = function(gme) {
-		var element = $(this);
+		var $element = $(this),
+            Route = [],
+            infoWindow = new google.maps.InfoWindow();
 
-		var Route = [];
-		var infoWindow = new google.maps.InfoWindow();
 		if(gme.mapSettings.CSSClass != '') {
-			element.addClass(gme.mapSettings.CSSClass);
+			$element.addClass(gme.mapSettings.CSSClass);
 		}
+
 		if(gme.mapSettings.tooltipTitle != '') {
-			element.attr("title", gme.mapSettings.tooltipTitle);
+			$element.attr("title", gme.mapSettings.tooltipTitle);
 		}
-		element.css("width", gme.mapSettings.width);
-		element.css("height", gme.mapSettings.height);
-		element.data("markers", []);
+
+		$element
+            .css("width", gme.mapSettings.width)
+            .css("height", gme.mapSettings.height)
+            .data("markers", []);
 
 
 		// set map options
@@ -39,31 +42,32 @@
 			mapTypeControlOptions: {mapTypeIds: gme.mapSettings.mapTypes}
 		};
 
-		element.data("map", new google.maps.Map(document.getElementById(gme.mapSettings.id), myOptions));
-		element.data("bounds", new google.maps.LatLngBounds());
+		$element
+            .data("map", new google.maps.Map(document.getElementById(gme.mapSettings.id), myOptions))
+            .data("bounds", new google.maps.LatLngBounds());
 
 		// styled map
 		if(gme.mapSettings.styledMapName) {
-			var myStyle = gme.mapSettings.styledMapCode;
-			var styledMapOptions = {
-				name: gme.mapSettings.styledMapName,
-				alt: gme.mapSettings.tooltipTitle
-			};
-			var myMapType = new google.maps.StyledMapType(
-				myStyle,
-				styledMapOptions
-			);
-			element.data("map").mapTypes.set(gme.mapSettings.styledMapName, myMapType);
+			var myStyle = gme.mapSettings.styledMapCode,
+			    styledMapOptions = {
+                    name: gme.mapSettings.styledMapName,
+                    alt: gme.mapSettings.tooltipTitle
+                },
+                myMapType = new google.maps.StyledMapType(
+                    myStyle,
+                    styledMapOptions
+			    );
+			$element.data("map").mapTypes.set(gme.mapSettings.styledMapName, myMapType);
 		}
 
 		if(gme.mapSettings.defaultType == 3 && gme.mapSettings.styledMapName) {
-			element.data("map").setMapTypeId(gme.mapSettings.styledMapName);
+			$element.data("map").setMapTypeId(gme.mapSettings.styledMapName);
 		}
 
 		// KML import
 		if(gme.mapSettings.kmlUrl != '' && gme.mapSettings.kmlLocal == 0) {
 			var kmlLayer = new google.maps.KmlLayer(gme.mapSettings.kmlUrl, {preserveViewport: gme.mapSettings.kmlPreserveViewport});
-			kmlLayer.setMap(element.data("map"));
+			kmlLayer.setMap($element.data("map"));
 		}
 
 		// KML import local
@@ -73,32 +77,31 @@
 				//loop through placemarks tags
 				$(data).find("Placemark").each(function() {
 					//get coordinates and place name
-					var coords = $(this).find("coordinates").text();
-					var place = $(this).find("name").text();
-					var description = $(this).find("description").text();
-					//store as JSON
-					var c = coords.split(",");
-					var address = {
-						title: place,
-						latitude: c[1],
-						longitude: c[0],
-						address: place,
-						marker: '',
-						imageSize: 0,
-						imageWidth: 0,
-						imageHeight: 0,
-						shadow: '',
-						shadowSize: 0,
-						shadowWidth: 0,
-						shadowHeight: 0,
-						infoWindowContent: description,
-						infoWindowLink: 0,
-						openByClick: 1,
-						closeByClick: 1,
-						opened: 0,
-						categories: ''
+					var coords = $(this).find("coordinates").text(),
+                        place = $(this).find("name").text(),
+                        description = $(this).find("description").text(),
+                        c = coords.split(","),
+                        address = {
+                            title: place,
+                            latitude: c[1],
+                            longitude: c[0],
+                            address: place,
+                            marker: '',
+                            imageSize: 0,
+                            imageWidth: 0,
+                            imageHeight: 0,
+                            shadow: '',
+                            shadowSize: 0,
+                            shadowWidth: 0,
+                            shadowHeight: 0,
+                            infoWindowContent: description,
+                            infoWindowLink: 0,
+                            openByClick: 1,
+                            closeByClick: 1,
+                            opened: 0,
+                            categories: ''
 					};
-					addMapPoint(address, Route, element, infoWindow, gme);
+					addMapPoint(address, Route, $element, infoWindow, gme);
 					gme.addresses.push(address);
 				});
 			});
@@ -106,37 +109,39 @@
 
 		// Search
 		if(gme.mapSettings.markerSearch == 1) {
-			var myForm = $('#' + gme.mapSettings.id + '-search');
-			myForm.find('.error').hide();
-			var searchIn = myForm.find('.gme-sword');
-			myForm.submit(function() {
+			var $myForm = $('#' + gme.mapSettings.id + '-search'),
+                searchIn = $myForm.find('.gme-sword');
+
+            $myForm.find('.error').hide();
+
+            $myForm.submit(function() {
 				var submitValue = $(searchIn).val().toLowerCase();
 				var notFound = true;
 				$.each(gme.addresses, function(i, address) {
 					$.each(address, function(index, val) {
 						if(typeof val == "string" && (index == "title" || index == "infoWindowContent") && submitValue != "") {
 							if(val.toLowerCase().indexOf(submitValue) != -1) {
-								if(element.data("markers")[i].infoWindow) {
-									element.data("markers")[i].infoWindow.open(element.data("map"), element.data("markers")[i]);
+								if($element.data("markers")[i].infoWindow) {
+									$element.data("markers")[i].infoWindow.open($element.data("map"), $element.data("markers")[i]);
 								}
-								element.data("map").setCenter(element.data("markers")[i].getPosition());
-								gme.infoWindow = element.data("markers")[i].getPosition();
+								$element.data("map").setCenter($element.data("markers")[i].getPosition());
+								gme.infoWindow = $element.data("markers")[i].getPosition();
 								notFound = false;
 							}
 						}
 					});
 				});
-				myForm.find('.error').toggle(notFound);
+				$myForm.find('.error').toggle(notFound);
 				return false;
 			});
 		}
 
 		// Add backend addresses
 		if(gme.mapSettings.showRoute == 0) {
-			element.data("geocoder", new google.maps.Geocoder());
-			if(element.data("geocoder")) {
+			$element.data("geocoder", new google.maps.Geocoder());
+			if($element.data("geocoder")) {
 				$.each(gme.addresses, function(index, address) {
-					addMapPoint(address, Route, element, infoWindow, gme);
+					addMapPoint(address, Route, $element, infoWindow, gme);
 				});
 
 			}
@@ -144,22 +149,27 @@
 
 		// init Route function
 		if(gme.mapSettings.showRoute == 1 || gme.mapSettings.calcRoute == 1) {
-			var panelHtml = $('<div id="dPanel-' + gme.mapSettings.id + '"><\/div>');
-			panelHtml.insertAfter(element);
-			var directionsService = new google.maps.DirectionsService();
-			var directionsDisplay = new google.maps.DirectionsRenderer();
+			var panelHtml = $('<div id="dPanel-' + gme.mapSettings.id + '"><\/div>'),
+                directionsService = new google.maps.DirectionsService(),
+                directionsDisplay = new google.maps.DirectionsRenderer();
+
+            panelHtml.insertAfter($element);
+
 			var renderRoute = function($start, $end, $travelMode, $unitSystem) {
-				directionsDisplay.setMap(element.data("map"));
+                var unitSystem = getUnitSystem($unitSystem),
+                    request = {
+                        origin: $start,
+                        destination: $end,
+                        travelMode: getTravelMode($travelMode)
+                    };
+
+				directionsDisplay.setMap($element.data("map"));
 				directionsDisplay.setPanel(document.getElementById("dPanel-" + gme.mapSettings.id));
-				var unitSystem = getUnitSystem($unitSystem);
-				var request = {
-					origin: $start,
-					destination: $end,
-					travelMode: getTravelMode($travelMode)
-				};
+
 				if(unitSystem != 0) {
 					request.unitSystem = unitSystem;
 				}
+
 				directionsService.route(request, function(response, status) {
 					if(status == google.maps.DirectionsStatus.OK) {
 						directionsDisplay.setDirections(response);
@@ -177,16 +187,16 @@
 
 		// show route from frontend
 		if(gme.mapSettings.showForm == 1) {
-			var mapForm = $('#' + gme.mapSettings.id + '-form');
+			var $mapForm = $('#' + gme.mapSettings.id + '-form');
 
-			mapForm.submit(function() {
-				var formStartAddress = mapForm.find('.gme-saddress').val();
-				var endAddressIndex = mapForm.find('.gme-eaddress option:selected').val();
-				var formEndAddress = endAddressIndex ?
+			$mapForm.submit(function() {
+				var formStartAddress = $mapForm.find('.gme-saddress').val(),
+                    endAddressIndex = $mapForm.find('.gme-eaddress option:selected').val(),
+                    formEndAddress = endAddressIndex ?
 					gme.addresses[parseInt(endAddressIndex)].address :
-					gme.addresses[0].address;
-				var formTravelMode = mapForm.find('.gme-travelmode').val();
-				var formUnitSystem = mapForm.find('.gme-unitsystem').val();
+					gme.addresses[0].address,
+                    formTravelMode = $mapForm.find('.gme-travelmode').val(),
+                    formUnitSystem = $mapForm.find('.gme-unitsystem').val();
 
 				if(formStartAddress == null) {
 					formStartAddress = gme.addresses[0].address;
@@ -210,24 +220,24 @@
 		}
 
 		// eventHandler resize can be used
-		element.bind('mapresize', function() {
-			google.maps.event.trigger(element.data("map"), 'resize');
-			element.data("map").fitBounds(element.data("bounds"));
+		$element.bind('mapresize', function() {
+			google.maps.event.trigger($element.data("map"), 'resize');
+			$element.data("map").fitBounds($element.data("bounds"));
 			if(gme.mapSettings.zoom > 0) {
-				element.data("map").setZoom(gme.mapSettings.zoom);
+				$element.data("map").setZoom(gme.mapSettings.zoom);
 			}
-			refreshMap(element, gme);
+			refreshMap($element, gme);
 			google.maps.event.trigger(infoWindow, 'content_changed');
 		});
 
 		// open info window
 		window.setTimeout(function() {
-			element.trigger("openinfo");
+			$element.trigger("openinfo");
 		}, 2000);
 
 		// categories checkboxes
 		var setCategories = function(selectedCats) {
-			$.each(element.data("markers"), function(key, marker) {
+			$.each($element.data("markers"), function(key, marker) {
 				marker.setVisible(false);
 				$.each(marker.categories, function(keyM, category) {
 					if($.inArray(category, selectedCats) != -1) {
@@ -236,8 +246,8 @@
 					}
 				});
 			});
-			if(element.markerCluster) {
-				element.markerCluster.repaint();
+			if($element.markerCluster) {
+				$element.markerCluster.repaint();
 			}
 		};
 
@@ -246,7 +256,7 @@
 		if(getCats) {
 			getCats = getCats.split(",");
 			setCategories(getCats);
-			$('.gomapsext-cats INPUT').each(function(key, checkbox) {
+			$('.gomapsext-cats input').each(function(key, checkbox) {
 				if($.inArray($(checkbox).val(), getCats) != -1) {
 					$(checkbox).attr('checked', true);
 					return true;
@@ -254,7 +264,7 @@
 			});
 		}
 		// categories checkboxes
-		$('.gomapsext-cats INPUT').change(function() {
+		$('.gomapsext-cats input').change(function() {
 			var selectedCats = $('.gomapsext-cats INPUT:checked').map(function() {
 				return this.value;
 			});
@@ -264,53 +274,57 @@
 
 		$('.gomapsext-addresses .js-address').click(function() {
 			var selectedAddress = [$(this).attr('data-address')];
-			focusAddress(selectedAddress, element, gme);
+			focusAddress(selectedAddress, $element, gme);
 			return false;
 		});
 
 		var getAddress = getURLParameter('tx_gomapsext_show\\[address\\]');
 		if(getAddress) {
-			focusAddress(getAddress, element, gme);
+			focusAddress(getAddress, $element, gme);
 		}
 
 		// trigger mapcreated on map
-		element.trigger("mapcreated");
+		$element.trigger("mapcreated");
 
-		refreshMap(element, gme);
+		refreshMap($element, gme);
 	};
 
 
 	// add a point
-	function addMapPoint(pointDescription, Route, element, infoWindow, gme) {
+	function addMapPoint(pointDescription, Route, $element, infoWindow, gme) {
+        var latitude = pointDescription.latitude,
+            longitude = pointDescription.longitude;
+
 		Route.push(pointDescription.address);
-		var latitude = pointDescription.latitude;
-		var longitude = pointDescription.longitude;
+
 		if(Math.round(latitude) == 0 && Math.round(longitude) == 0) {
-			element.data("geocoder").geocode({"address": pointDescription.address}, function(point, status) {
+			$element.data("geocoder").geocode({"address": pointDescription.address}, function(point, status) {
 				latitude = point[0].geometry.location.lat();
 				longitude = point[0].geometry.location.lng();
 				var position = new google.maps.LatLng(latitude, longitude);
-				setMapPoint(pointDescription, Route, element, infoWindow, position, gme);
+				setMapPoint(pointDescription, Route, $element, infoWindow, position, gme);
 			});
 			return;
 		}
+        
 		var position = new google.maps.LatLng(latitude, longitude);
-		setMapPoint(pointDescription, Route, element, infoWindow, position, gme);
+        
+		setMapPoint(pointDescription, Route, $element, infoWindow, position, gme);
 	}
 
-	function focusAddress(addressUid, element, gme) {
-		$.each(element.data("markers"), function(key, marker) {
+	function focusAddress(addressUid, $element, gme) {
+		$.each($element.data("markers"), function(key, marker) {
 			if($.inArray(marker.uid + "", addressUid) != -1) {
-				element.data("center", marker.position);
+				$element.data("center", marker.position);
 				if(marker.infoWindow) {
-					marker.infoWindow.open(element.data("map"), marker);
+					marker.infoWindow.open($element.data("map"), marker);
 				}
-				refreshMap(element, gme);
+				refreshMap($element, gme);
 				return true;
 			}
 		});
-		if(element.markerCluster) {
-			element.markerCluster.repaint();
+		if($element.markerCluster) {
+			$element.markerCluster.repaint();
 		}
 	}
 
@@ -352,7 +366,7 @@
 	}
 
 	// insert the point on the map
-	function setMapPoint(pointDescription, Route, element, infoWindow, position, gme) {
+	function setMapPoint(pointDescription, Route, $element, infoWindow, position, gme) {
 		var marker;
 		if(pointDescription.marker != "") {
 			var Icon;
@@ -378,7 +392,7 @@
 				}
 				marker = new google.maps.Marker({
 					position: position,
-					map: element.data("map"),
+					map: $element.data("map"),
 					icon: Icon,
 					shape: Shape,
 					shadow: Shadow
@@ -386,21 +400,21 @@
 			} else {
 				marker = new google.maps.Marker({
 					position: position,
-					map: element.data("map"),
+					map: $element.data("map"),
 					icon: Icon,
 					shape: Shape
 				});
 			}
 		} else {
-			marker = new google.maps.Marker({position: position, map: element.data("map")});
+			marker = new google.maps.Marker({position: position, map: $element.data("map")});
 		}
 
 		if(gme.mapSettings.markerCluster == 1) {
 			google.maps.event.addListener(marker, 'visible_changed', function() {
 				if(marker.getVisible()) {
-					element.markerCluster.addMarker(marker, true);
+					$element.markerCluster.addMarker(marker, true);
 				} else {
-					element.markerCluster.removeMarker(marker, true);
+					$element.markerCluster.removeMarker(marker, true);
 				}
 			});
 		}
@@ -418,7 +432,7 @@
 				google.maps.event.addListener(marker, "click", function() {
 					if(!infoWindow.getMap() || gme.infoWindow != this.getPosition()) {
 						infoWindow.setContent(infoWindowContent);
-						infoWindow.open(element.data("map"), this);
+						infoWindow.open($element.data("map"), this);
 						gme.infoWindow = this.getPosition();
 					}
 				});
@@ -426,7 +440,7 @@
 				google.maps.event.addListener(marker, "mouseover", function() {
 					if(!infoWindow.getMap() || gme.infoWindow != this.getPosition()) {
 						infoWindow.setContent(infoWindowContent);
-						infoWindow.open(element.data("map"), this);
+						infoWindow.open($element.data("map"), this);
 						gme.infoWindow = this.getPosition();
 					}
 				});
@@ -438,9 +452,9 @@
 			}
 			if(pointDescription.opened) {
 
-				element.off("openinfo").on("openinfo", function() {
+				$element.off("openinfo").on("openinfo", function() {
 					infoWindow.setContent(infoWindowContent);
-					infoWindow.open(element.data("map"), marker);
+					infoWindow.open($element.data("map"), marker);
 				});
 				gme.infoWindow = marker.getPosition();
 			}
@@ -450,15 +464,15 @@
 		}
 		marker.categories = pointDescription.categories.split(",");
 		marker.uid = pointDescription.uid;
-		element.data("markers").push(marker);
-		element.data("bounds").extend(position);
+		$element.data("markers").push(marker);
+		$element.data("bounds").extend(position);
 	}
 
 	// Set zoom, center and cluster
-	function refreshMap(element, gme) {
+	function refreshMap($element, gme) {
 		if(gme.mapSettings.zoom > 0 || gme.addresses.length == 1) {
-			google.maps.event.addListener(element.data("map"), "zoom_changed", function() {
-				var zoomChangeBoundsListener = google.maps.event.addListener(element.data("map"), "bounds_changed", function() {
+			google.maps.event.addListener($element.data("map"), "zoom_changed", function() {
+				var zoomChangeBoundsListener = google.maps.event.addListener($element.data("map"), "bounds_changed", function() {
 					if(this.initZoom == 1) {
 						this.setZoom((gme.mapSettings.zoom > 0) ? gme.mapSettings.zoom : gme.mapSettings.defaultZoom);
 						this.initZoom = 0;
@@ -466,25 +480,25 @@
 					google.maps.event.removeListener(zoomChangeBoundsListener);
 				});
 			});
-			element.data("map").initZoom = 1;
+			$element.data("map").initZoom = 1;
 		}
 
-		if(element.data("center")) {
-			element.data("map").setCenter(element.data("center"));
+		if($element.data("center")) {
+			$element.data("map").setCenter($element.data("center"));
 		} else {
-			element.data("map").fitBounds(element.data("bounds"));
+			$element.data("map").fitBounds($element.data("bounds"));
 		}
 
-		refreshCluster(element, gme);
+		refreshCluster($element, gme);
 	}
 
 	// refresh the cluster
-	function refreshCluster(element, gme) {
+	function refreshCluster($element, gme) {
 		if(gme.mapSettings.markerCluster == 1) {
-			if(element.markerCluster != null) {
-				element.markerCluster.clearMarkers();
+			if($element.markerCluster != null) {
+				$element.markerCluster.clearMarkers();
 			}
-			element.markerCluster = new MarkerClusterer(element.data("map"), element.data("markers"), {
+			$element.markerCluster = new MarkerClusterer($element.data("map"), $element.data("markers"), {
 				maxZoom: gme.mapSettings.markerClusterZoom,
 				gridSize: gme.mapSettings.markerClusterSize
 			});
