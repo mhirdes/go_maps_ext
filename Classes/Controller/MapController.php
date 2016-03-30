@@ -53,7 +53,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	public function initializeAction() {
 		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
 
-		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
 		$addJsMethod = 'addJs';
 
 		if ($this->extConf['footerJS'] == 1) {

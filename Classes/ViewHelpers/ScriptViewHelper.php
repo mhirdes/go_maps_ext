@@ -58,7 +58,7 @@ class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 	 * @author Marc Hirdes <marc_hirdes@gmx.de>
 	 */
 	public function render() {
-		$pageRenderer = $GLOBALS['TSFE']->getPageRenderer();
+		$pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
 		$pageRenderer->addJsFooterFile(
 			\TYPO3\CMS\Frontend\Page\PageGenerator::inline2TempFile($this->renderChildren(), 'js'),
 			'text/javascript', // $type
