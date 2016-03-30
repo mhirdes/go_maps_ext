@@ -14,7 +14,7 @@
                     google.maps.MapTypeId.TERRAIN,
                     "{map.styledMapName}");
 
-    gme.mapSettings = <![CDATA[{]]>
+    gme.mapSettings = <f:format.raw>{</f:format.raw>
             id: 'gme-' + {map.uid},
             title: '<gomapsext:escape>{map.title}</gomapsext:escape>',
             tooltipTitle: '<gomapsext:escape>{map.tooltipTitle}</gomapsext:escape>',
@@ -57,7 +57,7 @@
                 </f:else>
             </f:if>
             defaultZoom: 11
-    <![CDATA[}]]>
+    <f:format.raw>}</f:format.raw>
 
     gme.mapSettings.mapTypes = new Array();
     <f:for each="{map.mapTypes}" as="type" iteration="i">
@@ -72,7 +72,7 @@
 
     gme.addresses = new Array();
     <f:for each="{addresses}" as="address" iteration="i">
-        gme.addresses[{i.index}]  = <![CDATA[{]]>
+        gme.addresses[{i.index}]  = <f:format.raw>{</f:format.raw>
 	        uid: {address.uid},
             title: '<gomapsext:escape>{address.title}</gomapsext:escape>',
             latitude: {address.latitude},
@@ -122,7 +122,7 @@
             </f:if>
             opened: {f:if(condition:"{address.opened}", then:"1", else:"0")},
             categories: '<f:for each="{address.categories}" as="category" iteration="icat">{category.uid}{f:if(condition:icat.isLast,then:'',else:',')}</f:for>'
-        <![CDATA[}]]>
+        <f:format.raw>}</f:format.raw>
     </f:for>
 
     gme.ll = {};
