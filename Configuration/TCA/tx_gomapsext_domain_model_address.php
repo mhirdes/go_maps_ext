@@ -140,48 +140,12 @@ return array(
 				'eval' => 'trim,required'
 			),
 		),
-		'categories' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.categories',
-			'config' => array(
-				'type' => 'select',
-				'internal_type' => 'db',
-				'allowed' => 'tx_gomapsext_domain_model_category',
-				'foreign_table' => 'tx_gomapsext_domain_model_category',
-				'MM' => 'tx_gomapsext_address_category_mm',
-				'size' => 10,
-				'autoSizeMax' => 30,
-				'maxitems' => 9999,
-				'wizards' => array(
-					'_POSITION' => 'right',
-					'_PADDING' => 4,
-					'_VERTICAL' => 0,
-					'_DISTANCE' => 2,
-					'edit' => array(
-						'type' => 'popup',
-						'title' => 'Edit',
-						'module' => array(
-							'name' => 'wizard_edit',
-						),
-						'icon' => 'edit2.gif',
-						'popup_onlyOpenIfSelected' => 1,
-						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-					),
-					'add' => Array(
-						'type' => 'script',
-						'title' => 'Create new',
-						'icon' => 'add.gif',
-						'params' => array(
-							'table' => 'tx_gomapsext_domain_model_category',
-							'setValue' => 'prepend'
-						),
-						'module' => array(
-							'name' => 'wizard_add'
-						)
-					),
-				),
-			),
-		),
+//		'categories' => array(
+//			'exclude' => 1,
+//			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.categories',
+//			'config' => array(
+//			),
+//		),
 		'configuration_map' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.configuration_map',
