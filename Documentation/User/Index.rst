@@ -46,24 +46,6 @@ field.
 .. container:: table-row
 
    Property
-         tooltipTitle
-
-   Description
-         Shown by mouse over.
-
-
-.. container:: table-row
-
-   Property
-         class
-
-   Description
-         The class of the map container
-
-
-.. container:: table-row
-
-   Property
          width
 
    Description

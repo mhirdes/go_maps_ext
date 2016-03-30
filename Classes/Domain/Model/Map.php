@@ -42,18 +42,6 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $title;
     /**
-     * tooltipTitle
-     *
-     * @var \string
-     */
-    protected $tooltipTitle;
-    /**
-     * class
-     *
-     * @var \string
-     */
-    protected $class;
-    /**
      * in px or %
      *
      * @var \string
@@ -312,48 +300,6 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setTitle($title)
     {
         $this->title = $title;
-    }
-
-    /**
-     * Returns the tooltipTitle
-     *
-     * @return \string $tooltipTitle
-     */
-    public function getTooltipTitle()
-    {
-        return $this->tooltipTitle;
-    }
-
-    /**
-     * Sets the tooltipTitle
-     *
-     * @param \string $tooltipTitle
-     * @return void
-     */
-    public function setTooltipTitle($tooltipTitle)
-    {
-        $this->tooltipTitle = $tooltipTitle;
-    }
-
-    /**
-     * Returns the class
-     *
-     * @return \string $class
-     */
-    public function getClass()
-    {
-        return $this->class;
-    }
-
-    /**
-     * Sets the class
-     *
-     * @param \string $class
-     * @return void
-     */
-    public function setClass($class)
-    {
-        $this->class = $class;
     }
 
     /**

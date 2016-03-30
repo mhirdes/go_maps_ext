@@ -30,14 +30,12 @@ return array(
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, categories,
                                   configuration_map, latitude, longitude, address, marker, image_size, image_width,
-                                  image_height, shadow, shadow_size, shadow_width, shadow_height, info_window_content,
-                                  info_window_link, close_by_click, open_by_click',
+                                  image_height, info_window_content, info_window_link, close_by_click, open_by_click',
 	),
 	'types' => array(
 		'0' => array('showitem' => 'title,configuration_map;;data,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.style,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.marker;marker,
-					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.shadow;shadow,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window,
 					info_window_content;;link;richtext[]:rte_transform[mode=ts_css|imgpath=uploads/tx_gomapsap/rte/],
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.interaction;interaction,
@@ -49,7 +47,6 @@ return array(
 		'interaction' => array('showitem' => 'open_by_click, close_by_click, opened'),
 		'link' => array('showitem' => 'info_window_link'),
 		'marker' => array('showitem' => 'marker, --linebreak--, image_size, image_width, image_height'),
-		'shadow' => array('showitem' => 'shadow, --linebreak--, shadow_size, shadow_width, shadow_height'),
 		'time' => array('showitem' => 'starttime, endtime'),
 	),
 	'columns' => array(
@@ -140,12 +137,6 @@ return array(
 				'eval' => 'trim,required'
 			),
 		),
-//		'categories' => array(
-//			'exclude' => 1,
-//			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.categories',
-//			'config' => array(
-//			),
-//		),
 		'configuration_map' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.configuration_map',

@@ -249,9 +249,13 @@
 			<source>Container</source>
 			<target>Container</target>
 		</trans-unit>
+        <trans-unit id="tx_gomapsext_domain_model_map.palettes.address_interaction" approved="yes">
+            <source>Address Interaction</source>
+            <target>Interaktionen Adressen</target>
+        </trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction" approved="yes">
-			<source>Interaction</source>
-			<target>Interaktionen</target>
+			<source>Map Interaction</source>
+			<target>Interaktionen Karte</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.kml" approved="yes">
 			<source>KML settings</source>

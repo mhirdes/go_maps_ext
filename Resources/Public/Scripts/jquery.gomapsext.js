@@ -9,14 +9,6 @@
             Route = [],
             infoWindow = new google.maps.InfoWindow();
 
-		if(gme.mapSettings.CSSClass != '') {
-			$element.addClass(gme.mapSettings.CSSClass);
-		}
-
-		if(gme.mapSettings.tooltipTitle != '') {
-			$element.attr("title", gme.mapSettings.tooltipTitle);
-		}
-
 		$element
             .css("width", gme.mapSettings.width)
             .css("height", gme.mapSettings.height)

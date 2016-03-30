@@ -17,8 +17,6 @@
     gme.mapSettings = <f:format.raw>{</f:format.raw>
             id: 'gme-' + {map.uid},
             title: '<gomapsext:escape>{map.title}</gomapsext:escape>',
-            tooltipTitle: '<gomapsext:escape>{map.tooltipTitle}</gomapsext:escape>',
-            CSSClass: '{map.class}',
             width: '{map.width}',
             height: '{map.height}',
             zoom: {f:if(condition:"{map.zoom}", then:"{map.zoom}", else:"0")},

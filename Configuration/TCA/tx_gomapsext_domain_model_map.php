@@ -37,14 +37,14 @@ return array(
 	),
 	'types' => array(
 		'0' => array('showitem' => 'title,
-					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.container;container,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.size;size,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.zoom;zoom, addresses,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.kml;kml,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display,
-					default_type, show_addresses, show_categories, marker_search,
-					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.cluster;cluster,
+					default_type,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.interaction;interaction,
+					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.address_interaction;address_interaction,
+					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.cluster;cluster,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.additional;additional,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.controls,
 					--palette--;;map_control,--palette--;;zoom_control,--palette--;;controls,
@@ -56,8 +56,8 @@ return array(
 					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden,starttime, endtime')
 	),
 	'palettes' => array(
+        'address_interaction' => array('showitem' => 'marker_search, show_addresses, show_categories'),
 		'cluster' => array('showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'),
-		'container' => array('showitem' => 'tooltip_title, class'),
 		'controls' => array('showitem' => 'pan_control, scale_control, streetview_control'),
 		'interaction' => array('showitem' => 'scroll_zoom, draggable, double_click_zoom'),
 		'kml' => array('showitem' => 'kml_url, --linebreak--, kml_preserve_viewport, kml_local'),
@@ -152,24 +152,6 @@ return array(
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim,required'
-			),
-		),
-		'tooltip_title' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tooltip_title',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
-			),
-		),
-		'class' => array(
-			'exclude' => 1,
-			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.class',
-			'config' => array(
-				'type' => 'input',
-				'size' => 30,
-				'eval' => 'trim'
 			),
 		),
 		'width' => array(

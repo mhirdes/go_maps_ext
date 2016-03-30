@@ -63,8 +63,6 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	title varchar(255) DEFAULT '' NOT NULL,
-	tooltip_title varchar(255) DEFAULT '' NOT NULL,
-	class varchar(255) DEFAULT '' NOT NULL,
 	width varchar(11) DEFAULT '' NOT NULL,
 	height varchar(11) DEFAULT '' NOT NULL,
 	zoom int(11) DEFAULT '0' NOT NULL,
