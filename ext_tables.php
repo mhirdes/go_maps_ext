@@ -35,18 +35,6 @@ $TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_gomapsext_domain_model_map');
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
-	'tx_gomapsext_domain_model_category',
-	'EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_category.xlf'
-);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_gomapsext_domain_model_category');
-
-// add module path
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModule(
-	'wizard_styled_map',
-	'//:gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html'
-);
-
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
     'go_maps_ext',
     'tx_gomapsext_domain_model_address',
