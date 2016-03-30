@@ -90,7 +90,7 @@
             </f:if>
             imageWidth: {address.imageWidth},
             imageHeight: {address.imageHeight},
-            infoWindowContent: '<gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape>',
+            infoWindowContent: '<f:format.raw><gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape></f:format.raw>',
             infoWindowLink: {address.infoWindowLink},
             <f:if condition="{settings.infoWindow.openByClick}">
                 <f:then>
