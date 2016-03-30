@@ -75,21 +75,6 @@
 		<trans-unit id="tx_gomapsext_domain_model_address.palettes.marker">
 			<source>Marker layout</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.palettes.shadow">
-			<source>Shadow layout</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow">
-			<source>Shadow</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_height">
-			<source>Shadow height (px)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_size">
-			<source>User defined shadow size</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_width">
-			<source>Shadow width (px)</source>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.style">
 			<source>Style</source>
 		</trans-unit>

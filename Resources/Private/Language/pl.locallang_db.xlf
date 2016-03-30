@@ -85,22 +85,6 @@
 			<source>Opened</source>
 			<target>Otwarty</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow" approved="yes">
-			<source>Shadow</source>
-			<target>Cień</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_height" approved="yes">
-			<source>Shadow height (px)</source>
-			<target>Wysokość cienia (px)</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_size" approved="yes">
-			<source>User defined shadow size</source>
-			<target>Własny rozmiar cienia</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_width" approved="yes">
-			<source>Shadow width (px)</source>
-			<target>Szerokość cienia (px)</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.style" approved="yes">
 			<source>Style</source>
 			<target>Styl</target>

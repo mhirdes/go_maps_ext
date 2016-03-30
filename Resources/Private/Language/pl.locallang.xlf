@@ -60,22 +60,6 @@
 			<source>openByClick</source>
 			<target>openByClick</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow" approved="yes">
-			<source>shadow</source>
-			<target>cień</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_height" approved="yes">
-			<source>shadowHeight</source>
-			<target>shadowHeight</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_size" approved="yes">
-			<source>shadowSize</source>
-			<target>shadowSize</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_width" approved="yes">
-			<source>shadowWidth</source>
-			<target>shadowWidth</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.title" approved="yes">
 			<source>title</source>
 			<target>tytuł</target>

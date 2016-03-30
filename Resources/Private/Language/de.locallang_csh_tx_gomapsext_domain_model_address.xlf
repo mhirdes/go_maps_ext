@@ -62,22 +62,6 @@
 			<source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
 			<target>Das Info-Fenster ist geöffnet, wenn die Karte erscheint. Es wird je Karte nur ein Info-Fenster geöffnet erscheinen.</target>
 		</trans-unit>
-		<trans-unit id="shadow.description" approved="yes" xml:space="preserve">
-			<source>Choose a costum shadow for the pin.</source>
-			<target>Wählen Sie einen indiduellen Schatten für den Marker.</target>
-		</trans-unit>
-		<trans-unit id="shadow_height.description" approved="yes" xml:space="preserve">
-			<source>Costum shadow height in pixel.</source>
-			<target>Benutzerdefinierte Höhe des Schattens in Pixeln.</target>
-		</trans-unit>
-		<trans-unit id="shadow_size.description" approved="yes" xml:space="preserve">
-			<source>Check if the shadow has a different size then default.</source>
-			<target>Aktivieren Sie die Checkbox, wenn die Größe des Schattens von der Standardgröße abweicht.</target>
-		</trans-unit>
-		<trans-unit id="shadow_width.description" approved="yes" xml:space="preserve">
-			<source>Costum shadow width in pixel.</source>
-			<target>Benutzerdefinierte Breite des Schattens in Pixeln.</target>
-		</trans-unit>
 		<trans-unit id="title.description" approved="yes" xml:space="preserve">
 			<source>Only for internal usage.</source>
 			<target>Nur für die interne Verwendung.</target>

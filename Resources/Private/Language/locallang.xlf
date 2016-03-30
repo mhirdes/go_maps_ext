@@ -50,18 +50,6 @@
 		<trans-unit id="tx_gomapsext_domain_model_address.open_by_click">
 			<source>openByClick</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow">
-			<source>shadow</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_height">
-			<source>shadowHeight</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_size">
-			<source>shadowSize</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_width">
-			<source>shadowWidth</source>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.title">
 			<source>title</source>
 		</trans-unit>

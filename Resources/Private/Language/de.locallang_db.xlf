@@ -97,26 +97,6 @@
 			<source>Marker layout</source>
 			<target>Marker Aussehen</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.palettes.shadow" approved="yes">
-			<source>Shadow layout</source>
-			<target>Schatten Aussehen</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow" approved="yes">
-			<source>Shadow</source>
-			<target>Schatten</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_height" approved="yes">
-			<source>Shadow height (px)</source>
-			<target>Schattenhöhe (px)</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_size" approved="yes">
-			<source>User defined shadow size</source>
-			<target>Benutzerdefinierte Schattengröße</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.shadow_width" approved="yes">
-			<source>Shadow width (px)</source>
-			<target>Schattenbreite (px)</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.style" approved="yes">
 			<source>Style</source>
 			<target>Aussehen</target>
