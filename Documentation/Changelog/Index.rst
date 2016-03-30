@@ -17,6 +17,16 @@ ChangeLog
    Changes
          Changes:
 
+
+.. container:: table-row
+
+   Version
+         1.9.0
+
+   Changes
+         Last Version with compatibility TYPO3 6.2, feature link address
+
+
 .. container:: table-row
 
    Version
