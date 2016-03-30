@@ -42,7 +42,7 @@ $TCA['tt_content']['types']['list']['subtypes_excludelist'][$pluginSignature] = 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_gomapsext_domain_model_category');
 
 // add module path
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModulePath(
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addModule(
 	'wizard_styled_map',
 	'//:gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html'
 );
