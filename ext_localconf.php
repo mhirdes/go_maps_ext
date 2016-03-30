@@ -19,11 +19,6 @@ $TYPO3_CONF_VARS['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domai
 	'icon' => true
 );
 
-$TYPO3_CONF_VARS['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_category'][0] = array(
-	'fList' => 'name',
-	'icon' => true
-);
-
 $TYPO3_CONF_VARS['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_address'][0] = array(
 	'fList' => 'title, info_window_content',
 	'icon' => true
