@@ -16,12 +16,12 @@
 	"support": {
 		"issues": "https://forge.typo3.org/projects/go_maps_ext"
 	},
-	"version": "1.8.0",
+	"version": "2.0.0",
 	"replace": {
 		"go_maps_ext": "*"
 	},
 	"require": {
-		"typo3/cms-core": "6.2.0 - 7.6.99"
+		"typo3/cms-core": "7.0.99 - 8.9.99"
 	},
 	"autoload": {
 		"psr-4": {
