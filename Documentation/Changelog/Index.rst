@@ -23,7 +23,8 @@ ChangeLog
          2.0.0
 
    Changes
-         Compatibility TYPO3 8.0, sys_categories and sys_file used, list and link addresses, drop shadows
+         Compatibility TYPO3 8.0; sys_categories and sys_file used; list and link
+         addresses; drop shadows, toolTip and container class
 
 .. container:: table-row
 

@@ -16,13 +16,12 @@ $EM_CONF[$_EXTKEY] = array(
 	                  images for markers, style maps, KML, categories, responsive and many more.',
 	'category' => 'plugin',
 	'version' => '2.0.0',
-	'state' => 'beta',
+	'state' => 'stable',
 	'uploadfolder' => 1,
-	'createDirs' => 'uploads/tx_gomapsext',
 	'modify_tables' => '',
 	'clearcacheonload' => 1,
 	'author' => 'Marc Hirdes',
-	'author_email' => 'Marc_Hirdes@gmx.de',
+	'author_email' => 'marc_hirdes@gmx.de',
 	'author_company' => 'clickstorm GmbH',
 	'constraints' =>
 		array(
