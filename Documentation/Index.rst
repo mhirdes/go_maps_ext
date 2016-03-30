@@ -16,7 +16,7 @@ Google Maps Extbase
         en
 
     :Description:
-        Google Maps Extension. Simply insert a google map Version 3, jQuery, Calculate Route, Image for Markers, Style Maps, KML, Categories...
+        Google Maps Extension. Simply insert a google responsive map Version 3, jQuery, Calculate Route, Image for Markers, Style Maps, KML, Categories...
 
     :Keywords:
         google maps, google, map, api, map, marker, image, style, route, kml

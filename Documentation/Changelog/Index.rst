@@ -20,6 +20,14 @@ ChangeLog
 .. container:: table-row
 
    Version
+         2.0.0
+
+   Changes
+         Compatibility TYPO3 8.0, sys_categories and sys_file used, list and link addresses, drop shadows
+
+.. container:: table-row
+
+   Version
          1.8.0
 
    Changes

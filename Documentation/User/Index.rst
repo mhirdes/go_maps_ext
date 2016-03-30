@@ -148,15 +148,22 @@ field.
          relative. Only markers appear. Search and route are only available if
          the KML file is local.
 
+.. container:: table-row
+
+   Property
+         defaultType
+
+   Description
+         Map type on the beginning.MAP, SATELLITE, HYBRID, TERRAIN and one
+         individual type are possible.
 
 .. container:: table-row
 
    Property
-         showCategories
+         scrollZoom
 
    Description
-         Display a checkbox for each visible category. On change the points on
-         the map will be enabled/disabled.
+         Enables zoom with scroll wheel.
 
 
 .. container:: table-row
@@ -175,6 +182,37 @@ field.
 
    Description
          A double click on the map zooms in. Draggable map has to be enabled!
+
+
+.. container:: table-row
+
+   Property
+         markerSearch
+
+   Description
+         Displays a form on the frontend, were the user can enter a search
+         word. Searchs for InfoWindow content and title of a marker. The
+         InfoWindow of the first found marker opens.
+
+
+.. container:: table-row
+
+   Property
+         showAddresses
+
+   Description
+         Displays a list with all addresses incl. a link. If you click the
+         selected address will be centered.
+
+
+.. container:: table-row
+
+   Property
+         showCategories
+
+   Description
+         Display a checkbox for each visible category. On change the points on
+         the map will be enabled/disabled.
 
 
 .. container:: table-row
@@ -208,27 +246,6 @@ field.
    Description
          The size of the Clusters, like a radius. Take a look at the example
          link above.
-
-
-.. container:: table-row
-
-   Property
-         markerSearch
-
-   Description
-         Displays a form on the frontend, were the user can enter a search
-         word. Searchs for InfoWindow content and title of a marker. The
-         InfoWindow of the first found marker opens.
-
-
-.. container:: table-row
-
-   Property
-         defaultType
-
-   Description
-         Maptype on the beginning.MAP, SATELLITE, HYBRID, TERRAIN and one
-         individual type are possible.
 
 
 .. container:: table-row
@@ -488,44 +505,6 @@ Of course there are some more options...
 
    Description
          Costum image height in pixel.
-
-
-.. container:: table-row
-
-   Property
-         shadow
-
-   Description
-         Choose a costum shadow for the pin. There are some shadow generators
-         on the web, e.g. `http://www.cycloloco.com/shadowmaker
-         <http://www.cycloloco.com/shadowmaker>`_
-
-
-.. container:: table-row
-
-   Property
-         shadowSize
-
-   Description
-         Check only if the shadow has a different size then default.
-
-
-.. container:: table-row
-
-   Property
-         shadowWidth
-
-   Description
-         Costum shadow width in pixel.
-
-
-.. container:: table-row
-
-   Property
-         shadowHeight
-
-   Description
-         Costum shadow height in pixel.
 
 
 .. container:: table-row
