@@ -11,7 +11,7 @@ plugin.tx_gomapsext {
 		# cat=plugin.tx_gomapsext//a; type=text+; label = Show Addresses from this PIDs
 		storagePid =
         # cat=plugin.tx_gomapsext//a; type=text+; label = URL to Google Maps API: Default is current version
-        googleMapsLibrary = //maps.google.com/maps/api/js?v=3.17&sensor=false
+        googleMapsLibrary = //maps.google.com/maps/api/js?v=3.23&sensor=false
 		infoWindow {
 			# cat=plugin.tx_gomapsext//b; type=boolean; label = Open Infowindows By Click
 			openByClick = 0
