@@ -90,10 +90,6 @@
                             imageSize: 0,
                             imageWidth: 0,
                             imageHeight: 0,
-                            shadow: '',
-                            shadowSize: 0,
-                            shadowWidth: 0,
-                            shadowHeight: 0,
                             infoWindowContent: description,
                             infoWindowLink: 0,
                             openByClick: 1,
@@ -380,33 +376,12 @@
 			} else {
 				Icon = new google.maps.MarkerImage(pointDescription.marker);
 			}
-			if(pointDescription.shadow != "") {
-				var Shadow;
-				if(pointDescription.shadowSize == 1) {
-					Shadow = new google.maps.MarkerImage(
-						pointDescription.shadow,
-						new google.maps.Size(pointDescription.shadowWidth, pointDescription.shadowHeight),
-						new google.maps.Point(0, 0),
-						new google.maps.Point((pointDescription.imageWidth / 2), pointDescription.imageHeight)
-					);
-				} else {
-					Shadow = new google.maps.MarkerImage(pointDescription.shadow);
-				}
-				marker = new google.maps.Marker({
-					position: position,
-					map: $element.data("map"),
-					icon: Icon,
-					shape: Shape,
-					shadow: Shadow
-				});
-			} else {
-				marker = new google.maps.Marker({
-					position: position,
-					map: $element.data("map"),
-					icon: Icon,
-					shape: Shape
-				});
-			}
+            marker = new google.maps.Marker({
+                position: position,
+                map: $element.data("map"),
+                icon: Icon,
+                shape: Shape
+            });
 		} else {
 			marker = new google.maps.Marker({position: position, map: $element.data("map")});
 		}

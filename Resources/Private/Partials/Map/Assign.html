@@ -90,18 +90,6 @@
             </f:if>
             imageWidth: {address.imageWidth},
             imageHeight: {address.imageHeight},
-            <f:if condition="{address.shadowSize}">
-                <f:then>
-                    shadow: '{f:if(condition:"{address.shadow}",then:"{f:uri.image(src:address.shadow.uid,treatIdAsReference:1,width:address.shadowWidth,height:'{address.shadowHeight}c')}")}',
-                    shadowSize: 1,
-                </f:then>
-                <f:else>
-                    shadow: '{f:if(condition:"{address.shadow}" then:"{address.shadow.originalResource.publicUrl}")}',
-                    shadowSize: 0,
-                </f:else>
-            </f:if>
-            shadowWidth: {address.shadowWidth},
-            shadowHeight: {address.shadowHeight},
             infoWindowContent: '<gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape>',
             infoWindowLink: {address.infoWindowLink},
             <f:if condition="{settings.infoWindow.openByClick}">

@@ -90,30 +90,6 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $imageHeight;
     /**
-     * shadow
-     *
-     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-     */
-    protected $shadow;
-    /**
-     * shadowSize
-     *
-     * @var boolean
-     */
-    protected $shadowSize = false;
-    /**
-     * shadowWidth
-     *
-     * @var \integer
-     */
-    protected $shadowWidth;
-    /**
-     * shadowHeight
-     *
-     * @var \integer
-     */
-    protected $shadowHeight;
-    /**
      * infoWindowContent
      *
      * @var \string
@@ -382,100 +358,6 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setImageHeight($imageHeight)
     {
         $this->imageHeight = $imageHeight;
-    }
-
-    /**
-     * Returns the shadow
-     *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $shadow
-     */
-    public function getShadow()
-    {
-        return $this->shadow;
-    }
-
-    /**
-     * Sets the shadow
-     *
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $shadow
-     * @return void
-     */
-    public function setShadow(\TYPO3\CMS\Extbase\Domain\Model\FileReference $shadow)
-    {
-        $this->shadow = $shadow;
-    }
-
-    /**
-     * Returns the shadowSize
-     *
-     * @return boolean $shadowSize
-     */
-    public function getShadowSize()
-    {
-        return $this->shadowSize;
-    }
-
-    /**
-     * Sets the shadowSize
-     *
-     * @param boolean $shadowSize
-     * @return void
-     */
-    public function setShadowSize($shadowSize)
-    {
-        $this->shadowSize = $shadowSize;
-    }
-
-    /**
-     * Returns the boolean state of shadowSize
-     *
-     * @return boolean
-     */
-    public function isShadowSize()
-    {
-        return $this->getShadowSize();
-    }
-
-    /**
-     * Returns the shadowWidth
-     *
-     * @return \integer $shadowWidth
-     */
-    public function getShadowWidth()
-    {
-        return $this->shadowWidth;
-    }
-
-    /**
-     * Sets the shadowWidth
-     *
-     * @param \integer $shadowWidth
-     * @return void
-     */
-    public function setShadowWidth($shadowWidth)
-    {
-        $this->shadowWidth = $shadowWidth;
-    }
-
-    /**
-     * Returns the shadowHeight
-     *
-     * @return \integer $shadowHeight
-     */
-    public function getShadowHeight()
-    {
-        return $this->shadowHeight;
-    }
-
-    /**
-     * Sets the shadowHeight
-     *
-     * @param \integer $shadowHeight
-     * @return void
-     */
-    public function setShadowHeight($shadowHeight)
-    {
-        $this->shadowHeight = $shadowHeight;
     }
 
     /**
