@@ -1,4 +1,6 @@
 <?php
+namespace Clickstorm\GoMapsExt\Evaluation;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -30,7 +32,7 @@
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class tx_gomapsext_double6 {
+class Double6Evaluator {
 
     function returnFieldJS() {
         return '

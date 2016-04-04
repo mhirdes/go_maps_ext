@@ -165,7 +165,7 @@ return array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required,tx_gomapsext_double6'
+				'eval' => 'trim,required,Clickstorm\\GoMapsExt\\Evaluation\\Double6Evaluator'
 			),
 		),
 		'longitude' => array(
@@ -174,7 +174,7 @@ return array(
 			'config' => array(
 				'type' => 'input',
 				'size' => 30,
-				'eval' => 'trim,required,tx_gomapsext_double6'
+				'eval' => 'trim,required,Clickstorm\\GoMapsExt\\Evaluation\\Double6Evaluator'
 			),
 		),
 		'address' => array(
