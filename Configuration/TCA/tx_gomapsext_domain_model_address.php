@@ -25,7 +25,7 @@ return array(
 			'endtime' => 'endtime',
 		),
 		'searchFields' => 'title,address,info_window_content',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('go_maps_ext') . 'Resources/Public/Icons/tx_gomapsext_domain_model_address.png'
+		'iconfile' => 'EXT:go_maps_ext/Resources/Public/Icons/tx_gomapsext_domain_model_address.png'
 	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, categories,
@@ -33,14 +33,21 @@ return array(
                                   image_height, info_window_content, info_window_link, close_by_click, open_by_click',
 	),
 	'types' => array(
-		'0' => array('showitem' => 'title,configuration_map;;data,
+		'0' => array(
+            'showitem' => 'title,configuration_map;;data,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.style,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.marker;marker,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window,
-					info_window_content;;link;richtext[]:rte_transform[mode=ts_css|imgpath=uploads/tx_gomapsap/rte/],
+					info_window_content;;link,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.interaction;interaction,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.others,
-					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;time,categories')
+					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;time,categories',
+            'columnsOverrides' => array(
+                'info_window_content' => array(
+                    'defaultExtras' => 'richtext:rte_transform[mode=ts_css]'
+                )
+            )
+        )
 	),
 	'palettes' => array(
 		'data' => array('showitem' => 'latitude, longitude, address'),
@@ -55,6 +62,7 @@ return array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
 			'config' => array(
 				'type' => 'select',
+                'renderType' => 'selectSingle',
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
@@ -69,6 +77,7 @@ return array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => array(
 				'type' => 'select',
+                'renderType' => 'selectSingle',
 				'items' => array(
 					array('', 0),
 				),
@@ -259,7 +268,7 @@ return array(
 				'eval' => 'trim',
 				'wizards' => array(
 					'RTE' => array(
-						'icon' => 'wizard_rte2.gif',
+						'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_rte.gif',
 						'notNewRecords' => 1,
 						'RTEonly' => 1,
 						'module' => array(

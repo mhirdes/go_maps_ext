@@ -25,7 +25,7 @@ return array(
 			'endtime' => 'endtime',
 		),
 		'searchFields' => 'title,tooltip_title',
-		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('go_maps_ext') . 'Resources/Public/Icons/tx_gomapsext_domain_model_map.png'
+		'iconfile' => 'EXT:go_maps_ext/Resources/Public/Icons/tx_gomapsext_domain_model_map.png'
 	),
 	'interface' => array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
@@ -72,6 +72,7 @@ return array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
 			'config' => array(
 				'type' => 'select',
+                'renderType' => 'selectSingle',
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
 				'items' => array(
@@ -86,6 +87,7 @@ return array(
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
 			'config' => array(
 				'type' => 'select',
+                'renderType' => 'selectSingle',
 				'items' => array(
 					array('', 0),
 				),
@@ -226,14 +228,14 @@ return array(
 						'module' => array(
 							'name' => 'wizard_edit',
 						),
-						'icon' => 'edit2.gif',
+						'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_edit.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
 					),
 					'add' => Array(
 						'type' => 'script',
 						'title' => 'Create new',
-						'icon' => 'add.gif',
+						'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_add.gif',
 						'params' => array(
 							'table' => 'tx_gomapsext_domain_model_address',
 							'pid' => '###CURRENT_PID###',
@@ -420,6 +422,7 @@ return array(
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types',
 			'config' => array(
 				'type' => 'select',
+                'renderType' => 'selectMultipleSideBySide',
 				'items' => array(
 					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.0', 0),
 					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.1', 1),
