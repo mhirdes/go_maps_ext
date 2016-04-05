@@ -73,8 +73,8 @@
         gme.addresses[{i.index}]  = <f:format.raw>{</f:format.raw>
 	        uid: {address.uid},
             title: '<gomapsext:escape>{address.title}</gomapsext:escape>',
-            latitude: {address.latitude},
-            longitude: {address.longitude},
+            latitude: {address.latitude -> f:format.number(decimals:6, thousandsSeparator:'')},
+            longitude: {address.longitude -> f:format.number(decimals:6, thousandsSeparator:'')},
             address: '<gomapsext:escape>{address.address}</gomapsext:escape>',
             <f:if condition="{address.imageSize}">
                 <f:then>
