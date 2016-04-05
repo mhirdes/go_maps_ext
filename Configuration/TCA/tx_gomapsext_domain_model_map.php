@@ -53,7 +53,7 @@ return array(
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map,
 					styled_map_name, styled_map_code,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.others,
-					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden,starttime, endtime')
+					sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;time')
 	),
 	'palettes' => array(
         'address_interaction' => array('showitem' => 'marker_search, show_addresses, show_categories'),
@@ -63,6 +63,7 @@ return array(
 		'kml' => array('showitem' => 'kml_url, --linebreak--, kml_preserve_viewport, kml_local'),
 		'map_control' => array('showitem' => 'map_type_control, --linebreak--, map_types'),
 		'size' => array('showitem' => 'width, height'),
+        'time' => array('showitem' => 'starttime, endtime'),
 		'zoom' => array('showitem' => 'zoom, --linebreak--, zoom_min, zoom_max'),
 		'zoom_control' => array('showitem' => 'zoom_control, --linebreak--, zoom_control_type'),
 	),

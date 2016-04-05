@@ -34,14 +34,14 @@ return array(
 	),
 	'types' => array(
 		'0' => array(
-            'showitem' => 'title,configuration_map;;data,
+            'showitem' => 'title,configuration_map,--palette--;;data,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.style,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.marker;marker,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window,
-					info_window_content;;link,
+					info_window_content, --palette--;;link,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.interaction;interaction,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.others,
-					sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;time,categories',
+					sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;time,categories',
             'columnsOverrides' => array(
                 'info_window_content' => array(
                     'defaultExtras' => 'richtext:rte_transform[mode=ts_css]'
