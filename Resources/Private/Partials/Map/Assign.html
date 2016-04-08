@@ -78,7 +78,7 @@
             address: '<gomapsext:escape>{address.address}</gomapsext:escape>',
             <f:if condition="{address.imageSize}">
                 <f:then>
-                    marker: '{gomapsext:uriPrefix()}{f:if(condition:"{address.marker}",then:"{f:uri.image(src:address.marker.uid,treatIdAsReference:1,width:address.imageWidth,height:'{address.imageHeight}c')}")}',
+                    marker: '{f:if(condition:"{address.marker}",then:"{f:uri.image(src:address.marker.uid,treatIdAsReference:1,width:address.imageWidth,height:'{address.imageHeight}c')}")}',
                     imageSize: 1,
                 </f:then>
                 <f:else>
