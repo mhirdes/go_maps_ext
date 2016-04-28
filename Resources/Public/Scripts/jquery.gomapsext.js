@@ -357,7 +357,11 @@
 
 	// insert the point on the map
 	function setMapPoint(pointDescription, Route, $element, infoWindow, position, gme) {
-		var marker;
+		var markerOptions = {
+			position: position,
+			map: $element.data("map"),
+			title: pointDescription.title
+		};
 		if(pointDescription.marker != "") {
 			var Icon;
 			if(pointDescription.imageSize == 1) {
@@ -368,15 +372,9 @@
 			} else {
 				Icon = new google.maps.MarkerImage(pointDescription.marker);
 			}
-            marker = new google.maps.Marker({
-                position: position,
-                map: $element.data("map"),
-                icon: Icon,
-                shape: Shape
-            });
-		} else {
-			marker = new google.maps.Marker({position: position, map: $element.data("map")});
+			$.extend(markerOptions, {icon: Icon, shape: Shape});
 		}
+		var marker = new google.maps.Marker(markerOptions);
 
 		if(gme.mapSettings.markerCluster == 1) {
 			google.maps.event.addListener(marker, 'visible_changed', function() {
