@@ -78,6 +78,9 @@
     GoMapsExt.Controller.prototype = {
         // categories checkboxes
         setCategories: function (selectedCats) {
+            if (!jQuery.isArray(selectedCats)) {
+                throw "Argument 'selectedCats' must be an array";
+            }
             var $element = this.element;
             $.each(this.markers, function (key, marker) {
                 marker.setVisible(false);
@@ -302,6 +305,19 @@
             marker.uid = pointDescription.uid;
             this.markers.push(marker);
             this.bounds.extend(position);
+        },
+
+        resize: function() {
+            var _map = this.map,
+                gme = this.data;
+
+            google.maps.event.trigger(_map, 'resize');
+            _map.fitBounds(this.bounds);
+            if (gme.mapSettings.zoom > 0) {
+                _map.setZoom(gme.mapSettings.zoom);
+            }
+            this.refreshMap(this.element, gme);
+            google.maps.event.trigger(this.infoWindow, 'content_changed');
         },
 
         /**
@@ -587,20 +603,11 @@
         },
 
         _initializeResizeListener: function () {
-            var _this = this,
-                _map = this.map,
-                $element = this.element,
-                gme = this.data;
+            var _this = this;
 
             // eventHandler resize can be used
-            $element.bind('mapresize', function () {
-                google.maps.event.trigger(_map, 'resize');
-                _map.fitBounds(_this.bounds);
-                if (gme.mapSettings.zoom > 0) {
-                    _map.setZoom(gme.mapSettings.zoom);
-                }
-                _this.refreshMap($element, gme);
-                google.maps.event.trigger(infoWindow, 'content_changed');
+            this.element.bind('mapresize', function () {
+                _this.resize();
             });
         },
 
