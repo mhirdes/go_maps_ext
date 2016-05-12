@@ -78,10 +78,16 @@
     GoMapsExt.Controller.prototype = {
         // categories checkboxes
         setCategories: function (selectedCats) {
-            if (!jQuery.isArray(selectedCats)) {
+            if (!(selectedCats.length && selectedCats.map)) {
                 throw "Argument 'selectedCats' must be an array";
             }
             var $element = this.element;
+
+            // Make sure the input categories are strings
+            selectedCats = selectedCats.map(function(categoryId) {
+                return '' + categoryId;
+            });
+
             $.each(this.markers, function (key, marker) {
                 marker.setVisible(false);
                 $.each(marker.categories, function (keyM, category) {
