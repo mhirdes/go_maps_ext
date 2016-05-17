@@ -467,6 +467,7 @@
 				$element.markerCluster.clearMarkers();
 			}
 			$element.markerCluster = new MarkerClusterer($element.data("map"), $element.data("markers"), {
+				imagePath: 'https://googlemaps.github.io/js-marker-clusterer/images/m',
 				maxZoom: gme.mapSettings.markerClusterZoom,
 				gridSize: gme.mapSettings.markerClusterSize
 			});
