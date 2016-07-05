@@ -103,8 +103,18 @@ Constants
    Description
          Displays all addresses from this PID and additionally from the TCA
          field
-   
-   Default
+
+
+.. container:: table-row
+
+   Property
+         settings.apiKey
+
+   Data type
+         String
+
+   Description
+         Set the API key. Required for new domains. More information_. Get your apiKey_.
 
 
 .. container:: table-row
@@ -163,12 +173,7 @@ Constants
          String
    
    Description
-         Language Code for the API, for details look here:
-         `https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
-         <https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
-         >`_
-         
-         If not defined the language depends on the browser settings.
+         Language Code for the API (details_). If not defined the language depends on the browser settings.
    
    Default
          config.language
@@ -176,6 +181,9 @@ Constants
 
 .. ###### END~OF~TABLE ######
 
+.. _information: http://googlegeodevelopers.blogspot.de/2016/06/building-for-scale-updates-to-google.html
+.. _apiKey: https://developers.google.com/maps/documentation/javascript/get-api-key
+.. _details: https://spreadsheets.google.com/pub?key=p9pdwsai2hDMsLkXsoM05KQ&gid=1
 
 Example
 ~~~~~~~
@@ -184,4 +192,5 @@ Example
 
    plugin.tx_gomapsext.settings.infoWindow.openByClick = 1
    plugin.tx_gomapsext.settings.infoWindow.closeByClick = 1
+
 
