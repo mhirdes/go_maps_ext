@@ -361,6 +361,7 @@
                 }
                 $element.markerCluster = new MarkerClusterer(this.map, this.markers, {
                     imagePath: 'https://googlemaps.github.io/js-marker-clusterer/images/m',
+                    styles: gme.mapSettings.markerClusterStyle,
                     maxZoom: gme.mapSettings.markerClusterZoom,
                     gridSize: gme.mapSettings.markerClusterSize
                 });

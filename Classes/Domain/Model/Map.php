@@ -147,6 +147,12 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $markerClusterSize;
     /**
+     * markerClusterStyle
+     *
+     * @var \string
+     */
+    protected $markerClusterStyle;
+    /**
      * markerSearch
      *
      * @var boolean
@@ -749,6 +755,27 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setMarkerClusterSize($markerClusterSize)
     {
         $this->markerClusterSize = $markerClusterSize;
+    }
+
+    /**
+     * Returns the markerClusterStyle
+     *
+     * @return \string $markerClusterStyle
+     */
+    public function getMarkerClusterStyle()
+    {
+        return $this->markerClusterStyle;
+    }
+
+    /**
+     * Sets the markerClusterStyle
+     *
+     * @param \string $markerClusterStyle
+     * @return void
+     */
+    public function setMarkerClusterStyle($markerClusterStyle)
+    {
+        $this->markerClusterStyle = $markerClusterStyle;
     }
 
     /**
