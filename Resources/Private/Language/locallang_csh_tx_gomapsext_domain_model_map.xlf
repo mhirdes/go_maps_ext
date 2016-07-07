@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-21T14:45:31Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-07-07T12:02:30Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -10,6 +10,12 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
+		<trans-unit id="_marker_cluster_style.seeAlso">
+			<source>github.com | https://github.com/googlemaps/js-marker-clusterer</source>
+		</trans-unit>
+		<trans-unit id="_styled_map_code.seeAlso">
+			<source>googlemaps.github.io | http://googlemaps.github.io/js-samples/styledmaps/wizard/index.html</source>
+		</trans-unit>
 		<trans-unit id="addresses.description">
 			<source>You can choose, create or edit an address. New addresses will be saved on the current page.</source>
 		</trans-unit>
@@ -52,6 +58,9 @@
 		<trans-unit id="marker_cluster_size.description">
 			<source>The size of the Clusters, like a radius.</source>
 		</trans-unit>
+		<trans-unit id="marker_cluster_style.description">
+			<source>JSON Code, for more information view details</source>
+		</trans-unit>
 		<trans-unit id="marker_cluster_zoom.description">
 			<source>Up to this zoom level the Clusters are displayed.</source>
 		</trans-unit>
@@ -80,7 +89,7 @@
 			<source>Shows an icon to enable the streetview.</source>
 		</trans-unit>
 		<trans-unit id="styled_map_code.description">
-			<source>JSON, e.g. from http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</source>
+			<source>JSON Code, for more view details</source>
 		</trans-unit>
 		<trans-unit id="styled_map_name.description">
 			<source>Shown in the map type control.</source>

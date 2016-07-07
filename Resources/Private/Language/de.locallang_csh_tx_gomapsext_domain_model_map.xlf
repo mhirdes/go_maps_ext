@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-21T14:45:31Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-07-07T12:02:30Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -66,6 +66,10 @@
 			<source>The size of the Clusters, like a radius.</source>
 			<target>Die Größe bzw. der Radius der Cluster.</target>
 		</trans-unit>
+		<trans-unit id="marker_cluster_style.description" approved="yes">
+			<source>JSON Code, for more information view details</source>
+			<target>JSON Code, mehr Informationen in der Detailansicht</target>
+		</trans-unit>
 		<trans-unit id="marker_cluster_zoom.description" approved="yes">
 			<source>Up to this zoom level the Clusters are displayed.</source>
 			<target>Bis zu diesdem Zoom-Level werden die Cluster dargsetellt.</target>
@@ -103,8 +107,8 @@
 			<target>Zeigt einen Icon zum aktivieren der StreetView.</target>
 		</trans-unit>
 		<trans-unit id="styled_map_code.description" approved="yes">
-			<source>JSON, e.g. from http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</source>
-			<target>JSON, z.B. von http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</target>
+			<source>JSON Code, for more view details</source>
+			<target>JSON Code, weitere Informationen in Detailansicht</target>
 		</trans-unit>
 		<trans-unit id="styled_map_name.description" approved="yes">
 			<source>Shown in the map type control.</source>

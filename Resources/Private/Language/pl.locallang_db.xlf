@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2015-12-21T14:48:21Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2016-07-07T11:45:27Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -109,17 +109,9 @@
 			<source>Class</source>
 			<target>Klasa</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.controls" approved="yes">
-			<source>Controls</source>
-			<target>Sterowanie</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.default_type" approved="yes">
 			<source>Default type</source>
 			<target>Domyślny typ</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display" approved="yes">
-			<source>Display</source>
-			<target>Wyświetlanie</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.display.default.0" approved="yes">
 			<source>Map</source>
@@ -209,17 +201,13 @@
 			<source>Marker Search</source>
 			<target>Marker Szukaj</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.others" approved="yes">
-			<source>Record</source>
-			<target>Widoczność</target>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_map" approved="yes">
+			<source>Styled Map</source>
+			<target>Ostylowana mapa</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control" approved="yes">
 			<source>Pan control</source>
 			<target>Sterowanie położeniem</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.route" approved="yes">
-			<source>Route</source>
-			<target>Trasa</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.scale_control" approved="yes">
 			<source>Scale control</source>
@@ -237,10 +225,6 @@
 			<source>Streetview control</source>
 			<target>Sterowanie Street View</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map" approved="yes">
-			<source>Styled Map</source>
-			<target>Ostylowana mapa</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
 			<source>Code</source>
 			<target>Kod</target>
@@ -248,6 +232,22 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name" approved="yes">
 			<source>Styled Map name</source>
 			<target>Nazwa ostylowanej mapy</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.controls" approved="yes">
+			<source>Controls</source>
+			<target>Sterowanie</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.display" approved="yes">
+			<source>Display</source>
+			<target>Wyświetlanie</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.others" approved="yes">
+			<source>Record</source>
+			<target>Widoczność</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.route" approved="yes">
+			<source>Route</source>
+			<target>Trasa</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.title" approved="yes">
 			<source>Title</source>

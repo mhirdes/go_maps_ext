@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2015-12-21T14:45:31Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2016-07-07T12:02:30Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -75,7 +75,7 @@
 			<target>Pokazuje ikonę do włączenia Street View.</target>
 		</trans-unit>
 		<trans-unit id="styled_map_code.description" approved="yes">
-			<source>JSON, e.g. from http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</source>
+			<source>JSON Code, for more view details</source>
 			<target>JSON, np. z http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</target>
 		</trans-unit>
 		<trans-unit id="styled_map_name.description" approved="yes">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2015-12-21T14:48:21Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-07-07T11:45:27Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -102,14 +102,8 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.class">
 			<source>Class</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.controls">
-			<source>Controls</source>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.default_type">
 			<source>Default type</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display">
-			<source>Display</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.display.default.0">
 			<source>Map</source>
@@ -171,20 +165,20 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_size">
 			<source>Cluster size</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_zoom">
-			<source>Max zoom level</source>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_style">
 			<source>Marker Cluster style code</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_zoom">
+			<source>Max zoom level</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.marker_search">
 			<source>Marker Search</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.others">
-			<source>Record</source>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.additional">
 			<source>Additional</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.address_interaction">
+			<source>Address Interaction</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.cluster">
 			<source>Cluster settings</source>
@@ -192,9 +186,6 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.container">
 			<source>Container</source>
 		</trans-unit>
-        <trans-unit id="tx_gomapsext_domain_model_map.palettes.address_interaction">
-            <source>Address Interaction</source>
-        </trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction">
 			<source>Map Interaction</source>
 		</trans-unit>
@@ -204,14 +195,17 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.size">
 			<source>Size</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_cluster">
+			<source>Marker Cluster Style</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_map">
+			<source>Styled Map</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom">
 			<source>Zoom settings</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
 			<source>Pan control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.route">
-			<source>Route</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.scale_control">
 			<source>Scale control</source>
@@ -231,14 +225,26 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
 			<source>Streetview control</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map">
-			<source>Styled Map</source>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code">
 			<source>Code</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name">
 			<source>Styled Map name</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.controls">
+			<source>Controls</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.display">
+			<source>Display</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.others">
+			<source>Record</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.route">
+			<source>Route</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.style">
+			<source>Style</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.title">
 			<source>Title</source>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-21T14:48:21Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-07-07T11:45:27Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -133,17 +133,9 @@
 			<source>Class</source>
 			<target>Klasse</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.controls" approved="yes">
-			<source>Controls</source>
-			<target>Steuerung</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.default_type" approved="yes">
 			<source>Default type</source>
 			<target>Kartentyp am Anfang</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display" approved="yes">
-			<source>Display</source>
-			<target>Anzeige</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.display.default.0" approved="yes">
 			<source>Map</source>
@@ -225,25 +217,25 @@
 			<source>Cluster size</source>
 			<target>Cluster Größe</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_style" approved="yes">
+			<source>Marker Cluster style code</source>
+			<target>Marker Cluster Style Code</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_zoom" approved="yes">
 			<source>Max zoom level</source>
 			<target>Max. Zoom-Level</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_style">
-			<source>Marker Cluster style code</source>
-			<target>Marker Cluster Style Code</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.marker_search" approved="yes">
 			<source>Marker Search</source>
 			<target>Marker Suche</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.others" approved="yes">
-			<source>Record</source>
-			<target>Datensatz</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.additional" approved="yes">
 			<source>Additional</source>
 			<target>Zusätzliches</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.address_interaction" approved="yes">
+			<source>Address Interaction</source>
+			<target>Interaktionen Adressen</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.cluster" approved="yes">
 			<source>Cluster settings</source>
@@ -253,10 +245,6 @@
 			<source>Container</source>
 			<target>Container</target>
 		</trans-unit>
-        <trans-unit id="tx_gomapsext_domain_model_map.palettes.address_interaction" approved="yes">
-            <source>Address Interaction</source>
-            <target>Interaktionen Adressen</target>
-        </trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction" approved="yes">
 			<source>Map Interaction</source>
 			<target>Interaktionen Karte</target>
@@ -268,6 +256,14 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.size" approved="yes">
 			<source>Size</source>
 			<target>Maße</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_cluster" approved="yes">
+			<source>Marker Cluster Style</source>
+			<target>Marker Cluster Style</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_map" approved="yes">
+			<source>Styled Map</source>
+			<target>Styled Map</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom" approved="yes">
 			<source>Zoom settings</source>
@@ -301,10 +297,6 @@
 			<source>Streetview control</source>
 			<target>Zeige StreetView-Steuerung</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map" approved="yes">
-			<source>Styled Map</source>
-			<target>Styled Map</target>
-		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
 			<source>Code</source>
 			<target>Code</target>
@@ -312,6 +304,22 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name" approved="yes">
 			<source>Styled Map name</source>
 			<target>Name der benutzerdefierten Karte</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.controls" approved="yes">
+			<source>Controls</source>
+			<target>Steuerung</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.display" approved="yes">
+			<source>Display</source>
+			<target>Anzeige</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.others" approved="yes">
+			<source>Record</source>
+			<target>Datensatz</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.style" approved="yes">
+			<source>Style</source>
+			<target>Style</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.title" approved="yes">
 			<source>Title</source>
