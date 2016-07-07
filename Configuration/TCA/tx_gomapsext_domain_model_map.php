@@ -31,7 +31,7 @@ return array(
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
 		                          class, width, height, zoom, zoom_min, zoom_max, addresses, kml_url, kml_local, show_route,
 		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
-		                          marker_cluster_zoom, marker_cluster_size, marker_search, default_type,
+		                          marker_cluster_zoom, marker_cluster_size, marker_cluster_style, marker_search, default_type,
 		                          pan_control, scale_control, streetview_control, zoom_control, zoom_control_type,
 		                          map_type_control, map_types, styled_map_name, styled_map_code',
 	),
@@ -57,7 +57,7 @@ return array(
 	),
 	'palettes' => array(
         'address_interaction' => array('showitem' => 'marker_search, show_addresses, show_categories'),
-		'cluster' => array('showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'),
+		'cluster' => array('showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size, --linebreak--, marker_cluster_style'),
 		'controls' => array('showitem' => 'pan_control, scale_control, streetview_control'),
 		'interaction' => array('showitem' => 'scroll_zoom, draggable, double_click_zoom'),
 		'kml' => array('showitem' => 'kml_url, --linebreak--, kml_preserve_viewport, kml_local'),
@@ -339,6 +339,16 @@ return array(
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'int'
+			),
+		),
+		'marker_cluster_style' => array(
+			'exclude' => 1,
+			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_style',
+			'config' => array(
+				'type' => 'text',
+				'cols' => 40,
+				'rows' => 10,
+				'eval' => 'trim'
 			),
 		),
 		'marker_search' => array(

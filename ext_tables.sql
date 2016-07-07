@@ -80,6 +80,7 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	marker_cluster tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	marker_cluster_zoom int(11) DEFAULT '0' NOT NULL,
 	marker_cluster_size int(11) DEFAULT '0' NOT NULL,
+	marker_cluster_style text NOT NULL,
 	marker_search tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	default_type int(11) DEFAULT '0' NOT NULL,
 	pan_control tinyint(1) unsigned DEFAULT '0' NOT NULL,

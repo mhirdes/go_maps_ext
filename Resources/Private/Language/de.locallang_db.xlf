@@ -229,6 +229,10 @@
 			<source>Max zoom level</source>
 			<target>Max. Zoom-Level</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_style">
+			<source>Marker Cluster style code</source>
+			<target>Marker Cluster Style Code</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.marker_search" approved="yes">
 			<source>Marker Search</source>
 			<target>Marker Suche</target>
