@@ -91,6 +91,14 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		if ($this->extConf['include_manually'] != 1) {
 			$scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
 					$this->request->getControllerExtensionKey()
+				) . 'Resources/Public/Scripts/ZipFile.complete.js';
+			
+			$scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
+					$this->request->getControllerExtensionKey()
+				) . 'Resources/Public/Scripts/geoxml3.js';
+			
+			$scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
+					$this->request->getControllerExtensionKey()
 				) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
 
 			$scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(

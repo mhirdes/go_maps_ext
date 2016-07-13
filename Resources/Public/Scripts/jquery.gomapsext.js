@@ -426,17 +426,21 @@
                 _map = this.map,
                 gme = this.data,
                 Route = this.route,
+                infoWindow = this.infoWindow, 
                 $element = this.element;
 
             // KML import
             if (gme.mapSettings.kmlUrl != '' && gme.mapSettings.kmlLocal == 0) {
+            	console.log(gme.mapSettings.kmlUrl); 
                 var kmlLayer = new google.maps.KmlLayer(gme.mapSettings.kmlUrl, {preserveViewport: gme.mapSettings.kmlPreserveViewport});
                 kmlLayer.setMap(_map);
             }
 
             // KML import local
             if (gme.mapSettings.kmlUrl != '' && gme.mapSettings.kmlLocal == 1) {
-                $.get(gme.mapSettings.kmlUrl, function (data) {
+            	var myParser = new geoXML3.parser({map: _map});
+				myParser.parse(gme.mapSettings.kmlUrl);
+                /*$.get(gme.mapSettings.kmlUrl, function (data) {
 
                     //loop through placemarks tags
                     $(data).find("Placemark").each(function () {
@@ -464,7 +468,7 @@
                         _this.addMapPoint(address, Route, $element, infoWindow, gme);
                         gme.addresses.push(address);
                     });
-                });
+                });*/
             }
         },
 
