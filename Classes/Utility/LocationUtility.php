@@ -45,9 +45,15 @@ class LocationUtility {
 	public function render(array &$PA, $pObj) {
 		$version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
 		$settings = $this->loadTS($PA['row']['pid']);
-		$googleMapsLibrary = $settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary'] ?
-			htmlentities($settings['plugin.']['tx_gomapsext.']['settings.']['googleMapsLibrary']) :
-			'//maps.google.com/maps/api/js?v=3.17&amp;sensor=false';
+		$pluginSettings = $settings['plugin.']['tx_gomapsext.']['settings.'];
+
+		$googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
+			htmlentities($pluginSettings['googleMapsLibrary']) :
+			'//maps.google.com/maps/api/js?v=3.23&sensor=false';
+
+		if ($pluginSettings['apiKey']) {
+			$googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
+		}
 
 		$out = array();
 		$latitude = (float)$PA['row'][$PA['parameters']['latitude']];
