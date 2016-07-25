@@ -231,15 +231,20 @@
             if (pointDescription.marker != "") {
                 var Icon;
                 if (pointDescription.imageSize == 1) {
-                    Icon = new google.maps.MarkerImage(pointDescription.marker,
-                        new google.maps.Size(pointDescription.imageWidth, pointDescription.imageHeight),
-                        new google.maps.Point(0, 0));
+                    Icon = {
+                        url: pointDescription.marker,
+                        size: new google.maps.Size(pointDescription.imageWidth * 2, pointDescription.imageHeight * 2),
+                        scaledSize: new google.maps.Size(pointDescription.imageWidth, pointDescription.imageHeight),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(pointDescription.imageWidth / 2, pointDescription.imageHeight)
+                    };
+
                     var Shape = {
                         type: 'rectangle',
                         coord: [0, 0, pointDescription.imageWidth, 0, pointDescription.imageWidth, pointDescription.imageHeight, 0, pointDescription.imageHeight, 0, 0]
                     };
                 } else {
-                    Icon = new google.maps.MarkerImage(pointDescription.marker);
+                    Icon = pointDescription.marker;
                 }
                 $.extend(markerOptions, {icon: Icon, shape: Shape});
             }
