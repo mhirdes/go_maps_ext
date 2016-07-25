@@ -84,16 +84,19 @@
             latitude: {address.latitude -> f:format.number(decimals:6, thousandsSeparator:'')},
             longitude: {address.longitude -> f:format.number(decimals:6, thousandsSeparator:'')},
             address: '<gomapsext:escape>{address.address}</gomapsext:escape>',
-            <f:if condition="{address.imageSize}">
-                <f:then>
-                    marker: '{f:if(condition:"{address.marker}",then:"{f:uri.image(src:address.marker.uid,absolute:1,treatIdAsReference:1,width:address.imageWidth,height:'{address.imageHeight}c')}")}',
-                    imageSize: 1,
-                </f:then>
-                <f:else>
-                    marker: '{f:if(condition:"{address.marker}" then:"{f:uri.image(src:address.marker.originalResource.publicUrl,absolute:1)}")}',
-                    imageSize: 0,
-                </f:else>
-            </f:if>
+	        <f:if condition="{address.marker}">
+		        <f:if condition="{address.imageSize}">
+			        <f:then>
+				        marker: '{f:uri.image(src:address.marker.uid,absolute:1,treatIdAsReference:1,width:address.imageWidth,height:'{address.imageHeight}c')}',
+				        imageSize: 1,
+			        </f:then>
+			        <f:else>
+				        marker: '{f:uri.image(src:address.marker.originalResource.publicUrl,absolute:1)}',
+				        imageSize: 0,
+			        </f:else>
+		        </f:if>
+	        </f:if>
+
             imageWidth: {address.imageWidth},
             imageHeight: {address.imageHeight},
             infoWindowContent: '<f:format.raw><gomapsext:escape><f:format.html>{address.infoWindowContent}</f:format.html></gomapsext:escape></f:format.raw>',
