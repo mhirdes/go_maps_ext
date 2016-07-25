@@ -86,11 +86,11 @@
             address: '<gomapsext:escape>{address.address}</gomapsext:escape>',
             <f:if condition="{address.imageSize}">
                 <f:then>
-                    marker: '{f:if(condition:"{address.marker}",then:"{f:uri.image(src:address.marker.uid,treatIdAsReference:1,width:address.imageWidth,height:'{address.imageHeight}c')}")}',
+                    marker: '{f:if(condition:"{address.marker}",then:"{f:uri.image(src:address.marker.uid,absolute:1,treatIdAsReference:1,width:address.imageWidth,height:'{address.imageHeight}c')}")}',
                     imageSize: 1,
                 </f:then>
                 <f:else>
-                    marker: '{f:if(condition:"{address.marker}" then:"{address.marker.originalResource.publicUrl}")}',
+                    marker: '{f:if(condition:"{address.marker}" then:"{f:uri.image(src:address.marker.originalResource.publicUrl,absolute:1)}")}',
                     imageSize: 0,
                 </f:else>
             </f:if>
