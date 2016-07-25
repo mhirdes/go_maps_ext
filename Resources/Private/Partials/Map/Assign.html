@@ -90,7 +90,7 @@
                     imageSize: 1,
                 </f:then>
                 <f:else>
-                    marker: '{f:if(condition:"{address.marker}" then:"{address.marker.originalResource.publicUrl}")}',
+                    marker: '{gomapsext:uriPrefix()}{f:if(condition:"{address.marker}" then:"{address.marker.originalResource.publicUrl}")}',
                     imageSize: 0,
                 </f:else>
             </f:if>
