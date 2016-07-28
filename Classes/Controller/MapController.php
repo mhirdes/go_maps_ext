@@ -60,8 +60,9 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 			$addJsMethod = 'addJsFooter';
 		}
 		$googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
-			htmlentities($this->settings['googleMapsLibrary']) :
+			$this->settings['googleMapsLibrary'] :
 			'//maps.google.com/maps/api/js?v=3.23&sensor=false';
+
 		if ($this->settings['apiKey']) {
 			$googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
 		}
