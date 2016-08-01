@@ -384,6 +384,15 @@ field.
          samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html>`_
 
 
+.. container:: table-row
+
+   Property
+         markerClusterStyle
+
+   Description
+         JSON code for the cluster style, for more information look here `https://github.com/googlemaps/js-marker-clusterer <https://github.com/googlemaps/js-marker-clusterer>`_
+
+
 .. ###### END~OF~TABLE ######
 
 
@@ -468,7 +477,7 @@ Of course there are some more options...
          imageSize
 
    Description
-         Check if the image of the marker has a different size then default.
+         Check if the image of the marker has a different size then default. The image should be twice as large as indicated.
 
 
 .. container:: table-row

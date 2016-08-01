@@ -13,4 +13,4 @@ Known Problems
 - Current developer version: `https://github.com/mhirdes/go\_maps\_ext
   <https://github.com/mhirdes/go_maps_ext>`_
 
-
+- Slack channel: #ext-go_maps_ext

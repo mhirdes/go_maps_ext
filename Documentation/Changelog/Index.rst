@@ -20,6 +20,14 @@ ChangeLog
 .. container:: table-row
 
    Version
+         2.2.0
+
+   Changes
+         Cluster style option (update DB), high resolution markers, API key fixes, absolute image paths
+
+.. container:: table-row
+
+   Version
          2.0.0
 
    Changes

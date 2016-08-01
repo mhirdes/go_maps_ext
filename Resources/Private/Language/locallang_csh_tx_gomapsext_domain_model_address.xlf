@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-11-21T11:34:06Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-01T07:19:58Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_address</description>
 			<type>CSH</type>
@@ -10,43 +10,43 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-		<trans-unit id="address.description" xml:space="preserve">
+		<trans-unit id="address.description">
 			<source>Please enter an address or coordinates on the position field above and press update.</source>
 		</trans-unit>
-		<trans-unit id="close_by_click.description" xml:space="preserve">
+		<trans-unit id="close_by_click.description">
 			<source>Close InfoWindow by click instead of mouse out.</source>
 		</trans-unit>
-		<trans-unit id="configuration_map.description" xml:space="preserve">
+		<trans-unit id="configuration_map.description">
 			<source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
 		</trans-unit>
-		<trans-unit id="image_height.description" xml:space="preserve">
+		<trans-unit id="image_height.description">
 			<source>Costum image height in pixel.</source>
 		</trans-unit>
-		<trans-unit id="image_size.description" xml:space="preserve">
-			<source>Check if the image has a different size then default.</source>
+		<trans-unit id="image_size.description">
+			<source>Check if the image has a different size then default. The image should be twice as large as indicated.</source>
 		</trans-unit>
-		<trans-unit id="image_width.description" xml:space="preserve">
+		<trans-unit id="image_width.description">
 			<source>Costum image width in pixel.</source>
 		</trans-unit>
-		<trans-unit id="info_window_content.description" xml:space="preserve">
+		<trans-unit id="info_window_content.description">
 			<source>This will be displayed in the InfoWindow of this marker.</source>
 		</trans-unit>
-		<trans-unit id="info_window_link.description" xml:space="preserve">
+		<trans-unit id="info_window_link.description">
 			<source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
 		</trans-unit>
-		<trans-unit id="latitude.description" xml:space="preserve">
+		<trans-unit id="latitude.description">
 			<source>Please enter an address or coordinates on the position field above and press update.</source>
 		</trans-unit>
-		<trans-unit id="longitude.description" xml:space="preserve">
+		<trans-unit id="longitude.description">
 			<source>Please enter an address or coordinates on the position field above and press update.</source>
 		</trans-unit>
-		<trans-unit id="marker.description" xml:space="preserve">
+		<trans-unit id="marker.description">
 			<source>Choose a costum image for the pin.</source>
 		</trans-unit>
-		<trans-unit id="open_by_click.description" xml:space="preserve">
+		<trans-unit id="open_by_click.description">
 			<source>Open InfoWindow by click instead of mouse over.</source>
 		</trans-unit>
-		<trans-unit id="opened.description" xml:space="preserve">
+		<trans-unit id="opened.description">
 			<source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
 		</trans-unit>
 		</body>
