@@ -55,7 +55,7 @@ class LocationUtility {
 			$googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
 		}
 
-		$out = array();
+		$out = [];
 		$latitude = (float)$PA['row'][$PA['parameters']['latitude']];
 		$longitude = (float)$PA['row'][$PA['parameters']['longitude']];
 		$address = $PA['row'][$PA['parameters']['address']];
@@ -269,11 +269,11 @@ EOT;
 	}
 
 	protected function loadTS($pageUid) {
-		$sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance(
+		$sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
 			'TYPO3\\CMS\\Frontend\\Page\\PageRepository'
 		);
 		$rootLine = $sysPageObj->getRootLine($pageUid);
-		$TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility ::makeInstance(
+		$TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
 			'TYPO3\\CMS\\Core\\TypoScript\\ExtendedTemplateService'
 		);
 		$TSObj->tt_track = 0;

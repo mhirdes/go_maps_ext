@@ -34,13 +34,13 @@ namespace Clickstorm\GoMapsExt\Evaluation;
  */
 class Double6Evaluator {
 
-    function returnFieldJS() {
-        return '
+	function returnFieldJS() {
+		return '
          return parseFloat(value).toFixed(6);
       ';
-    }
+	}
 
-    function evaluateFieldValue($value, $is_in, &$set) {
-        return sprintf('%01.6f', $value);
-    }
+	function evaluateFieldValue($value, $is_in, &$set) {
+		return sprintf('%01.6f', $value);
+	}
 }

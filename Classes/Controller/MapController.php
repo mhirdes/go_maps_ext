@@ -111,10 +111,10 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 	 * @return void
 	 */
 	public function showAction(\Clickstorm\GoMapsExt\Domain\Model\Map $map = null) {
-		$categoriesArray = array();
+		$categoriesArray = [];
 
 		// get current map
-		$map = $map ? : $this->mapRepository->findByUid($this->settings['map']);
+		$map = $map ?: $this->mapRepository->findByUid($this->settings['map']);
 
 		// find addresses
 		$pid = $this->settings['storagePid'];
@@ -135,12 +135,12 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		}
 
 		$this->view->assignMultiple(
-			array(
+			[
 				'request' => $this->request->getArguments(),
 				'map' => $map,
 				'addresses' => $addresses,
 				'categories' => $categoriesArray
-			)
+			]
 		);
 	}
 

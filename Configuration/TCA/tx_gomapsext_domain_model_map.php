@@ -1,42 +1,40 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-	die ('Access denied.');
-}
 
-return array(
-	'ctrl' => array(
+return [
+	'ctrl' => [
 		'title' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map',
 		'label' => 'title',
 		'tstamp' => 'tstamp',
 		'crdate' => 'crdate',
 		'cruser_id' => 'cruser_id',
-		'dividers2tabs' => TRUE,
+		'dividers2tabs' => true,
 		'default_sortby' => 'ORDER BY title',
 		'versioningWS' => 2,
-		'versioning_followPages' => TRUE,
+		'versioning_followPages' => true,
 		'origUid' => 't3_origuid',
 		'languageField' => 'sys_language_uid',
 		'transOrigPointerField' => 'l10n_parent',
 		'transOrigDiffSourceField' => 'l10n_diffsource',
 		'delete' => 'deleted',
-		'enablecolumns' => array(
+		'enablecolumns' => [
 			'disabled' => 'hidden',
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
-		),
+		],
 		'searchFields' => 'title,tooltip_title',
 		'iconfile' => 'EXT:go_maps_ext/Resources/Public/Icons/tx_gomapsext_domain_model_map.png'
-	),
-	'interface' => array(
+	],
+	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
 		                          class, width, height, zoom, zoom_min, zoom_max, addresses, kml_url, kml_local, show_route,
 		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
 		                          marker_cluster_zoom, marker_cluster_size, marker_cluster_style, marker_search, default_type,
 		                          pan_control, scale_control, streetview_control, zoom_control, zoom_control_type,
 		                          map_type_control, map_types, styled_map_name, styled_map_code',
-	),
-	'types' => array(
-		'0' => array('showitem' => 'title,
+	],
+	'types' => [
+		'0' => [
+			'showitem' => 'title,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.size;size,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.zoom;zoom, addresses,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.kml;kml,
@@ -54,161 +52,162 @@ return array(
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.styled_map;styled_map,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.styled_cluster;styled_cluster,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tab.others,
-					sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;time')
-	),
-	'palettes' => array(
-        'address_interaction' => array('showitem' => 'marker_search, show_addresses, show_categories'),
-		'cluster' => array('showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'),
-		'controls' => array('showitem' => 'pan_control, scale_control, streetview_control'),
-		'interaction' => array('showitem' => 'scroll_zoom, draggable, double_click_zoom'),
-		'kml' => array('showitem' => 'kml_url, --linebreak--, kml_preserve_viewport, kml_local'),
-		'map_control' => array('showitem' => 'map_type_control, --linebreak--, map_types'),
-		'size' => array('showitem' => 'width, height'),
-		'styled_map' => array('showitem' => 'styled_map_name, --linebreak--, styled_map_code'),
-		'styled_cluster' => array('showitem' => 'marker_cluster_style'),
-        'time' => array('showitem' => 'starttime, endtime'),
-		'zoom' => array('showitem' => 'zoom, --linebreak--, zoom_min, zoom_max'),
-		'zoom_control' => array('showitem' => 'zoom_control, --linebreak--, zoom_control_type'),
-	),
-	'columns' => array(
-		'sys_language_uid' => array(
+					sys_language_uid, l10n_parent, l10n_diffsource, hidden, --palette--;;time'
+		]
+	],
+	'palettes' => [
+		'address_interaction' => ['showitem' => 'marker_search, show_addresses, show_categories'],
+		'cluster' => ['showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'],
+		'controls' => ['showitem' => 'pan_control, scale_control, streetview_control'],
+		'interaction' => ['showitem' => 'scroll_zoom, draggable, double_click_zoom'],
+		'kml' => ['showitem' => 'kml_url, --linebreak--, kml_preserve_viewport, kml_local'],
+		'map_control' => ['showitem' => 'map_type_control, --linebreak--, map_types'],
+		'size' => ['showitem' => 'width, height'],
+		'styled_map' => ['showitem' => 'styled_map_name, --linebreak--, styled_map_code'],
+		'styled_cluster' => ['showitem' => 'marker_cluster_style'],
+		'time' => ['showitem' => 'starttime, endtime'],
+		'zoom' => ['showitem' => 'zoom, --linebreak--, zoom_min, zoom_max'],
+		'zoom_control' => ['showitem' => 'zoom_control, --linebreak--, zoom_control_type'],
+	],
+	'columns' => [
+		'sys_language_uid' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
-			'config' => array(
+			'config' => [
 				'type' => 'select',
-                'renderType' => 'selectSingle',
+				'renderType' => 'selectSingle',
 				'foreign_table' => 'sys_language',
 				'foreign_table_where' => 'ORDER BY sys_language.title',
-				'items' => array(
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1),
-					array('LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0)
-				),
-			),
-		),
-		'l10n_parent' => array(
+				'items' => [
+					['LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1],
+					['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0]
+				],
+			],
+		],
+		'l10n_parent' => [
 			'displayCond' => 'FIELD:sys_language_uid:>:0',
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
-			'config' => array(
+			'config' => [
 				'type' => 'select',
-                'renderType' => 'selectSingle',
-				'items' => array(
-					array('', 0),
-				),
+				'renderType' => 'selectSingle',
+				'items' => [
+					['', 0],
+				],
 				'foreign_table' => 'tx_gomapsext_domain_model_map',
 				'foreign_table_where' => 'AND tx_gomapsext_domain_model_map.pid=###CURRENT_PID### AND tx_gomapsext_domain_model_map.sys_language_uid IN (-1,0)',
-			),
-		),
-		'l10n_diffsource' => array(
-			'config' => array(
+			],
+		],
+		'l10n_diffsource' => [
+			'config' => [
 				'type' => 'passthrough',
-			),
-		),
-		't3ver_label' => array(
+			],
+		],
+		't3ver_label' => [
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 30,
 				'max' => 255,
-			)
-		),
-		'hidden' => array(
+			]
+		],
+		'hidden' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
-			),
-		),
-		'starttime' => array(
+			],
+		],
+		'starttime' => [
 			'exclude' => 1,
 			'l10n_mode' => 'mergeIfNotBlank',
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 13,
 				'max' => 20,
 				'eval' => 'datetime',
 				'checkbox' => 0,
 				'default' => 0,
-				'range' => array(
+				'range' => [
 					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-				),
-			),
-		),
-		'endtime' => array(
+				],
+			],
+		],
+		'endtime' => [
 			'exclude' => 1,
 			'l10n_mode' => 'mergeIfNotBlank',
 			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 13,
 				'max' => 20,
 				'eval' => 'datetime',
 				'checkbox' => 0,
 				'default' => 0,
-				'range' => array(
+				'range' => [
 					'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-				),
-			),
-		),
-		'title' => array(
+				],
+			],
+		],
+		'title' => [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.title',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim,required'
-			),
-		),
-		'width' => array(
+			],
+		],
+		'width' => [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.width',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'required'
-			),
-		),
-		'height' => array(
+			],
+		],
+		'height' => [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.height',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'required'
-			),
-		),
-		'zoom' => array(
+			],
+		],
+		'zoom' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'int'
-			),
-		),
-		'zoom_min' => array(
+			],
+		],
+		'zoom_min' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_min',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'int'
-			),
-		),
-		'zoom_max' => array(
+			],
+		],
+		'zoom_max' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_max',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'int'
-			),
-		),
-		'addresses' => array(
+			],
+		],
+		'addresses' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.addresses',
-			'config' => array(
+			'config' => [
 				'type' => 'group',
 				'internal_type' => 'db',
 				'allowed' => 'tx_gomapsext_domain_model_address',
@@ -218,306 +217,372 @@ return array(
 				'autoSizeMax' => 30,
 				'maxitems' => 9999,
 				'multiple' => 0,
-				'wizards' => array(
+				'wizards' => [
 					'_POSITION' => 'right',
 					'_PADDING' => 4,
 					'_VERTICAL' => 0,
 					'_DISTANCE' => 2,
-					'suggest' => array(
+					'suggest' => [
 						'type' => 'suggest'
-					),
-					'edit' => array(
+					],
+					'edit' => [
 						'type' => 'popup',
 						'title' => 'Edit',
-						'module' => array(
+						'module' => [
 							'name' => 'wizard_edit',
-						),
+						],
 						'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_edit.gif',
 						'popup_onlyOpenIfSelected' => 1,
 						'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-					),
-					'add' => Array(
+					],
+					'add' => [
 						'type' => 'script',
 						'title' => 'Create new',
 						'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_add.gif',
-						'params' => array(
+						'params' => [
 							'table' => 'tx_gomapsext_domain_model_address',
 							'pid' => '###CURRENT_PID###',
 							'setValue' => 'prepend'
-						),
-						'module' => array(
+						],
+						'module' => [
 							'name' => 'wizard_add',
-						),
-					),
-				),
-			),
-		),
-		'kml_url' => array(
+						],
+					],
+				],
+			],
+		],
+		'kml_url' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.kml_url',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim',
 				'max' => 500
-			),
-		),
-		'kml_local' => array(
+			],
+		],
+		'kml_local' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.kml_local',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'kml_preserve_viewport' => array(
+			],
+		],
+		'kml_preserve_viewport' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.kml_preserve_viewport',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'show_addresses' => array(
+			],
+		],
+		'show_addresses' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_addresses',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'show_categories' => array(
+			],
+		],
+		'show_categories' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_categories',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'scroll_zoom' => array(
+			],
+		],
+		'scroll_zoom' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.scroll_zoom',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'draggable' => array(
+			],
+		],
+		'draggable' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.draggable',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'double_click_zoom' => array(
+			],
+		],
+		'double_click_zoom' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.double_click_zoom',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'marker_cluster' => array(
+			],
+		],
+		'marker_cluster' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'marker_cluster_zoom' => array(
+			],
+		],
+		'marker_cluster_zoom' => [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_zoom',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'int'
-			),
-		),
-		'marker_cluster_size' => array(
+			],
+		],
+		'marker_cluster_size' => [
 			'exclude' => 0,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_size',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 4,
 				'eval' => 'int'
-			),
-		),
-		'marker_cluster_style' => array(
+			],
+		],
+		'marker_cluster_style' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_style',
-			'config' => array(
+			'config' => [
 				'type' => 'text',
 				'cols' => 40,
 				'rows' => 10,
 				'eval' => 'trim'
-			),
-		),
-		'marker_search' => array(
+			],
+		],
+		'marker_search' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_search',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'default_type' => array(
+			],
+		],
+		'default_type' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.default_type',
-			'config' => array(
+			'config' => [
 				'type' => 'radio',
-				'items' => array(
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.0', 0),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.1', 1),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.2', 2),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.3', 3),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.4', 4),
-				),
+				'items' => [
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.0',
+						0
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.1',
+						1
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.2',
+						2
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.3',
+						3
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.display.default.4',
+						4
+					],
+				],
 				'eval' => '',
 				'default' => 0
-			),
-		),
-		'pan_control' => array(
+			],
+		],
+		'pan_control' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.pan_control',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'scale_control' => array(
+			],
+		],
+		'scale_control' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.scale_control',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'streetview_control' => array(
+			],
+		],
+		'streetview_control' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.streetview_control',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'zoom_control' => array(
+			],
+		],
+		'zoom_control' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'zoom_control_type' => array(
+			],
+		],
+		'zoom_control_type' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type',
-			'config' => array(
+			'config' => [
 				'type' => 'radio',
 				'default' => 0,
-				'items' => array(
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.0', 0),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.1', 1),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.2', 2),
-				),
-			),
-		),
-		'map_type_control' => array(
+				'items' => [
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.0',
+						0
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.1',
+						1
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.2',
+						2
+					],
+				],
+			],
+		],
+		'map_type_control' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_type_control',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 1
-			),
-		),
-		'map_types' => array(
+			],
+		],
+		'map_types' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types',
-			'config' => array(
+			'config' => [
 				'type' => 'select',
-                'renderType' => 'selectMultipleSideBySide',
-				'items' => array(
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.0', 0),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.1', 1),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.2', 2),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.3', 3),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.4', 4),
-				),
+				'renderType' => 'selectMultipleSideBySide',
+				'items' => [
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.0',
+						0
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.1',
+						1
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.2',
+						2
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.3',
+						3
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types.4',
+						4
+					],
+				],
 				'size' => 5,
 				'default' => '0,1,2',
 				'maxitems' => 5,
 				'eval' => '',
 
-			),
-		),
-		'show_route' => array(
+			],
+		],
+		'show_route' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_route',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'calc_route' => array(
+			],
+		],
+		'calc_route' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.calc_route',
-			'config' => array(
+			'config' => [
 				'type' => 'check',
 				'default' => 0
-			),
-		),
-		'travel_mode' => array(
+			],
+		],
+		'travel_mode' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode',
-			'config' => array(
+			'config' => [
 				'type' => 'radio',
-				'items' => array(
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.0', 0),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.1', 1),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.2', 2),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.3', 3),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.4', 4),
-				),
+				'items' => [
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.0',
+						0
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.1',
+						1
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.2',
+						2
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.3',
+						3
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode.4',
+						4
+					],
+				],
 				'eval' => '',
 				'default' => 0
-			),
-		),
-		'unit_system' => array(
+			],
+		],
+		'unit_system' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system',
-			'config' => array(
+			'config' => [
 				'type' => 'radio',
-				'items' => array(
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.0', 0),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.1', 1),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.2', 2),
-					array('LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.3', 3),
-				),
+				'items' => [
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.0',
+						0
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.1',
+						1
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.2',
+						2
+					],
+					[
+						'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system.3',
+						3
+					],
+				],
 				'eval' => '',
 				'default' => 2
-			),
-		),
-		'styled_map_name' => array(
+			],
+		],
+		'styled_map_name' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map_name',
-			'config' => array(
+			'config' => [
 				'type' => 'input',
 				'size' => 30,
 				'eval' => 'trim'
-			),
-		),
-		'styled_map_code' => array(
+			],
+		],
+		'styled_map_code' => [
 			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map_code',
-			'config' => array(
+			'config' => [
 				'type' => 'text',
 				'cols' => 40,
 				'rows' => 15,
 				'eval' => 'trim'
-			),
-		),
-	),
-);
+			],
+		],
+	],
+];
 
 ?>

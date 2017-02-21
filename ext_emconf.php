@@ -10,7 +10,7 @@
  * writing. "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
 	'title' => 'Google Maps API Extbase',
 	'description' => 'Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route,
 	                  images for markers, style maps, KML, categories, responsive and many more.',
@@ -24,18 +24,18 @@ $EM_CONF[$_EXTKEY] = array(
 	'author_email' => 'marc_hirdes@gmx.de',
 	'author_company' => 'clickstorm GmbH',
 	'constraints' =>
-		array(
+		[
 			'depends' =>
-				array(
+				[
 					'typo3' => '7.6.0 - 8.9.99',
-				),
+				],
 			'conflicts' =>
-				array(),
+				[],
 			'suggests' =>
-				array(),
-		),
+				[],
+		],
 	'suggests' =>
-		array(),
-);
+		[],
+];
 
 ?>
