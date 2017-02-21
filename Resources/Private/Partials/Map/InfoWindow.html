@@ -1,6 +1,5 @@
-<html xmlns:f="http://www.w3.org/1999/html"/>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-<f:section name="Main">
 <f:if condition="{address.infoWindowImages}">
     <f:for each="{address.infoWindowImages}" as="image">
         <f:link.typolink parameter="{image.originalResource.link}">
@@ -17,4 +16,3 @@
 <f:if condition="{address.infoWindowContent}">
     <f:format.html>{address.infoWindowContent}</f:format.html>
 </f:if>
-</f:section>

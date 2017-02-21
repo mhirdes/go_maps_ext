@@ -99,7 +99,7 @@
 
             imageWidth: {address.imageWidth},
             imageHeight: {address.imageHeight},
-            infoWindowContent: '<f:format.raw><gomapsext:escape><f:render partial="Map/InfoWindow" arguments="{_all}" section="Main" /></gomapsext:escape></f:format.raw>',
+            infoWindowContent: '<f:format.raw><gomapsext:escape><f:render partial="Map/InfoWindow" arguments="{_all}" /></gomapsext:escape></f:format.raw>',
             infoWindowLink: {address.infoWindowLink},
             <f:if condition="{settings.infoWindow.openByClick}">
                 <f:then>
