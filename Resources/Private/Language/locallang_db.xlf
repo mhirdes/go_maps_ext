@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-07-07T11:45:27Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-02-21T15:33:02Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -38,6 +38,9 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.info_window_content">
 			<source>InfoWindow content</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_address.info_window_images">
+			<source>InfoWindow image</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link">
 			<source>Link to Google Maps</source>

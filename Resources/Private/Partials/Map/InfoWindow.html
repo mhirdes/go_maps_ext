@@ -1,0 +1,20 @@
+<html xmlns:f="http://www.w3.org/1999/html"/>
+
+<f:section name="Main">
+<f:if condition="{address.infoWindowImages}">
+    <f:for each="{address.infoWindowImages}" as="image">
+        <f:link.typolink parameter="{image.originalResource.link}">
+            <f:image image="{image}" maxWidth="{settings.infoWindow.imageMaxWidth}" />
+        </f:link.typolink>
+        <f:if condition="{image.originalResource.description}">
+            <p>
+                {image.originalResource.description}
+            </p>
+        </f:if>
+    </f:for>
+</f:if>
+
+<f:if condition="{address.infoWindowContent}">
+    <f:format.html>{address.infoWindowContent}</f:format.html>
+</f:if>
+</f:section>

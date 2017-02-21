@@ -19,6 +19,8 @@ plugin.tx_gomapsext {
 			openByClick = 0
 			# cat=plugin.tx_gomapsext//c; type=boolean; label = Close Infowindows By Click
 			closeByClick = 0
+			# cat=plugin.tx_gomapsext//c; type=string; label = Max. width of image in infowindows
+			imageMaxWidth = 654
 		}
 	}
 }

@@ -506,6 +506,14 @@ Of course there are some more options...
    Description
          This will be displayed in the InfoWindow of this marker.
 
+.. container:: table-row
+
+   Property
+         infoWindowImages
+
+   Description
+         Extra field for fal images to show in the InfoWindow.
+
 
 .. container:: table-row
 

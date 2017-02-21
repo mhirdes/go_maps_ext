@@ -20,6 +20,7 @@ CREATE TABLE tx_gomapsext_domain_model_address (
 	image_height int(11) DEFAULT '0' NOT NULL,
 	info_window_content text NOT NULL,
 	info_window_link int(11) DEFAULT '0' NOT NULL,
+	info_window_images int(11) unsigned NOT NULL default '0',
 	close_by_click tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	open_by_click tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	opened tinyint(1) unsigned DEFAULT '0' NOT NULL,

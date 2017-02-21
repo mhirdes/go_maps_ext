@@ -96,6 +96,13 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected $infoWindowContent;
     /**
+     * infoWindowImages
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @lazy
+     */
+    protected $infoWindowImages = null;
+    /**
      * infoWindowLink
      *
      * @var \integer
@@ -157,6 +164,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
          * It will be rewritten on each save in the extension builder
          * You may modify the constructor of this class instead
          */
+        $this->infoWindowImages = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->categories = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
         $this->map = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
@@ -379,6 +387,49 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setInfoWindowContent($infoWindowContent)
     {
         $this->infoWindowContent = $infoWindowContent;
+    }
+
+    /**
+     * Adds a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImage
+     * @return void
+     */
+    public function addInfoWindowImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImage)
+    {
+        $this->infoWindowImages->attach($infoWindowImage);
+    }
+
+    /**
+     * Removes a FileReference
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImageToRemove The FileReference to be removed
+     * @return void
+     */
+    public function removeInfoWindowImage(\TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImageToRemove)
+    {
+        $this->infoWindowImages->detach($infoWindowImageToRemove);
+    }
+
+    /**
+     * Returns the infoWindowImages
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $infoWindowImages
+     */
+    public function getInfoWindowImages()
+    {
+        return $this->infoWindowImages;
+    }
+
+    /**
+     * Sets the infoWindowImages
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $infoWindowImages
+     * @return void
+     */
+    public function setInfoWindowImage(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $infoWindowImages)
+    {
+        $this->infoWindowImages = $infoWindowImages;
     }
 
     /**

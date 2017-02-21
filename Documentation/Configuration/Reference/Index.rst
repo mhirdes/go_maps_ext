@@ -167,6 +167,22 @@ Constants
 .. container:: table-row
 
    Property
+         settings.infoWindow.imageMaxWidth
+
+   Data type
+         String
+
+   Description
+         Set the max. width of the image in InfoWindows. Global configuration
+         for all addresses.
+
+   Default
+         654
+
+
+.. container:: table-row
+
+   Property
          language
    
    Data type
