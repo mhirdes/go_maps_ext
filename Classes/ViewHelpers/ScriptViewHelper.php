@@ -71,5 +71,3 @@ class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 		return '';
 	}
 }
-
-?>

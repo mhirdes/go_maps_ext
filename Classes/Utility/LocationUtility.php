@@ -284,5 +284,3 @@ EOT;
 		return $TSObj->setup;
 	}
 }
-
-?>

@@ -1130,5 +1130,3 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		return $unitSystems;
 	}
 }
-
-?>

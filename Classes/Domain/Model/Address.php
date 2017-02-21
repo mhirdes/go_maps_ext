@@ -565,5 +565,3 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->map = $map;
 	}
 }
-
-?>

@@ -61,5 +61,3 @@ class EscapeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelp
 		return str_replace("'", "\'", preg_replace("/\r\n|\r|\n/", "", $value));
 	}
 }
-
-?>
