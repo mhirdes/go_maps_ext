@@ -49,7 +49,7 @@ class LocationUtility {
 
 		$googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
 			htmlentities($pluginSettings['googleMapsLibrary']) :
-			'//maps.google.com/maps/api/js?v=3.23&sensor=false';
+			'//maps.google.com/maps/api/js?v=3.27';
 
 		if ($pluginSettings['apiKey']) {
 			$googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];

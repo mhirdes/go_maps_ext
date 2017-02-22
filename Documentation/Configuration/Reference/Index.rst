@@ -129,7 +129,7 @@ Constants
          Configure the URL form which the Google Maps JS is loaded
    
    Default
-         //maps.google.com/maps/api/js?v=3.17&sensor=false
+         //maps.google.com/maps/api/js?v=3.27
 
 
 .. container:: table-row
