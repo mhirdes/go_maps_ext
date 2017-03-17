@@ -140,3 +140,13 @@ CREATE TABLE tx_gomapsext_map_address_mm (
 	KEY uid_local (uid_local),
 	KEY uid_foreign (uid_foreign)
 );
+
+#
+# Extend table structure of table 'sys_category'
+#
+CREATE TABLE sys_category (
+	gme_marker int(11) unsigned NOT NULL default '0',
+	gme_image_size tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	gme_image_width int(11) DEFAULT '0' NOT NULL,
+	gme_image_height int(11) DEFAULT '0' NOT NULL,
+);

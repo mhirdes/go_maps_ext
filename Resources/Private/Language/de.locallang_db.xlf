@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-02-21T15:33:02Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-03-17T15:36:17Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -9,6 +9,10 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
+		<trans-unit id="sys_category.tab.map" approved="yes">
+			<source>Google Map</source>
+			<target>Google Karte</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_address" approved="yes">
 			<source>Google Maps Address</source>
 			<target>Google Maps Adresse</target>
