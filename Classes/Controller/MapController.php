@@ -119,7 +119,11 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		// find addresses
 		$pid = $this->settings['storagePid'];
 		if ($pid) {
-			$addresses = $this->addressRepository->findAllAddresses($map, $pid);
+			if ($pid == 'this'){
+				$addresses = $this->addressRepository->findAllAddresses($map, $GLOBALS['TSFE']->id);
+			} else {
+				$addresses = $this->addressRepository->findAllAddresses($map, $pid);
+			}
 		} else {
 			$addresses = $map->getAddresses();
 		}
