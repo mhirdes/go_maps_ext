@@ -98,10 +98,10 @@ Constants
          settings.storagePid
    
    Data type
-         integer
+         integer/String
    
    Description
-         Displays all addresses from this PID and additionally from the TCA
+         If integer is set, it will display all addresses from this PID and additionally from the TCA, if the string "this" is set, it will show the addresses from the current active page uid (i.e. settings.storagePid = "this")
          field
 
 
