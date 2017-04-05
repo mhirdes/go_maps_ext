@@ -210,6 +210,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom">
 			<source>Zoom settings</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates">
+			<source>Default card cutout</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
 			<source>Pan control</source>
 		</trans-unit>
@@ -317,6 +320,12 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.zoom_min">
 			<source>Zoom min</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.latitude">
+			<source>Latitude</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.longitude">
+			<source>Longitude</source>
 		</trans-unit>
 		</body>
 	</file>

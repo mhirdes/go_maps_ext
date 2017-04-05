@@ -124,6 +124,12 @@
 		<trans-unit id="zoom_min.description">
 			<source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
 		</trans-unit>
+		<trans-unit id="latitude.description">
+			<source>Insert the latitude of the point on which your map should be centered at the page load.</source>
+		</trans-unit>
+		<trans-unit id="longitude.description">
+			<source>Insert the longitude of the point on which your map should be centered at the page load.</source>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

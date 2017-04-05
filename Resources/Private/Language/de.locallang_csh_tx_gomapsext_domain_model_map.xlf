@@ -154,6 +154,14 @@
 			<source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
 			<target>Der minimale Zoomstufe, in der die Karte angezeigt wird. Wenn nicht angegeben oder auf Null gesetzt, wird der minimale Zoom vom aktuellen Kartentyp verwendet.</target>
 		</trans-unit>
+		<trans-unit id="latitude.description" approved="yes">
+			<source>Insert the latitude of the point on which your map should be centered at the page load.</source>
+			<target>Breitengrad des Punktes, welcher beim Seitenaufruf der Karte das Zentrum bildet.</target>
+		</trans-unit>
+		<trans-unit id="longitude.description" approved="yes">
+			<source>Insert the longitude of the point on which your map should be centered at the page load.</source>
+			<target>Längengrad des Punktes, welcher beim Seitenaufruf der Karte das Zentrum bildet.</target>
+		</trans-unit>
 		</body>
 	</file>
 </xliff>

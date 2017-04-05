@@ -349,6 +349,9 @@
 
             if ($element.data("center")) {
                 _map.setCenter($element.data("center"));
+            } else if(gme.mapSettings.lat != 0 && gme.mapSettings.lng != 0) {
+                _map.setCenter(new google.maps.LatLng(gme.mapSettings.lat, gme.mapSettings.lng));
+                _map.setZoom(gme.mapSettings.zoom);
             } else {
                 _map.fitBounds(this.bounds);
             }
