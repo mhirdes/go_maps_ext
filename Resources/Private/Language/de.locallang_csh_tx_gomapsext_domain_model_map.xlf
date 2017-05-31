@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2016-07-07T12:02:30Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-05-31T09:32:43Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -49,6 +49,14 @@
 		<trans-unit id="kml_url.description" approved="yes">
 			<source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
 			<target>Geben Sie die URL einer KML-Datei an, z.B. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</target>
+		</trans-unit>
+		<trans-unit id="latitude.description" approved="yes">
+			<source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
+			<target>Überschreiben des Breitengrades vom Mittelpunkt der Karte. Normalerweise wird dieser anhand der Adressen berechnet.</target>
+		</trans-unit>
+		<trans-unit id="longitude.description" approved="yes">
+			<source>If set this longitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
+			<target>Überschreiben des Längengrades vom Mittelpunkt der Karte. Normalerweise wird dieser anhand der Adressen berechnet.</target>
 		</trans-unit>
 		<trans-unit id="map_type_control.description" approved="yes">
 			<source>Shows a control to change the map type.</source>
@@ -153,14 +161,6 @@
 		<trans-unit id="zoom_min.description" approved="yes">
 			<source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
 			<target>Der minimale Zoomstufe, in der die Karte angezeigt wird. Wenn nicht angegeben oder auf Null gesetzt, wird der minimale Zoom vom aktuellen Kartentyp verwendet.</target>
-		</trans-unit>
-		<trans-unit id="latitude.description" approved="yes">
-			<source>Insert the latitude of the point on which your map should be centered at the page load.</source>
-			<target>Breitengrad des Punktes, welcher beim Seitenaufruf der Karte das Zentrum bildet.</target>
-		</trans-unit>
-		<trans-unit id="longitude.description" approved="yes">
-			<source>Insert the longitude of the point on which your map should be centered at the page load.</source>
-			<target>Längengrad des Punktes, welcher beim Seitenaufruf der Karte das Zentrum bildet.</target>
 		</trans-unit>
 		</body>
 	</file>

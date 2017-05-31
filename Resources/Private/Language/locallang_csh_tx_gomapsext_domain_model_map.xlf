@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-07-07T12:02:30Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-05-31T09:32:43Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -45,6 +45,12 @@
 		</trans-unit>
 		<trans-unit id="kml_url.description">
 			<source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
+		</trans-unit>
+		<trans-unit id="latitude.description">
+			<source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
+		</trans-unit>
+		<trans-unit id="longitude.description">
+			<source>If set this longitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
 		</trans-unit>
 		<trans-unit id="map_type_control.description">
 			<source>Shows a control to change the map type.</source>
@@ -123,12 +129,6 @@
 		</trans-unit>
 		<trans-unit id="zoom_min.description">
 			<source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
-		</trans-unit>
-		<trans-unit id="latitude.description">
-			<source>Insert the latitude of the point on which your map should be centered at the page load.</source>
-		</trans-unit>
-		<trans-unit id="longitude.description">
-			<source>Insert the longitude of the point on which your map should be centered at the page load.</source>
 		</trans-unit>
 		</body>
 	</file>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-03-17T15:36:17Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2017-05-31T09:28:10Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -144,6 +144,12 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.kml_url">
 			<source>URL of a KML file</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.latitude">
+			<source>Latitude</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.longitude">
+			<source>Longitude</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.map_type_control">
 			<source>Map type control</source>
 		</trans-unit>
@@ -192,6 +198,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.container">
 			<source>Container</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates">
+			<source>Default map center</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction">
 			<source>Map Interaction</source>
 		</trans-unit>
@@ -209,9 +218,6 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom">
 			<source>Zoom settings</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates">
-			<source>Default card cutout</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
 			<source>Pan control</source>
@@ -320,12 +326,6 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.zoom_min">
 			<source>Zoom min</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.latitude">
-			<source>Latitude</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.longitude">
-			<source>Longitude</source>
 		</trans-unit>
 		</body>
 	</file>

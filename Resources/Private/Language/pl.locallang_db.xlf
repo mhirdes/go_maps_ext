@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2017-03-17T15:36:17Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2017-05-31T09:28:10Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
