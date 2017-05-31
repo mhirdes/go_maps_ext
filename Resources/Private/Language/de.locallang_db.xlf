@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-05-31T09:28:10Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-05-31T09:37:59Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -332,6 +332,10 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.tab.display" approved="yes">
 			<source>Display</source>
 			<target>Anzeige</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.initial" approved="yes">
+			<source>Initial</source>
+			<target>Initial</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.tab.others" approved="yes">
 			<source>Record</source>
