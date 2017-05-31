@@ -378,10 +378,7 @@ field.
          styledMapCode
 
    Description
-         JSON, e.g. from `http://gmaps-
-         samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html <http
-         ://gmaps-
-         samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html>`_
+         JSON, e.g. from `https://mapstyle.withgoogle.com/ <https://mapstyle.withgoogle.com/>`_
 
 
 .. container:: table-row
