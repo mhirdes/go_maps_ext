@@ -259,6 +259,18 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 * @var \array
 	 */
 	protected $unitSystems = [];
+    /**
+     * latitude
+     *
+     * @var \float
+     */
+    protected $latitude;
+    /**
+     * longitude
+     *
+     * @var \float
+     */
+    protected $longitude;
 
 	/**
 	 * __construct
@@ -1129,4 +1141,43 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
 		return $unitSystems;
 	}
+
+    /**
+     * Returns the latitude
+     *
+     * @return \float $latitude
+     */
+    public function getLatitude() {
+        return $this->latitude;
+    }
+
+    /**
+     * Sets the latitude
+     *
+     * @param \float $latitude
+     * @return void
+     */
+    public function setLatitude($latitude) {
+        $this->latitude = $latitude;
+    }
+
+    /**
+     * Returns the longitude
+     *
+     * @return \float $longitude
+     */
+    public function getLongitude() {
+        return $this->longitude;
+    }
+
+    /**
+     * Sets the longitude
+     *
+     * @param \float $longitude
+     * @return void
+     */
+    public function setLongitude($longitude) {
+        $this->longitude = $longitude;
+    }
+
 }

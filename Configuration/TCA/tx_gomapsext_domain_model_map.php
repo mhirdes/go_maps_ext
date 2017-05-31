@@ -24,7 +24,7 @@ return [
 	],
 	'interface' => [
 		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
-		                          class, width, height, zoom, zoom_min, zoom_max, addresses, kml_url, kml_local, show_route,
+		                          class, width, height, zoom, zoom_min, zoom_max, latitude, longitude, addresses, kml_url, kml_local, show_route,
 		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
 		                          marker_cluster_zoom, marker_cluster_size, marker_cluster_style, marker_search, default_type,
 		                          pan_control, scale_control, streetview_control, zoom_control, zoom_control_type,
@@ -35,6 +35,7 @@ return [
 			'showitem' => 'title,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.size;size,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.zoom;zoom, addresses,
+					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.coordinates;coordinates,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.kml;kml,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tab.display,
 					default_type,
@@ -57,6 +58,7 @@ return [
 		'address_interaction' => ['showitem' => 'marker_search, show_addresses, show_categories'],
 		'cluster' => ['showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'],
 		'controls' => ['showitem' => 'pan_control, scale_control, streetview_control'],
+        'coordinates' => ['showitem' => 'latitude, longitude'],
 		'interaction' => ['showitem' => 'scroll_zoom, draggable, double_click_zoom'],
 		'kml' => ['showitem' => 'kml_url, --linebreak--, kml_preserve_viewport, kml_local'],
 		'map_control' => ['showitem' => 'map_type_control, --linebreak--, map_types'],
@@ -580,5 +582,23 @@ return [
 				'eval' => 'trim'
 			],
 		],
+        'latitude' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.latitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,Clickstorm\\GoMapsExt\\Evaluation\\Double6Evaluator'
+            ],
+        ],
+        'longitude' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.longitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim,Clickstorm\\GoMapsExt\\Evaluation\\Double6Evaluator'
+            ],
+        ],
 	],
 ];

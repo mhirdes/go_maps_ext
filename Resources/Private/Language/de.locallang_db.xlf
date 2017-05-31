@@ -277,6 +277,10 @@
 			<source>Zoom settings</source>
 			<target>Zoom Einstellungen</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates" approved="yes">
+			<source>Default card cutout</source>
+			<target>Standard Kartenausschnitt</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control" approved="yes">
 			<source>Pan control</source>
 			<target>Zeige Schwenksteuerung</target>
@@ -416,6 +420,14 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.zoom_min" approved="yes">
 			<source>Zoom min</source>
 			<target>Zoom min</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.latitude" approved="yes">
+			<source>Latitude</source>
+			<target>Breitengrad</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.longitude" approved="yes">
+			<source>Longitude</source>
+			<target>Längengrad</target>
 		</trans-unit>
 		</body>
 	</file>

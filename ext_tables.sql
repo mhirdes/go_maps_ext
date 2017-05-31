@@ -97,6 +97,8 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	unit_system int(11) DEFAULT '0' NOT NULL,
 	styled_map_name varchar(255) DEFAULT '' NOT NULL,
 	styled_map_code text NOT NULL,
+	longitude double(11,6) DEFAULT '0.000000' NOT NULL,
+	latitude double(11,6) DEFAULT '0.000000' NOT NULL,
 	
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,
