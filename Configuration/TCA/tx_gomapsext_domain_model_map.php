@@ -327,7 +327,7 @@ return [
 			],
 		],
 		'marker_cluster_zoom' => [
-			'exclude' => 0,
+			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_zoom',
 			'config' => [
 				'type' => 'input',
@@ -336,7 +336,7 @@ return [
 			],
 		],
 		'marker_cluster_size' => [
-			'exclude' => 0,
+			'exclude' => 1,
 			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_size',
 			'config' => [
 				'type' => 'input',
@@ -584,7 +584,7 @@ return [
 			],
 		],
         'latitude' => [
-            'exclude' => 0,
+            'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.latitude',
             'config' => [
                 'type' => 'input',
@@ -593,7 +593,7 @@ return [
             ],
         ],
         'longitude' => [
-            'exclude' => 0,
+            'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.longitude',
             'config' => [
                 'type' => 'input',
