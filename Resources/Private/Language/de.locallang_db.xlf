@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-03-17T15:36:17Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-05-31T09:37:59Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -189,6 +189,14 @@
 			<source>URL of a KML file</source>
 			<target>URL einer KML Datei</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.latitude" approved="yes">
+			<source>Latitude</source>
+			<target>Breitengrad</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.longitude" approved="yes">
+			<source>Longitude</source>
+			<target>Längengrad</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.map_type_control" approved="yes">
 			<source>Map type control</source>
 			<target>Zeige Kartentyp-Steuerung</target>
@@ -253,6 +261,10 @@
 			<source>Container</source>
 			<target>Container</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates" approved="yes">
+			<source>Default map center</source>
+			<target>Standard Kartenausschnitt</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction" approved="yes">
 			<source>Map Interaction</source>
 			<target>Interaktionen Karte</target>
@@ -276,10 +288,6 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom" approved="yes">
 			<source>Zoom settings</source>
 			<target>Zoom Einstellungen</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates" approved="yes">
-			<source>Default card cutout</source>
-			<target>Standard Kartenausschnitt</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control" approved="yes">
 			<source>Pan control</source>
@@ -324,6 +332,10 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.tab.display" approved="yes">
 			<source>Display</source>
 			<target>Anzeige</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.tab.initial" approved="yes">
+			<source>Initial</source>
+			<target>Initial</target>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.tab.others" approved="yes">
 			<source>Record</source>
@@ -420,14 +432,6 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.zoom_min" approved="yes">
 			<source>Zoom min</source>
 			<target>Zoom min</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.latitude" approved="yes">
-			<source>Latitude</source>
-			<target>Breitengrad</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.longitude" approved="yes">
-			<source>Longitude</source>
-			<target>Längengrad</target>
 		</trans-unit>
 		</body>
 	</file>

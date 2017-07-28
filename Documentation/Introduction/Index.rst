@@ -40,7 +40,9 @@ Features
 
 - Import a KML file
 
-- Create an individual map style/marker image
+- Create an individual map style
+
+- Add Marker images for addresses or categories
 
 - Marker Cluster
 

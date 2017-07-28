@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2016-07-07T12:02:30Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2017-05-31T09:32:43Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -76,7 +76,7 @@
 		</trans-unit>
 		<trans-unit id="styled_map_code.description" approved="yes">
 			<source>JSON Code, for more view details</source>
-			<target>JSON, np. z http://gmaps-samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html</target>
+			<target>JSON, np. z https://mapstyle.withgoogle.com/</target>
 		</trans-unit>
 		<trans-unit id="styled_map_name.description" approved="yes">
 			<source>Shown in the map type control.</source>

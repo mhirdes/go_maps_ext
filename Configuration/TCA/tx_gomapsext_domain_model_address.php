@@ -261,6 +261,7 @@ return [
 				'cols' => 40,
 				'rows' => 15,
 				'eval' => 'trim',
+                'enableRichtext' => 1,
 				'wizards' => [
 					'RTE' => [
 						'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_rte.gif',

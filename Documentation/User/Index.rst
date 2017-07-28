@@ -98,6 +98,24 @@ field.
          You can choose, create or edit an address. New addresses will be saved
          on the current page.
 
+.. container:: table-row
+
+   Property
+         latitude
+
+   Description
+         If set this latitude will be used to center the map. Otherwise the center is calculated so that all
+         addresses fit in the map.
+
+.. container:: table-row
+
+   Property
+         longitude
+
+   Description
+         If set this longitude will be used to center the map. Otherwise the center is calculated so that all
+         addresses fit in the map.
+
 
 .. container:: table-row
 
@@ -378,10 +396,7 @@ field.
          styledMapCode
 
    Description
-         JSON, e.g. from `http://gmaps-
-         samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html <http
-         ://gmaps-
-         samples-v3.googlecode.com/svn/trunk/styledmaps/wizard/index.html>`_
+         JSON, e.g. from `https://mapstyle.withgoogle.com/ <https://mapstyle.withgoogle.com/>`_
 
 
 .. container:: table-row
