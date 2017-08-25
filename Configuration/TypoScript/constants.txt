@@ -13,7 +13,7 @@ plugin.tx_gomapsext {
 		# cat=plugin.tx_gomapsext//a; type=text+; label = API Key, https://developers.google.com/maps/documentation/javascript/get-api-key
 		apiKey =
         # cat=plugin.tx_gomapsext//a; type=text+; label = URL to Google Maps API: Default is current version
-        googleMapsLibrary = //maps.google.com/maps/api/js?v=3.28
+        googleMapsLibrary = //maps.google.com/maps/api/js?v=3.29
 		infoWindow {
 			# cat=plugin.tx_gomapsext//b; type=boolean; label = Open Infowindows By Click
 			openByClick = 0
