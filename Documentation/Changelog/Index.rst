@@ -20,6 +20,14 @@ ChangeLog
 .. container:: table-row
 
    Version
+         2.3.0
+
+   Changes
+         Info Window images, set map center, category marker, update API version, bugfixes
+
+.. container:: table-row
+
+   Version
          2.2.0
 
    Changes
