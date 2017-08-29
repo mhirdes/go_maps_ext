@@ -22,7 +22,7 @@ Features
 
 - Works with jQuery
 
-- Uses Version 3 of the Google Maps API, no API key needed
+- Uses Version 3 of the Google Maps API, API key needed
 
 - Add your own markers via geocoding in the backend
 
