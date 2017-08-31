@@ -1,39 +1,39 @@
 plugin.tx_gomapsext {
 	view {
 		templateRootPaths {
-            10 = {$plugin.tx_gomapsext.view.templateRootPath}
-        }
-        partialRootPaths {
-            10 = {$plugin.tx_gomapsext.view.partialRootPath}
-        }
-        layoutRootPaths {
-            10 = {$plugin.tx_gomapsext.view.layoutRootPath}
-        }
+			10 = {$plugin.tx_gomapsext.view.templateRootPath}
+		}
+		partialRootPaths {
+			10 = {$plugin.tx_gomapsext.view.partialRootPath}
+		}
+		layoutRootPaths {
+			10 = {$plugin.tx_gomapsext.view.layoutRootPath}
+		}
 	}
 	settings {
 		storagePid = {$plugin.tx_gomapsext.settings.storagePid}
-		apiKey = {$plugin.tx_gomapsext.settings.apiKey}
-        googleMapsLibrary = {$plugin.tx_gomapsext.settings.googleMapsLibrary}
+		googleMapsLibrary = {$plugin.tx_gomapsext.settings.googleMapsLibrary}
+		googleApiKey = {$plugin.tx_gomapsext.settings.googleApiKey}
 		infoWindow {
 			openByClick = {$plugin.tx_gomapsext.settings.infoWindow.openByClick}
 			closeByClick = {$plugin.tx_gomapsext.settings.infoWindow.closeByClick}	
-            imageMaxWidth = {$plugin.tx_gomapsext.settings.infoWindow.imageMaxWidth}
+			imageMaxWidth = {$plugin.tx_gomapsext.settings.infoWindow.imageMaxWidth}
 		}
 		language < config.language
 	}
 	
 	#Fix Twitter Bootstrap
-  	_CSS_DEFAULT_STYLE (
+	_CSS_DEFAULT_STYLE (
 		.tx-go-maps-ext img {
 			max-width: none;
 		}
-  	)
+	)
 }
 
 config.tx_extbase.persistence.classes {
-    Clickstorm\GoMapsExt\Domain\Model\Category {
-        mapping {
-            tableName = sys_category
-        }
-    }
+	Clickstorm\GoMapsExt\Domain\Model\Category {
+		mapping {
+			tableName = sys_category
+		}
+	}
 }

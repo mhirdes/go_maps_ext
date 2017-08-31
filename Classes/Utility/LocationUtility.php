@@ -47,12 +47,16 @@ class LocationUtility {
 		$settings = $this->loadTS($PA['row']['pid']);
 		$pluginSettings = $settings['plugin.']['tx_gomapsext.']['settings.'];
 
-		$googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
-			htmlentities($pluginSettings['googleMapsLibrary']) :
-			'//maps.google.com/maps/api/js?v=3.29';
+		$googleMapsLibrary = '';
+		if (isset($pluginSettings['googleMapsLibrary']) && ! empty($pluginSettings['googleMapsLibrary'])) {
+			$googleMapsLibrary = htmlentities($pluginSettings['googleMapsLibrary']);
+		}
 
-		if ($pluginSettings['apiKey']) {
-			$googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
+		// without API key we cannot load Google Maps but we should still show the plugin
+		// in the backend so we know the API key is missing
+		if (! empty($googleMapsLibrary) &&
+				isset($pluginSettings['googleApiKey']) && ! empty($pluginSettings['googleApiKey'])) {
+			$googleMapsLibrary .= '&amp;key=' . htmlentities($pluginSettings['googleApiKey']);
 		}
 
 		$out = [];
@@ -97,9 +101,10 @@ class LocationUtility {
 			$addressField
 		);
 
-		$out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
-		$out[] = '<script type="text/javascript">';
-		$out[] = <<<EOT
+		if (! empty($googleMapsLibrary)) {
+			$out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
+			$out[] = '<script type="text/javascript">';
+			$out[] = <<<EOT
 if (typeof TxClimbingSites == 'undefined') TxClimbingSites = {};
 
 String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); } 
@@ -256,7 +261,9 @@ TxClimbingSites.convertAddress = function(addressOld) {
 
 window.onload = TxClimbingSites.init;
 EOT;
-		$out[] = '</script>';
+			$out[] = '</script>';
+		}  // end if (! empty($googleMapsLibrary))
+
 		$out[] = '<div id="' . $baseElementId . '">';
 		$out[] = '
 			<input id="' . $addressId . '" type="textbox" value="' . $address . '" style="width:300px">

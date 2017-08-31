@@ -59,28 +59,33 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 		if ($this->extConf['footerJS'] == 1) {
 			$addJsMethod = 'addJsFooter';
 		}
-		$googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
-			$this->settings['googleMapsLibrary'] :
-			'//maps.google.com/maps/api/js?v=3.29';
 
-		if ($this->settings['apiKey']) {
-			$googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
+		// without API key we cannot load Google Maps
+		$googleMapsLibrary = '';
+		if (isset($this->settings['googleMapsLibrary']) && ! empty($this->settings['googleMapsLibrary']) &&
+				isset($this->settings['googleApiKey']) && ! empty($this->settings['googleApiKey'])) {
+			$googleMapsLibrary = $this->settings['googleMapsLibrary'];
+
+			$googleMapsLibrary .= '&key=' . $this->settings['googleApiKey'];
+
+			if (isset($this->settings['language']) && ! empty($this->settings['language'])) {
+				$googleMapsLibrary .= '&language=' . $this->settings['language'];
+			}
 		}
-		if ($this->settings['language']) {
-			$googleMapsLibrary .= '&language=' . $this->settings['language'];
+
+		if (! empty($googleMapsLibrary)) {
+			$pageRenderer->{$addJsMethod . 'Library'}(
+				'googleMaps',
+				$googleMapsLibrary,
+				'text/javascript',
+				false,
+				false,
+				'',
+				true
+			);
 		}
 
-		$pageRenderer->{$addJsMethod . 'Library'}(
-			'googleMaps',
-			$googleMapsLibrary,
-			'text/javascript',
-			false,
-			false,
-			'',
-			true
-		);
-
-		if ($this->extConf['include_library'] == 1) {
+		if (! empty($googleMapsLibrary) && $this->extConf['include_library'] == 1) {
 			$pageRenderer->{$addJsMethod . 'Library'}(
 				'jQuery',
 				\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
@@ -89,7 +94,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 			);
 		}
 
-		if ($this->extConf['include_manually'] != 1) {
+		if (! empty($googleMapsLibrary) && $this->extConf['include_manually'] != 1) {
 			$scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
 					$this->request->getControllerExtensionKey()
 				) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
