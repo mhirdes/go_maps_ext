@@ -101,6 +101,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
 			<source>streetviewControl</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control">
+			<source>fullscreenControl</source>
+		</trans-unit>		
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code">
 			<source>styledMapCode</source>
 		</trans-unit>

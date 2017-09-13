@@ -87,6 +87,7 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	pan_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	scale_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	streetview_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
+	fullscreen_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	zoom_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	zoom_control_type int(11) DEFAULT '0' NOT NULL,
 	map_type_control tinyint(1) unsigned DEFAULT '0' NOT NULL,

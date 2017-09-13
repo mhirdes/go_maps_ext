@@ -114,6 +114,10 @@
 			<source>Shows an icon to enable the streetview.</source>
 			<target>Zeigt einen Icon zum aktivieren der StreetView.</target>
 		</trans-unit>
+		<trans-unit id="fullscreen_control.description" approved="yes">
+			<source>Shows an icon to enable the fullscreen.</source>
+			<target>Zeigt einen Icon zum aktivieren das Vollbild.</target>
+		</trans-unit>		
 		<trans-unit id="styled_map_code.description" approved="yes">
 			<source>JSON Code, for more view details</source>
 			<target>JSON Code, weitere Informationen in Detailansicht</target>

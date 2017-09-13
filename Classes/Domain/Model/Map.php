@@ -182,6 +182,12 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 	 */
 	protected $streetviewControl = false;
 	/**
+	 * fullscreenControl
+	 *
+	 * @var boolean
+	 */
+	 protected $fullscreenControl = false;
+	/**
 	 * zoomControl
 	 *
 	 * @var boolean
@@ -871,6 +877,34 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 		$this->streetviewControl = $streetviewControl;
 	}
 
+	/**
+	 * Returns the fullscreenControl
+	 *
+	 * @return boolean $fullscreenControl
+	 */
+	 public function getFullscreenControl() {
+		return $this->fullscreenControl;
+	}
+
+	/**
+	 * Returns the boolean state of fullscreenControl
+	 *
+	 * @return boolean
+	 */
+	public function isFullscreenControl() {
+		return $this->getFullscreenControl();
+	}
+
+	/**
+	 * Sets the fullscreenControl
+	 *
+	 * @param boolean $fullscreenControl
+	 * @return void
+	 */
+	public function setFullscreenControl($fullscreenControl) {
+		$this->fullscreenControl = $fullscreenControl;
+	}
+	
 	/**
 	 * Returns the zoomControl
 	 *

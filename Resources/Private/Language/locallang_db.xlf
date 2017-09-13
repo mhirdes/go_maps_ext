@@ -240,6 +240,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
 			<source>Streetview control</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control">
+			<source>Fullscreen control</source>
+		</trans-unit>		
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code">
 			<source>Code</source>
 		</trans-unit>

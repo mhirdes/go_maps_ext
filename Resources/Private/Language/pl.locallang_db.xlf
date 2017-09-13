@@ -229,6 +229,10 @@
 			<source>Streetview control</source>
 			<target>Sterowanie Street View</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
+			<source>Fullscreen control</source>
+			<target>Sterowanie pełny ekran</target>
+		</trans-unit>		
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
 			<source>Code</source>
 			<target>Kod</target>
