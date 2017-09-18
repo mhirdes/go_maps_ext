@@ -128,6 +128,10 @@
 			<source>streetviewControl</source>
 			<target>streetviewControl</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
+			<source>fullscreenControl</source>
+			<target>fullscreenControl</target>
+		</trans-unit>		
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
 			<source>styledMapCode</source>
 			<target>styledMapCode</target>

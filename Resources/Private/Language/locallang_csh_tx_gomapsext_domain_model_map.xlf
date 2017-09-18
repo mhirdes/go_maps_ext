@@ -94,6 +94,9 @@
 		<trans-unit id="streetview_control.description">
 			<source>Shows an icon to enable the streetview.</source>
 		</trans-unit>
+		<trans-unit id="fullscreen_control.description">
+			<source>Shows an icon to enable the fullscreen.</source>
+		</trans-unit>		
 		<trans-unit id="styled_map_code.description">
 			<source>JSON Code, for more view details</source>
 		</trans-unit>

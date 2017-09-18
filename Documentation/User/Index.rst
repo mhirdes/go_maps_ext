@@ -278,6 +278,15 @@ field.
 .. container:: table-row
 
    Property
+         fullscreenControl
+
+   Description
+         Shows an icon to enable fullscreen.
+
+
+.. container:: table-row
+
+   Property
          zoomControl
 
    Description

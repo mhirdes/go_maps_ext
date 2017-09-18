@@ -74,6 +74,10 @@
 			<source>Shows an icon to enable the streetview.</source>
 			<target>Pokazuje ikonę do włączenia Street View.</target>
 		</trans-unit>
+		<trans-unit id="fullscreen_control.description" approved="yes">
+			<source>Shows an icon to enable the fullscreen.</source>
+			<target>Pokazuje ikonę do włączenia pełny ekran.</target>
+		</trans-unit>
 		<trans-unit id="styled_map_code.description" approved="yes">
 			<source>JSON Code, for more view details</source>
 			<target>JSON, np. z https://mapstyle.withgoogle.com/</target>
