@@ -1,4 +1,5 @@
-{namespace gomapsext=Clickstorm\GoMapsExt\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"
+      xmlns:gomapsext="http://typo3.org/ns/Clickstorm/GoMapsExt/ViewHelpers">
 
 <gomapsext:script>
     (function ($, window, document, undefined) {
@@ -151,11 +152,12 @@
     var $element = jQuery("#" + gme.mapSettings.id);
     $element.gomapsext(gme);
     if(gme.mapSettings.width.indexOf('%') != -1) {
-    jQuery(window).resize(function() {
-    $element.trigger('mapresize');
-    });
+        jQuery(window).resize(function() {
+            $element.trigger('mapresize');
+        });
     }
 
     }); // end of closure
     })(jQuery, window, document);
 </gomapsext:script>
+</html>

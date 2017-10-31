@@ -1,4 +1,5 @@
 <?php
+
 namespace Clickstorm\GoMapsExt\Domain\Repository;
 
 /***************************************************************
@@ -25,41 +26,44 @@ namespace Clickstorm\GoMapsExt\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Clickstorm\GoMapsExt\Domain\Model\Map;
+use TYPO3\CMS\Extbase\Persistence\Repository;
+
 /**
- *
- *
  * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class AddressRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class AddressRepository extends Repository
+{
 
-	/**
-	 * Finds all addresses by the specified map or the storage pid
-	 *
-	 * @param \Clickstorm\GoMapsExt\Domain\Model\Map $map The map
-	 * @param \integer $pid The Storage Pid
-	 * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface The addresses
-	 */
-	function findAllAddresses(\Clickstorm\GoMapsExt\Domain\Model\Map $map, $pid) {
-		$query = $this->createQuery();
-		$query->getQuerySettings()->setRespectStoragePage(false);
-		$query->getQuerySettings()->setRespectSysLanguage(false);
+    /**
+     * Finds all addresses by the specified map or the storage pid
+     *
+     * @param \Clickstorm\GoMapsExt\Domain\Model\Map $map The map
+     * @param int $pid The Storage Pid
+     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface The addresses
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     */
+    public function findAllAddresses(Map $map, $pid)
+    {
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
+        $query->getQuerySettings()->setRespectSysLanguage(false);
 
-		$or = [];
-		$and = [];
+        $or = [];
+        $and = [];
 
-		$or[] = $query->equals('pid', $pid);
-		if ($map) {
-			$or[] = $query->contains('map', $map);
-		}
-		$and[] = $query->logicalOr($or);
+        $or[] = $query->equals('pid', $pid);
+        if ($map) {
+            $or[] = $query->contains('map', $map);
+        }
+        $and[] = $query->logicalOr($or);
 
-		return $query->matching(
-			$query->logicalAnd(
-				$and
-			)
-		)
-			->execute();
-	}
+        return $query->matching(
+            $query->logicalAnd(
+                $and
+            )
+        )
+            ->execute();
+    }
 }

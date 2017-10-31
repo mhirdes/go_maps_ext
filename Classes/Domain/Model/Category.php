@@ -1,4 +1,5 @@
 <?php
+
 namespace Clickstorm\GoMapsExt\Domain\Model;
 
 /***************************************************************
@@ -25,111 +26,120 @@ namespace Clickstorm\GoMapsExt\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
+
 /**
- *
- *
  * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category {
-	/**
-	 * marker
-	 *
+class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
+{
+    /**
+     * marker
+     *
 	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-	 */
-	protected $gmeMarker;
-	/**
-	 * imageSize
-	 *
-	 * @var boolean
-	 */
-	protected $gmeImageSize = false;
-	/**
-	 * imageWidth
-	 *
-	 * @var int
-	 */
-	protected $gmeImageWidth;
-	/**
-	 * imageHeight
-	 *
-	 * @var int
-	 */
-	protected $gmeImageHeight;
+     */
+    protected $gmeMarker;
+    /**
+     * imageSize
+     *
+     * @var boolean
+     */
+    protected $gmeImageSize = false;
+    /**
+     * imageWidth
+     *
+     * @var int
+     */
+    protected $gmeImageWidth;
+    /**
+     * imageHeight
+     *
+     * @var int
+     */
+    protected $gmeImageHeight;
 
-	/**
-	 * Returns the marker
-	 *
+    /**
+     * Returns the marker
+     *
 	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference gmeMarker
-	 */
-	public function getGmeMarker() {
-		return $this->gmeMarker;
-	}
+     */
+    public function getGmeMarker()
+    {
+        return $this->gmeMarker;
+    }
 
-	/**
-	 * Sets the gmeMarker
-	 *
+    /**
+     * Sets the gmeMarker
+     *
 	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $gmeMarker
-	 * @return void
-	 */
-	public function setGmeMarker(\TYPO3\CMS\Extbase\Domain\Model\FileReference $gmeMarker) {
-		$this->gmeMarker = $gmeMarker;
-	}
+     * @return void
+     */
+    public function setGmeMarker(FileReference $gmeMarker)
+    {
+        $this->gmeMarker = $gmeMarker;
+    }
 
-	/**
-	 * Returns the imageSize
-	 *
-	 * @return boolean $gmeImageSize
-	 */
-	public function getGmeImageSize() {
-		return $this->gmeImageSize;
-	}
+    /**
+     * Returns the imageSize
+     *
+     * @return boolean $gmeImageSize
+     */
+    public function getGmeImageSize()
+    {
+        return $this->gmeImageSize;
+    }
 
-	/**
-	 * Returns the boolean state of imageSize
-	 *
-	 * @return boolean
-	 */
-	public function isGmeImageSize() {
-		return $this->getGmeImageSize();
-	}
+    /**
+     * Returns the boolean state of imageSize
+     *
+     * @return boolean
+     */
+    public function isGmeImageSize()
+    {
+        return $this->getGmeImageSize();
+    }
 
-	/**
-	 * Sets the imageSize
-	 *
-	 * @param boolean $gmeImageSize
-	 * @return void
-	 */
-	public function setGmeImageSize($gmeImageSize) {
-		$this->gmeImageSize = $gmeImageSize;
-	}
+    /**
+     * Sets the imageSize
+     *
+     * @param boolean $gmeImageSize
+     * @return void
+     */
+    public function setGmeImageSize($gmeImageSize)
+    {
+        $this->gmeImageSize = $gmeImageSize;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getGmeImageWidth() {
-		return $this->gmeImageWidth;
-	}
+    /**
+     * @return int
+     */
+    public function getGmeImageWidth()
+    {
+        return $this->gmeImageWidth;
+    }
 
-	/**
-	 * @param int $gmeImageWidth
-	 */
-	public function setGmeImageWidth($gmeImageWidth) {
-		$this->gmeImageWidth = $gmeImageWidth;
-	}
+    /**
+     * @param int $gmeImageWidth
+     */
+    public function setGmeImageWidth($gmeImageWidth)
+    {
+        $this->gmeImageWidth = $gmeImageWidth;
+    }
 
-	/**
-	 * @return int
-	 */
-	public function getGmeImageHeight() {
-		return $this->gmeImageHeight;
-	}
+    /**
+     * @return int
+     */
+    public function getGmeImageHeight()
+    {
+        return $this->gmeImageHeight;
+    }
 
-	/**
-	 * @param int $gmeImageHeight
-	 */
-	public function setGmeImageHeight($gmeImageHeight) {
-		$this->gmeImageHeight = $gmeImageHeight;
-	}
+    /**
+     * @param int $gmeImageHeight
+     */
+    public function setGmeImageHeight($gmeImageHeight)
+    {
+        $this->gmeImageHeight = $gmeImageHeight;
+    }
 }

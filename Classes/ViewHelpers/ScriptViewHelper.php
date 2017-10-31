@@ -1,11 +1,13 @@
 <?php
+
 namespace Clickstorm\GoMapsExt\ViewHelpers;
-/*                                                                                                    
+
+/**
  *  Copyright notice
  *
  *  (c) 2013 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
  *  (c) 2013 Mathias Brodala <mbrodala@pagemachine.de>, PAGEmachine AG
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -25,8 +27,10 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  *  This copyright notice MUST APPEAR in all copies of the script!
 */
 
-/**
- */
+use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Frontend\Page\PageGenerator;
 
 /**
  * Renders a HTML-script value by moving it into a temporary file and adding it to the page
@@ -51,23 +55,24 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  * </output>
  *
  */
-class ScriptViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+class ScriptViewHelper extends AbstractViewHelper
+{
+    /**
+     * @return string The parsed string.
+     * @author Marc Hirdes <marc_hirdes@gmx.de>
+     */
+    public function render()
+    {
+        $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+        $pageRenderer->addJsFooterFile(
+            PageGenerator::inline2TempFile($this->renderChildren(), 'js'),
+            'text/javascript', // $type
+            true, // $compress
+            false, // $forceOnTop
+            '', // $allWrap
+            true // $excludeFromConcatenation
+        );
 
-	/**
-	 * @return The parsed string.
-	 * @author Marc Hirdes <marc_hirdes@gmx.de>
-	 */
-	public function render() {
-		$pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-		$pageRenderer->addJsFooterFile(
-			\TYPO3\CMS\Frontend\Page\PageGenerator::inline2TempFile($this->renderChildren(), 'js'),
-			'text/javascript', // $type
-			true, // $compress
-			false, // $forceOnTop
-			'', // $allWrap
-			true // $excludeFromConcatenation
-		);
-
-		return '';
-	}
+        return '';
+    }
 }

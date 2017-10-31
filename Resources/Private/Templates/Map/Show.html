@@ -1,19 +1,17 @@
-<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      data-namespace-typo3-fluid="true">
-
-<f:layout name="Default" />
-
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
 <!-- Keep the id and the js-classes -->
 <f:section name="Main">
     <f:if condition="{map.showForm}">
         <f:render partial="Map/Form" arguments="{_all}"/>
     </f:if>
-    <div class="js-map" id="gme-{map.uid}"> </div>
-    <f:render partial="Map/Assign" arguments="{_all}" />
+    <div class="js-map" id="gme-{map.uid}"></div>
+    <f:render partial="Map/Assign" arguments="{_all}"/>
     <f:if condition="{map.showCategories}">
-        <f:render partial="Map/Categories" arguments="{_all}" />
+        <f:render partial="Map/Categories" arguments="{_all}"/>
     </f:if>
     <f:if condition="{map.showAddresses}">
-        <f:render partial="Map/Addresses" arguments="{_all}" />
+        <f:render partial="Map/Addresses" arguments="{_all}"/>
     </f:if>
 </f:section>
+</html>

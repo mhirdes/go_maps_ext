@@ -1,4 +1,5 @@
 <?php
+
 namespace Clickstorm\GoMapsExt\Evaluation;
 
 /***************************************************************
@@ -26,21 +27,27 @@ namespace Clickstorm\GoMapsExt\Evaluation;
  ***************************************************************/
 
 /**
- *
- *
  * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class Double6Evaluator {
+class Double6Evaluator
+{
+    /**
+     * @return string
+     */
+    public function returnFieldJS()
+    {
+        return 'return parseFloat(value).toFixed(6);';
+    }
 
-	function returnFieldJS() {
-		return '
-         return parseFloat(value).toFixed(6);
-      ';
-	}
-
-	function evaluateFieldValue($value, $is_in, &$set) {
-		return sprintf('%01.6f', $value);
-	}
+    /**
+     * @param $value
+     * @param $is_in
+     * @param $set
+     * @return string
+     */
+    public function evaluateFieldValue($value, $is_in, &$set)
+    {
+        return sprintf('%01.6f', $value);
+    }
 }

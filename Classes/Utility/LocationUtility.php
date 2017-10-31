@@ -27,79 +27,86 @@ namespace Clickstorm\GoMapsExt\Utility;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Core\TypoScript\ExtendedTemplateService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\VersionNumberUtility;
+use TYPO3\CMS\Frontend\Page\PageRepository;
+
 /**
  * Google map.
  *
  * @package climbing_sites
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-class LocationUtility {
+class LocationUtility
+{
 
-	/**
-	 * Renders the Google map.
-	 *
-	 * @param array $PA
-	 * @param \TYPO3\CMS\Backend\Form\FormEngine $pObj
-	 * @return string
-	 */
-	public function render(array &$PA, $pObj) {
-		$version = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
-		$settings = $this->loadTS($PA['row']['pid']);
-		$pluginSettings = $settings['plugin.']['tx_gomapsext.']['settings.'];
+    /**
+     * Renders the Google map.
+     *
+     * @param array $PA
+     * @param \TYPO3\CMS\Backend\Form\Element\UserElement $pObj
+     * @return string
+     * @throws \Exception
+     */
+    public function render(array &$PA, $pObj)
+    {
+        $version = VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
+        $settings = $this->loadTS($PA['row']['pid']);
+        $pluginSettings = $settings['plugin.']['tx_gomapsext.']['settings.'];
 
-		$googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
-			htmlentities($pluginSettings['googleMapsLibrary']) :
-			'//maps.google.com/maps/api/js?v=3.29';
+        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
+            htmlentities($pluginSettings['googleMapsLibrary']) :
+            '//maps.google.com/maps/api/js?v=3.30';
 
-		if ($pluginSettings['apiKey']) {
-			$googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
-		}
+        if ($pluginSettings['apiKey']) {
+            $googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
+        }
 
-		$out = [];
-		$latitude = (float)$PA['row'][$PA['parameters']['latitude']];
-		$longitude = (float)$PA['row'][$PA['parameters']['longitude']];
-		$address = $PA['row'][$PA['parameters']['address']];
+        $out = [];
+        $latitude = (float)$PA['row'][$PA['parameters']['latitude']];
+        $longitude = (float)$PA['row'][$PA['parameters']['longitude']];
+        $address = $PA['row'][$PA['parameters']['address']];
 
-		$baseElementId = isset($PA['itemFormElID']) ? $PA['itemFormElID'] : $PA['table'] . '_map';
-		$addressId = $baseElementId . '_address';
-		$mapId = $baseElementId . '_map';
+        $baseElementId = isset($PA['itemFormElID']) ? $PA['itemFormElID'] : $PA['table'] . '_map';
+        $addressId = $baseElementId . '_address';
+        $mapId = $baseElementId . '_map';
 
-		if (!($latitude && $longitude)) {
-			$latitude = 0;
-			$longitude = 0;
-		};
-		$dataPrefix = 'data[' . $PA['table'] . '][' . $PA['row']['uid'] . ']';
-		$latitudeField = $dataPrefix . '[' . $PA['parameters']['latitude'] . ']';
-		$longitudeField = $dataPrefix . '[' . $PA['parameters']['longitude'] . ']';
-		$addressField = $dataPrefix . '[' . $PA['parameters']['address'] . ']';
+        if (!($latitude && $longitude)) {
+            $latitude = 0;
+            $longitude = 0;
+        }
+        $dataPrefix = 'data[' . $PA['table'] . '][' . $PA['row']['uid'] . ']';
+        $latitudeField = $dataPrefix . '[' . $PA['parameters']['latitude'] . ']';
+        $longitudeField = $dataPrefix . '[' . $PA['parameters']['longitude'] . ']';
+        $addressField = $dataPrefix . '[' . $PA['parameters']['address'] . ']';
 
+        $updateJs = "TBE_EDITOR.fieldChanged('%s','%s','%s','%s');";
+        $updateLatitudeJs = sprintf(
+            $updateJs,
+            $PA['table'],
+            $PA['row']['uid'],
+            $PA['parameters']['latitude'],
+            $latitudeField
+        );
+        $updateLongitudeJs = sprintf(
+            $updateJs,
+            $PA['table'],
+            $PA['row']['uid'],
+            $PA['parameters']['longitude'],
+            $longitudeField
+        );
+        $updateAddressJs = sprintf(
+            $updateJs,
+            $PA['table'],
+            $PA['row']['uid'],
+            $PA['parameters']['address'],
+            $addressField
+        );
 
-		$updateJs = "TBE_EDITOR.fieldChanged('%s','%s','%s','%s');";
-		$updateLatitudeJs = sprintf(
-			$updateJs,
-			$PA['table'],
-			$PA['row']['uid'],
-			$PA['parameters']['latitude'],
-			$latitudeField
-		);
-		$updateLongitudeJs = sprintf(
-			$updateJs,
-			$PA['table'],
-			$PA['row']['uid'],
-			$PA['parameters']['longitude'],
-			$longitudeField
-		);
-		$updateAddressJs = sprintf(
-			$updateJs,
-			$PA['table'],
-			$PA['row']['uid'],
-			$PA['parameters']['address'],
-			$addressField
-		);
-
-		$out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
-		$out[] = '<script type="text/javascript">';
-		$out[] = <<<EOT
+        $out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
+        $out[] = '<script type="text/javascript">';
+        $out[] = <<<EOT
 if (typeof TxClimbingSites == 'undefined') TxClimbingSites = {};
 
 String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); } 
@@ -127,11 +134,11 @@ TxClimbingSites.init = function() {
 
 		// Update address
 		TxClimbingSites.reverseGeocode(TxClimbingSites.marker.getPosition().lat(), TxClimbingSites.marker.getPosition().lng());
-		
+
 		// Update Position
 		var position = document.getElementById("{$addressId}");
 		position.value = lat + "," + lng;
-		
+
 		// Tell TYPO3 that fields were updated
 		TxClimbingSites.positionChanged();
 	});
@@ -155,11 +162,11 @@ TxClimbingSites.codeAddress = function() {
 		lat = address.substr(0, address.lastIndexOf(',')).trim();
 		lng = address.substr(address.lastIndexOf(',')+1).trim();
 		position = new google.maps.LatLng(lat, lng);
-		
+
 		// Update Map
 		TxClimbingSites.map.setCenter(position);
 		TxClimbingSites.marker.setPosition(position);
-		
+
 		// Update visible fields
 		TxClimbingSites.updateValue('{$latitudeField}', lat);
         TxClimbingSites.updateValue('{$longitudeField}', lng);
@@ -174,11 +181,11 @@ TxClimbingSites.codeAddress = function() {
 				lng = results[0].geometry.location.lng().toFixed(6);
 
 				formatedAddress = results[0].formatted_address
-				
+
 				// Update Map
 				TxClimbingSites.map.setCenter(results[0].geometry.location);
 				TxClimbingSites.marker.setPosition(results[0].geometry.location);
-				
+
 				// Update fields
                 TxClimbingSites.updateValue('{$latitudeField}', lat);
                 TxClimbingSites.updateValue('{$longitudeField}', lng);
@@ -234,7 +241,7 @@ TxClimbingSites.reverseGeocode = function(latitude, longitude) {
 
 TxClimbingSites.convertAddress = function(addressOld) {
 	addressInput = document.getElementById("{$addressId}");
-	
+
 	TxClimbingSites.geocoder.geocode({'address':addressOld}, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK) {
 			TxClimbingSites.map.setCenter(results[0].geometry.location);
@@ -247,7 +254,6 @@ TxClimbingSites.convertAddress = function(addressOld) {
 
 			// Update visible fields
 			addressInput.value = addressOld;
-			
 		} else {
 			alert("Geocode was not successful for the following reason: " + status);
 		}
@@ -256,31 +262,34 @@ TxClimbingSites.convertAddress = function(addressOld) {
 
 window.onload = TxClimbingSites.init;
 EOT;
-		$out[] = '</script>';
-		$out[] = '<div id="' . $baseElementId . '">';
-		$out[] = '
-			<input id="' . $addressId . '" type="textbox" value="' . $address . '" style="width:300px">
+        $out[] = '</script>';
+        $out[] = '<div id="' . $baseElementId . '">';
+        $out[] = '
+			<input type="text" value="' . $address . '" id="' . $addressId . '" style="width:300px">
 			<input type="button" value="Update" onclick="TxClimbingSites.codeAddress()">
 		';
-		$out[] = '<div id="' . $mapId . '" style="height:400px;margin:10px 0;width:400px"></div>';
-		$out[] = '</div>'; // id=$baseElementId
+        $out[] = '<div id="' . $mapId . '" style="height:400px;margin:10px 0;width:400px"></div>';
+        $out[] = '</div>'; // id=$baseElementId
 
-		return implode('', $out);
-	}
+        return implode('', $out);
+    }
 
-	protected function loadTS($pageUid) {
-		$sysPageObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-			'TYPO3\\CMS\\Frontend\\Page\\PageRepository'
-		);
-		$rootLine = $sysPageObj->getRootLine($pageUid);
-		$TSObj = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-			'TYPO3\\CMS\\Core\\TypoScript\\ExtendedTemplateService'
-		);
-		$TSObj->tt_track = 0;
-		$TSObj->init();
-		$TSObj->runThroughTemplates($rootLine);
-		$TSObj->generateConfig();
+    /**
+     * @param int $pageUid
+     * @return mixed
+     * @throws \Exception
+     */
+    protected function loadTS($pageUid)
+    {
+        $sysPageObj = GeneralUtility::makeInstance(PageRepository::class);
+        $rootLine = $sysPageObj->getRootLine($pageUid);
 
-		return $TSObj->setup;
-	}
+        $TSObj = GeneralUtility::makeInstance(ExtendedTemplateService::class);
+        $TSObj->tt_track = 0;
+        $TSObj->init();
+        $TSObj->runThroughTemplates($rootLine);
+        $TSObj->generateConfig();
+
+        return $TSObj->setup;
+    }
 }

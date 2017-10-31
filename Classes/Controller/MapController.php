@@ -1,5 +1,7 @@
 <?php
+
 namespace Clickstorm\GoMapsExt\Controller;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -25,127 +27,138 @@ namespace Clickstorm\GoMapsExt\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Clickstorm\GoMapsExt\Domain\Model\Map;
+use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
 /**
- *
- *
  * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class MapController extends ActionController
+{
 
-	/**
-	 * mapRepository
-	 *
-	 * @var \Clickstorm\GoMapsExt\Domain\Repository\MapRepository
-	 * @inject
-	 */
-	protected $mapRepository;
+    /**
+     * mapRepository
+     *
+     * @var \Clickstorm\GoMapsExt\Domain\Repository\MapRepository
+     * @inject
+     */
+    protected $mapRepository;
 
-	/**
-	 * addressRepository
-	 *
-	 * @var \Clickstorm\GoMapsExt\Domain\Repository\AddressRepository
-	 * @inject
-	 */
-	protected $addressRepository;
+    /**
+     * addressRepository
+     *
+     * @var \Clickstorm\GoMapsExt\Domain\Repository\AddressRepository
+     * @inject
+     */
+    protected $addressRepository;
 
-	public function initializeAction() {
-		$this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
+    /**
+     * @var array
+     */
+    protected $extConf;
 
-		$pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-		$addJsMethod = 'addJs';
+    public function initializeAction()
+    {
+        $this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
 
-		if ($this->extConf['footerJS'] == 1) {
-			$addJsMethod = 'addJsFooter';
-		}
-		$googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
-			$this->settings['googleMapsLibrary'] :
-			'//maps.google.com/maps/api/js?v=3.29';
+        $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+        $addJsMethod = 'addJs';
 
-		if ($this->settings['apiKey']) {
-			$googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
-		}
-		if ($this->settings['language']) {
-			$googleMapsLibrary .= '&language=' . $this->settings['language'];
-		}
+        if ($this->extConf['footerJS'] == 1) {
+            $addJsMethod = 'addJsFooter';
+        }
+        $googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
+            $this->settings['googleMapsLibrary'] :
+            '//maps.google.com/maps/api/js?v=3.29';
 
-		$pageRenderer->{$addJsMethod . 'Library'}(
-			'googleMaps',
-			$googleMapsLibrary,
-			'text/javascript',
-			false,
-			false,
-			'',
-			true
-		);
+        if ($this->settings['apiKey']) {
+            $googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
+        }
+        if ($this->settings['language']) {
+            $googleMapsLibrary .= '&language=' . $this->settings['language'];
+        }
 
-		if ($this->extConf['include_library'] == 1) {
-			$pageRenderer->{$addJsMethod . 'Library'}(
-				'jQuery',
-				\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
-					$this->request->getControllerExtensionKey()
-				) . 'Resources/Public/Scripts/jquery.min.js'
-			);
-		}
+        $pageRenderer->{$addJsMethod . 'Library'}(
+            'googleMaps',
+            $googleMapsLibrary,
+            'text/javascript',
+            false,
+            false,
+            '',
+            true
+        );
 
-		if ($this->extConf['include_manually'] != 1) {
-			$scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
-					$this->request->getControllerExtensionKey()
-				) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
+        if ($this->extConf['include_library'] == 1) {
+            $pageRenderer->{$addJsMethod . 'Library'}(
+                'jQuery',
+                ExtensionManagementUtility::siteRelPath(
+                    $this->request->getControllerExtensionKey()
+                ) . 'Resources/Public/Scripts/jquery.min.js'
+            );
+        }
 
-			$scripts[] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath(
-					$this->request->getControllerExtensionKey()
-				) . 'Resources/Public/Scripts/jquery.gomapsext.js';
+        if ($this->extConf['include_manually'] != 1) {
+            $scripts[] = ExtensionManagementUtility::siteRelPath(
+                    $this->request->getControllerExtensionKey()
+                ) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
 
-			foreach ($scripts as $script) {
-				$pageRenderer->{$addJsMethod . 'File'}($script);
-			}
-		}
-	}
+            $scripts[] = ExtensionManagementUtility::siteRelPath(
+                    $this->request->getControllerExtensionKey()
+                ) . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
-	/**
-	 * action show
-	 *
-	 * @param \Clickstorm\GoMapsExt\Domain\Model\Map $map
-	 * @return void
-	 */
-	public function showAction(\Clickstorm\GoMapsExt\Domain\Model\Map $map = null) {
-		$categoriesArray = [];
+            foreach ($scripts as $script) {
+                $pageRenderer->{$addJsMethod . 'File'}($script);
+            }
+        }
+    }
 
-		// get current map
-		$map = $map ?: $this->mapRepository->findByUid($this->settings['map']);
+    /**
+     * show action
+     *
+     * @param Map $map
+     * @return void
+     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     */
+    public function showAction(Map $map = null)
+    {
+        $categoriesArray = [];
 
-		// find addresses
-		$pid = $this->settings['storagePid'];
-		if ($pid) {
-			if ($pid == 'this'){
-				$addresses = $this->addressRepository->findAllAddresses($map, $GLOBALS['TSFE']->id);
-			} else {
-				$addresses = $this->addressRepository->findAllAddresses($map, $pid);
-			}
-		} else {
-			$addresses = $map->getAddresses();
-		}
+        // get current map
+        /* @var Map $map */
+        $map = $map ?: $this->mapRepository->findByUid($this->settings['map']);
 
-		// get categories
-		if ($map->isShowCategories()) {
-			foreach ($addresses as $address) {
-				$addrCats = $address->getCategories();
-				foreach ($addrCats as $addrCat) {
-					$categoriesArray[$addrCat->getUid()] = $addrCat->getTitle();
-				}
-			}
-		}
+        // find addresses
+        $pid = $this->settings['storagePid'];
+        if ($pid) {
+            if ($pid == 'this') {
+                $addresses = $this->addressRepository->findAllAddresses($map, $GLOBALS['TSFE']->id);
+            } else {
+                $addresses = $this->addressRepository->findAllAddresses($map, $pid);
+            }
+        } else {
+            $addresses = $map->getAddresses();
+        }
 
-		$this->view->assignMultiple(
-			[
-				'request' => $this->request->getArguments(),
-				'map' => $map,
-				'addresses' => $addresses,
-				'categories' => $categoriesArray
-			]
-		);
-	}
+        // get categories
+        if ($map->isShowCategories()) {
+            foreach ($addresses as $address) {
+                /* @var \Clickstorm\GoMapsExt\Domain\Model\Address $address */
+                $addressCategories = $address->getCategories();
+                /* @var \Clickstorm\GoMapsExt\Domain\Model\Category $addressCategory */
+                foreach ($addressCategories as $addressCategory) {
+                    $categoriesArray[$addressCategory->getUid()] = $addressCategory->getTitle();
+                }
+            }
+        }
 
+        $this->view->assignMultiple([
+            'request' => $this->request->getArguments(),
+            'map' => $map, 'addresses' => $addresses,
+            'categories' => $categoriesArray
+        ]);
+    }
 }

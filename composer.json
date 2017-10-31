@@ -14,7 +14,7 @@
 	"license": ["GPL-2.0+"],
 	"keywords": ["TYPO3 CMS", "map", "google", "marker", "route", "kml", "style", "extbase"],
 	"support": {
-		"issues": "https://forge.typo3.org/projects/go_maps_ext"
+		"issues": "https://forge.typo3.org/projects/extension-go_maps_ext"
 	},
 	"version": "2.3.2-dev",
 	"replace": {
