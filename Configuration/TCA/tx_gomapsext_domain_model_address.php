@@ -278,7 +278,7 @@ return [
 					]
 				]
 			],
-			'defaultExtras' => 'richtext[]',
+			'defaultExtras' => 'richtext:rte_transform[mode=ts_css]',
 		],
 		'info_window_images' => [
 			'exclude' => 1,
