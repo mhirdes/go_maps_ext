@@ -26,7 +26,9 @@
             tooltipTitle: null,
             kmlUrl: null,
             kmlLocal: null,
-            showForm: null
+            showForm: null,
+            lat: null,
+            lng: null
         },
         zoomTypes: [],
         defaultMapTypes: [],
@@ -350,7 +352,7 @@
 
             if ($element.data("center")) {
                 _map.setCenter($element.data("center"));
-            } else if(gme.mapSettings.lat != 0 && gme.mapSettings.lng != 0) {
+            } else if(gme.mapSettings.lat != null && gme.mapSettings.lng != null) {
                 _map.setCenter(new google.maps.LatLng(gme.mapSettings.lat, gme.mapSettings.lng));
                 _map.setZoom(gme.mapSettings.zoom);
             } else {
