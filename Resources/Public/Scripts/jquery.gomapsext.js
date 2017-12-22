@@ -476,7 +476,7 @@
                                 opened: 0,
                                 categories: ''
                             };
-                        _this.addMapPoint(address, Route, $element, infoWindow, gme);
+                        _this.addMapPoint(address, Route, $element, _this.infoWindow, gme);
                         gme.addresses.push(address);
                     });
                 });
