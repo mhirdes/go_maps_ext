@@ -133,7 +133,7 @@ class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 			foreach ($addresses as $address) {
 				$addrCats = $address->getCategories();
 				foreach ($addrCats as $addrCat) {
-					$categoriesArray[$addrCat->getUid()] = $addrCat->getTitle();
+					$categoriesArray[$addrCat->getUid()] = $addrCat;
 				}
 			}
 		}
