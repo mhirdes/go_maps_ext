@@ -18,7 +18,8 @@
 	},
 	"version": "2.3.2-dev",
 	"replace": {
-		"go_maps_ext": "*"
+		"go_maps_ext": "self.version",
+		"typo3-ter/go-maps-ext": "self.version"
 	},
 	"require": {
 		"typo3/cms-core": "7.6.0 - 8.7.99"
