@@ -150,7 +150,7 @@ class MapController extends ActionController
                 $addressCategories = $address->getCategories();
                 /* @var \Clickstorm\GoMapsExt\Domain\Model\Category $addressCategory */
                 foreach ($addressCategories as $addressCategory) {
-                    $categoriesArray[$addressCategory->getUid()] = $addressCategory->getTitle();
+                    $categoriesArray[$addressCategory->getUid()] = $addressCategory;
                 }
             }
         }
