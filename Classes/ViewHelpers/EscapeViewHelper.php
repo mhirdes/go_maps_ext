@@ -1,7 +1,8 @@
 <?php
+
 namespace Clickstorm\GoMapsExt\ViewHelpers;
 
-/*
+/**
  *  Copyright notice
  *
  *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
@@ -23,10 +24,9 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  *  GNU General Public License for more details.
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
-*/
-
-/**
  */
+
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Renders a HTML-script value by passing it and escape ' to pretend for errors.
@@ -37,7 +37,7 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  * <gomapsext:format.escape>function('');</gomapsext:format.escape>
  * </code>
  * <output>
- *function(\'\');
+ * function(\'\');
  * </output>
  *
  * <code title="Inline notation">
@@ -46,18 +46,18 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  * <output>
  * some\'Text\'
  * </output>
- *
  */
+class EscapeViewHelper extends AbstractViewHelper
+{
 
-class EscapeViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper {
+    /**
+     * @return string The parsed string.
+     * @author Marc Hirdes <marc_hirdes@gmx.de>
+     */
+    public function render()
+    {
+        $value = $this->renderChildren();
 
-	/**
-	 * @return The parsed string.
-	 * @author Marc Hirdes <marc_hirdes@gmx.de>
-	 */
-	public function render() {
-		$value = $this->renderChildren();
-
-		return str_replace("'", "\'", preg_replace("/\r\n|\r|\n/", "", $value));
-	}
+        return str_replace("'", "\'", preg_replace("/\r\n|\r|\n/", '', $value));
+    }
 }

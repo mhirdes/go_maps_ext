@@ -1,4 +1,5 @@
 <?php
+
 namespace Clickstorm\GoMapsExt\Domain\Repository;
 
 /***************************************************************
@@ -25,12 +26,12 @@ namespace Clickstorm\GoMapsExt\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Extbase\Persistence\Repository;
+
 /**
- *
- *
  * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
  */
-class MapRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
+class MapRepository extends Repository
+{
 }
