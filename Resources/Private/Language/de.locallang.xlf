@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2015-12-23T14:21:42Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-05-25T11:52:13Z">
 		<header>
 			<description>Language labels for the Google Maps API Extbase extension in the FRONTEND</description>
 			<authorName>Marc Hirdes</authorName>
@@ -63,6 +63,10 @@
 		<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" approved="yes">
 			<source>Search</source>
 			<target>Suchen</target>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_templates_map_preview.link" approved="yes">
+			<source>show map</source>
+			<target>Karte anzeigen</target>
 		</trans-unit>
 		</body>
 	</file>

@@ -19,8 +19,14 @@ plugin.tx_gomapsext {
 			openByClick = 0
 			# cat=plugin.tx_gomapsext//c; type=boolean; label = Close Infowindows By Click
 			closeByClick = 0
-			# cat=plugin.tx_gomapsext//c; type=string; label = Max. width of image in infowindows
+			# cat=plugin.tx_gomapsext//d; type=string; label = Max. width of image in infowindows
 			imageMaxWidth = 654
+		}
+		preview {
+			# cat=plugin.tx_gomapsext//e; type=boolean; label = Load map only when user accepted
+			enabled = 1
+			# cat=plugin.tx_gomapsext//e; type=text+; label = URL to general preview image
+			image =
 		}
 	}
 }

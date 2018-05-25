@@ -5,7 +5,7 @@ defined('TYPO3_MODE') or die();
 	'Clickstorm.' . $_EXTKEY,
 	'Show',
 	[
-		'Map' => 'show',
+		'Map' => 'show,preview',
 
 	],
 	// non-cacheable actions

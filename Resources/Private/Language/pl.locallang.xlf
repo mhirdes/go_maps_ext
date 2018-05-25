@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2015-12-23T14:21:42Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2018-05-25T11:52:13Z">
 		<header>
 			<description>Language labels for the Google Maps API Extbase extension in the FRONTEND</description>
 			<authorName>Marc Hirdes</authorName>
@@ -92,6 +92,10 @@
 			<source>draggable</source>
 			<target>draggable</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
+			<source>fullscreenControl</source>
+			<target>fullscreenControl</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.height" approved="yes">
 			<source>in px</source>
 			<target>w pikselach</target>
@@ -128,10 +132,6 @@
 			<source>streetviewControl</source>
 			<target>streetviewControl</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
-			<source>fullscreenControl</source>
-			<target>fullscreenControl</target>
-		</trans-unit>		
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
 			<source>styledMapCode</source>
 			<target>styledMapCode</target>

@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<!-- Keep the id and the js-classes -->
+<f:section name="Main">
+    <div class="preview">
+        <f:link.action action="show" arguments="{map:map,show:1}" class="js-gme-show">
+            <f:if condition="{settings.preview.image}">
+                <f:then>
+                    <f:image src="{settings.preview.image}"/>
+                </f:then>
+                <f:else>
+                    <f:translate key="tx_gomapsext_templates_map_preview.link"/>
+                </f:else>
+            </f:if>
+        </f:link.action>
+    </div>
+</f:section>
+</html>

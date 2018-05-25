@@ -121,10 +121,16 @@ class MapController extends ActionController
      *
      * @param Map $map
      * @return void
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
     public function showAction(Map $map = null)
     {
+        if($this->settings['preview']['enabled'] && !$this->request->hasArgument('show')) {
+            $this->redirect('preview', null, null, ['map' => $map]);
+        }
+
         $categoriesArray = [];
 
         // get current map
@@ -160,5 +166,14 @@ class MapController extends ActionController
             'map' => $map, 'addresses' => $addresses,
             'categories' => $categoriesArray
         ]);
+    }
+
+    /**
+     *
+     */
+    public function previewAction() {
+        if($this->request->hasArgument('map')) {
+            $this->view->assign('map', $this->request->getArgument('map'));
+        }
     }
 }
