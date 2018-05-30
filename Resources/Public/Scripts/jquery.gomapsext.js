@@ -43,42 +43,51 @@
      * @constructor
      */
     GoMapsExt.Controller = function (element, gme) {
-        var $element = this.element = $(element);
+        this.element = $(element);
         this.gme = gme;
         this.data = gme;
-        this.route = [];
-        this.infoWindow = new google.maps.InfoWindow();
-        this.bounds = new google.maps.LatLngBounds();
-        this.markers = [];
 
-        this.map = new google.maps.Map(document.getElementById(gme.mapSettings.id), this._createMapOptions());
-
-        this._initializeCss();
-        this._initializeData();
-        this._initializeKmlImport();
-
-        this._initializeSearch();
-        this._initializeBackendAddresses();
-        this._initializeRoute();
-        this._initializeResizeListener();
-        this._initializeCheckboxListener();
-        this._initializeAddressListener();
-
-        // open info window
-        window.setTimeout(function () {
-            $element.trigger("openinfo");
-        }, 2000);
-
-        this.setCategoriesFromRequest();
-        this.focusAddressFromRequest();
-
-        // trigger mapcreated on map
-        $element.trigger("mapcreated");
-
-        this.refreshMap($element, gme);
+        if(typeof google !== "undefined") {
+            this.initialize();
+        }
     };
 
     GoMapsExt.Controller.prototype = {
+
+        initialize: function() {
+            var $element = this.element;
+	        this.route = [];
+	        this.infoWindow = new google.maps.InfoWindow();
+	        this.bounds = new google.maps.LatLngBounds();
+	        this.markers = [];
+
+	        this.map = new google.maps.Map(document.getElementById(this.gme.mapSettings.id), this._createMapOptions());
+
+	        this._initializeCss();
+	        this._initializeData();
+	        this._initializeKmlImport();
+
+	        this._initializeSearch();
+	        this._initializeBackendAddresses();
+	        this._initializeRoute();
+	        this._initializeResizeListener();
+	        this._initializeCheckboxListener();
+	        this._initializeAddressListener();
+
+	        // open info window
+	        window.setTimeout(function () {
+		        $element.trigger("openinfo");
+	        }, 2000);
+
+	        this.setCategoriesFromRequest();
+	        this.focusAddressFromRequest();
+
+	        // trigger mapcreated on map
+	        $element.trigger("mapcreated");
+
+	        this.refreshMap($element, this.gme);
+        },
+
         // categories checkboxes
         setCategories: function (selectedCats) {
             var $element = this.element;

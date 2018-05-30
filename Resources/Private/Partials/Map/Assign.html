@@ -6,14 +6,8 @@
     $(function () {
     var gme = new Object();
 
-    gme.zoomTypes = new Array(google.maps.ZoomControlStyle.DEFAULT,
-    google.maps.ZoomControlStyle.SMALL,
-    google.maps.ZoomControlStyle.LARGE);
-    gme.defaultMapTypes = new Array(google.maps.MapTypeId.ROADMAP,
-    google.maps.MapTypeId.SATELLITE,
-    google.maps.MapTypeId.HYBRID,
-    google.maps.MapTypeId.TERRAIN,
-    "{map.styledMapName}");
+    gme.zoomTypes = new Array(0,1,2);
+    gme.defaultMapTypes = new Array("roadmap", "satellite", "hybrid", "terrain", "{map.styledMapName}");
 
     gme.mapSettings = <f:format.raw>{</f:format.raw>
     id: 'gme-' + {map.uid},

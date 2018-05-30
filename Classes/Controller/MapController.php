@@ -57,9 +57,9 @@ class MapController extends ActionController
     protected $addressRepository;
 
     /**
-     * @var array
+     * @var string
      */
-    protected $extConf;
+    protected $googleMapsLibrary;
 
     public function initializeAction()
     {
@@ -71,26 +71,28 @@ class MapController extends ActionController
         if ($this->extConf['footerJS'] == 1) {
             $addJsMethod = 'addJsFooter';
         }
-        $googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
+        $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
             $this->settings['googleMapsLibrary'] :
             '//maps.google.com/maps/api/js?v=3.29';
 
         if ($this->settings['apiKey']) {
-            $googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
+            $this->googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
         }
         if ($this->settings['language']) {
-            $googleMapsLibrary .= '&language=' . $this->settings['language'];
+            $this->googleMapsLibrary .= '&language=' . $this->settings['language'];
         }
 
-        $pageRenderer->{$addJsMethod . 'Library'}(
-            'googleMaps',
-            $googleMapsLibrary,
-            'text/javascript',
-            false,
-            false,
-            '',
-            true
-        );
+        if(!$this->settings['preview']['enabled']) {
+            $pageRenderer->{$addJsMethod . 'Library'}(
+                'googleMaps',
+                $this->googleMapsLibrary,
+                'text/javascript',
+                false,
+                false,
+                '',
+                true
+            );
+        }
 
         if ($this->extConf['include_library'] == 1) {
             $pageRenderer->{$addJsMethod . 'Library'}(
@@ -110,6 +112,12 @@ class MapController extends ActionController
                     $this->request->getControllerExtensionKey()
                 ) . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
+            if($this->settings['preview']['enabled']) {
+                $scripts[] = ExtensionManagementUtility::siteRelPath(
+                        $this->request->getControllerExtensionKey()
+                    ) . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
+            }
+
             foreach ($scripts as $script) {
                 $pageRenderer->{$addJsMethod . 'File'}($script);
             }
@@ -127,10 +135,6 @@ class MapController extends ActionController
      */
     public function showAction(Map $map = null)
     {
-        if($this->settings['preview']['enabled'] && !$this->request->hasArgument('show')) {
-            $this->redirect('preview', null, null, ['map' => $map]);
-        }
-
         $categoriesArray = [];
 
         // get current map
@@ -164,16 +168,8 @@ class MapController extends ActionController
         $this->view->assignMultiple([
             'request' => $this->request->getArguments(),
             'map' => $map, 'addresses' => $addresses,
-            'categories' => $categoriesArray
+            'categories' => $categoriesArray,
+            'googleMapsLibrary' => $this->googleMapsLibrary
         ]);
-    }
-
-    /**
-     *
-     */
-    public function previewAction() {
-        if($this->request->hasArgument('map')) {
-            $this->view->assign('map', $this->request->getArgument('map'));
-        }
     }
 }
