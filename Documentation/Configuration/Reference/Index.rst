@@ -183,6 +183,51 @@ Constants
 .. container:: table-row
 
    Property
+         settings.preview.enabled
+
+   Data type
+         boolean
+
+   Description
+         Set the max. width of the image in InfoWindows. Global configuration
+         for all addresses.
+
+   Default
+         1
+
+
+.. container:: table-row
+
+   Property
+         settings.preview.image
+
+   Data type
+         String
+
+   Description
+         Define a fallback image for all previews. If there is no image set on the map, this image will be shown.
+         If both is not set, a link will be displayed. Much more is possible if you overwrite the partial.
+
+
+.. container:: table-row
+
+   Property
+         settings.preview.setCookieToShowMapAlways
+
+   Data type
+         boolean
+
+   Description
+         If the user wants to see a map once, it will be saved in the session cookie. Subsequently, all maps are loaded
+         on a page as long as the user does not close the session.
+
+   Default
+         0
+
+
+.. container:: table-row
+
+   Property
          language
    
    Data type

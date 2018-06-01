@@ -116,6 +116,15 @@ field.
          If set this longitude will be used to center the map. Otherwise the center is calculated so that all
          addresses fit in the map.
 
+.. container:: table-row
+
+   Property
+         previewImage
+
+   Description
+         Define an image to show as preview of the current map. Otherwise the fallback image of the TypoScript constant
+         will be displayed if defined. If both is not set, a link will be displayed.
+
 
 .. container:: table-row
 

@@ -51,6 +51,8 @@ Features
 - Create categories for the addresses and filter them via GET-Params or
   Checkboxes
 
+- GDPR compatible - show an image preview, only if the user accept, the data from Google will be loaded
+
 .. _screenshots:
 
 Screenshots
