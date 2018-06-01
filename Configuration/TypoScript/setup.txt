@@ -22,6 +22,7 @@ plugin.tx_gomapsext {
 		preview {
 			enabled = {$plugin.tx_gomapsext.settings.preview.enabled}
 			image = {$plugin.tx_gomapsext.settings.preview.image}
+			setCookieToShowMapAlways = {$plugin.tx_gomapsext.settings.preview.setCookieToShowMapAlways}
 		}
 		language < config.language
 	}

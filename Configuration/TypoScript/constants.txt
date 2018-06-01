@@ -27,6 +27,8 @@ plugin.tx_gomapsext {
 			enabled = 1
 			# cat=plugin.tx_gomapsext//e; type=text+; label = URL to general preview image
 			image =
+			# cat=plugin.tx_gomapsext//e; type=boolean; label = If the user wants to see a map once, it will be saved in the session.
+			setCookieToShowMapAlways = 0
 		}
 	}
 }

@@ -112,11 +112,19 @@ class MapController extends ActionController
                     $this->request->getControllerExtensionKey()
                 ) . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
+            if($this->settings['preview']['setCookieToShowMapAlways']) {
+                $scripts[] = ExtensionManagementUtility::siteRelPath(
+                        $this->request->getControllerExtensionKey()
+                    ) . 'Resources/Public/Scripts/jquery.cookie.js';
+            }
+
             if($this->settings['preview']['enabled']) {
                 $scripts[] = ExtensionManagementUtility::siteRelPath(
                         $this->request->getControllerExtensionKey()
                     ) . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
             }
+
+
 
             foreach ($scripts as $script) {
                 $pageRenderer->{$addJsMethod . 'File'}($script);

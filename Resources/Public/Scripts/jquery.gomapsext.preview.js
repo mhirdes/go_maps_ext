@@ -4,18 +4,37 @@
 jQuery(document).ready(function ($) {
     var $links = $('.js-gme-show'),
         $preview = $('.js-gme-preview'),
-        $mapContainer = $('.js-gme-container');
+        $mapContainer = $('.js-gme-container'),
+        useCookies = $preview.data('cookie'),
+        hideMap = true;
 
-    $mapContainer.hide();
+	if(useCookies) {
+		if($.cookie('tx_gomapsext_show_map')) {
+			showMap();
+			hideMap = false;
+		}
+	}
 
-	$links.click(function (e) {
-        e.preventDefault();
-	    if(typeof google === "undefined") {
-		    $('body').append($('<script>').attr('src', $links.data('library') + '&callback=GoMapsExtLoaded'));
-		    $mapContainer.show();
-	    }
+	if(hideMap) {
+		$mapContainer.hide();
+
+		$links.click(function (e) {
+			e.preventDefault();
+			showMap();
+			if(useCookies) {
+				$.cookie('tx_gomapsext_show_map', 1, {path:'/'});
+			}
+		});
+	}
+
+	function showMap() {
+		if(typeof google === "undefined") {
+			$('body').append($('<script>').attr('src', $links.data('library') + '&callback=GoMapsExtLoaded'));
+			$mapContainer.show();
+		}
 		$preview.remove();
-    });
+	}
+
 });
 
 /**
