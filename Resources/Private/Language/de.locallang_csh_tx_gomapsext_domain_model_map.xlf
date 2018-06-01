@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-05-31T09:32:43Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-06-01T10:20:05Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -33,6 +33,10 @@
 		<trans-unit id="draggable.description" approved="yes">
 			<source>Position of the map can be changed.</source>
 			<target>Die Position der Karte kann verändert werden.</target>
+		</trans-unit>
+		<trans-unit id="fullscreen_control.description" approved="yes">
+			<source>Shows an icon to enable the fullscreen.</source>
+			<target>Zeigt einen Icon zum aktivieren das Vollbild.</target>
 		</trans-unit>
 		<trans-unit id="height.description" approved="yes">
 			<source>Set the height of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
@@ -90,6 +94,10 @@
 			<source>Show arrows to change the position of the map.</source>
 			<target>Zeigt Pfeil zum navigieren an.</target>
 		</trans-unit>
+		<trans-unit id="preview_image.description" approved="yes">
+			<source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
+			<target>Definieren Sie ein Bild, das als Vorschau der aktuellen Karte angezeigt werden soll. Wenn die Vorschau aktiviert ist, wird dieses Bild anstelle der Karte angezeigt. Erst wenn der Nutzer auf das Bild klickt, werden Daten von Google geladen und die Karte wird angezeigt.</target>
+		</trans-unit>
 		<trans-unit id="scale_control.description" approved="yes">
 			<source>Displays a measure.</source>
 			<target>Zeigt einen Maßstab.</target>
@@ -114,10 +122,6 @@
 			<source>Shows an icon to enable the streetview.</source>
 			<target>Zeigt einen Icon zum aktivieren der StreetView.</target>
 		</trans-unit>
-		<trans-unit id="fullscreen_control.description" approved="yes">
-			<source>Shows an icon to enable the fullscreen.</source>
-			<target>Zeigt einen Icon zum aktivieren das Vollbild.</target>
-		</trans-unit>		
 		<trans-unit id="styled_map_code.description" approved="yes">
 			<source>JSON Code, for more view details</source>
 			<target>JSON Code, weitere Informationen in Detailansicht</target>

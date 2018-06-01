@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2017-05-31T09:32:43Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2018-06-01T10:20:05Z">
 		<header>
 			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
 			<type>CSH</type>
@@ -34,6 +34,10 @@
 			<source>Position of the map can be changed.</source>
 			<target>Pozycja mapy może być zmieniana.</target>
 		</trans-unit>
+		<trans-unit id="fullscreen_control.description" approved="yes">
+			<source>Shows an icon to enable the fullscreen.</source>
+			<target>Pokazuje ikonę do włączenia pełny ekran.</target>
+		</trans-unit>
 		<trans-unit id="height.description" approved="yes">
 			<source>Set the height of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
 			<target>Ustaw wysokość mapy w pikselach.</target>
@@ -58,6 +62,10 @@
 			<source>Show arrows to change the position of the map.</source>
 			<target>Pokazuje strzałki do zmiany pozycji mapy.</target>
 		</trans-unit>
+		<trans-unit id="preview_image.description" approved="yes">
+			<source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
+			<target>Zdefiniuj obraz, aby pokazać go jako podgląd aktualnej mapy. Jeśli podglądy są włączone, ten obraz będzie wyświetlany zamiast mapy. Tylko wtedy, gdy użytkownik kliknie obraz, dane z Google zostaną załadowane, a mapa zostanie wyświetlona.</target>
+		</trans-unit>
 		<trans-unit id="scale_control.description" approved="yes">
 			<source>Displays a measure.</source>
 			<target>Wyświetla miarkę.</target>
@@ -73,10 +81,6 @@
 		<trans-unit id="streetview_control.description" approved="yes">
 			<source>Shows an icon to enable the streetview.</source>
 			<target>Pokazuje ikonę do włączenia Street View.</target>
-		</trans-unit>
-		<trans-unit id="fullscreen_control.description" approved="yes">
-			<source>Shows an icon to enable the fullscreen.</source>
-			<target>Pokazuje ikonę do włączenia pełny ekran.</target>
 		</trans-unit>
 		<trans-unit id="styled_map_code.description" approved="yes">
 			<source>JSON Code, for more view details</source>
