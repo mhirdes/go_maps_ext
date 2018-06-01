@@ -167,6 +167,12 @@ class Map extends AbstractEntity
      */
     protected $defaultType;
     /**
+     * previewImage
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $previewImage;
+    /**
      * panControl
      *
      * @var boolean
@@ -846,6 +852,22 @@ class Map extends AbstractEntity
     public function setDefaultType($defaultType)
     {
         $this->defaultType = $defaultType;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    public function getPreviewImage()
+    {
+        return $this->previewImage;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $previewImage
+     */
+    public function setPreviewImage($previewImage)
+    {
+        $this->previewImage = $previewImage;
     }
 
     /**

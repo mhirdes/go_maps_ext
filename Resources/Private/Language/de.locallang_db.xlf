@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-05-31T09:37:59Z">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-06-01T09:20:11Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -173,6 +173,10 @@
 			<source>Draggable</source>
 			<target>Verschiebbare Karte</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
+			<source>Fullscreen control</source>
+			<target>Zeige Vollbild-Steuerung</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.height" approved="yes">
 			<source>Height</source>
 			<target>Höhe</target>
@@ -293,6 +297,10 @@
 			<source>Pan control</source>
 			<target>Zeige Schwenksteuerung</target>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.preview_image" approved="yes">
+			<source>Preview Image</source>
+			<target>Vorschaubild</target>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.scale_control" approved="yes">
 			<source>Scale control</source>
 			<target>Zeige Maßstab</target>
@@ -317,10 +325,6 @@
 			<source>Streetview control</source>
 			<target>Zeige StreetView-Steuerung</target>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
-			<source>Fullscreen control</source>
-			<target>Zeige Vollbild-Steuerung</target>
-		</trans-unit>		
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
 			<source>Code</source>
 			<target>Code</target>

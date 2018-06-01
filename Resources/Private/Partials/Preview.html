@@ -2,12 +2,19 @@
 
 <div class="js-gme-preview">
 	<a href="javascript:;" title="{f:translate(key:'tx_gomapsext_templates_map_preview.link')}" class="js-gme-show" data-library="{googleMapsLibrary}">
-		<f:if condition="{settings.preview.image}">
+		<f:if condition="{map.previewImage}">
 			<f:then>
-				<f:image src="{settings.preview.image}"/>
+				<f:image image="{map.previewImage}"/>
 			</f:then>
 			<f:else>
-				<f:translate key="tx_gomapsext_templates_map_preview.link"/>
+				<f:if condition="{settings.preview.image}">
+					<f:then>
+						<f:image src="{settings.preview.image}"/>
+					</f:then>
+					<f:else>
+						<f:translate key="tx_gomapsext_templates_map_preview.link"/>
+					</f:else>
+				</f:if>
 			</f:else>
 		</f:if>
 	</a>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2017-05-31T09:37:59Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-06-01T09:20:11Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -132,6 +132,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.draggable">
 			<source>Draggable</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control">
+			<source>Fullscreen control</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.height">
 			<source>Height</source>
 		</trans-unit>
@@ -222,6 +225,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
 			<source>Pan control</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.preview_image">
+			<source>Preview Image</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.scale_control">
 			<source>Scale control</source>
 		</trans-unit>
@@ -240,9 +246,6 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
 			<source>Streetview control</source>
 		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control">
-			<source>Fullscreen control</source>
-		</trans-unit>		
 		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code">
 			<source>Code</source>
 		</trans-unit>
