@@ -16,7 +16,7 @@
 	"support": {
 		"issues": "https://forge.typo3.org/projects/extension-go_maps_ext"
 	},
-	"version": "2.3.2-dev",
+	"version": "2.4.0",
 	"replace": {
 		"go_maps_ext": "self.version",
 		"typo3-ter/go-maps-ext": "self.version"

@@ -20,6 +20,14 @@ ChangeLog
 .. container:: table-row
 
    Version
+         2.4.0
+
+   Changes
+         GDPR compatible preview for maps, full sreen control, bugfixes
+
+.. container:: table-row
+
+   Version
          2.3.0
 
    Changes
