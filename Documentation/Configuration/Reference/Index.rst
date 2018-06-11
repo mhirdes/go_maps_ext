@@ -189,8 +189,7 @@ Constants
          boolean
 
    Description
-         Set the max. width of the image in InfoWindows. Global configuration
-         for all addresses.
+         Load map only when user accepted. A preview text or image will be displayed instead.
 
    Default
          1
