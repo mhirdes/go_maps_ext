@@ -24,7 +24,7 @@ plugin.tx_gomapsext {
 		}
 		preview {
 			# cat=plugin.tx_gomapsext//e; type=boolean; label = Load map only when user accepted
-			enabled = 1
+			enabled = 0
 			# cat=plugin.tx_gomapsext//e; type=text+; label = URL to general preview image
 			image =
 			# cat=plugin.tx_gomapsext//e; type=boolean; label = If the user wants to see a map once, it will be saved in the session.
