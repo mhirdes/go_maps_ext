@@ -40,6 +40,7 @@ return [
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tab.initial,default_type,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.zoom;zoom, 
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.coordinates;coordinates,
+                    --palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.geolocation;geolocation,
 					preview_image,
                     --div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tab.display,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.interaction;interaction,
@@ -62,6 +63,7 @@ return [
         'cluster' => ['showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'],
         'controls' => ['showitem' => 'pan_control, scale_control, streetview_control, fullscreen_control'],
         'coordinates' => ['showitem' => 'latitude, longitude'],
+        'geolocation' => ['showitem' => 'geolocation'],
         'interaction' => ['showitem' => 'scroll_zoom, draggable, double_click_zoom'],
         'kml' => ['showitem' => 'kml_url, --linebreak--, kml_preserve_viewport, kml_local'],
         'map_control' => ['showitem' => 'map_type_control, --linebreak--, map_types'],
@@ -657,6 +659,14 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim,' . Clickstorm\GoMapsExt\Evaluation\Double6Evaluator::class
+            ],
+        ],
+        'geolocation' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.geolocation',
+            'config' => [
+                'type' => 'check',
+                'default' => 0
             ],
         ],
     ],
