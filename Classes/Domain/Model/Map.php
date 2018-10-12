@@ -40,21 +40,21 @@ class Map extends AbstractEntity
      * Title* (without space character, special character!)
      *
      * @var \string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
      */
     protected $title;
     /**
      * in px or %
      *
      * @var \string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
      */
     protected $width;
     /**
      * in px or %
      *
      * @var string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
      */
     protected $height;
     /**
@@ -79,7 +79,7 @@ class Map extends AbstractEntity
      * addresses
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $addresses;
     /**

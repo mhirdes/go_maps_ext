@@ -40,7 +40,7 @@ class Address extends AbstractEntity
      * title
      *
      * @var \string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
      */
     protected $title;
     /**
@@ -101,7 +101,7 @@ class Address extends AbstractEntity
      * infoWindowImages
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $infoWindowImages = null;
     /**
@@ -132,14 +132,14 @@ class Address extends AbstractEntity
      * categories
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $categories;
     /**
      * map
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $map;
 

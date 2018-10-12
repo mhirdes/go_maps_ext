@@ -44,7 +44,7 @@ class MapController extends ActionController
      * mapRepository
      *
      * @var \Clickstorm\GoMapsExt\Domain\Repository\MapRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $mapRepository;
 
@@ -52,7 +52,7 @@ class MapController extends ActionController
      * addressRepository
      *
      * @var \Clickstorm\GoMapsExt\Domain\Repository\AddressRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $addressRepository;
 
