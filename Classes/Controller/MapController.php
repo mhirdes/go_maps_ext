@@ -70,12 +70,11 @@ class MapController extends ActionController
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $addJsMethod = 'addJs';
 
-        if ($extConf['footerJS'] == 1) {
+        if ($extConf['footerJS'] === '1') {
             $addJsMethod = 'addJsFooter';
         }
-        $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
-            $this->settings['googleMapsLibrary'] :
-            '//maps.google.com/maps/api/js?v=3.29';
+
+        $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?? '//maps.google.com/maps/api/js?v=3.29';
 
         if ($this->settings['apiKey']) {
             $this->googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
@@ -97,14 +96,14 @@ class MapController extends ActionController
         }
 
         $pathPrefix =  PathUtility::getAbsoluteWebPath(ExtensionManagementUtility::extPath($this->request->getControllerExtensionKey()));
-        if ($extConf['include_library'] == 1) {
+        if ($extConf['include_library'] === '1') {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'jQuery',
                 $pathPrefix . 'Resources/Public/Scripts/jquery.min.js'
             );
         }
 
-        if ($extConf['include_manually'] != 1) {
+        if ($extConf['include_manually'] !== '1') {
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/markerclusterer_compiled.js';
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
@@ -137,7 +136,7 @@ class MapController extends ActionController
 
         // get current map
         /* @var Map $map */
-        $map = $map ?: $this->mapRepository->findByUid($this->settings['map']);
+        $map = $map ?? $this->mapRepository->findByUid($this->settings['map']);
 
         // find addresses
         $pid = $this->settings['storagePid'];
