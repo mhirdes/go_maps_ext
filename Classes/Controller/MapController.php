@@ -31,6 +31,7 @@ use Clickstorm\GoMapsExt\Domain\Model\Map;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -94,37 +95,25 @@ class MapController extends ActionController
             );
         }
 
+        $pathPrefix =  PathUtility::getAbsoluteWebPath(ExtensionManagementUtility::extPath($this->request->getControllerExtensionKey()));
         if ($this->extConf['include_library'] == 1) {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'jQuery',
-                ExtensionManagementUtility::siteRelPath(
-                    $this->request->getControllerExtensionKey()
-                ) . 'Resources/Public/Scripts/jquery.min.js'
+                $pathPrefix . 'Resources/Public/Scripts/jquery.min.js'
             );
         }
 
         if ($this->extConf['include_manually'] != 1) {
-            $scripts[] = ExtensionManagementUtility::siteRelPath(
-                    $this->request->getControllerExtensionKey()
-                ) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
-
-            $scripts[] = ExtensionManagementUtility::siteRelPath(
-                    $this->request->getControllerExtensionKey()
-                ) . 'Resources/Public/Scripts/jquery.gomapsext.js';
+            $scripts[] = $pathPrefix . 'Resources/Public/Scripts/markerclusterer_compiled.js';
+            $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
             if($this->settings['preview']['setCookieToShowMapAlways']) {
-                $scripts[] = ExtensionManagementUtility::siteRelPath(
-                        $this->request->getControllerExtensionKey()
-                    ) . 'Resources/Public/Scripts/jquery.cookie.js';
+                $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.cookie.js';
             }
 
             if($this->settings['preview']['enabled']) {
-                $scripts[] = ExtensionManagementUtility::siteRelPath(
-                        $this->request->getControllerExtensionKey()
-                    ) . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
+                $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
             }
-
-
 
             foreach ($scripts as $script) {
                 $pageRenderer->{$addJsMethod . 'File'}($script);
