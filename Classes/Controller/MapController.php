@@ -28,6 +28,7 @@ namespace Clickstorm\GoMapsExt\Controller;
  ***************************************************************/
 
 use Clickstorm\GoMapsExt\Domain\Model\Map;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -64,7 +65,7 @@ class MapController extends ActionController
 
     public function initializeAction()
     {
-        $this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
+        $this->extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('go_maps_ext');
 
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $addJsMethod = 'addJs';
