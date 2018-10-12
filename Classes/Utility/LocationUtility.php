@@ -56,9 +56,7 @@ class LocationUtility
         $settings = $this->loadTS($PA['row']['pid']);
         $pluginSettings = $settings['plugin.']['tx_gomapsext.']['settings.'];
 
-        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
-            htmlentities($pluginSettings['googleMapsLibrary']) :
-            '//maps.google.com/maps/api/js?v=3.30';
+        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? ' //maps.google.com/maps/api/js?v=weekly';
 
         if ($pluginSettings['apiKey']) {
             $googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
