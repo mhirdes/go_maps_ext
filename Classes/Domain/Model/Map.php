@@ -40,21 +40,21 @@ class Map extends AbstractEntity
      * Title* (without space character, special character!)
      *
      * @var \string
-     * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $title;
     /**
      * in px or %
      *
      * @var \string
-     * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $width;
     /**
      * in px or %
      *
      * @var string
-     * @TYPO3\CMS\Extbase\Annotation\Validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $height;
     /**
