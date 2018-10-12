@@ -29,6 +29,7 @@ namespace Clickstorm\GoMapsExt\Utility;
 
 use TYPO3\CMS\Core\TypoScript\ExtendedTemplateService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\RootlineUtility;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 use TYPO3\CMS\Frontend\Page\PageRepository;
 
@@ -281,13 +282,9 @@ EOT;
      */
     protected function loadTS($pageUid)
     {
-        $sysPageObj = GeneralUtility::makeInstance(PageRepository::class);
-        $rootLine = $sysPageObj->getRootLine($pageUid);
-
         $TSObj = GeneralUtility::makeInstance(ExtendedTemplateService::class);
-        $TSObj->tt_track = 0;
-        $TSObj->init();
-        $TSObj->runThroughTemplates($rootLine);
+        $TSObj->tt_track = false;
+        $TSObj->runThroughTemplates(GeneralUtility::makeInstance(RootlineUtility::class, $pageUid)->get());
         $TSObj->generateConfig();
 
         return $TSObj->setup;
