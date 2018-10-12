@@ -65,12 +65,12 @@ class MapController extends ActionController
 
     public function initializeAction()
     {
-        $this->extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('go_maps_ext');
+        $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('go_maps_ext');
 
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $addJsMethod = 'addJs';
 
-        if ($this->extConf['footerJS'] == 1) {
+        if ($extConf['footerJS'] == 1) {
             $addJsMethod = 'addJsFooter';
         }
         $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
@@ -97,14 +97,14 @@ class MapController extends ActionController
         }
 
         $pathPrefix =  PathUtility::getAbsoluteWebPath(ExtensionManagementUtility::extPath($this->request->getControllerExtensionKey()));
-        if ($this->extConf['include_library'] == 1) {
+        if ($extConf['include_library'] == 1) {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'jQuery',
                 $pathPrefix . 'Resources/Public/Scripts/jquery.min.js'
             );
         }
 
-        if ($this->extConf['include_manually'] != 1) {
+        if ($extConf['include_manually'] != 1) {
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/markerclusterer_compiled.js';
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
