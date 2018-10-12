@@ -2,6 +2,8 @@
 
 namespace Clickstorm\GoMapsExt\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+
 /**
  *  Copyright notice
  *
@@ -25,8 +27,6 @@ namespace Clickstorm\GoMapsExt\ViewHelpers;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  */
-
-use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Renders a HTML-script value by passing it and escape ' to pretend for errors.
