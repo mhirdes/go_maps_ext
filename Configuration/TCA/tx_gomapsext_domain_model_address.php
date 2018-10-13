@@ -264,7 +264,11 @@ return [
                 'rows' => 15,
                 'eval' => 'trim',
                 'enableRichtext' => 1,
-                'fieldControl' => 'fullScreenRichtext',
+                'fieldControl' => [
+                    'fullScreenRichtext' => [
+                        'disabled' => false,
+                    ]
+                ]
 			],
 		],
 		'info_window_images' => [
