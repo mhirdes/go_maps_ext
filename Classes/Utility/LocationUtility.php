@@ -26,11 +26,9 @@ namespace Clickstorm\GoMapsExt\Utility;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
-use TYPO3\CMS\Core\TypoScript\ExtendedTemplateService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\VersionNumberUtility;
-use TYPO3\CMS\Frontend\Page\PageRepository;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /**
  * Google map.
@@ -51,13 +49,9 @@ class LocationUtility
      */
     public function render(array &$PA, $pObj)
     {
-        $version = VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
-        $settings = $this->loadTS($PA['row']['pid']);
-        $pluginSettings = $settings['plugin.']['tx_gomapsext.']['settings.'];
+        $pluginSettings = static::getSettings();
 
-        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
-            htmlentities($pluginSettings['googleMapsLibrary']) :
-            '//maps.google.com/maps/api/js?v=3.30';
+        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? ' //maps.google.com/maps/api/js?v=weekly';
 
         if ($pluginSettings['apiKey']) {
             $googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
@@ -207,13 +201,8 @@ TxClimbingSites.positionChanged = function() {
 }
 
 TxClimbingSites.updateValue = function(fieldName, value) {
-    var version = {$version};
     document[TBE_EDITOR.formname][fieldName].value = value;
-    if(version < 7005000) {
-        document[TBE_EDITOR.formname][fieldName + '_hr'].value = value;
-    } else {
-        TYPO3.jQuery('[data-formengine-input-name="' + fieldName + '"]').val(value);
-    }
+    TYPO3.jQuery('[data-formengine-input-name="' + fieldName + '"]').val(value);
 }
 
 TxClimbingSites.setMarker = function(lat, lng) {
@@ -275,21 +264,18 @@ EOT;
     }
 
     /**
-     * @param int $pageUid
-     * @return mixed
-     * @throws \Exception
+     * Get definitive TypoScript Settings from
+     * plugin.tx_gomapsext.settings.
+     *
+     * @return array
      */
-    protected function loadTS($pageUid)
+    private static function getSettings(): array
     {
-        $sysPageObj = GeneralUtility::makeInstance(PageRepository::class);
-        $rootLine = $sysPageObj->getRootLine($pageUid);
+        return GeneralUtility::makeInstance(ObjectManager::class)
+            ->get(ConfigurationManagerInterface::class)
+            ->getConfiguration(
+                ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
+            )['plugin.']['tx_gomapsext.']['settings.'] ?? [];
 
-        $TSObj = GeneralUtility::makeInstance(ExtendedTemplateService::class);
-        $TSObj->tt_track = 0;
-        $TSObj->init();
-        $TSObj->runThroughTemplates($rootLine);
-        $TSObj->generateConfig();
-
-        return $TSObj->setup;
     }
 }
