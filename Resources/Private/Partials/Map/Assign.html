@@ -19,6 +19,7 @@
     maxZoom: {f:if(condition:"{map.zoomMax}", then:"{map.zoomMax}", else:"0")},
     lat: {f:if(condition:"{map.latitude} != 0", then: "{map.latitude}", else:"0")},
     lng: {f:if(condition:"{map.longitude} != 0", then: "{map.longitude}", else:"0")},
+    geolocation: {f:if(condition:"{map.geolocation} != 0", then: "1", else:"0")},
     kmlUrl: '{map.kmlUrl}',
     kmlPreserveViewport: {f:if(condition:"{map.kmlPreserveViewport}", then:"true", else:"false")},
     kmlLocal: {f:if(condition:"{map.kmlLocal}", then:"1", else:"0")},
@@ -51,6 +52,7 @@
     unitSystem: {map.unitSystem},
     showForm: {f:if(condition:"{map.showForm}", then:"1", else:"0")},
     showCategories: {f:if(condition:"{map.showCategories}", then:"1", else:"0")},
+    logicalAnd: {f:if(condition:"{settings.logicalAnd}", then:"1", else:"0")},
     styledMapName: '{map.styledMapName}',
     <f:if condition="{map.styledMapCode}">
         <f:then>

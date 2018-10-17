@@ -153,6 +153,9 @@
 		<trans-unit id="tx_gomapsext_domain_model_map.longitude">
 			<source>Longitude</source>
 		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.geolocation">
+			<source>Activate Geolocation</source>
+		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.map_type_control">
 			<source>Map type control</source>
 		</trans-unit>
@@ -203,6 +206,9 @@
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates">
 			<source>Default map center</source>
+		</trans-unit>
+		<trans-unit id="tx_gomapsext_domain_model_map.palettes.geolocation">
+			<source>Geolocation</source>
 		</trans-unit>
 		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction">
 			<source>Map Interaction</source>

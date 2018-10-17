@@ -55,6 +55,9 @@
 		<trans-unit id="longitude.description">
 			<source>If set this longitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
 		</trans-unit>
+		<trans-unit id="geolocation.description">
+			<source>If set geolocation is activated. If location is possible and allowed by the user, a marker is shown representing the actual position and the map is centered to this point.</source>
+		</trans-unit>
 		<trans-unit id="map_type_control.description">
 			<source>Shows a control to change the map type.</source>
 		</trans-unit>

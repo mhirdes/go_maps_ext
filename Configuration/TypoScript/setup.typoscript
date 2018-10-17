@@ -12,6 +12,7 @@ plugin.tx_gomapsext {
 	}
 	settings {
 		storagePid = {$plugin.tx_gomapsext.settings.storagePid}
+		logicalAnd = {$plugin.tx_gomapsext.settings.logicalAnd}
 		apiKey = {$plugin.tx_gomapsext.settings.apiKey}
 		googleMapsLibrary = {$plugin.tx_gomapsext.settings.googleMapsLibrary}
 		infoWindow {
