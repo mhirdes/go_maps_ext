@@ -28,7 +28,8 @@
             kmlLocal: null,
             showForm: null,
             lat: null,
-            lng: null
+            lng: null,
+            geolocation: null
         },
         zoomTypes: [],
         defaultMapTypes: [],
@@ -66,6 +67,7 @@
 	        this._initializeCss();
 	        this._initializeData();
 	        this._initializeKmlImport();
+            this._initializeGeolocation();
 
 	        this._initializeSearch();
 	        this._initializeBackendAddresses();
@@ -90,16 +92,32 @@
 
         // categories checkboxes
         setCategories: function (selectedCats) {
-            var $element = this.element;
+            var gme = this.data,
+                $element = this.element;
 
             $.each(this.markers, function (key, marker) {
                 marker.setVisible(false);
+                var matches = 0;
                 $.each(marker.categories, function (keyM, category) {
                     if ($.inArray(category, selectedCats) != -1) {
-                        marker.setVisible(true);
-                        return true;
+                        matches += 1;
                     }
                 });
+                var showMarker = (matches > 0);
+                if (gme.mapSettings.logicalAnd) {
+                    showMarker = (matches == selectedCats.length);
+                }
+                if (showMarker) {
+                    marker.setVisible(true);
+                    if ($('#gme-address'+marker.uid).parent().is('del')) {
+                        $('#gme-address'+marker.uid).unwrap();
+                    }
+                    return true;
+                } else {
+                    if (! $('#gme-address'+marker.uid).parent().is('del')) {
+                        $('#gme-address'+marker.uid).wrap('<del></del>');
+                    }
+                }
             });
             if ($element.markerCluster) {
                 $element.markerCluster.repaint();
@@ -430,6 +448,7 @@
                 minZoom: gme.mapSettings.minZoom,
                 maxZoom: gme.mapSettings.maxZoom,
                 center: new google.maps.LatLng(0, 0),
+                geolocation: gme.mapSettings.geolocation,
                 draggable: gme.mapSettings.draggable,
                 disableDoubleClickZoom: gme.mapSettings.doubleClickZoom,
                 scrollwheel: gme.mapSettings.scrollZoom,
@@ -488,6 +507,41 @@
                         _this.addMapPoint(address, Route, $element, _this.infoWindow, gme);
                         gme.addresses.push(address);
                     });
+                });
+            }
+        },
+
+        _initializeGeolocation: function () {
+            var _this = this,
+                _map = this.map,
+                gme = this.data;
+
+            // geolocation
+            if (gme.mapSettings.geolocation == 1) {
+                var myloc = new google.maps.Marker({
+                    clickable: false,
+                    icon: {
+                      path: google.maps.SymbolPath.CIRCLE,
+                      scale: 9,
+                      fillColor: '#408fff',
+                      fillOpacity: 1,
+                      strokeColor: 'white',
+                      strokeWeight: 3
+                    },
+                    zIndex: 999,
+                    map: _map
+                });
+
+                if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
+                    var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                    myloc.setPosition(me);
+                    var mycenter = {
+                        lat: pos.coords.latitude, 
+                        lng: pos.coords.longitude
+                    };
+                    _map.setCenter(mycenter);
+                }, function(error) {
+                    console.log('could not get position');
                 });
             }
         },

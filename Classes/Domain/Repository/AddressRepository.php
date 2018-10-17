@@ -53,7 +53,9 @@ class AddressRepository extends Repository
         $or = [];
         $and = [];
 
-        $or[] = $query->equals('pid', $pid);
+        foreach (explode(',', $pid) as $p) {
+            $or[] = $query->equals('pid', $p);
+        }
         if ($map) {
             $or[] = $query->contains('map', $map);
         }

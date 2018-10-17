@@ -141,11 +141,8 @@ class MapController extends ActionController
         // find addresses
         $pid = $this->settings['storagePid'];
         if ($pid) {
-            if ($pid == 'this') {
-                $addresses = $this->addressRepository->findAllAddresses($map, $GLOBALS['TSFE']->id);
-            } else {
-                $addresses = $this->addressRepository->findAllAddresses($map, $pid);
-            }
+            $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $pid);
+            $addresses = $this->addressRepository->findAllAddresses($map, $pid);
         } else {
             $addresses = $map->getAddresses();
         }

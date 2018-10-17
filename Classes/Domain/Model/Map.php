@@ -286,6 +286,12 @@ class Map extends AbstractEntity
      * @var \float
      */
     protected $longitude;
+    /**
+     * geolocation
+     *
+     * @var boolean
+     */
+    protected $geolocation = false;
 
     /**
      * __construct
@@ -1333,5 +1339,36 @@ class Map extends AbstractEntity
     public function setLongitude($longitude)
     {
         $this->longitude = $longitude;
+    }
+
+    /**
+     * Returns the geolocation
+     *
+     * @return boolean $geolocation
+     */
+    public function getGeolocation()
+    {
+        return $this->geolocation;
+    }
+
+    /**
+     * Returns the boolean state of geolocation
+     *
+     * @return boolean
+     */
+    public function isGeolocation()
+    {
+        return $this->getGeolocation();
+    }
+
+    /**
+     * Sets the geolocation
+     *
+     * @param boolean $geolocation
+     * @return void
+     */
+    public function setGeolocation($geolocation)
+    {
+        $this->geolocation = $geolocation;
     }
 }

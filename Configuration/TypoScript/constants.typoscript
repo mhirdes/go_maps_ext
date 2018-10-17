@@ -10,6 +10,8 @@ plugin.tx_gomapsext {
 	settings {
 		# cat=plugin.tx_gomapsext//a; type=text+; label = Show Addresses from this PIDs
 		storagePid =
+		# cat=plugin.tx_gomapsext//a; type=boolean; label = Category filter with logical AND (instead of logical OR)
+		logicalAnd = 0
 		# cat=plugin.tx_gomapsext//a; type=text+; label = API Key, https://developers.google.com/maps/documentation/javascript/get-api-key
 		apiKey =
         # cat=plugin.tx_gomapsext//a; type=text+; label = URL to Google Maps API: Defaults to the weekly channel
