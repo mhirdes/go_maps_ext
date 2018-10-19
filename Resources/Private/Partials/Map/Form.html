@@ -1,14 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"
 	  xmlns:gomapsext="http://typo3.org/ns/Clickstorm/GoMapsExt/ViewHelpers">
 
-<f:if condition="{map.markerSearch}">
-	<form id="gme-{map.uid}-search" method="post">
-		<input type="text" name="sword" class="js-gme-sword" value="{request.sword}" />
-		<input type="submit" class="js-gme-submit" name="submitSearch"
-			   value="{f:translate(key:'tx_gomapsext_partials_map_assign.submitSearch')}" />
-		<div class="js-gme-error"><f:translate key="partials.map.form.error" /></div>
-	</form>
-</f:if>
 <f:form id="gme-{map.uid}-form" method="post">
 	<f:if condition="{map.calcRoute}">
 		<f:form.textfield name="saddress" class="js-gme-saddress" value="{request.saddress}" />

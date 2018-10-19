@@ -6,6 +6,9 @@
         <f:render partial="Preview" arguments="{_all}"/>
     </f:if>
     <div class="js-gme-container">
+        <f:if condition="{map.markerSearch}">
+            <f:render partial="Map/MarkerSearch" arguments="{_all}"/>
+        </f:if>
         <f:if condition="{map.showForm}">
             <f:render partial="Map/Form" arguments="{_all}"/>
         </f:if>
