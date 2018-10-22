@@ -29,7 +29,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'title,configuration_map,--palette--;;data,
+            'showitem' => 'title,--palette--;;address,configuration_map,--palette--;;data,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.style,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.palettes.marker;marker,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window,
@@ -40,6 +40,7 @@ return [
         ]
     ],
     'palettes' => [
+        'address' => ['showitem' => 'street, --linebreak--, zip,  city'],
         'data' => ['showitem' => 'latitude, longitude, address'],
         'interaction' => ['showitem' => 'open_by_click, close_by_click, opened'],
         'link' => ['showitem' => 'info_window_link'],
@@ -139,6 +140,33 @@ return [
                 'eval' => 'trim,required'
             ],
         ],
+        'street' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.street',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'zip' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.zip',
+            'config' => [
+                'type' => 'input',
+                'size' => 5,
+                'eval' => 'trim'
+            ],
+        ],
+        'city' => [
+            'exclude' => 0,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.city',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
         'configuration_map' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.configuration_map',
@@ -149,6 +177,9 @@ return [
                     'longitude' => 'longitude',
                     'latitude' => 'latitude',
                     'address' => 'address',
+                    'street' => 'street',
+                    'zip' => 'zip',
+                    'city' => 'city',
                 ],
             ],
         ],

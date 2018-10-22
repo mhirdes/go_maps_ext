@@ -44,6 +44,24 @@ class Address extends AbstractEntity
      */
     protected $title;
     /**
+     * street
+     *
+     * @var \string
+     */
+    protected $street;
+    /**
+     * zip
+     *
+     * @var \string
+     */
+    protected $zip;
+    /**
+     * city
+     *
+     * @var \string
+     */
+    protected $city;
+    /**
      * configurationMap
      *
      * @var \string
@@ -190,6 +208,54 @@ class Address extends AbstractEntity
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * @param string $street
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+    }
+
+    /**
+     * @return string
+     */
+    public function getZip()
+    {
+        return $this->zip;
+    }
+
+    /**
+     * @param string $zip
+     */
+    public function setZip($zip)
+    {
+        $this->zip = $zip;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
     }
 
     /**
