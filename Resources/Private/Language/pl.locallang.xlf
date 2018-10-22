@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2018-05-25T11:52:13Z">
+	<file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2018-10-22T11:26:16Z">
 		<header>
 			<description>Language labels for the Google Maps API Extbase extension in the FRONTEND</description>
 			<authorName>Marc Hirdes</authorName>
@@ -8,214 +8,214 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-		<trans-unit id="tx_gomapsext_domain_model_address" approved="yes">
-			<source>Google Maps Address</source>
-			<target>Adres map Google</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.address" approved="yes">
-			<source>address</source>
-			<target>addres</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.close_by_click" approved="yes">
-			<source>closeByClick</source>
-			<target>closeByClick</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.configuration_map" approved="yes">
-			<source>configurationMap</source>
-			<target>configurationMap</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_height" approved="yes">
-			<source>imageHeight</source>
-			<target>imageHeight</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_size" approved="yes">
-			<source>imageSize</source>
-			<target>imageSize</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_width" approved="yes">
-			<source>imageWidth</source>
-			<target>imageWidth</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_content" approved="yes">
-			<source>infoWindowContent</source>
-			<target>infoWindowContent</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link" approved="yes">
-			<source>infoWindowLink</source>
-			<target>infoWindowLink</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.latitude" approved="yes">
-			<source>latitude</source>
-			<target>szerokość</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.longitude" approved="yes">
-			<source>longitude</source>
-			<target>długość</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.marker" approved="yes">
-			<source>marker</source>
-			<target>marker</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.open_by_click" approved="yes">
-			<source>openByClick</source>
-			<target>openByClick</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.title" approved="yes">
-			<source>title</source>
-			<target>tytuł</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map" approved="yes">
-			<source>Map</source>
-			<target>Mapa</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.addresses" approved="yes">
-			<source>addresses</source>
-			<target>addresses</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.calc_route" approved="yes">
-			<source>calcRoute</source>
-			<target>calcRoute</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.class" approved="yes">
-			<source>class</source>
-			<target>klasa</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.default_type" approved="yes">
-			<source>defaultType</source>
-			<target>defaultType</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.double_click_zoom" approved="yes">
-			<source>doubleClickZoom</source>
-			<target>doubleClickZoom</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.draggable" approved="yes">
-			<source>draggable</source>
-			<target>draggable</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
-			<source>fullscreenControl</source>
-			<target>fullscreenControl</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.height" approved="yes">
-			<source>in px</source>
-			<target>w pikselach</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.kml_url" approved="yes">
-			<source>kmlUrl</source>
-			<target>kmlUrl</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_type_control" approved="yes">
-			<source>mapTypeControl</source>
-			<target>mapTypeControl</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types" approved="yes">
-			<source>mapTypes</source>
-			<target>mapTypes</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.pan_control" approved="yes">
-			<source>panControl</source>
-			<target>panControl</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.scale_control" approved="yes">
-			<source>scaleControl</source>
-			<target>scaleControl</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.scroll_zoom" approved="yes">
-			<source>scrollZoom</source>
-			<target>scrollZoom</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.show_route" approved="yes">
-			<source>showRoute</source>
-			<target>showRoute</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control" approved="yes">
-			<source>streetviewControl</source>
-			<target>streetviewControl</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
-			<source>styledMapCode</source>
-			<target>styledMapCode</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name" approved="yes">
-			<source>styledMapName</source>
-			<target>styledMapName</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.title" approved="yes">
-			<source>Title* (without space character, special character!)</source>
-			<target>Tytuł* (Bez spacji i znaków specjalnych!)</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tooltip_title" approved="yes">
-			<source>tooltipTitle</source>
-			<target>tooltipTitle</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0" approved="yes">
-			<source>Driving</source>
-			<target>Samochodem</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2" approved="yes">
-			<source>Bicycling</source>
-			<target>Rowerem</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3" approved="yes">
-			<source>Transit</source>
-			<target>Tranzyt</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4" approved="yes">
-			<source>Walking</source>
-			<target>Pieszo</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2" approved="yes">
-			<source>km</source>
-			<target>km</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3" approved="yes">
-			<source>mil</source>
-			<target>mile</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.width" approved="yes">
-			<source>in px</source>
-			<target>w pikselach</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom" approved="yes">
-			<source>zoom</source>
-			<target>zoom</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control" approved="yes">
-			<source>zoomControl</source>
-			<target>zoomControl</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type" approved="yes">
-			<source>zoomControlType</source>
-			<target>zoomControlType</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_flexform_settings" approved="yes">
-			<source>Settings</source>
-			<target>Ustawienia</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_flexform_settings.map" approved="yes">
-			<source>Map</source>
-			<target>Mapa</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.alert" approved="yes">
-			<source>Please enter a valid address.</source>
-			<target>Wprowadź prawidłowy adres.</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText" approved="yes">
-			<source>Calculate Route</source>
-			<target>Wyznacz trasę</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults" approved="yes">
-			<source>No results found.</source>
-			<target>Nie znaleziono żadnych wyników.</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.submit" approved="yes">
-			<source>Calculate Route</source>
-			<target>Wyznacz trasę</target>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" approved="yes">
-			<source>Search</source>
-			<target>Szukaj</target>
-		</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address" approved="yes">
+				<source><![CDATA[Google Maps Address]]></source>
+				<target><![CDATA[Adres map Google]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.address" approved="yes">
+				<source><![CDATA[address]]></source>
+				<target><![CDATA[addres]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.close_by_click" approved="yes">
+				<source><![CDATA[closeByClick]]></source>
+				<target><![CDATA[closeByClick]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.configuration_map" approved="yes">
+				<source><![CDATA[configurationMap]]></source>
+				<target><![CDATA[configurationMap]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.image_height" approved="yes">
+				<source><![CDATA[imageHeight]]></source>
+				<target><![CDATA[imageHeight]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.image_size" approved="yes">
+				<source><![CDATA[imageSize]]></source>
+				<target><![CDATA[imageSize]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.image_width" approved="yes">
+				<source><![CDATA[imageWidth]]></source>
+				<target><![CDATA[imageWidth]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_content" approved="yes">
+				<source><![CDATA[infoWindowContent]]></source>
+				<target><![CDATA[infoWindowContent]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link" approved="yes">
+				<source><![CDATA[infoWindowLink]]></source>
+				<target><![CDATA[infoWindowLink]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.latitude" approved="yes">
+				<source><![CDATA[latitude]]></source>
+				<target><![CDATA[szerokość]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.longitude" approved="yes">
+				<source><![CDATA[longitude]]></source>
+				<target><![CDATA[długość]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.marker" approved="yes">
+				<source><![CDATA[marker]]></source>
+				<target><![CDATA[marker]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.open_by_click" approved="yes">
+				<source><![CDATA[openByClick]]></source>
+				<target><![CDATA[openByClick]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.title" approved="yes">
+				<source><![CDATA[title]]></source>
+				<target><![CDATA[tytuł]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map" approved="yes">
+				<source><![CDATA[Map]]></source>
+				<target><![CDATA[Mapa]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.addresses" approved="yes">
+				<source><![CDATA[addresses]]></source>
+				<target><![CDATA[addresses]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.calc_route" approved="yes">
+				<source><![CDATA[calcRoute]]></source>
+				<target><![CDATA[calcRoute]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.class" approved="yes">
+				<source><![CDATA[class]]></source>
+				<target><![CDATA[klasa]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.default_type" approved="yes">
+				<source><![CDATA[defaultType]]></source>
+				<target><![CDATA[defaultType]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.double_click_zoom" approved="yes">
+				<source><![CDATA[doubleClickZoom]]></source>
+				<target><![CDATA[doubleClickZoom]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.draggable" approved="yes">
+				<source><![CDATA[draggable]]></source>
+				<target><![CDATA[draggable]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control" approved="yes">
+				<source><![CDATA[fullscreenControl]]></source>
+				<target><![CDATA[fullscreenControl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.height" approved="yes">
+				<source><![CDATA[in px]]></source>
+				<target><![CDATA[w pikselach]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.kml_url" approved="yes">
+				<source><![CDATA[kmlUrl]]></source>
+				<target><![CDATA[kmlUrl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_type_control" approved="yes">
+				<source><![CDATA[mapTypeControl]]></source>
+				<target><![CDATA[mapTypeControl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_types" approved="yes">
+				<source><![CDATA[mapTypes]]></source>
+				<target><![CDATA[mapTypes]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.pan_control" approved="yes">
+				<source><![CDATA[panControl]]></source>
+				<target><![CDATA[panControl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.scale_control" approved="yes">
+				<source><![CDATA[scaleControl]]></source>
+				<target><![CDATA[scaleControl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.scroll_zoom" approved="yes">
+				<source><![CDATA[scrollZoom]]></source>
+				<target><![CDATA[scrollZoom]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.show_route" approved="yes">
+				<source><![CDATA[showRoute]]></source>
+				<target><![CDATA[showRoute]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.streetview_control" approved="yes">
+				<source><![CDATA[streetviewControl]]></source>
+				<target><![CDATA[streetviewControl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code" approved="yes">
+				<source><![CDATA[styledMapCode]]></source>
+				<target><![CDATA[styledMapCode]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name" approved="yes">
+				<source><![CDATA[styledMapName]]></source>
+				<target><![CDATA[styledMapName]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.title" approved="yes">
+				<source><![CDATA[Title* (without space character, special character!)]]></source>
+				<target><![CDATA[Tytuł* (Bez spacji i znaków specjalnych!)]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tooltip_title" approved="yes">
+				<source><![CDATA[tooltipTitle]]></source>
+				<target><![CDATA[tooltipTitle]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0" approved="yes">
+				<source><![CDATA[Driving]]></source>
+				<target><![CDATA[Samochodem]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2" approved="yes">
+				<source><![CDATA[Bicycling]]></source>
+				<target><![CDATA[Rowerem]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3" approved="yes">
+				<source><![CDATA[Transit]]></source>
+				<target><![CDATA[Tranzyt]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4" approved="yes">
+				<source><![CDATA[Walking]]></source>
+				<target><![CDATA[Pieszo]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2" approved="yes">
+				<source><![CDATA[km]]></source>
+				<target><![CDATA[km]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3" approved="yes">
+				<source><![CDATA[mil]]></source>
+				<target><![CDATA[mile]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.width" approved="yes">
+				<source><![CDATA[in px]]></source>
+				<target><![CDATA[w pikselach]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.zoom" approved="yes">
+				<source><![CDATA[zoom]]></source>
+				<target><![CDATA[zoom]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control" approved="yes">
+				<source><![CDATA[zoomControl]]></source>
+				<target><![CDATA[zoomControl]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type" approved="yes">
+				<source><![CDATA[zoomControlType]]></source>
+				<target><![CDATA[zoomControlType]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_flexform_settings" approved="yes">
+				<source><![CDATA[Settings]]></source>
+				<target><![CDATA[Ustawienia]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_flexform_settings.map" approved="yes">
+				<source><![CDATA[Map]]></source>
+				<target><![CDATA[Mapa]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_partials_map_assign.alert" approved="yes">
+				<source><![CDATA[Please enter a valid address.]]></source>
+				<target><![CDATA[Wprowadź prawidłowy adres.]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText" approved="yes">
+				<source><![CDATA[Calculate Route]]></source>
+				<target><![CDATA[Wyznacz trasę]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults" approved="yes">
+				<source><![CDATA[No results found.]]></source>
+				<target><![CDATA[Nie znaleziono żadnych wyników.]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_partials_map_assign.submit" approved="yes">
+				<source><![CDATA[Calculate Route]]></source>
+				<target><![CDATA[Wyznacz trasę]]></target>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" approved="yes">
+				<source><![CDATA[Search]]></source>
+				<target><![CDATA[Szukaj]]></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

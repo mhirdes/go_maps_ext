@@ -10,6 +10,9 @@ CREATE TABLE tx_gomapsext_domain_model_address (
 	categories int(11) unsigned DEFAULT '0' NOT NULL,
 	
 	title varchar(255) DEFAULT '' NOT NULL,
+	street varchar(255) DEFAULT '' NOT NULL,
+	zip varchar(20) DEFAULT '' NOT NULL,
+	city varchar(20) DEFAULT '' NOT NULL,
 	configuration_map varchar(255) DEFAULT '' NOT NULL,
 	latitude double(11,6) DEFAULT '0.000000' NOT NULL,
 	longitude double(11,6) DEFAULT '0.000000' NOT NULL,
