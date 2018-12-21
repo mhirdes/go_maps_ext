@@ -5,7 +5,7 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route,
 	                  images for markers, style maps, KML, categories, responsive and many more.',
     'category' => 'plugin',
-    'version' => '2.5.1-dev',
+    'version' => '2.6.0',
     'state' => 'stable',
     'uploadfolder' => 1,
     'clearCacheOnLoad' => 1,
