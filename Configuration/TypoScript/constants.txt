@@ -9,7 +9,7 @@ plugin.tx_gomapsext {
 	}
 	settings {
 		# cat=plugin.tx_gomapsext//a; type=text+; label = Show Addresses from this PIDs
-		storagePid =
+		storagePid = this
 		# cat=plugin.tx_gomapsext//a; type=boolean; label = Category filter with logical AND (instead of logical OR)
 		logicalAnd = 0
 		# cat=plugin.tx_gomapsext//a; type=text+; label = API Key, https://developers.google.com/maps/documentation/javascript/get-api-key
