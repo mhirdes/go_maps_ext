@@ -139,12 +139,12 @@ class MapController extends ActionController
         $map = $map ?? $this->mapRepository->findByUid($this->settings['map']);
 
         // find addresses
-        $pid = $this->settings['storagePid'];
-        if ($pid) {
-            $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $pid);
+        $addresses = $map->getAddresses();
+
+        // no addresses related to the map, try to find some from the storagePid
+        if($addresses->count() === 0 && $this->settings['storagePid']) {
+            $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
             $addresses = $this->addressRepository->findAllAddresses($map, $pid);
-        } else {
-            $addresses = $map->getAddresses();
         }
 
         // get categories
