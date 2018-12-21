@@ -260,15 +260,6 @@ field.
 .. container:: table-row
 
    Property
-         panControl
-
-   Description
-         Show arrows to change the position of the map.
-
-
-.. container:: table-row
-
-   Property
          scaleControl
 
    Description

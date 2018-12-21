@@ -54,7 +54,6 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	marker_cluster_style text NOT NULL,
 	marker_search tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	default_type int(11) DEFAULT '0' NOT NULL,
-	pan_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	scale_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	streetview_control tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	fullscreen_control tinyint(1) unsigned DEFAULT '0' NOT NULL,

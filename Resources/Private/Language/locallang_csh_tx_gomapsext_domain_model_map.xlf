@@ -79,9 +79,6 @@
 		<trans-unit id="marker_search.description">
 			<source>Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</source>
 		</trans-unit>
-		<trans-unit id="pan_control.description">
-			<source>Show arrows to change the position of the map.</source>
-		</trans-unit>
 		<trans-unit id="preview_image.description">
 			<source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
 		</trans-unit>

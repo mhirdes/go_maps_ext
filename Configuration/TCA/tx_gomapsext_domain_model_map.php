@@ -28,7 +28,7 @@ return [
 		                          addresses, kml_url, kml_local, show_route,
 		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
 		                          marker_cluster_zoom, marker_cluster_size, marker_cluster_style, marker_search, default_type,
-		                          pan_control, scale_control, streetview_control, fullscreen_control, zoom_control, zoom_control_type,
+		                          scale_control, streetview_control, fullscreen_control, zoom_control, zoom_control_type,
 		                          map_type_control, map_types, styled_map_name, styled_map_code',
     ],
     'types' => [
@@ -61,7 +61,7 @@ return [
     'palettes' => [
         'address_interaction' => ['showitem' => 'marker_search, show_addresses, show_categories'],
         'cluster' => ['showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'],
-        'controls' => ['showitem' => 'pan_control, scale_control, streetview_control, fullscreen_control'],
+        'controls' => ['showitem' => 'scale_control, streetview_control, fullscreen_control'],
         'coordinates' => ['showitem' => 'latitude, longitude'],
         'geolocation' => ['showitem' => 'geolocation'],
         'interaction' => ['showitem' => 'scroll_zoom, draggable, double_click_zoom'],
@@ -424,14 +424,6 @@ return [
                 ],
                 'eval' => '',
                 'default' => 0
-            ],
-        ],
-        'pan_control' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.pan_control',
-            'config' => [
-                'type' => 'check',
-                'default' => 1
             ],
         ],
         'scale_control' => [

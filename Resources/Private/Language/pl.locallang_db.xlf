@@ -225,10 +225,6 @@
 				<source><![CDATA[Styled Map]]></source>
 				<target><![CDATA[Ostylowana mapa]]></target>
 			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.pan_control" approved="yes">
-				<source><![CDATA[Pan control]]></source>
-				<target><![CDATA[Sterowanie położeniem]]></target>
-			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.preview_image" approved="yes">
 				<source><![CDATA[Preview Image]]></source>
 				<target><![CDATA[Obraz podglądu]]></target>

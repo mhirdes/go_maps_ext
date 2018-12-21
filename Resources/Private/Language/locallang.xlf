@@ -89,9 +89,6 @@
 			<trans-unit id="tx_gomapsext_domain_model_map.map_types">
 				<source><![CDATA[mapTypes]]></source>
 			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
-				<source><![CDATA[panControl]]></source>
-			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.scale_control">
 				<source><![CDATA[scaleControl]]></source>
 			</trans-unit>

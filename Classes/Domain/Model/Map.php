@@ -173,12 +173,6 @@ class Map extends AbstractEntity
      */
     protected $previewImage;
     /**
-     * panControl
-     *
-     * @var boolean
-     */
-    protected $panControl = false;
-    /**
      * scaleControl
      *
      * @var boolean
@@ -874,37 +868,6 @@ class Map extends AbstractEntity
     public function setPreviewImage($previewImage)
     {
         $this->previewImage = $previewImage;
-    }
-
-    /**
-     * Returns the panControl
-     *
-     * @return boolean $panControl
-     */
-    public function getPanControl()
-    {
-        return $this->panControl;
-    }
-
-    /**
-     * Returns the boolean state of panControl
-     *
-     * @return boolean
-     */
-    public function isPanControl()
-    {
-        return $this->getPanControl();
-    }
-
-    /**
-     * Sets the panControl
-     *
-     * @param boolean $panControl
-     * @return void
-     */
-    public function setPanControl($panControl)
-    {
-        $this->panControl = $panControl;
     }
 
     /**

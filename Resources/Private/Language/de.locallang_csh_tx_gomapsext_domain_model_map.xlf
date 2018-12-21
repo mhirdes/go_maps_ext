@@ -90,10 +90,6 @@
 			<source>Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</source>
 			<target>Zeigt ein Formular im Frontend, wo der Nutzer ein Suchwort eingeben kann. Durchsucht werden Titel und Info-Fenster Inhalt der Marker. Das Info-Fenster des zuerst gefundenen Markers öffnet sich.</target>
 		</trans-unit>
-		<trans-unit id="pan_control.description" approved="yes">
-			<source>Show arrows to change the position of the map.</source>
-			<target>Zeigt Pfeil zum navigieren an.</target>
-		</trans-unit>
 		<trans-unit id="preview_image.description" approved="yes">
 			<source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
 			<target>Definieren Sie ein Bild, das als Vorschau der aktuellen Karte angezeigt werden soll. Wenn die Vorschau aktiviert ist, wird dieses Bild anstelle der Karte angezeigt. Erst wenn der Nutzer auf das Bild klickt, werden Daten von Google geladen und die Karte wird angezeigt.</target>

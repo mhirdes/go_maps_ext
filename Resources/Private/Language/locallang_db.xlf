@@ -237,9 +237,6 @@
 			<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom">
 				<source><![CDATA[Zoom settings]]></source>
 			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
-				<source><![CDATA[Pan control]]></source>
-			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.preview_image">
 				<source><![CDATA[Preview Image]]></source>
 			</trans-unit>

@@ -58,10 +58,6 @@
 			<source>Possible map types to choose. Map type control has to be enabled.</source>
 			<target>Możliwe rodzaje map do wyboru. Sterowanie rodzajem mapy musi być włączone.</target>
 		</trans-unit>
-		<trans-unit id="pan_control.description" approved="yes">
-			<source>Show arrows to change the position of the map.</source>
-			<target>Pokazuje strzałki do zmiany pozycji mapy.</target>
-		</trans-unit>
 		<trans-unit id="preview_image.description" approved="yes">
 			<source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
 			<target>Zdefiniuj obraz, aby pokazać go jako podgląd aktualnej mapy. Jeśli podglądy są włączone, ten obraz będzie wyświetlany zamiast mapy. Tylko wtedy, gdy użytkownik kliknie obraz, dane z Google zostaną załadowane, a mapa zostanie wyświetlona.</target>
