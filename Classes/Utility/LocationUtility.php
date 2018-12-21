@@ -228,7 +228,7 @@ TxClimbingSites.positionChanged = function() {
 
 TxClimbingSites.updateValue = function(fieldName, value) {
     document[TBE_EDITOR.formname][fieldName].value = value;
-    TYPO3.jQuery('[data-formengine-input-name="' + fieldName + '"]').val(value);
+    window.$('[data-formengine-input-name="' + fieldName + '"]').val(value);
 }
 
 TxClimbingSites.setMarker = function(lat, lng) {
