@@ -330,18 +330,6 @@
 			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control">
 				<source><![CDATA[Zoom control]]></source>
 			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type">
-				<source><![CDATA[Type of zoom control]]></source>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.0">
-				<source><![CDATA[Default (according to map size)]]></source>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.1">
-				<source><![CDATA[Small (only 2 zoom buttons)]]></source>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.2">
-				<source><![CDATA[Large (zoom-scale and buttons)]]></source>
-			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.zoom_max">
 				<source><![CDATA[Zoom max]]></source>
 			</trans-unit>

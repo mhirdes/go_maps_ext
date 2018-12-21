@@ -154,10 +154,6 @@
 			<source>Enable buttons to change the zoom.</source>
 			<target>Zeigt Buttons zum ändern der Zoomstufe.</target>
 		</trans-unit>
-		<trans-unit id="zoom_control_type.description" approved="yes">
-			<source>Choose beetween large and small.</source>
-			<target>Größe der Zoomsteuerung einstellen.</target>
-		</trans-unit>
 		<trans-unit id="zoom_max.description" approved="yes">
 			<source>The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.</source>
 			<target>Die maximale Zoomstufe, in der die Karte angezeigt wird. Wenn nicht angegeben oder auf null gesetzt, wird der maximale Zoom vom aktuellen Kartentyp verwendet.</target>

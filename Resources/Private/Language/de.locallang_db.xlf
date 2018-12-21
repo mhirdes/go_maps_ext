@@ -425,22 +425,6 @@
 				<source><![CDATA[Zoom control]]></source>
 				<target><![CDATA[Zeige Zoom-Steuerung]]></target>
 			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type" approved="yes">
-				<source><![CDATA[Type of zoom control]]></source>
-				<target><![CDATA[Typ der Zoom-Steuerung]]></target>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.0" approved="yes">
-				<source><![CDATA[Default (according to map size)]]></source>
-				<target><![CDATA[Standard (Abhängig von Kartengröße)]]></target>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.1" approved="yes">
-				<source><![CDATA[Small (only 2 zoom buttons)]]></source>
-				<target><![CDATA[Klein (Nur zwei Buttons)]]></target>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.2" approved="yes">
-				<source><![CDATA[Large (zoom-scale and buttons)]]></source>
-				<target><![CDATA[Groß (Skala and Buttons)]]></target>
-			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.zoom_max" approved="yes">
 				<source><![CDATA[Zoom max]]></source>
 				<target><![CDATA[Zoom max]]></target>

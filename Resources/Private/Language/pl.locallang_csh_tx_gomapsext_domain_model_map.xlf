@@ -114,10 +114,6 @@
 			<source>Enable buttons to change the zoom.</source>
 			<target>Włącz przyciski do kontroli przybliżenia.</target>
 		</trans-unit>
-		<trans-unit id="zoom_control_type.description" approved="yes">
-			<source>Choose beetween large and small.</source>
-			<target>Wybierz pomiędzy dużym i małym.</target>
-		</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -333,22 +333,6 @@
 				<source><![CDATA[Zoom control]]></source>
 				<target><![CDATA[Sterowanie przybliżeniem]]></target>
 			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type" approved="yes">
-				<source><![CDATA[Type of zoom control]]></source>
-				<target><![CDATA[Rodzaj sterowania przybliżeniem]]></target>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.0" approved="yes">
-				<source><![CDATA[Default (according to map size)]]></source>
-				<target><![CDATA[Domyślny (zgodnie z wymiarami mapy)]]></target>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.1" approved="yes">
-				<source><![CDATA[Small (only 2 zoom buttons)]]></source>
-				<target><![CDATA[Mały (tylko 2 przyciski)]]></target>
-			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.2" approved="yes">
-				<source><![CDATA[Large (zoom-scale and buttons)]]></source>
-				<target><![CDATA[Duży (skala przybliżenia i przyciski)]]></target>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

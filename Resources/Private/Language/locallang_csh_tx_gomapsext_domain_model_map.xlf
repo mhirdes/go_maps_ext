@@ -127,9 +127,6 @@
 		<trans-unit id="zoom_control.description">
 			<source>Enable buttons to change the zoom.</source>
 		</trans-unit>
-		<trans-unit id="zoom_control_type.description">
-			<source>Choose beetween large and small.</source>
-		</trans-unit>
 		<trans-unit id="zoom_max.description">
 			<source>The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.</source>
 		</trans-unit>

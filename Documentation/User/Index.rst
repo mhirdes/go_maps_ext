@@ -296,15 +296,6 @@ field.
 .. container:: table-row
 
    Property
-         zoomControlType
-
-   Description
-         Choose beetween large and small.
-
-
-.. container:: table-row
-
-   Property
          mapTypeControl
 
    Description

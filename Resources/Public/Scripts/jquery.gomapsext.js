@@ -14,7 +14,6 @@
             streetviewControl: null,
             fullscreenControl: null,
             zoomControl: null,
-            zoomControlType: null,
             defaultType: null,
             mapTypeControl: null,
             mapTypes: null,
@@ -455,7 +454,6 @@
                 streetViewControl: gme.mapSettings.streetviewControl,
                 fullscreenControl: gme.mapSettings.fullscreenControl,
                 zoomControl: gme.mapSettings.zoomControl,
-                zoomControlOptions: {style: gme.zoomTypes[gme.mapSettings.zoomControlType]},
                 mapTypeId: gme.defaultMapTypes[gme.mapSettings.defaultType],
                 mapTypeControl: gme.mapSettings.mapTypeControl,
                 mapTypeControlOptions: {mapTypeIds: gme.mapSettings.mapTypes}

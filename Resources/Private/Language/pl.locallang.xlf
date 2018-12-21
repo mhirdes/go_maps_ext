@@ -180,10 +180,6 @@
 				<source><![CDATA[zoomControl]]></source>
 				<target><![CDATA[zoomControl]]></target>
 			</trans-unit>
-			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type" approved="yes">
-				<source><![CDATA[zoomControlType]]></source>
-				<target><![CDATA[zoomControlType]]></target>
-			</trans-unit>
 			<trans-unit id="tx_gomapsext_flexform_settings" approved="yes">
 				<source><![CDATA[Settings]]></source>
 				<target><![CDATA[Ustawienia]]></target>
