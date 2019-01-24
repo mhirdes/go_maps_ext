@@ -55,10 +55,10 @@
 				<source><![CDATA[No]]></source>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.1">
-				<source><![CDATA[With address (and title)]]></source>
+				<source><![CDATA[With address]]></source>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.2">
-				<source><![CDATA[With coordinates (and title)]]></source>
+				<source><![CDATA[With coordinates]]></source>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_address.latitude">
 				<source><![CDATA[Latitude]]></source>

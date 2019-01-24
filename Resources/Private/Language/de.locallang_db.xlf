@@ -70,12 +70,12 @@
 				<target><![CDATA[Nein]]></target>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.1" approved="yes">
-				<source><![CDATA[With address (and title)]]></source>
-				<target><![CDATA[Mit Adresse (und Titel)]]></target>
+				<source><![CDATA[With address]]></source>
+				<target><![CDATA[Mit Adresse]]></target>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.2" approved="yes">
-				<source><![CDATA[With coordinates (and title)]]></source>
-				<target><![CDATA[Mit Koordinaten (und Titel)]]></target>
+				<source><![CDATA[With coordinates]]></source>
+				<target><![CDATA[Mit Koordinaten]]></target>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_address.latitude" approved="yes">
 				<source><![CDATA[Latitude]]></source>
