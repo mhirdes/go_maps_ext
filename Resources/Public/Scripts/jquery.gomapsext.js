@@ -672,11 +672,16 @@
         },
 
         _initializeResizeListener: function () {
-            var _this = this;
+            var _this = this,
+                width = $(this.element).width();
 
             // eventHandler resize can be used
             this.element.bind('mapresize', function () {
-                _this.resize();
+                // resize only when the window width changes, not while hiding a browser bar
+                if($(this).width() != width) {
+                    width = $(this).width();
+                    _this.resize();
+                }
             });
         },
 
