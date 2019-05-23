@@ -716,4 +716,4 @@
             $element.data('gomapsextcontroller', new GoMapsExt.Controller($element, gme));
         }
     };
-}(jQuery));
+}(jQuery || $));
