@@ -10,12 +10,10 @@
             defaultZoom: null,
             doubleClickZoom: null,
             scrollZoom: null,
-            panControl: null,
             scaleControl: null,
             streetviewControl: null,
             fullscreenControl: null,
             zoomControl: null,
-            zoomControlType: null,
             defaultType: null,
             mapTypeControl: null,
             mapTypes: null,
@@ -297,8 +295,7 @@
                 var infoWindowContent = pointDescription.infoWindowContent;
                 if (pointDescription.infoWindowLink > 0) {
                     var daddr = (pointDescription.infoWindowLink == 2) ? pointDescription.latitude + ", " + pointDescription.longitude : pointDescription.address;
-                    daddr += " (" + pointDescription.title + ")";
-                    infoWindowContent += '<p class="routeLink"><a href="//maps.google.com/maps?daddr=' + encodeURI(daddr) + '" target="_blank">' + gme.ll.infoWindowLinkText + '<\/a><\/p>';
+                    infoWindowContent += '<p class="routeLink"><a href="//www.google.com/maps/dir/?api=1&destination=' + encodeURI(daddr) + '" target="_blank">' + gme.ll.infoWindowLinkText + '<\/a><\/p>';
                 }
                 infoWindowContent = '<div class="gme-info-window">' + infoWindowContent + '</div>';
 
@@ -452,12 +449,10 @@
                 draggable: gme.mapSettings.draggable,
                 disableDoubleClickZoom: gme.mapSettings.doubleClickZoom,
                 scrollwheel: gme.mapSettings.scrollZoom,
-                panControl: gme.mapSettings.panControl,
                 scaleControl: gme.mapSettings.scaleControl,
                 streetViewControl: gme.mapSettings.streetviewControl,
                 fullscreenControl: gme.mapSettings.fullscreenControl,
                 zoomControl: gme.mapSettings.zoomControl,
-                zoomControlOptions: {style: gme.zoomTypes[gme.mapSettings.zoomControlType]},
                 mapTypeId: gme.defaultMapTypes[gme.mapSettings.defaultType],
                 mapTypeControl: gme.mapSettings.mapTypeControl,
                 mapTypeControlOptions: {mapTypeIds: gme.mapSettings.mapTypes}
@@ -676,11 +671,16 @@
         },
 
         _initializeResizeListener: function () {
-            var _this = this;
+            var _this = this,
+                width = $(this.element).width();
 
             // eventHandler resize can be used
             this.element.bind('mapresize', function () {
-                _this.resize();
+                // resize only when the window width changes, not while hiding a browser bar
+                if($(this).width() != width) {
+                    width = $(this).width();
+                    _this.resize();
+                }
             });
         },
 
@@ -716,4 +716,4 @@
             $element.data('gomapsextcontroller', new GoMapsExt.Controller($element, gme));
         }
     };
-}(jQuery));
+}(jQuery || $));

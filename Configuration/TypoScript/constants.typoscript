@@ -9,13 +9,13 @@ plugin.tx_gomapsext {
 	}
 	settings {
 		# cat=plugin.tx_gomapsext//a; type=text+; label = Show Addresses from this PIDs
-		storagePid =
+		storagePid = this
 		# cat=plugin.tx_gomapsext//a; type=boolean; label = Category filter with logical AND (instead of logical OR)
 		logicalAnd = 0
 		# cat=plugin.tx_gomapsext//a; type=text+; label = API Key, https://developers.google.com/maps/documentation/javascript/get-api-key
 		apiKey =
-        # cat=plugin.tx_gomapsext//a; type=text+; label = URL to Google Maps API: Default is current version
-        googleMapsLibrary = //maps.google.com/maps/api/js?v=3.30
+        # cat=plugin.tx_gomapsext//a; type=text+; label = URL to Google Maps API: Defaults to the weekly channel
+        googleMapsLibrary = //maps.google.com/maps/api/js?v=weekly
 		infoWindow {
 			# cat=plugin.tx_gomapsext//b; type=boolean; label = Open Infowindows By Click
 			openByClick = 0

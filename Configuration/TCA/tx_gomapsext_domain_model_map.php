@@ -20,7 +20,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'title,tooltip_title',
-        'iconfile' => 'EXT:go_maps_ext/Resources/Public/Icons/tx_gomapsext_domain_model_map.png'
+        'iconfile' => 'EXT:go_maps_ext/Resources/Public/Icons/tx_gomapsext_domain_model_map.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
@@ -28,7 +28,7 @@ return [
 		                          addresses, kml_url, kml_local, show_route,
 		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
 		                          marker_cluster_zoom, marker_cluster_size, marker_cluster_style, marker_search, default_type,
-		                          pan_control, scale_control, streetview_control, fullscreen_control, zoom_control, zoom_control_type,
+		                          scale_control, streetview_control, fullscreen_control, zoom_control,
 		                          map_type_control, map_types, styled_map_name, styled_map_code',
     ],
     'types' => [
@@ -48,7 +48,7 @@ return [
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.cluster;cluster,
 					--palette--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.palettes.additional;additional,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tab.controls,
-					--palette--;;map_control,--palette--;;zoom_control,--palette--;;controls,
+					--palette--;;map_control,--palette--;;controls,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tab.route,
 					calc_route, travel_mode, unit_system, show_route,
 					--div--;LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.tab.style,
@@ -61,7 +61,7 @@ return [
     'palettes' => [
         'address_interaction' => ['showitem' => 'marker_search, show_addresses, show_categories'],
         'cluster' => ['showitem' => 'marker_cluster, --linebreak--, marker_cluster_zoom, marker_cluster_size'],
-        'controls' => ['showitem' => 'pan_control, scale_control, streetview_control, fullscreen_control'],
+        'controls' => ['showitem' => 'zoom_control, scale_control, streetview_control, fullscreen_control'],
         'coordinates' => ['showitem' => 'latitude, longitude'],
         'geolocation' => ['showitem' => 'geolocation'],
         'interaction' => ['showitem' => 'scroll_zoom, draggable, double_click_zoom'],
@@ -72,19 +72,18 @@ return [
         'styled_cluster' => ['showitem' => 'marker_cluster_style'],
         'time' => ['showitem' => 'starttime, endtime'],
         'zoom' => ['showitem' => 'zoom, --linebreak--, zoom_min, zoom_max'],
-        'zoom_control' => ['showitem' => 'zoom_control, --linebreak--, zoom_control_type'],
     ],
     'columns' => [
         'sys_language_uid' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'special' => 'languages',
                 'items' => [
                     [
-                        'LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',
+                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
                         'flags-multiple'
                     ]
@@ -95,7 +94,7 @@ return [
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -112,7 +111,7 @@ return [
             ],
         ],
         't3ver_label' => [
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -121,19 +120,19 @@ return [
         ],
         'hidden' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
             ],
         ],
         'starttime' => [
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+            'allowLanguageSynchronization' => true,
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
+                'renderType' => 'inputDateTime',
                 'size' => 13,
-                'max' => 20,
                 'eval' => 'datetime',
                 'checkbox' => 0,
                 'default' => 0,
@@ -144,12 +143,12 @@ return [
         ],
         'endtime' => [
             'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+            'allowLanguageSynchronization' => true,
+            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
+                'renderType' => 'inputDateTime',
                 'size' => 13,
-                'max' => 20,
                 'eval' => 'datetime',
                 'checkbox' => 0,
                 'default' => 0,
@@ -221,36 +220,40 @@ return [
                     'appearance' => [
                         'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
                     ],
-                    'foreign_types' => [
-                        '0' => [
-                            'showitem' => '
-                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                    'overrideChildTca' => [
+                        'types' => [
+                            'foreign_types' => [
+                                '0' => [
+                                    'showitem' => '
+                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                         --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
-                            'showitem' => '
-                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
+                                    'showitem' => '
+                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                         --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                            'showitem' => '
-                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                    'showitem' => '
+                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                         --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
-                            'showitem' => '
-                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
+                                    'showitem' => '
+                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                         --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                            'showitem' => '
-                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
+                                    'showitem' => '
+                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                         --palette--;;filePalette'
-                        ],
-                        \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
-                            'showitem' => '
-                        --palette--;LLL:EXT:lang/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
+                                ],
+                                \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                                    'showitem' => '
+                        --palette--;LLL:EXT:lang/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
                         --palette--;;filePalette'
+                                ]
+                            ],
                         ]
                     ],
                     'maxitems' => 1
@@ -271,39 +274,15 @@ return [
                 'autoSizeMax' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
-                'wizards' => [
-                    '_POSITION' => 'right',
-                    '_PADDING' => 4,
-                    '_VERTICAL' => 0,
-                    '_DISTANCE' => 2,
-                    'suggest' => [
-                        'type' => 'suggest'
+                'fieldControl' => [
+                    'editPopup' => [
+                        'disabled' => false,
                     ],
-                    'edit' => [
-                        'type' => 'popup',
-                        'title' => 'Edit',
-                        'module' => [
-                            'name' => 'wizard_edit',
-                        ],
-                        'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_edit.gif',
-                        'popup_onlyOpenIfSelected' => 1,
-                        'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
-                    ],
-                    'add' => [
-                        'type' => 'script',
-                        'title' => 'Create new',
-                        'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_add.gif',
-                        'params' => [
-                            'table' => 'tx_gomapsext_domain_model_address',
-                            'pid' => '###CURRENT_PID###',
-                            'setValue' => 'prepend'
-                        ],
-                        'module' => [
-                            'name' => 'wizard_add',
-                        ],
+                    'addRecord' => [
+                        'disabled' => false,
                     ],
                 ],
-            ],
+            ]
         ],
         'kml_url' => [
             'exclude' => 1,
@@ -446,14 +425,6 @@ return [
                 'default' => 0
             ],
         ],
-        'pan_control' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.pan_control',
-            'config' => [
-                'type' => 'check',
-                'default' => 1
-            ],
-        ],
         'scale_control' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.scale_control',
@@ -484,28 +455,6 @@ return [
             'config' => [
                 'type' => 'check',
                 'default' => 1
-            ],
-        ],
-        'zoom_control_type' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type',
-            'config' => [
-                'type' => 'radio',
-                'default' => 0,
-                'items' => [
-                    [
-                        'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.0',
-                        0
-                    ],
-                    [
-                        'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.1',
-                        1
-                    ],
-                    [
-                        'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control_type.2',
-                        2
-                    ],
-                ],
             ],
         ],
         'map_type_control' => [

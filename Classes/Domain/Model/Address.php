@@ -40,9 +40,27 @@ class Address extends AbstractEntity
      * title
      *
      * @var \string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $title;
+    /**
+     * street
+     *
+     * @var \string
+     */
+    protected $street;
+    /**
+     * zip
+     *
+     * @var \string
+     */
+    protected $zip;
+    /**
+     * city
+     *
+     * @var \string
+     */
+    protected $city;
     /**
      * configurationMap
      *
@@ -101,7 +119,7 @@ class Address extends AbstractEntity
      * infoWindowImages
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $infoWindowImages = null;
     /**
@@ -132,14 +150,14 @@ class Address extends AbstractEntity
      * categories
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $categories;
     /**
      * map
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $map;
 
@@ -190,6 +208,54 @@ class Address extends AbstractEntity
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * @param string $street
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+    }
+
+    /**
+     * @return string
+     */
+    public function getZip()
+    {
+        return $this->zip;
+    }
+
+    /**
+     * @param string $zip
+     */
+    public function setZip($zip)
+    {
+        $this->zip = $zip;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $city
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
     }
 
     /**

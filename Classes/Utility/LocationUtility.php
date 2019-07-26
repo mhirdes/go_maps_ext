@@ -26,11 +26,10 @@ namespace Clickstorm\GoMapsExt\Utility;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
-use TYPO3\CMS\Core\TypoScript\ExtendedTemplateService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\VersionNumberUtility;
-use TYPO3\CMS\Frontend\Page\PageRepository;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * Google map.
@@ -51,13 +50,9 @@ class LocationUtility
      */
     public function render(array &$PA, $pObj)
     {
-        $version = VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version);
-        $settings = $this->loadTS($PA['row']['pid']);
-        $pluginSettings = $settings['plugin.']['tx_gomapsext.']['settings.'];
+        $pluginSettings = static::getSettings();
 
-        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?
-            htmlentities($pluginSettings['googleMapsLibrary']) :
-            '//maps.google.com/maps/api/js?v=3.30';
+        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? ' //maps.google.com/maps/api/js?v=weekly';
 
         if ($pluginSettings['apiKey']) {
             $googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
@@ -80,6 +75,9 @@ class LocationUtility
         $latitudeField = $dataPrefix . '[' . $PA['parameters']['latitude'] . ']';
         $longitudeField = $dataPrefix . '[' . $PA['parameters']['longitude'] . ']';
         $addressField = $dataPrefix . '[' . $PA['parameters']['address'] . ']';
+        $streetFieldName = $dataPrefix . '[' . $PA['parameters']['street'] . ']';
+        $zipFieldName = $dataPrefix . '[' . $PA['parameters']['zip'] . ']';
+        $cityFieldName = $dataPrefix . '[' . $PA['parameters']['city'] . ']';
 
         $updateJs = "TBE_EDITOR.fieldChanged('%s','%s','%s','%s');";
         $updateLatitudeJs = sprintf(
@@ -104,6 +102,7 @@ class LocationUtility
             $addressField
         );
 
+
         $out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
         $out[] = '<script type="text/javascript">';
         $out[] = <<<EOT
@@ -118,6 +117,13 @@ TxClimbingSites.init = function() {
 		center: TxClimbingSites.origin,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
+	
+	if(document.getElementsByName("{$streetFieldName}")[0] && 
+	    document.getElementsByName("{$streetFieldName}")[0] && 
+	    document.getElementsByName("{$streetFieldName}")[0]) {
+	    var button = document.getElementById('gme-btn-address').style.display = 'inline-block';
+	}
+	
 	TxClimbingSites.map = new google.maps.Map(document.getElementById("{$mapId}"), myOptions);
 	TxClimbingSites.marker = new google.maps.Marker({
 		map: TxClimbingSites.map,
@@ -152,6 +158,32 @@ TxClimbingSites.refreshMap = function() {
 	// No need to do it again
 	Ext.fly(TxClimbingSites.tabPrefix + '-MENU').un('click', TxClimbingSites.refreshMap);
 }
+
+TxClimbingSites.localize = function(address) {
+    TxClimbingSites.geocoder.geocode({'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            // Get Position
+            lat = results[0].geometry.location.lat().toFixed(6);
+            lng = results[0].geometry.location.lng().toFixed(6);
+
+            formatedAddress = results[0].formatted_address
+
+            // Update Map
+            TxClimbingSites.map.setCenter(results[0].geometry.location);
+            TxClimbingSites.marker.setPosition(results[0].geometry.location);
+
+            // Update fields
+            TxClimbingSites.updateValue('{$latitudeField}', lat);
+            TxClimbingSites.updateValue('{$longitudeField}', lng);
+            TxClimbingSites.updateValue('{$addressField}', formatedAddress);
+
+            TxClimbingSites.positionChanged();
+        } else {
+            alert("Geocode was not successful for the following reason: " + status);
+        }
+    });
+}
+
 /***************************/
 TxClimbingSites.codeAddress = function() {
 	var address = document.getElementById("{$addressId}").value;
@@ -174,29 +206,17 @@ TxClimbingSites.codeAddress = function() {
 		// Get Address
 		TxClimbingSites.reverseGeocode(lat, lng);
 	} else {
-		TxClimbingSites.geocoder.geocode({'address': address}, function(results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				// Get Position
-				lat = results[0].geometry.location.lat().toFixed(6);
-				lng = results[0].geometry.location.lng().toFixed(6);
-
-				formatedAddress = results[0].formatted_address
-
-				// Update Map
-				TxClimbingSites.map.setCenter(results[0].geometry.location);
-				TxClimbingSites.marker.setPosition(results[0].geometry.location);
-
-				// Update fields
-                TxClimbingSites.updateValue('{$latitudeField}', lat);
-                TxClimbingSites.updateValue('{$longitudeField}', lng);
-                TxClimbingSites.updateValue('{$addressField}', formatedAddress);
-
-                TxClimbingSites.positionChanged();
-			} else {
-				alert("Geocode was not successful for the following reason: " + status);
-			}
-		});
+		TxClimbingSites.localize(address);
 	}
+}
+
+TxClimbingSites.codeByAddress = function() {
+	var street = document.getElementsByName("{$streetFieldName}")[0].value,
+	    zip = document.getElementsByName("{$zipFieldName}")[0].value,
+	    city = document.getElementsByName("{$cityFieldName}")[0].value,
+	    address = street + ',' + zip + ' ' + city;
+	    	
+    TxClimbingSites.localize(address);
 }
 
 TxClimbingSites.positionChanged = function() {
@@ -207,13 +227,8 @@ TxClimbingSites.positionChanged = function() {
 }
 
 TxClimbingSites.updateValue = function(fieldName, value) {
-    var version = {$version};
     document[TBE_EDITOR.formname][fieldName].value = value;
-    if(version < 7005000) {
-        document[TBE_EDITOR.formname][fieldName + '_hr'].value = value;
-    } else {
-        TYPO3.jQuery('[data-formengine-input-name="' + fieldName + '"]').val(value);
-    }
+    window.$('[data-formengine-input-name="' + fieldName + '"]').val(value);
 }
 
 TxClimbingSites.setMarker = function(lat, lng) {
@@ -265,8 +280,21 @@ EOT;
         $out[] = '</script>';
         $out[] = '<div id="' . $baseElementId . '">';
         $out[] = '
-			<input type="text" value="' . $address . '" id="' . $addressId . '" style="width:300px">
-			<input type="button" value="Update" onclick="TxClimbingSites.codeAddress()">
+			<input type="text" 
+			       class="form-control" 
+			       value="' . $address . '" 
+			       id="' . $addressId . '" 
+			       style="display:inline-block;width:300px">
+			<input type="button" 
+			       value="' . LocalizationUtility::translate('update_by_position', 'go_maps_ext') . '" 
+			       class="btn btn-sm btn-default"
+			       onclick="TxClimbingSites.codeAddress()">
+			<input id="gme-btn-address"
+			       type="button" 
+			       value="' . LocalizationUtility::translate('update_by_address', 'go_maps_ext') . '" 
+			       class="btn btn-sm btn-default"
+			       style="display:none;"
+			       onclick="TxClimbingSites.codeByAddress()">
 		';
         $out[] = '<div id="' . $mapId . '" style="height:400px;margin:10px 0;width:400px"></div>';
         $out[] = '</div>'; // id=$baseElementId
@@ -275,21 +303,18 @@ EOT;
     }
 
     /**
-     * @param int $pageUid
-     * @return mixed
-     * @throws \Exception
+     * Get definitive TypoScript Settings from
+     * plugin.tx_gomapsext.settings.
+     *
+     * @return array
      */
-    protected function loadTS($pageUid)
+    private static function getSettings(): array
     {
-        $sysPageObj = GeneralUtility::makeInstance(PageRepository::class);
-        $rootLine = $sysPageObj->getRootLine($pageUid);
+        return GeneralUtility::makeInstance(ObjectManager::class)
+            ->get(ConfigurationManagerInterface::class)
+            ->getConfiguration(
+                ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
+            )['plugin.']['tx_gomapsext.']['settings.'] ?? [];
 
-        $TSObj = GeneralUtility::makeInstance(ExtendedTemplateService::class);
-        $TSObj->tt_track = 0;
-        $TSObj->init();
-        $TSObj->runThroughTemplates($rootLine);
-        $TSObj->generateConfig();
-
-        return $TSObj->setup;
     }
 }

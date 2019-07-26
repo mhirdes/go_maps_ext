@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2018-06-01T09:20:11Z">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-10-22T11:54:32Z">
 		<header>
 			<type>database</type>
 			<description>Language labels for database tables/fields belonging to extension 'go_maps_ext'</description>
@@ -9,339 +9,333 @@
 			<generator>LFEditor</generator>
 		</header>
 		<body>
-		<trans-unit id="sys_category.tab.map">
-			<source>Google Map</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address">
-			<source>Google Maps Address</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.address">
-			<source>Address</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.categories">
-			<source>Categories</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.close_by_click">
-			<source>Close InfoWindow by click</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.configuration_map">
-			<source>Position</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_height">
-			<source>Image height (px)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_size">
-			<source>User defined image size</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.image_width">
-			<source>Image width (px)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window">
-			<source>InfoWindow</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_content">
-			<source>InfoWindow content</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_images">
-			<source>InfoWindow image</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link">
-			<source>Link to Google Maps</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.0">
-			<source>No</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.1">
-			<source>With address (and title)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.2">
-			<source>With coordinates (and title)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.latitude">
-			<source>Latitude</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.longitude">
-			<source>Longitude</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.marker">
-			<source>Marker</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.open_by_click">
-			<source>Open InfoWindow by click</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.opened">
-			<source>Opened</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.others">
-			<source>Others</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.palettes.interaction">
-			<source>Interaction</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.palettes.marker">
-			<source>Marker layout</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.style">
-			<source>Style</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_address.title">
-			<source>Title</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_category">
-			<source>Category</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_category.name">
-			<source>Name</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_category.others">
-			<source>Etc.</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map">
-			<source>Map</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.addresses">
-			<source>Addresses</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.calc_route">
-			<source>Calc route form</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.class">
-			<source>Class</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.default_type">
-			<source>Default type</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display.default.0">
-			<source>Map</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display.default.1">
-			<source>Satellite</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display.default.2">
-			<source>Hybrid</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display.default.3">
-			<source>Terrain</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.display.default.4">
-			<source>Styled (Only if styled Map is defined!)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.double_click_zoom">
-			<source>Doubleclick zoom</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.draggable">
-			<source>Draggable</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control">
-			<source>Fullscreen control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.height">
-			<source>Height</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.kml_local">
-			<source>KML file location is local</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.kml_preserve_viewport">
-			<source>Preserve Viewport</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.kml_url">
-			<source>URL of a KML file</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.latitude">
-			<source>Latitude</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.longitude">
-			<source>Longitude</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.geolocation">
-			<source>Activate Geolocation</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_type_control">
-			<source>Map type control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types">
-			<source>Map types</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types.0">
-			<source>Map</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types.1">
-			<source>Satellite</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types.2">
-			<source>Hybrid</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types.3">
-			<source>Terrain</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.map_types.4">
-			<source>Styled Map</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster">
-			<source>Marker Cluster</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_size">
-			<source>Cluster size</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_style">
-			<source>Marker Cluster style code</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_zoom">
-			<source>Max zoom level</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.marker_search">
-			<source>Marker Search</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.additional">
-			<source>Additional</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.address_interaction">
-			<source>Address Interaction</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.cluster">
-			<source>Cluster settings</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.container">
-			<source>Container</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates">
-			<source>Default map center</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.geolocation">
-			<source>Geolocation</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction">
-			<source>Map Interaction</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.kml">
-			<source>KML settings</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.size">
-			<source>Size</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_cluster">
-			<source>Marker Cluster Style</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_map">
-			<source>Styled Map</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom">
-			<source>Zoom settings</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.pan_control">
-			<source>Pan control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.preview_image">
-			<source>Preview Image</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.scale_control">
-			<source>Scale control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.scroll_zoom">
-			<source>Scroll zoom</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.show_addresses">
-			<source>Show Address Links</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.show_categories">
-			<source>Show Categories</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.show_route">
-			<source>Show particular route</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
-			<source>Streetview control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code">
-			<source>Code</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name">
-			<source>Styled Map name</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tab.controls">
-			<source>Controls</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tab.display">
-			<source>Display</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tab.initial">
-			<source>Initial</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tab.others">
-			<source>Record</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tab.route">
-			<source>Route</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tab.style">
-			<source>Style</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.title">
-			<source>Title</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.tooltip_title">
-			<source>Tooltip title</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode">
-			<source>Travel mode</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0">
-			<source>Driving</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.1">
-			<source>Select by frontend user</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2">
-			<source>Bicycling (only available in US)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3">
-			<source>Transit</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4">
-			<source>Walking</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system">
-			<source>Unit system</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.0">
-			<source>Default</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.1">
-			<source>Select by frontend user</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2">
-			<source>Metric (kilometer)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3">
-			<source>Imperial (miles)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.width">
-			<source>Width</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom">
-			<source>Zoom</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control">
-			<source>Zoom control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type">
-			<source>Type of zoom control</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.0">
-			<source>Default (according to map size)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.1">
-			<source>Small (only 2 zoom buttons)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_control_type.2">
-			<source>Large (zoom-scale and buttons)</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_max">
-			<source>Zoom max</source>
-		</trans-unit>
-		<trans-unit id="tx_gomapsext_domain_model_map.zoom_min">
-			<source>Zoom min</source>
-		</trans-unit>
+			<trans-unit id="sys_category.tab.map">
+				<source><![CDATA[Google Map]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address">
+				<source><![CDATA[Google Maps Address]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.address">
+				<source><![CDATA[Address]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.categories">
+				<source><![CDATA[Categories]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.city">
+				<source><![CDATA[City]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.close_by_click">
+				<source><![CDATA[Close InfoWindow by click]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.configuration_map">
+				<source><![CDATA[Position]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.image_height">
+				<source><![CDATA[Image height (px)]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.image_size">
+				<source><![CDATA[User defined image size]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.image_width">
+				<source><![CDATA[Image width (px)]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window">
+				<source><![CDATA[InfoWindow]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_content">
+				<source><![CDATA[InfoWindow content]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_images">
+				<source><![CDATA[InfoWindow image]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link">
+				<source><![CDATA[Link to Google Maps]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.0">
+				<source><![CDATA[No]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.1">
+				<source><![CDATA[With address]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.info_window_link.2">
+				<source><![CDATA[With coordinates]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.latitude">
+				<source><![CDATA[Latitude]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.longitude">
+				<source><![CDATA[Longitude]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.marker">
+				<source><![CDATA[Marker]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.open_by_click">
+				<source><![CDATA[Open InfoWindow by click]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.opened">
+				<source><![CDATA[Opened]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.others">
+				<source><![CDATA[Others]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.palettes.interaction">
+				<source><![CDATA[Interaction]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.palettes.marker">
+				<source><![CDATA[Marker layout]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.street">
+				<source><![CDATA[Street]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.style">
+				<source><![CDATA[Style]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.title">
+				<source><![CDATA[Title]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_address.zip">
+				<source><![CDATA[Zip Code]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_category">
+				<source><![CDATA[Category]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_category.name">
+				<source><![CDATA[Name]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_category.others">
+				<source><![CDATA[Etc.]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map">
+				<source><![CDATA[Map]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.addresses">
+				<source><![CDATA[Addresses]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.calc_route">
+				<source><![CDATA[Calc route form]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.class">
+				<source><![CDATA[Class]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.default_type">
+				<source><![CDATA[Default type]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.display.default.0">
+				<source><![CDATA[Map]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.display.default.1">
+				<source><![CDATA[Satellite]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.display.default.2">
+				<source><![CDATA[Hybrid]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.display.default.3">
+				<source><![CDATA[Terrain]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.display.default.4">
+				<source><![CDATA[Styled (Only if styled Map is defined!)]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.double_click_zoom">
+				<source><![CDATA[Doubleclick zoom]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.draggable">
+				<source><![CDATA[Draggable]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.fullscreen_control">
+				<source><![CDATA[Fullscreen control]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.geolocation">
+				<source><![CDATA[Activate Geolocation]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.height">
+				<source><![CDATA[Height]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.kml_local">
+				<source><![CDATA[KML file location is local]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.kml_preserve_viewport">
+				<source><![CDATA[Preserve Viewport]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.kml_url">
+				<source><![CDATA[URL of a KML file]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.latitude">
+				<source><![CDATA[Latitude]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.longitude">
+				<source><![CDATA[Longitude]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_type_control">
+				<source><![CDATA[Map type control]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_types">
+				<source><![CDATA[Map types]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_types.0">
+				<source><![CDATA[Map]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_types.1">
+				<source><![CDATA[Satellite]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_types.2">
+				<source><![CDATA[Hybrid]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_types.3">
+				<source><![CDATA[Terrain]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.map_types.4">
+				<source><![CDATA[Styled Map]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster">
+				<source><![CDATA[Marker Cluster]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_size">
+				<source><![CDATA[Cluster size]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_style">
+				<source><![CDATA[Marker Cluster style code]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.marker_cluster_zoom">
+				<source><![CDATA[Max zoom level]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.marker_search">
+				<source><![CDATA[Marker Search]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.additional">
+				<source><![CDATA[Additional]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.address_interaction">
+				<source><![CDATA[Address Interaction]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.cluster">
+				<source><![CDATA[Cluster settings]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.container">
+				<source><![CDATA[Container]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.coordinates">
+				<source><![CDATA[Default map center]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.geolocation">
+				<source><![CDATA[Geolocation]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction">
+				<source><![CDATA[Map Interaction]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.kml">
+				<source><![CDATA[KML settings]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.size">
+				<source><![CDATA[Size]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_cluster">
+				<source><![CDATA[Marker Cluster Style]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.styled_map">
+				<source><![CDATA[Styled Map]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.palettes.zoom">
+				<source><![CDATA[Zoom settings]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.preview_image">
+				<source><![CDATA[Preview Image]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.scale_control">
+				<source><![CDATA[Scale control]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.scroll_zoom">
+				<source><![CDATA[Scroll zoom]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.show_addresses">
+				<source><![CDATA[Show Address Links]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.show_categories">
+				<source><![CDATA[Show Categories]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.show_route">
+				<source><![CDATA[Show particular route]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.streetview_control">
+				<source><![CDATA[Streetview control]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.styled_map_code">
+				<source><![CDATA[Code]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.styled_map_name">
+				<source><![CDATA[Styled Map name]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tab.controls">
+				<source><![CDATA[Controls]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tab.display">
+				<source><![CDATA[Display]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tab.initial">
+				<source><![CDATA[Initial]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tab.others">
+				<source><![CDATA[Record]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tab.route">
+				<source><![CDATA[Route]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tab.style">
+				<source><![CDATA[Style]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.title">
+				<source><![CDATA[Title]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.tooltip_title">
+				<source><![CDATA[Tooltip title]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode">
+				<source><![CDATA[Travel mode]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0">
+				<source><![CDATA[Driving]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.1">
+				<source><![CDATA[Select by frontend user]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2">
+				<source><![CDATA[Bicycling (only available in US)]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3">
+				<source><![CDATA[Transit]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4">
+				<source><![CDATA[Walking]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.unit_system">
+				<source><![CDATA[Unit system]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.unit_system.0">
+				<source><![CDATA[Default]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.unit_system.1">
+				<source><![CDATA[Select by frontend user]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.unit_system.2">
+				<source><![CDATA[Metric (kilometer)]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.unit_system.3">
+				<source><![CDATA[Imperial (miles)]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.width">
+				<source><![CDATA[Width]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.zoom">
+				<source><![CDATA[Zoom]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.zoom_control">
+				<source><![CDATA[Zoom control]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.zoom_max">
+				<source><![CDATA[Zoom max]]></source>
+			</trans-unit>
+			<trans-unit id="tx_gomapsext_domain_model_map.zoom_min">
+				<source><![CDATA[Zoom min]]></source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

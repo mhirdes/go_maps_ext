@@ -260,15 +260,6 @@ field.
 .. container:: table-row
 
    Property
-         panControl
-
-   Description
-         Show arrows to change the position of the map.
-
-
-.. container:: table-row
-
-   Property
          scaleControl
 
    Description
@@ -300,15 +291,6 @@ field.
 
    Description
          Enable buttons to change the zoom.
-
-
-.. container:: table-row
-
-   Property
-         zoomControlType
-
-   Description
-         Choose beetween large and small.
 
 
 .. container:: table-row

@@ -28,9 +28,11 @@ namespace Clickstorm\GoMapsExt\Controller;
  ***************************************************************/
 
 use Clickstorm\GoMapsExt\Domain\Model\Map;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -44,7 +46,7 @@ class MapController extends ActionController
      * mapRepository
      *
      * @var \Clickstorm\GoMapsExt\Domain\Repository\MapRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $mapRepository;
 
@@ -52,7 +54,7 @@ class MapController extends ActionController
      * addressRepository
      *
      * @var \Clickstorm\GoMapsExt\Domain\Repository\AddressRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $addressRepository;
 
@@ -63,17 +65,16 @@ class MapController extends ActionController
 
     public function initializeAction()
     {
-        $this->extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['go_maps_ext']);
+        $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('go_maps_ext');
 
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $addJsMethod = 'addJs';
 
-        if ($this->extConf['footerJS'] == 1) {
+        if ($extConf['footerJS'] === '1') {
             $addJsMethod = 'addJsFooter';
         }
-        $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?
-            $this->settings['googleMapsLibrary'] :
-            '//maps.google.com/maps/api/js?v=3.29';
+
+        $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?? '//maps.google.com/maps/api/js?v=weekly';
 
         if ($this->settings['apiKey']) {
             $this->googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
@@ -94,37 +95,25 @@ class MapController extends ActionController
             );
         }
 
-        if ($this->extConf['include_library'] == 1) {
+        $pathPrefix =  PathUtility::getAbsoluteWebPath(ExtensionManagementUtility::extPath($this->request->getControllerExtensionKey()));
+        if ($extConf['include_library'] === '1') {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'jQuery',
-                ExtensionManagementUtility::siteRelPath(
-                    $this->request->getControllerExtensionKey()
-                ) . 'Resources/Public/Scripts/jquery.min.js'
+                $pathPrefix . 'Resources/Public/Scripts/jquery.min.js'
             );
         }
 
-        if ($this->extConf['include_manually'] != 1) {
-            $scripts[] = ExtensionManagementUtility::siteRelPath(
-                    $this->request->getControllerExtensionKey()
-                ) . 'Resources/Public/Scripts/markerclusterer_compiled.js';
-
-            $scripts[] = ExtensionManagementUtility::siteRelPath(
-                    $this->request->getControllerExtensionKey()
-                ) . 'Resources/Public/Scripts/jquery.gomapsext.js';
+        if ($extConf['include_manually'] !== '1') {
+            $scripts[] = $pathPrefix . 'Resources/Public/Scripts/markerclusterer_compiled.js';
+            $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
             if($this->settings['preview']['setCookieToShowMapAlways']) {
-                $scripts[] = ExtensionManagementUtility::siteRelPath(
-                        $this->request->getControllerExtensionKey()
-                    ) . 'Resources/Public/Scripts/jquery.cookie.js';
+                $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.cookie.js';
             }
 
             if($this->settings['preview']['enabled']) {
-                $scripts[] = ExtensionManagementUtility::siteRelPath(
-                        $this->request->getControllerExtensionKey()
-                    ) . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
+                $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
             }
-
-
 
             foreach ($scripts as $script) {
                 $pageRenderer->{$addJsMethod . 'File'}($script);
@@ -147,15 +136,15 @@ class MapController extends ActionController
 
         // get current map
         /* @var Map $map */
-        $map = $map ?: $this->mapRepository->findByUid($this->settings['map']);
+        $map = $map ?? $this->mapRepository->findByUid($this->settings['map']);
 
         // find addresses
-        $pid = $this->settings['storagePid'];
-        if ($pid) {
-            $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $pid);
+        $addresses = $map->getAddresses();
+
+        // no addresses related to the map, try to find some from the storagePid
+        if($addresses->count() === 0 && $this->settings['storagePid']) {
+            $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
             $addresses = $this->addressRepository->findAllAddresses($map, $pid);
-        } else {
-            $addresses = $map->getAddresses();
         }
 
         // get categories

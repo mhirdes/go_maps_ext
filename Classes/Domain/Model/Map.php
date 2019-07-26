@@ -40,21 +40,21 @@ class Map extends AbstractEntity
      * Title* (without space character, special character!)
      *
      * @var \string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $title;
     /**
      * in px or %
      *
      * @var \string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $width;
     /**
      * in px or %
      *
      * @var string
-     * @validate NotEmpty
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
     protected $height;
     /**
@@ -79,7 +79,7 @@ class Map extends AbstractEntity
      * addresses
      *
 	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $addresses;
     /**
@@ -173,12 +173,6 @@ class Map extends AbstractEntity
      */
     protected $previewImage;
     /**
-     * panControl
-     *
-     * @var boolean
-     */
-    protected $panControl = false;
-    /**
      * scaleControl
      *
      * @var boolean
@@ -202,12 +196,6 @@ class Map extends AbstractEntity
      * @var boolean
      */
     protected $zoomControl = false;
-    /**
-     * zoomControlType
-     *
-     * @var \string
-     */
-    protected $zoomControlType;
     /**
      * mapTypeControl
      *
@@ -877,37 +865,6 @@ class Map extends AbstractEntity
     }
 
     /**
-     * Returns the panControl
-     *
-     * @return boolean $panControl
-     */
-    public function getPanControl()
-    {
-        return $this->panControl;
-    }
-
-    /**
-     * Returns the boolean state of panControl
-     *
-     * @return boolean
-     */
-    public function isPanControl()
-    {
-        return $this->getPanControl();
-    }
-
-    /**
-     * Sets the panControl
-     *
-     * @param boolean $panControl
-     * @return void
-     */
-    public function setPanControl($panControl)
-    {
-        $this->panControl = $panControl;
-    }
-
-    /**
      * Returns the scaleControl
      *
      * @return boolean $scaleControl
@@ -1029,27 +986,6 @@ class Map extends AbstractEntity
     public function setZoomControl($zoomControl)
     {
         $this->zoomControl = $zoomControl;
-    }
-
-    /**
-     * Returns the zoomControlType
-     *
-     * @return \string $zoomControlType
-     */
-    public function getZoomControlType()
-    {
-        return $this->zoomControlType;
-    }
-
-    /**
-     * Sets the zoomControlType
-     *
-     * @param \string $zoomControlType
-     * @return void
-     */
-    public function setZoomControlType($zoomControlType)
-    {
-        $this->zoomControlType = $zoomControlType;
     }
 
     /**
