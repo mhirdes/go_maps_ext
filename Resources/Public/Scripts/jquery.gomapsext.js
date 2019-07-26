@@ -94,16 +94,20 @@
                 $element = this.element;
 
             $.each(this.markers, function (key, marker) {
-                marker.setVisible(false);
-                var matches = 0;
-                $.each(marker.categories, function (keyM, category) {
-                    if ($.inArray(category, selectedCats) != -1) {
-                        matches += 1;
+                if (selectedCats.length > 0) {
+                    marker.setVisible(false);
+                    var matches = 0;
+                    $.each(marker.categories, function (keyM, category) {
+                        if ($.inArray(category, selectedCats) != -1) {
+                            matches += 1;
+                        }
+                    });
+                    var showMarker = (matches > 0);
+                    if (gme.mapSettings.logicalAnd) {
+                        showMarker = (matches == selectedCats.length);
                     }
-                });
-                var showMarker = (matches > 0);
-                if (gme.mapSettings.logicalAnd) {
-                    showMarker = (matches == selectedCats.length);
+                } else {
+                    showMarker = true;
                 }
                 if (showMarker) {
                     marker.setVisible(true);
@@ -716,4 +720,4 @@
             $element.data('gomapsextcontroller', new GoMapsExt.Controller($element, gme));
         }
     };
-}(jQuery || $));
+}(jQuery));
