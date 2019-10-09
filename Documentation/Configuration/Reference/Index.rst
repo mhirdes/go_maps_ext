@@ -227,16 +227,17 @@ Constants
 .. container:: table-row
 
    Property
-         language
+         forceLanguage
    
    Data type
-         String
+         boolean
    
    Description
-         Language Code for the API (details_). If not defined the language depends on the browser settings.
+         Force the language of the map to be equal to the page language. If false the language depends on the
+         browser settings.
    
    Default
-         config.language
+         1
 
 
 .. ###### END~OF~TABLE ######

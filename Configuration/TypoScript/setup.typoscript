@@ -15,6 +15,7 @@ plugin.tx_gomapsext {
 		logicalAnd = {$plugin.tx_gomapsext.settings.logicalAnd}
 		apiKey = {$plugin.tx_gomapsext.settings.apiKey}
 		googleMapsLibrary = {$plugin.tx_gomapsext.settings.googleMapsLibrary}
+		forceLanguage = {$plugin.tx_gomapsext.settings.forceLanguage}
 		infoWindow {
 			openByClick = {$plugin.tx_gomapsext.settings.infoWindow.openByClick}
 			closeByClick = {$plugin.tx_gomapsext.settings.infoWindow.closeByClick}
@@ -25,7 +26,6 @@ plugin.tx_gomapsext {
 			image = {$plugin.tx_gomapsext.settings.preview.image}
 			setCookieToShowMapAlways = {$plugin.tx_gomapsext.settings.preview.setCookieToShowMapAlways}
 		}
-		language < config.language
 	}
 
 	#Fix Twitter Bootstrap
