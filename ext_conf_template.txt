@@ -4,5 +4,8 @@ include_library = 0
 # cat=basic; type=boolean; label = Include JS from extension manually
 include_manually = 0
 
+# cat=basic; type=boolean; label = Include the Google JavaScript API manually
+include_google_api_manually = 0
+
 # cat=basic; type=boolean; label = Add JavaScript to Footer
 footerJS = 1

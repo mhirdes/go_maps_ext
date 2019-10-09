@@ -27,6 +27,38 @@ Extension Configurations
 .. container:: table-row
 
    Property
+         include\_manually
+
+   Data type
+         boolean
+
+   Description
+         Include the JavaScript from extension manually
+
+   Default
+         0
+
+
+.. container:: table-row
+
+   Property
+         include\_google\_api\_manually
+
+   Data type
+         boolean
+
+   Description
+         Include the Google JavaScript API manually
+
+   Default
+         0
+
+
+
+
+.. container:: table-row
+
+   Property
          footerJS
    
    Data type
