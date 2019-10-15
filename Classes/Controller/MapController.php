@@ -82,7 +82,7 @@ class MapController extends ActionController
             $this->googleMapsLibrary .= '&language=' . $this->settings['language'];
         }
 
-        if(!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
+        if(!$this->settings['preview']['enabled'] && !$this->extConf['include_google_api_manually']) {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'googleMaps',
                 $this->googleMapsLibrary,
