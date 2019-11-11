@@ -29,17 +29,13 @@ namespace Clickstorm\GoMapsExt\Controller;
 
 use Clickstorm\GoMapsExt\Domain\Model\Map;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Context\Context;
-use TYPO3\CMS\Core\Context\LanguageAspect;
 use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class MapController extends ActionController
@@ -86,7 +82,7 @@ class MapController extends ActionController
             $this->googleMapsLibrary .= '&language=' . $GLOBALS['TSFE']->sys_language_isocode;
         }
 
-        if(!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
+        if (!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'googleMaps',
                 $this->googleMapsLibrary,
@@ -110,11 +106,11 @@ class MapController extends ActionController
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/markerclusterer_compiled.js';
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
-            if($this->settings['preview']['setCookieToShowMapAlways']) {
+            if ($this->settings['preview']['setCookieToShowMapAlways']) {
                 $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.cookie.js';
             }
 
-            if($this->settings['preview']['enabled']) {
+            if ($this->settings['preview']['enabled']) {
                 $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
             }
 
@@ -145,7 +141,7 @@ class MapController extends ActionController
         $addresses = $map->getAddresses();
 
         // no addresses related to the map, try to find some from the storagePid
-        if($addresses->count() === 0 && $this->settings['storagePid']) {
+        if ($addresses->count() === 0 && $this->settings['storagePid']) {
             $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
             $addresses = $this->addressRepository->findAllAddresses($map, $pid);
         }

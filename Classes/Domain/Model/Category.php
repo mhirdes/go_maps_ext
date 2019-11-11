@@ -29,7 +29,6 @@ namespace Clickstorm\GoMapsExt\Domain\Model;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 
 /**
- * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
@@ -37,13 +36,13 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     /**
      * marker
      *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
     protected $gmeMarker;
     /**
      * imageSize
      *
-     * @var boolean
+     * @var bool
      */
     protected $gmeImageSize = false;
     /**
@@ -62,7 +61,7 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     /**
      * Returns the marker
      *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference gmeMarker
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference gmeMarker
      */
     public function getGmeMarker()
     {
@@ -72,7 +71,7 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     /**
      * Sets the gmeMarker
      *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $gmeMarker
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $gmeMarker
      * @return void
      */
     public function setGmeMarker(FileReference $gmeMarker)
@@ -83,7 +82,7 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     /**
      * Returns the imageSize
      *
-     * @return boolean $gmeImageSize
+     * @return bool $gmeImageSize
      */
     public function getGmeImageSize()
     {
@@ -93,7 +92,7 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     /**
      * Returns the boolean state of imageSize
      *
-     * @return boolean
+     * @return bool
      */
     public function isGmeImageSize()
     {
@@ -103,7 +102,7 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     /**
      * Sets the imageSize
      *
-     * @param boolean $gmeImageSize
+     * @param bool $gmeImageSize
      * @return void
      */
     public function setGmeImageSize($gmeImageSize)

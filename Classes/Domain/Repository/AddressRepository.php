@@ -30,7 +30,6 @@ use Clickstorm\GoMapsExt\Domain\Model\Map;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class AddressRepository extends Repository

@@ -34,7 +34,6 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 /**
  * Google map.
  *
- * @package climbing_sites
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
 class LocationUtility
@@ -101,7 +100,6 @@ class LocationUtility
             $PA['parameters']['address'],
             $addressField
         );
-
 
         $out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
         $out[] = '<script type="text/javascript">';
@@ -315,6 +313,5 @@ EOT;
             ->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
             )['plugin.']['tx_gomapsext.']['settings.'] ?? [];
-
     }
 }

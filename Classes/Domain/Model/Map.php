@@ -31,7 +31,6 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
- * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class Map extends AbstractEntity
@@ -78,7 +77,7 @@ class Map extends AbstractEntity
     /**
      * addresses
      *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $addresses;
@@ -91,49 +90,49 @@ class Map extends AbstractEntity
     /**
      * kmlPreserveViewport
      *
-     * @var boolean
+     * @var bool
      */
     protected $kmlPreserveViewport = false;
     /**
      * kmlLocal
      *
-     * @var boolean
+     * @var bool
      */
     protected $kmlLocal = false;
     /**
      * showAddresses
      *
-     * @var boolean
+     * @var bool
      */
     protected $showAddresses = false;
     /**
      * showCategories
      *
-     * @var boolean
+     * @var bool
      */
     protected $showCategories = false;
     /**
      * scrollZoom
      *
-     * @var boolean
+     * @var bool
      */
     protected $scrollZoom = false;
     /**
      * draggable
      *
-     * @var boolean
+     * @var bool
      */
     protected $draggable = false;
     /**
      * doubleClickZoom
      *
-     * @var boolean
+     * @var bool
      */
     protected $doubleClickZoom = false;
     /**
      * markerCluster
      *
-     * @var boolean
+     * @var bool
      */
     protected $markerCluster = false;
     /**
@@ -157,7 +156,7 @@ class Map extends AbstractEntity
     /**
      * markerSearch
      *
-     * @var boolean
+     * @var bool
      */
     protected $markerSearch = false;
     /**
@@ -175,31 +174,31 @@ class Map extends AbstractEntity
     /**
      * scaleControl
      *
-     * @var boolean
+     * @var bool
      */
     protected $scaleControl = false;
     /**
      * streetviewControl
      *
-     * @var boolean
+     * @var bool
      */
     protected $streetviewControl = false;
     /**
      * fullscreenControl
      *
-     * @var boolean
+     * @var bool
      */
     protected $fullscreenControl = false;
     /**
      * zoomControl
      *
-     * @var boolean
+     * @var bool
      */
     protected $zoomControl = false;
     /**
      * mapTypeControl
      *
-     * @var boolean
+     * @var bool
      */
     protected $mapTypeControl = false;
     /**
@@ -211,13 +210,13 @@ class Map extends AbstractEntity
     /**
      * showRoute
      *
-     * @var boolean
+     * @var bool
      */
     protected $showRoute = false;
     /**
      * calcRoute
      *
-     * @var boolean
+     * @var bool
      */
     protected $calcRoute = false;
     /**
@@ -247,7 +246,7 @@ class Map extends AbstractEntity
     /**
      * showForm
      *
-     * @var boolean
+     * @var bool
      */
     protected $showForm = false;
     /**
@@ -277,7 +276,7 @@ class Map extends AbstractEntity
     /**
      * geolocation
      *
-     * @var boolean
+     * @var bool
      */
     protected $geolocation = false;
 
@@ -434,7 +433,7 @@ class Map extends AbstractEntity
     /**
      * Adds a Address
      *
-	 * @param \Clickstorm\GoMapsExt\Domain\Model\Address $address
+     * @param \Clickstorm\GoMapsExt\Domain\Model\Address $address
      * @return void
      */
     public function addAddress(Address $address)
@@ -445,7 +444,7 @@ class Map extends AbstractEntity
     /**
      * Removes a Address
      *
-	 * @param \Clickstorm\GoMapsExt\Domain\Model\Address $addressToRemove The Address to be removed
+     * @param \Clickstorm\GoMapsExt\Domain\Model\Address $addressToRemove The Address to be removed
      * @return void
      */
     public function removeAddress(Address $addressToRemove)
@@ -498,7 +497,7 @@ class Map extends AbstractEntity
     /**
      * Returns the kmlPreserveViewport
      *
-     * @return boolean $kmlPreserveViewport
+     * @return bool $kmlPreserveViewport
      */
     public function getKmlPreserveViewport()
     {
@@ -508,7 +507,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of kmlPreserveViewport
      *
-     * @return boolean
+     * @return bool
      */
     public function isKmlPreserveViewport()
     {
@@ -518,7 +517,7 @@ class Map extends AbstractEntity
     /**
      * Sets the kmlPreserveViewport
      *
-     * @param boolean $kmlPreserveViewport
+     * @param bool $kmlPreserveViewport
      * @return void
      */
     public function setKmlPreserveViewport($kmlPreserveViewport)
@@ -529,7 +528,7 @@ class Map extends AbstractEntity
     /**
      * Returns the kmlLocal
      *
-     * @return boolean $kmlLocal
+     * @return bool $kmlLocal
      */
     public function getKmlLocal()
     {
@@ -539,7 +538,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of kmlLocal
      *
-     * @return boolean
+     * @return bool
      */
     public function isKmlLocal()
     {
@@ -549,7 +548,7 @@ class Map extends AbstractEntity
     /**
      * Sets the kmlLocal
      *
-     * @param boolean $kmlLocal
+     * @param bool $kmlLocal
      * @return void
      */
     public function setKmlLocal($kmlLocal)
@@ -560,7 +559,7 @@ class Map extends AbstractEntity
     /**
      * Returns the showAddresses
      *
-     * @return boolean $showAddresses
+     * @return bool $showAddresses
      */
     public function getShowAddresses()
     {
@@ -570,7 +569,7 @@ class Map extends AbstractEntity
     /**
      * Sets the showAddresses
      *
-     * @param boolean $showAddresses
+     * @param bool $showAddresses
      * @return void
      */
     public function setShowAddresses($showAddresses)
@@ -581,7 +580,7 @@ class Map extends AbstractEntity
     /**
      * Returns the showCategories
      *
-     * @return boolean $showCategories
+     * @return bool $showCategories
      */
     public function getShowCategories()
     {
@@ -591,7 +590,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of showCategories
      *
-     * @return boolean
+     * @return bool
      */
     public function isShowCategories()
     {
@@ -601,7 +600,7 @@ class Map extends AbstractEntity
     /**
      * Sets the showCategories
      *
-     * @param boolean $showCategories
+     * @param bool $showCategories
      * @return void
      */
     public function setShowCategories($showCategories)
@@ -612,7 +611,7 @@ class Map extends AbstractEntity
     /**
      * Returns the scrollZoom
      *
-     * @return boolean $scrollZoom
+     * @return bool $scrollZoom
      */
     public function getScrollZoom()
     {
@@ -622,7 +621,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of scrollZoom
      *
-     * @return boolean
+     * @return bool
      */
     public function isScrollZoom()
     {
@@ -632,7 +631,7 @@ class Map extends AbstractEntity
     /**
      * Sets the scrollZoom
      *
-     * @param boolean $scrollZoom
+     * @param bool $scrollZoom
      * @return void
      */
     public function setScrollZoom($scrollZoom)
@@ -643,7 +642,7 @@ class Map extends AbstractEntity
     /**
      * Returns the draggable
      *
-     * @return boolean $draggable
+     * @return bool $draggable
      */
     public function getDraggable()
     {
@@ -653,7 +652,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of draggable
      *
-     * @return boolean
+     * @return bool
      */
     public function isDraggable()
     {
@@ -663,7 +662,7 @@ class Map extends AbstractEntity
     /**
      * Sets the draggable
      *
-     * @param boolean $draggable
+     * @param bool $draggable
      * @return void
      */
     public function setDraggable($draggable)
@@ -674,7 +673,7 @@ class Map extends AbstractEntity
     /**
      * Returns the doubleClickZoom
      *
-     * @return boolean $doubleClickZoom
+     * @return bool $doubleClickZoom
      */
     public function getDoubleClickZoom()
     {
@@ -684,7 +683,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of doubleClickZoom
      *
-     * @return boolean
+     * @return bool
      */
     public function isDoubleClickZoom()
     {
@@ -694,7 +693,7 @@ class Map extends AbstractEntity
     /**
      * Sets the doubleClickZoom
      *
-     * @param boolean $doubleClickZoom
+     * @param bool $doubleClickZoom
      * @return void
      */
     public function setDoubleClickZoom($doubleClickZoom)
@@ -705,7 +704,7 @@ class Map extends AbstractEntity
     /**
      * Returns the markerCluster
      *
-     * @return boolean $markerCluster
+     * @return bool $markerCluster
      */
     public function getMarkerCluster()
     {
@@ -715,7 +714,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of markerCluster
      *
-     * @return boolean
+     * @return bool
      */
     public function isMarkerCluster()
     {
@@ -725,7 +724,7 @@ class Map extends AbstractEntity
     /**
      * Sets the markerCluster
      *
-     * @param boolean $markerCluster
+     * @param bool $markerCluster
      * @return void
      */
     public function setMarkerCluster($markerCluster)
@@ -799,7 +798,7 @@ class Map extends AbstractEntity
     /**
      * Returns the markerSearch
      *
-     * @return boolean $markerSearch
+     * @return bool $markerSearch
      */
     public function getMarkerSearch()
     {
@@ -809,7 +808,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of markerSearch
      *
-     * @return boolean
+     * @return bool
      */
     public function isMarkerSearch()
     {
@@ -819,7 +818,7 @@ class Map extends AbstractEntity
     /**
      * Sets the markerSearch
      *
-     * @param boolean $markerSearch
+     * @param bool $markerSearch
      * @return void
      */
     public function setMarkerSearch($markerSearch)
@@ -867,7 +866,7 @@ class Map extends AbstractEntity
     /**
      * Returns the scaleControl
      *
-     * @return boolean $scaleControl
+     * @return bool $scaleControl
      */
     public function getScaleControl()
     {
@@ -877,7 +876,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of scaleControl
      *
-     * @return boolean
+     * @return bool
      */
     public function isScaleControl()
     {
@@ -887,7 +886,7 @@ class Map extends AbstractEntity
     /**
      * Sets the scaleControl
      *
-     * @param boolean $scaleControl
+     * @param bool $scaleControl
      * @return void
      */
     public function setScaleControl($scaleControl)
@@ -898,7 +897,7 @@ class Map extends AbstractEntity
     /**
      * Returns the streetviewControl
      *
-     * @return boolean $streetviewControl
+     * @return bool $streetviewControl
      */
     public function getStreetviewControl()
     {
@@ -908,7 +907,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of streetviewControl
      *
-     * @return boolean
+     * @return bool
      */
     public function isStreetviewControl()
     {
@@ -918,7 +917,7 @@ class Map extends AbstractEntity
     /**
      * Sets the streetviewControl
      *
-     * @param boolean $streetviewControl
+     * @param bool $streetviewControl
      * @return void
      */
     public function setStreetviewControl($streetviewControl)
@@ -929,7 +928,7 @@ class Map extends AbstractEntity
     /**
      * Returns the fullscreenControl
      *
-     * @return boolean $fullscreenControl
+     * @return bool $fullscreenControl
      */
     public function getFullscreenControl()
     {
@@ -939,7 +938,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of fullscreenControl
      *
-     * @return boolean
+     * @return bool
      */
     public function isFullscreenControl()
     {
@@ -949,7 +948,7 @@ class Map extends AbstractEntity
     /**
      * Sets the fullscreenControl
      *
-     * @param boolean $fullscreenControl
+     * @param bool $fullscreenControl
      * @return void
      */
     public function setFullscreenControl($fullscreenControl)
@@ -960,7 +959,7 @@ class Map extends AbstractEntity
     /**
      * Returns the zoomControl
      *
-     * @return boolean $zoomControl
+     * @return bool $zoomControl
      */
     public function getZoomControl()
     {
@@ -970,7 +969,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of zoomControl
      *
-     * @return boolean
+     * @return bool
      */
     public function isZoomControl()
     {
@@ -980,7 +979,7 @@ class Map extends AbstractEntity
     /**
      * Sets the zoomControl
      *
-     * @param boolean $zoomControl
+     * @param bool $zoomControl
      * @return void
      */
     public function setZoomControl($zoomControl)
@@ -991,7 +990,7 @@ class Map extends AbstractEntity
     /**
      * Returns the mapTypeControl
      *
-     * @return boolean $mapTypeControl
+     * @return bool $mapTypeControl
      */
     public function getMapTypeControl()
     {
@@ -1001,7 +1000,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of mapTypeControl
      *
-     * @return boolean
+     * @return bool
      */
     public function isMapTypeControl()
     {
@@ -1011,7 +1010,7 @@ class Map extends AbstractEntity
     /**
      * Sets the mapTypeControl
      *
-     * @param boolean $mapTypeControl
+     * @param bool $mapTypeControl
      * @return void
      */
     public function setMapTypeControl($mapTypeControl)
@@ -1026,7 +1025,7 @@ class Map extends AbstractEntity
      */
     public function getMapTypes()
     {
-        return explode(",", $this->mapTypes);
+        return explode(',', $this->mapTypes);
     }
 
     /**
@@ -1043,7 +1042,7 @@ class Map extends AbstractEntity
     /**
      * Returns the showRoute
      *
-     * @return boolean $showRoute
+     * @return bool $showRoute
      */
     public function getShowRoute()
     {
@@ -1053,7 +1052,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of showRoute
      *
-     * @return boolean
+     * @return bool
      */
     public function isShowRoute()
     {
@@ -1063,7 +1062,7 @@ class Map extends AbstractEntity
     /**
      * Sets the showRoute
      *
-     * @param boolean $showRoute
+     * @param bool $showRoute
      * @return void
      */
     public function setShowRoute($showRoute)
@@ -1116,7 +1115,7 @@ class Map extends AbstractEntity
     /**
      * Returns the setForm
      *
-     * @return boolean $showForm
+     * @return bool $showForm
      */
     public function getShowForm()
     {
@@ -1130,7 +1129,7 @@ class Map extends AbstractEntity
     /**
      * Returns the calcRoute
      *
-     * @return boolean $calcRoute
+     * @return bool $calcRoute
      */
     public function getCalcRoute()
     {
@@ -1140,7 +1139,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of calcRoute
      *
-     * @return boolean
+     * @return bool
      */
     public function isCalcRoute()
     {
@@ -1150,7 +1149,7 @@ class Map extends AbstractEntity
     /**
      * Sets the calcRoute
      *
-     * @param boolean $calcRoute
+     * @param bool $calcRoute
      * @return void
      */
     public function setCalcRoute($calcRoute)
@@ -1280,7 +1279,7 @@ class Map extends AbstractEntity
     /**
      * Returns the geolocation
      *
-     * @return boolean $geolocation
+     * @return bool $geolocation
      */
     public function getGeolocation()
     {
@@ -1290,7 +1289,7 @@ class Map extends AbstractEntity
     /**
      * Returns the boolean state of geolocation
      *
-     * @return boolean
+     * @return bool
      */
     public function isGeolocation()
     {
@@ -1300,7 +1299,7 @@ class Map extends AbstractEntity
     /**
      * Sets the geolocation
      *
-     * @param boolean $geolocation
+     * @param bool $geolocation
      * @return void
      */
     public function setGeolocation($geolocation)

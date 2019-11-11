@@ -300,17 +300,17 @@ return [
                         'disabled' => false,
                     ]
                 ]
-			],
-		],
-		'info_window_images' => [
-			'exclude' => 1,
-			'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_images',
-			'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-				'tx_gomapsext_info_window_image',
-				[
-					'appearance' => [
-						'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-					],
+            ],
+        ],
+        'info_window_images' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_images',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'tx_gomapsext_info_window_image',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
+                    ],
                     'overrideChildTca' => [
                         'types' => [
                             'foreign_types' => [

@@ -31,7 +31,6 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * @package go_maps_ext
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
 class Address extends AbstractEntity
@@ -88,13 +87,13 @@ class Address extends AbstractEntity
     /**
      * marker
      *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
     protected $marker;
     /**
      * imageSize
      *
-     * @var boolean
+     * @var bool
      */
     protected $imageSize = false;
     /**
@@ -118,7 +117,7 @@ class Address extends AbstractEntity
     /**
      * infoWindowImages
      *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $infoWindowImages = null;
@@ -131,32 +130,32 @@ class Address extends AbstractEntity
     /**
      * closeByClick
      *
-     * @var boolean
+     * @var bool
      */
     protected $closeByClick = false;
     /**
      * openByClick
      *
-     * @var boolean
+     * @var bool
      */
     protected $openByClick = false;
     /**
      * opened
      *
-     * @var boolean
+     * @var bool
      */
     protected $opened = false;
     /**
      * categories
      *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $categories;
     /**
      * map
      *
-	 * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $map;
@@ -345,7 +344,7 @@ class Address extends AbstractEntity
     /**
      * Returns the marker
      *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference marker
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference marker
      */
     public function getMarker()
     {
@@ -355,7 +354,7 @@ class Address extends AbstractEntity
     /**
      * Sets the marker
      *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $marker
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $marker
      * @return void
      */
     public function setMarker(FileReference $marker)
@@ -366,7 +365,7 @@ class Address extends AbstractEntity
     /**
      * Returns the imageSize
      *
-     * @return boolean $imageSize
+     * @return bool $imageSize
      */
     public function getImageSize()
     {
@@ -376,7 +375,7 @@ class Address extends AbstractEntity
     /**
      * Returns the boolean state of imageSize
      *
-     * @return boolean
+     * @return bool
      */
     public function isImageSize()
     {
@@ -386,7 +385,7 @@ class Address extends AbstractEntity
     /**
      * Sets the imageSize
      *
-     * @param boolean $imageSize
+     * @param bool $imageSize
      * @return void
      */
     public function setImageSize($imageSize)
@@ -460,7 +459,7 @@ class Address extends AbstractEntity
     /**
      * Adds a FileReference
      *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImage
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImage
      * @return void
      */
     public function addInfoWindowImage(FileReference $infoWindowImage)
@@ -471,7 +470,7 @@ class Address extends AbstractEntity
     /**
      * Removes a FileReference
      *
-	 * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImageToRemove The FileReference to be removed
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImageToRemove The FileReference to be removed
      * @return void
      */
     public function removeInfoWindowImage(FileReference $infoWindowImageToRemove)
@@ -482,7 +481,7 @@ class Address extends AbstractEntity
     /**
      * Returns the infoWindowImages
      *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $infoWindowImages
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference> $infoWindowImages
      */
     public function getInfoWindowImages()
     {
@@ -492,7 +491,7 @@ class Address extends AbstractEntity
     /**
      * Sets the infoWindowImages
      *
-	 * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $infoWindowImages
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $infoWindowImages
      * @return void
      */
     public function setInfoWindowImage(ObjectStorage $infoWindowImages)
@@ -524,7 +523,7 @@ class Address extends AbstractEntity
     /**
      * Returns the closeByClick
      *
-     * @return boolean $closeByClick
+     * @return bool $closeByClick
      */
     public function getCloseByClick()
     {
@@ -534,7 +533,7 @@ class Address extends AbstractEntity
     /**
      * Returns the boolean state of closeByClick
      *
-     * @return boolean
+     * @return bool
      */
     public function isCloseByClick()
     {
@@ -544,7 +543,7 @@ class Address extends AbstractEntity
     /**
      * Sets the closeByClick
      *
-     * @param boolean $closeByClick
+     * @param bool $closeByClick
      * @return void
      */
     public function setCloseByClick($closeByClick)
@@ -555,7 +554,7 @@ class Address extends AbstractEntity
     /**
      * Returns the openByClick
      *
-     * @return boolean $openByClick
+     * @return bool $openByClick
      */
     public function getOpenByClick()
     {
@@ -565,7 +564,7 @@ class Address extends AbstractEntity
     /**
      * Returns the boolean state of openByClick
      *
-     * @return boolean
+     * @return bool
      */
     public function isOpenByClick()
     {
@@ -575,7 +574,7 @@ class Address extends AbstractEntity
     /**
      * Sets the openByClick
      *
-     * @param boolean $openByClick
+     * @param bool $openByClick
      * @return void
      */
     public function setOpenByClick($openByClick)
@@ -586,7 +585,7 @@ class Address extends AbstractEntity
     /**
      * Returns the opened
      *
-     * @return boolean $opened
+     * @return bool $opened
      */
     public function getOpened()
     {
@@ -596,7 +595,7 @@ class Address extends AbstractEntity
     /**
      * Returns the boolean state of opened
      *
-     * @return boolean
+     * @return bool
      */
     public function isOpened()
     {
@@ -606,7 +605,7 @@ class Address extends AbstractEntity
     /**
      * Sets the opened
      *
-     * @param boolean $opened
+     * @param bool $opened
      * @return void
      */
     public function setOpened($opened)
@@ -617,7 +616,7 @@ class Address extends AbstractEntity
     /**
      * Adds a Category
      *
-	 * @param \Clickstorm\GoMapsExt\Domain\Model\Category $category
+     * @param \Clickstorm\GoMapsExt\Domain\Model\Category $category
      * @return void
      */
     public function addCategories(Category $category)
@@ -628,7 +627,7 @@ class Address extends AbstractEntity
     /**
      * Removes a Category
      *
-	 * @param \Clickstorm\GoMapsExt\Domain\Model\Category $categoryToRemove The Category to be removed
+     * @param \Clickstorm\GoMapsExt\Domain\Model\Category $categoryToRemove The Category to be removed
      * @return void
      */
     public function removeCategories(Category $categoryToRemove)
@@ -639,7 +638,7 @@ class Address extends AbstractEntity
     /**
      * Returns the Categories
      *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category> $categories
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category> $categories
      */
     public function getCategories()
     {
@@ -660,7 +659,7 @@ class Address extends AbstractEntity
     /**
      * Returns the Map
      *
-	 * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map> $map
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map> $map
      */
     public function getMap()
     {
