@@ -620,9 +620,9 @@ class Address extends AbstractEntity
 	 * @param \Clickstorm\GoMapsExt\Domain\Model\Category $category
      * @return void
      */
-    public function addAddress(Category $category)
+    public function addCategories(Category $category)
     {
-        $this->addresses->attach($category);
+        $this->categories->attach($category);
     }
 
     /**
@@ -631,9 +631,9 @@ class Address extends AbstractEntity
 	 * @param \Clickstorm\GoMapsExt\Domain\Model\Category $categoryToRemove The Category to be removed
      * @return void
      */
-    public function removeAddress(Category $categoryToRemove)
+    public function removeCategories(Category $categoryToRemove)
     {
-        $this->addresses->detach($categoryToRemove);
+        $this->categories->detach($categoryToRemove);
     }
 
     /**
