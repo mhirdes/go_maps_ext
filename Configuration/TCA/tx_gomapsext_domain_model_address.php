@@ -172,7 +172,7 @@ return [
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.configuration_map',
             'config' => [
                 'type' => 'user',
-                'userFunc' => Clickstorm\GoMapsExt\Utility\LocationUtility::class . '->render',
+                'renderType' => 'GomapsextMapElement',
                 'parameters' => [
                     'longitude' => 'longitude',
                     'latitude' => 'latitude',

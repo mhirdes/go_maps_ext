@@ -1,6 +1,6 @@
 <?php
 
-namespace Clickstorm\GoMapsExt\Utility;
+namespace Clickstorm\GoMapsExt\Form\Element;
 
 /***************************************************************
  *  Copyright notice
@@ -26,6 +26,8 @@ namespace Clickstorm\GoMapsExt\Utility;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
+use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -36,19 +38,18 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  *
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  */
-class LocationUtility
+class GomapsextMapElement extends AbstractFormElement
 {
 
     /**
      * Renders the Google map.
      *
-     * @param array $PA
-     * @param \TYPO3\CMS\Backend\Form\Element\UserElement $pObj
-     * @return string
-     * @throws \Exception
+     * @return array
      */
-    public function render(array &$PA, $pObj)
+    public function render()
     {
+        $resultArray = $this->initializeResultArray();
+
         $pluginSettings = static::getSettings();
 
         $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? ' //maps.google.com/maps/api/js?v=weekly';
@@ -58,11 +59,11 @@ class LocationUtility
         }
 
         $out = [];
-        $latitude = (float)$PA['row'][$PA['parameters']['latitude']];
-        $longitude = (float)$PA['row'][$PA['parameters']['longitude']];
-        $address = $PA['row'][$PA['parameters']['address']];
+        $latitude = (float)$this->data['databaseRow'][$this->data['parameterArray']['fieldConf']['config']['parameters']['latitude']];
+        $longitude = (float)$this->data['databaseRow'][$this->data['parameterArray']['fieldConf']['config']['parameters']['longitude']];
+        $address = $this->data['databaseRow'][$this->data['parameterArray']['fieldConf']['config']['parameters']['address']];
 
-        $baseElementId = isset($PA['itemFormElID']) ? $PA['itemFormElID'] : $PA['table'] . '_map';
+        $baseElementId = isset($this->data['databaseRow']['uid']) ? $this->data['databaseRow']['uid'] : $this->data['tableName'] . '_map';
         $addressId = $baseElementId . '_address';
         $mapId = $baseElementId . '_map';
 
@@ -70,34 +71,34 @@ class LocationUtility
             $latitude = 0;
             $longitude = 0;
         }
-        $dataPrefix = 'data[' . $PA['table'] . '][' . $PA['row']['uid'] . ']';
-        $latitudeField = $dataPrefix . '[' . $PA['parameters']['latitude'] . ']';
-        $longitudeField = $dataPrefix . '[' . $PA['parameters']['longitude'] . ']';
-        $addressField = $dataPrefix . '[' . $PA['parameters']['address'] . ']';
-        $streetFieldName = $dataPrefix . '[' . $PA['parameters']['street'] . ']';
-        $zipFieldName = $dataPrefix . '[' . $PA['parameters']['zip'] . ']';
-        $cityFieldName = $dataPrefix . '[' . $PA['parameters']['city'] . ']';
+        $dataPrefix = 'data[' . $this->data['tableName'] . '][' . $this->data['databaseRow']['uid'] . ']';
+        $latitudeField = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['latitude'] . ']';
+        $longitudeField = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['longitude'] . ']';
+        $addressField = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['address'] . ']';
+        $streetFieldName = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['street'] . ']';
+        $zipFieldName = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['zip'] . ']';
+        $cityFieldName = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['city'] . ']';
 
         $updateJs = "TBE_EDITOR.fieldChanged('%s','%s','%s','%s');";
         $updateLatitudeJs = sprintf(
             $updateJs,
-            $PA['table'],
-            $PA['row']['uid'],
-            $PA['parameters']['latitude'],
+            $this->data['tableName'],
+            $this->data['databaseRow']['uid'],
+            $this->data['parameterArray']['fieldConf']['config']['parameters']['latitude'],
             $latitudeField
         );
         $updateLongitudeJs = sprintf(
             $updateJs,
-            $PA['table'],
-            $PA['row']['uid'],
-            $PA['parameters']['longitude'],
+            $this->data['tableName'],
+            $this->data['databaseRow']['uid'],
+            $this->data['parameterArray']['fieldConf']['config']['parameters']['longitude'],
             $longitudeField
         );
         $updateAddressJs = sprintf(
             $updateJs,
-            $PA['table'],
-            $PA['row']['uid'],
-            $PA['parameters']['address'],
+            $this->data['tableName'],
+            $this->data['databaseRow']['uid'],
+            $this->data['parameterArray']['fieldConf']['config']['parameters']['address'],
             $addressField
         );
 
@@ -297,7 +298,9 @@ EOT;
         $out[] = '<div id="' . $mapId . '" style="height:400px;margin:10px 0;width:400px"></div>';
         $out[] = '</div>'; // id=$baseElementId
 
-        return implode('', $out);
+        $resultArray['html'] = implode('', $out);
+
+        return $resultArray;
     }
 
     /**
