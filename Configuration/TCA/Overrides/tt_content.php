@@ -5,7 +5,7 @@ $extKey = 'go_maps_ext';
 
 // register plugin
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'Clickstorm.' . $extKey,
+    $extKey,
     'Show',
     'Google Map'
 );

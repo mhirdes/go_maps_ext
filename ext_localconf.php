@@ -2,11 +2,10 @@
 defined('TYPO3_MODE') or die();
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Clickstorm.' . $_EXTKEY,
+    'go_maps_ext',
     'Show',
     [
-        'Map' => 'show,preview',
-
+        \Clickstorm\GoMapsExt\Controller\MapController::class => 'show, preview'
     ],
     // non-cacheable actions
     []

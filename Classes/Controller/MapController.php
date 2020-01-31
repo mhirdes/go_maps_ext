@@ -30,6 +30,7 @@ namespace Clickstorm\GoMapsExt\Controller;
 use Clickstorm\GoMapsExt\Domain\Model\Map;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\PathUtility;
@@ -78,8 +79,11 @@ class MapController extends ActionController
         if ($this->settings['apiKey']) {
             $this->googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
         }
+
         if ($this->settings['forceLanguage']) {
-            $this->googleMapsLibrary .= '&language=' . $GLOBALS['TSFE']->sys_language_isocode;
+            /** @var SiteLanguage $language */
+            $language = $GLOBALS['TYPO3_REQUEST']->getAttribute('language');
+            $this->googleMapsLibrary .= '&language=' . $language->getTwoLetterIsoCode();
         }
 
         if (!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
