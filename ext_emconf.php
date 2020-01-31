@@ -5,7 +5,7 @@ $EM_CONF[$_EXTKEY] = [
     'description' => 'Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route,
 	                  images for markers, style maps, KML, categories, responsive and many more.',
     'category' => 'plugin',
-    'version' => '3.2.1-dev',
+    'version' => '4.0.0-dev',
     'state' => 'stable',
     'uploadfolder' => 1,
     'clearCacheOnLoad' => 1,
@@ -14,7 +14,7 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'clickstorm GmbH',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.5.0-9.5.99',
+            'typo3' => '10.0.0-10.2.99',
         ],
         'conflicts' => [],
         'suggests' => [],
