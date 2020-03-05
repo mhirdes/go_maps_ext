@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
 	}
 
 	function showMap() {
-		if(typeof google === "undefined") {
+		if(typeof google === "undefined" || typeof google.maps === "undefined") {
 			$('body').append($('<script>').attr('src', $links.data('library') + '&callback=GoMapsExtLoaded'));
 			$mapContainer.show();
 		}
