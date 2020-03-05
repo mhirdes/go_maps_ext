@@ -28,7 +28,12 @@ jQuery(document).ready(function ($) {
 	}
 
 	function showMap() {
+		
 		if(typeof google === "undefined") {
+			$('body').append($('<script>').attr('src', $links.data('library') + '&callback=GoMapsExtLoaded'));
+			$mapContainer.show();
+		} //Fix for IE with defined google meta tag (e.g. bootstrap_package)
+		else if(typeof google.maps === "undefined") {
 			$('body').append($('<script>').attr('src', $links.data('library') + '&callback=GoMapsExtLoaded'));
 			$mapContainer.show();
 		}
