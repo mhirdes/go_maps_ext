@@ -46,7 +46,7 @@
         this.gme = gme;
         this.data = gme;
 
-        if(typeof google !== "undefined") {
+        if(typeof google !== "undefined" && typeof google.maps !== "undefined") {
             this.initialize();
         }
     };
