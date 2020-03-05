@@ -46,8 +46,11 @@
         this.gme = gme;
         this.data = gme;
 
-        if(typeof google !== "undefined") {
-            this.initialize();
+        if(typeof google !== "undefined" ) {
+		//Fix for IE with defined google meta tag (e.g. bootstrap_package)
+		if(typeof google.maps !== "undefined") {
+			this.initialize();
+		}
         }
     };
 
