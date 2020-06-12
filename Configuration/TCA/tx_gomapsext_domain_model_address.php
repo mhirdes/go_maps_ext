@@ -22,11 +22,6 @@ return [
         'searchFields' => 'title,address,info_window_content',
         'iconfile' => 'EXT:go_maps_ext/Resources/Public/Icons/tx_gomapsext_domain_model_address.svg'
     ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, categories,
-                                  configuration_map, latitude, longitude, address, marker, image_size, image_width,
-                                  image_height, info_window_content, info_window_images, info_window_link, close_by_click, open_by_click',
-    ],
     'types' => [
         '0' => [
             'showitem' => 'title,--palette--;;address,configuration_map,--palette--;;data,
@@ -67,16 +62,15 @@ return [
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    ['', 0],
-                ],
-                'foreign_table' => 'tx_gomapsext_domain_model_address',
-                'foreign_table_where' => 'AND tx_gomapsext_domain_model_address.pid=###CURRENT_PID### AND tx_gomapsext_domain_model_address.sys_language_uid IN (-1,0)',
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'tx_gomapsext_domain_model_address',
+                'size' => 1,
+                'maxitems' => 1,
+                'minitems' => 0,
+                'default' => 0,
             ],
         ],
         'l10n_diffsource' => [

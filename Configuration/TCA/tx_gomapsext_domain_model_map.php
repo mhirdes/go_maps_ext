@@ -22,15 +22,6 @@ return [
         'searchFields' => 'title,tooltip_title',
         'iconfile' => 'EXT:go_maps_ext/Resources/Public/Icons/tx_gomapsext_domain_model_map.svg'
     ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, tooltip_title,
-		                          class, width, height, zoom, zoom_min, zoom_max, latitude, longitude, preview_image, 
-		                          addresses, kml_url, kml_local, show_route,
-		                          calc_route, scroll_zoom, draggable, double_click_zoom, marker_cluster,
-		                          marker_cluster_zoom, marker_cluster_size, marker_cluster_style, marker_search, default_type,
-		                          scale_control, streetview_control, fullscreen_control, zoom_control,
-		                          map_type_control, map_types, styled_map_name, styled_map_code',
-    ],
     'types' => [
         '0' => [
             'showitem' => 'title,
@@ -93,16 +84,15 @@ return [
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    ['', 0],
-                ],
-                'foreign_table' => 'tx_gomapsext_domain_model_map',
-                'foreign_table_where' => 'AND tx_gomapsext_domain_model_map.pid=###CURRENT_PID### AND tx_gomapsext_domain_model_map.sys_language_uid IN (-1,0)',
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'tx_gomapsext_domain_model_map',
+                'size' => 1,
+                'maxitems' => 1,
+                'minitems' => 0,
+                'default' => 0,
             ],
         ],
         'l10n_diffsource' => [
