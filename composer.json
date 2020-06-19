@@ -1,43 +1,38 @@
 {
-  "name": "clickstorm/go_maps_ext",
-  "type": "typo3-cms-extension",
-  "description": "Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route, images for markers, style maps, KML, categories, responsive and many more.",
-  "homepage": "http://www.clickstorm.de",
-  "authors": [
-	{
-	  "name": "Marc Hirdes",
-	  "email": "hirdes@clickstorm.de",
-	  "homepage": "https://www.clickstorm.de",
-	  "role": "Developer"
+	"name": "clickstorm/go_maps_ext",
+	"type": "typo3-cms-extension",
+	"description": "Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route, images for markers, style maps, KML, categories, responsive and many more.",
+	"homepage": "http://www.clickstorm.de",
+	"authors": [
+		{
+			"name": "Marc Hirdes",
+			"email": "hirdes@clickstorm.de",
+			"homepage": "https://www.clickstorm.de",
+			"role": "Developer"
+		}
+	],
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"keywords": [
+		"TYPO3 CMS",
+		"map",
+		"google",
+		"marker",
+		"route",
+		"kml",
+		"style",
+		"extbase"
+	],
+	"replace": {
+		"typo3-ter/go-maps-ext": "self.version"
+	},
+	"require": {
+		"typo3/cms-core": "^10.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Clickstorm\\GoMapsExt\\": "Classes/"
+		}
 	}
-  ],
-  "license": [
-	"GPL-2.0+"
-  ],
-  "keywords": [
-	"TYPO3 CMS",
-	"map",
-	"google",
-	"marker",
-	"route",
-	"kml",
-	"style",
-	"extbase"
-  ],
-  "replace": {
-	"typo3-ter/go-maps-ext": "self.version"
-  },
-  "require": {
-	"typo3/cms-core": "^10.0"
-  },
-  "autoload": {
-	"psr-4": {
-	  "Clickstorm\\GoMapsExt\\": "Classes/"
-	}
-  },
-  "extra": {
-	"branch-alias": {
-	  "dev-master": "4x-dev"
-	}
-  }
 }
