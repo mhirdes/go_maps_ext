@@ -35,11 +35,3 @@ plugin.tx_gomapsext {
 		}
 	)
 }
-
-config.tx_extbase.persistence.classes {
-	Clickstorm\GoMapsExt\Domain\Model\Category {
-		mapping {
-			tableName = sys_category
-		}
-	}
-}
