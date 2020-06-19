@@ -12,7 +12,7 @@
 	}
   ],
   "license": [
-	"GPL-2.0+"
+	"GPL-2.0-or-later"
   ],
   "keywords": [
 	"TYPO3 CMS",
@@ -25,7 +25,6 @@
 	"extbase"
   ],
   "replace": {
-	"go_maps_ext": "self.version",
 	"typo3-ter/go-maps-ext": "self.version"
   },
   "require": {
