@@ -59,6 +59,11 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     protected $gmeImageHeight;
 
     /**
+     * @var int
+     */
+    protected $sorting;
+
+    /**
      * Returns the marker
      *
      * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference gmeMarker
@@ -140,5 +145,21 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
     public function setGmeImageHeight($gmeImageHeight)
     {
         $this->gmeImageHeight = $gmeImageHeight;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSorting()
+    {
+        return $this->sorting;
+    }
+
+    /**
+     * @param int $sorting
+     */
+    public function setSorting(int $sorting)
+    {
+        $this->sorting = $sorting;
     }
 }
