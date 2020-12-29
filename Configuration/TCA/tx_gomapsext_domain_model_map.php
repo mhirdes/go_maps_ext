@@ -285,7 +285,8 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
-                'max' => 500
+                'max' => 500,
+                'default' => ''
             ],
         ],
         'kml_local' => [
@@ -583,7 +584,8 @@ return [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15,
-                'eval' => 'trim'
+                'eval' => 'trim',
+                'default' => ''
             ],
         ],
         'latitude' => [
