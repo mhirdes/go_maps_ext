@@ -28,6 +28,8 @@ namespace Clickstorm\GoMapsExt\Controller;
  ***************************************************************/
 
 use Clickstorm\GoMapsExt\Domain\Model\Map;
+use Clickstorm\GoMapsExt\Domain\Repository\AddressRepository;
+use Clickstorm\GoMapsExt\Domain\Repository\MapRepository;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
@@ -45,18 +47,36 @@ class MapController extends ActionController
     /**
      * mapRepository
      *
-     * @var \Clickstorm\GoMapsExt\Domain\Repository\MapRepository
-     * @TYPO3\CMS\Extbase\Annotation\Inject
+     * @var MapRepository
      */
-    protected $mapRepository;
+    protected $mapRepository = null;
 
     /**
      * addressRepository
      *
-     * @var \Clickstorm\GoMapsExt\Domain\Repository\AddressRepository
-     * @TYPO3\CMS\Extbase\Annotation\Inject
+     * @var AddressRepository
      */
-    protected $addressRepository;
+    protected $addressRepository = null;
+
+    /**
+     * Inject a mapRepository
+     *
+     * @param MapRepository $mapRepository
+     */
+    public function injectMapRepository(MapRepository $mapRepository)
+    {
+        $this->mapRepository = $mapRepository;
+    }
+
+    /**
+     * Inject a addressRepository
+     *
+     * @param AddressRepository $addressRepository
+     */
+    public function injectAddressRepository(AddressRepository $addressRepository)
+    {
+        $this->addressRepository = $addressRepository;
+    }
 
     /**
      * @var string
