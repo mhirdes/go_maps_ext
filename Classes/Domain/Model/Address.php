@@ -120,7 +120,7 @@ class Address extends AbstractEntity
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
-    protected $infoWindowImages = null;
+    protected $infoWindowImages;
     /**
      * infoWindowLink
      *
@@ -162,8 +162,6 @@ class Address extends AbstractEntity
 
     /**
      * __construct
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -173,8 +171,6 @@ class Address extends AbstractEntity
 
     /**
      * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
-     *
-     * @return void
      */
     protected function initStorageObjects()
     {
@@ -292,7 +288,6 @@ class Address extends AbstractEntity
      * Sets the latitude
      *
      * @param \float $latitude
-     * @return void
      */
     public function setLatitude($latitude)
     {
@@ -313,7 +308,6 @@ class Address extends AbstractEntity
      * Sets the longitude
      *
      * @param \float $longitude
-     * @return void
      */
     public function setLongitude($longitude)
     {
@@ -334,7 +328,6 @@ class Address extends AbstractEntity
      * Sets the address
      *
      * @param \string $address
-     * @return void
      */
     public function setAddress($address)
     {
@@ -355,7 +348,6 @@ class Address extends AbstractEntity
      * Sets the marker
      *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $marker
-     * @return void
      */
     public function setMarker(FileReference $marker)
     {
@@ -386,7 +378,6 @@ class Address extends AbstractEntity
      * Sets the imageSize
      *
      * @param bool $imageSize
-     * @return void
      */
     public function setImageSize($imageSize)
     {
@@ -407,7 +398,6 @@ class Address extends AbstractEntity
      * Sets the imageWidth
      *
      * @param int $imageWidth
-     * @return void
      */
     public function setImageWidth($imageWidth)
     {
@@ -428,7 +418,6 @@ class Address extends AbstractEntity
      * Sets the imageHeight
      *
      * @param int $imageHeight
-     * @return void
      */
     public function setImageHeight($imageHeight)
     {
@@ -449,7 +438,6 @@ class Address extends AbstractEntity
      * Sets the infoWindowContent
      *
      * @param \string $infoWindowContent
-     * @return void
      */
     public function setInfoWindowContent($infoWindowContent)
     {
@@ -460,7 +448,6 @@ class Address extends AbstractEntity
      * Adds a FileReference
      *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImage
-     * @return void
      */
     public function addInfoWindowImage(FileReference $infoWindowImage)
     {
@@ -471,7 +458,6 @@ class Address extends AbstractEntity
      * Removes a FileReference
      *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $infoWindowImageToRemove The FileReference to be removed
-     * @return void
      */
     public function removeInfoWindowImage(FileReference $infoWindowImageToRemove)
     {
@@ -492,7 +478,6 @@ class Address extends AbstractEntity
      * Sets the infoWindowImages
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $infoWindowImages
-     * @return void
      */
     public function setInfoWindowImage(ObjectStorage $infoWindowImages)
     {
@@ -513,7 +498,6 @@ class Address extends AbstractEntity
      * Sets the infoWindowLink
      *
      * @param int $infoWindowLink
-     * @return void
      */
     public function setInfoWindowLink($infoWindowLink)
     {
@@ -544,7 +528,6 @@ class Address extends AbstractEntity
      * Sets the closeByClick
      *
      * @param bool $closeByClick
-     * @return void
      */
     public function setCloseByClick($closeByClick)
     {
@@ -575,7 +558,6 @@ class Address extends AbstractEntity
      * Sets the openByClick
      *
      * @param bool $openByClick
-     * @return void
      */
     public function setOpenByClick($openByClick)
     {
@@ -606,7 +588,6 @@ class Address extends AbstractEntity
      * Sets the opened
      *
      * @param bool $opened
-     * @return void
      */
     public function setOpened($opened)
     {
@@ -617,7 +598,6 @@ class Address extends AbstractEntity
      * Adds a Category
      *
      * @param \Clickstorm\GoMapsExt\Domain\Model\Category $category
-     * @return void
      */
     public function addCategories(Category $category)
     {
@@ -628,7 +608,6 @@ class Address extends AbstractEntity
      * Removes a Category
      *
      * @param \Clickstorm\GoMapsExt\Domain\Model\Category $categoryToRemove The Category to be removed
-     * @return void
      */
     public function removeCategories(Category $categoryToRemove)
     {
@@ -649,7 +628,6 @@ class Address extends AbstractEntity
      * Sets the Categories
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category> $categories
-     * @return void
      */
     public function setCategories(ObjectStorage $categories)
     {
@@ -670,7 +648,6 @@ class Address extends AbstractEntity
      * Sets the Map
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map> $map
-     * @return void
      */
     public function setMap(ObjectStorage $map)
     {

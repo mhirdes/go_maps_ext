@@ -2,8 +2,8 @@
 
 namespace Clickstorm\GoMapsExt\ViewHelpers;
 
-use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  *  Copyright notice
  *
@@ -28,7 +28,7 @@ use TYPO3\CMS\Core\Page\PageRenderer;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
 */
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * Renders a HTML-script value by moving it into a temporary file and adding it to the page
@@ -51,7 +51,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *  someText
  * </script>
  * </output>
- *
  */
 class ScriptViewHelper extends AbstractViewHelper
 {

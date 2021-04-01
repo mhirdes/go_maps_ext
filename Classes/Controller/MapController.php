@@ -49,14 +49,14 @@ class MapController extends ActionController
      *
      * @var MapRepository
      */
-    protected $mapRepository = null;
+    protected $mapRepository;
 
     /**
      * addressRepository
      *
      * @var AddressRepository
      */
-    protected $addressRepository = null;
+    protected $addressRepository;
 
     /**
      * Inject a mapRepository
@@ -148,7 +148,6 @@ class MapController extends ActionController
      * show action
      *
      * @param Map $map
-     * @return void
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
@@ -180,7 +179,7 @@ class MapController extends ActionController
                     $categoriesArray[$addressCategory->getSorting()] = $addressCategory;
                 }
             }
-            if($categoriesArray) {
+            if ($categoriesArray) {
                 ksort($categoriesArray);
             }
         }

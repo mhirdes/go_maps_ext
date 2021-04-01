@@ -77,7 +77,6 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
      * Sets the gmeMarker
      *
      * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $gmeMarker
-     * @return void
      */
     public function setGmeMarker(FileReference $gmeMarker)
     {
@@ -108,7 +107,6 @@ class Category extends \TYPO3\CMS\Extbase\Domain\Model\Category
      * Sets the imageSize
      *
      * @param bool $gmeImageSize
-     * @return void
      */
     public function setGmeImageSize($gmeImageSize)
     {

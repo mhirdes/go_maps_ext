@@ -282,8 +282,6 @@ class Map extends AbstractEntity
 
     /**
      * __construct
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -293,8 +291,6 @@ class Map extends AbstractEntity
 
     /**
      * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
-     *
-     * @return void
      */
     protected function initStorageObjects()
     {
@@ -320,7 +316,6 @@ class Map extends AbstractEntity
      * Sets the title
      *
      * @param \string $title
-     * @return void
      */
     public function setTitle($title)
     {
@@ -339,7 +334,6 @@ class Map extends AbstractEntity
      * Sets the width
      *
      * @param \string $width
-     * @return void
      */
     public function setWidth($width)
     {
@@ -360,7 +354,6 @@ class Map extends AbstractEntity
      * Sets the height
      *
      * @param \string $height
-     * @return void
      */
     public function setHeight($height)
     {
@@ -381,7 +374,6 @@ class Map extends AbstractEntity
      * Sets the zoom
      *
      * @param int $zoom
-     * @return void
      */
     public function setZoom($zoom)
     {
@@ -402,7 +394,6 @@ class Map extends AbstractEntity
      * Sets the zoomMin
      *
      * @param int $zoomMin
-     * @return void
      */
     public function setZoomMin($zoomMin)
     {
@@ -423,7 +414,6 @@ class Map extends AbstractEntity
      * Sets the zoomMax
      *
      * @param int $zoomMax
-     * @return void
      */
     public function setZoomMax($zoomMax)
     {
@@ -434,7 +424,6 @@ class Map extends AbstractEntity
      * Adds a Address
      *
      * @param \Clickstorm\GoMapsExt\Domain\Model\Address $address
-     * @return void
      */
     public function addAddress(Address $address)
     {
@@ -445,7 +434,6 @@ class Map extends AbstractEntity
      * Removes a Address
      *
      * @param \Clickstorm\GoMapsExt\Domain\Model\Address $addressToRemove The Address to be removed
-     * @return void
      */
     public function removeAddress(Address $addressToRemove)
     {
@@ -466,7 +454,6 @@ class Map extends AbstractEntity
      * Sets the addresses
      *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address> $addresses
-     * @return void
      */
     public function setAddresses(ObjectStorage $addresses)
     {
@@ -487,7 +474,6 @@ class Map extends AbstractEntity
      * Sets the kmlUrl
      *
      * @param \string $kmlUrl
-     * @return void
      */
     public function kmlUrl($kmlUrl)
     {
@@ -518,7 +504,6 @@ class Map extends AbstractEntity
      * Sets the kmlPreserveViewport
      *
      * @param bool $kmlPreserveViewport
-     * @return void
      */
     public function setKmlPreserveViewport($kmlPreserveViewport)
     {
@@ -549,7 +534,6 @@ class Map extends AbstractEntity
      * Sets the kmlLocal
      *
      * @param bool $kmlLocal
-     * @return void
      */
     public function setKmlLocal($kmlLocal)
     {
@@ -570,7 +554,6 @@ class Map extends AbstractEntity
      * Sets the showAddresses
      *
      * @param bool $showAddresses
-     * @return void
      */
     public function setShowAddresses($showAddresses)
     {
@@ -601,7 +584,6 @@ class Map extends AbstractEntity
      * Sets the showCategories
      *
      * @param bool $showCategories
-     * @return void
      */
     public function setShowCategories($showCategories)
     {
@@ -632,7 +614,6 @@ class Map extends AbstractEntity
      * Sets the scrollZoom
      *
      * @param bool $scrollZoom
-     * @return void
      */
     public function setScrollZoom($scrollZoom)
     {
@@ -663,7 +644,6 @@ class Map extends AbstractEntity
      * Sets the draggable
      *
      * @param bool $draggable
-     * @return void
      */
     public function setDraggable($draggable)
     {
@@ -694,7 +674,6 @@ class Map extends AbstractEntity
      * Sets the doubleClickZoom
      *
      * @param bool $doubleClickZoom
-     * @return void
      */
     public function setDoubleClickZoom($doubleClickZoom)
     {
@@ -725,7 +704,6 @@ class Map extends AbstractEntity
      * Sets the markerCluster
      *
      * @param bool $markerCluster
-     * @return void
      */
     public function setMarkerCluster($markerCluster)
     {
@@ -746,7 +724,6 @@ class Map extends AbstractEntity
      * Sets the markerClusterZoom
      *
      * @param int $markerClusterZoom
-     * @return void
      */
     public function setMarkerClusterZoom($markerClusterZoom)
     {
@@ -767,7 +744,6 @@ class Map extends AbstractEntity
      * Sets the markerClusterSize
      *
      * @param int $markerClusterSize
-     * @return void
      */
     public function setMarkerClusterSize($markerClusterSize)
     {
@@ -788,7 +764,6 @@ class Map extends AbstractEntity
      * Sets the markerClusterStyle
      *
      * @param \string $markerClusterStyle
-     * @return void
      */
     public function setMarkerClusterStyle($markerClusterStyle)
     {
@@ -819,7 +794,6 @@ class Map extends AbstractEntity
      * Sets the markerSearch
      *
      * @param bool $markerSearch
-     * @return void
      */
     public function setMarkerSearch($markerSearch)
     {
@@ -840,7 +814,6 @@ class Map extends AbstractEntity
      * Sets the defaultType
      *
      * @param int $defaultType
-     * @return void
      */
     public function setDefaultType($defaultType)
     {
@@ -887,7 +860,6 @@ class Map extends AbstractEntity
      * Sets the scaleControl
      *
      * @param bool $scaleControl
-     * @return void
      */
     public function setScaleControl($scaleControl)
     {
@@ -918,7 +890,6 @@ class Map extends AbstractEntity
      * Sets the streetviewControl
      *
      * @param bool $streetviewControl
-     * @return void
      */
     public function setStreetviewControl($streetviewControl)
     {
@@ -949,7 +920,6 @@ class Map extends AbstractEntity
      * Sets the fullscreenControl
      *
      * @param bool $fullscreenControl
-     * @return void
      */
     public function setFullscreenControl($fullscreenControl)
     {
@@ -980,7 +950,6 @@ class Map extends AbstractEntity
      * Sets the zoomControl
      *
      * @param bool $zoomControl
-     * @return void
      */
     public function setZoomControl($zoomControl)
     {
@@ -1011,7 +980,6 @@ class Map extends AbstractEntity
      * Sets the mapTypeControl
      *
      * @param bool $mapTypeControl
-     * @return void
      */
     public function setMapTypeControl($mapTypeControl)
     {
@@ -1032,7 +1000,6 @@ class Map extends AbstractEntity
      * Sets the mapTypes
      *
      * @param \string $mapTypes
-     * @return void
      */
     public function setMapTypes($mapTypes)
     {
@@ -1063,7 +1030,6 @@ class Map extends AbstractEntity
      * Sets the showRoute
      *
      * @param bool $showRoute
-     * @return void
      */
     public function setShowRoute($showRoute)
     {
@@ -1084,7 +1050,6 @@ class Map extends AbstractEntity
      * Sets the styledMapName
      *
      * @param \string $styledMapName
-     * @return void
      */
     public function setStyledMapName($styledMapName)
     {
@@ -1105,7 +1070,6 @@ class Map extends AbstractEntity
      * Sets the styledMapCode
      *
      * @param \string $styledMapCode
-     * @return void
      */
     public function setStyledMapCode($styledMapCode)
     {
@@ -1121,9 +1085,8 @@ class Map extends AbstractEntity
     {
         if ($this->getCalcRoute() == 1 || $this->getTravelMode() == 1 || $this->getUnitSystem() == 1) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     /**
@@ -1150,7 +1113,6 @@ class Map extends AbstractEntity
      * Sets the calcRoute
      *
      * @param bool $calcRoute
-     * @return void
      */
     public function setCalcRoute($calcRoute)
     {
@@ -1171,7 +1133,6 @@ class Map extends AbstractEntity
      * Sets the travelMode
      *
      * @param int $travelMode
-     * @return void
      */
     public function setTravelMode($travelMode)
     {
@@ -1192,7 +1153,6 @@ class Map extends AbstractEntity
      * Sets the unitSystem
      *
      * @param int $unitSystem
-     * @return void
      */
     public function setUnitSystem($unitSystem)
     {
@@ -1248,7 +1208,6 @@ class Map extends AbstractEntity
      * Sets the latitude
      *
      * @param \float $latitude
-     * @return void
      */
     public function setLatitude($latitude)
     {
@@ -1269,7 +1228,6 @@ class Map extends AbstractEntity
      * Sets the longitude
      *
      * @param \float $longitude
-     * @return void
      */
     public function setLongitude($longitude)
     {
@@ -1300,7 +1258,6 @@ class Map extends AbstractEntity
      * Sets the geolocation
      *
      * @param bool $geolocation
-     * @return void
      */
     public function setGeolocation($geolocation)
     {
