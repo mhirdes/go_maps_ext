@@ -2,6 +2,8 @@
 
 namespace Clickstorm\GoMapsExt\ViewHelpers;
 
+use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
+use TYPO3\CMS\Core\Page\PageRenderer;
 /**
  *  Copyright notice
  *
@@ -51,11 +53,11 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  * </output>
  *
  */
-class ScriptViewHelper extends \TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper
+class ScriptViewHelper extends AbstractViewHelper
 {
     public function render()
     {
-        GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class)
+        GeneralUtility::makeInstance(PageRenderer::class)
               ->addJsFooterFile(
                   GeneralUtility::writeJavaScriptContentToTemporaryFile($this->renderChildren())
               );

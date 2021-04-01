@@ -11,12 +11,12 @@ defined('TYPO3_MODE') or die();
     []
 );
 
-$TYPO3_CONF_VARS['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_map'][0] = [
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_map'][0] = [
     'fList' => 'title,default_type',
     'icon' => true
 ];
 
-$TYPO3_CONF_VARS['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_address'][0] = [
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_address'][0] = [
     'fList' => 'title, info_window_content',
     'icon' => true
 ];
