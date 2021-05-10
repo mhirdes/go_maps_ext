@@ -20,7 +20,7 @@ Users Manual
 |img-4|
 
 Map
-"""""
+"""
 
 One Map represents one Google Map in the frontend.
 
@@ -578,3 +578,38 @@ Of course there are some more options...
 
 
 .. ###### END~OF~TABLE ######
+
+
+API Key
+"""""""
+
+An API Key is required for your Google Map. The integrator can set the API
+Key via TypoScript or an editor creates an API Key and set them in the FlexForm
+of the Plugin.
+
+.. ### BEGIN~OF~TABLE ###
+
+.. container:: table-row
+
+   Property
+         title
+
+   Description
+         Only for internal usage.
+
+         [required]
+
+
+.. container:: table-row
+
+   Property
+         API Key
+
+   Description
+         An API Key for Google Maps. More information_. Get your apiKey_.
+
+
+.. ###### END~OF~TABLE ######
+
+.. _information: http://googlegeodevelopers.blogspot.de/2016/06/building-for-scale-updates-to-google.html
+.. _apiKey: https://developers.google.com/maps/documentation/javascript/get-api-key

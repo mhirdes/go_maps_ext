@@ -34,6 +34,25 @@
 							</config>
 						</TCEforms>
 					</settings.map>
+                    <settings.ff.apiKey>
+                        <TCEforms>
+                            <label>
+                                LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_flexform_settings.apiKey
+                            </label>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>tx_gomapsext_domain_model_key</allowed>
+                                <size>1</size>
+                                <maxitems>1</maxitems>
+                                <wizards>
+                                    <suggest>
+                                        <type>suggest</type>
+                                    </suggest>
+                                </wizards>
+                            </config>
+                        </TCEforms>
+                    </settings.ff.apiKey>
 				</el>
 			</ROOT>
 		</sDEF>

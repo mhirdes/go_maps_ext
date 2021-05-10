@@ -13,13 +13,13 @@ Extension Configurations
 
    Property
          include\_library
-   
+
    Data type
          boolean
-   
+
    Description
          Use JavaScript Library from Extension: jQuery
-   
+
    Default
          0
 
@@ -60,13 +60,13 @@ Extension Configurations
 
    Property
          footerJS
-   
+
    Data type
          boolean
-   
+
    Description
          Adds all JavaScript to the footer of the body instead of the head
-   
+
    Default
          1
 
@@ -83,13 +83,13 @@ Constants
 
    Property
          view.templateRootPath
-   
+
    Data type
          file
-   
+
    Description
          Path to template root (FE)
-   
+
    Default
          EXT:go\_maps\_ext/Resources/Private/Templates/
 
@@ -98,13 +98,13 @@ Constants
 
    Property
          view.layoutRootPath
-   
+
    Data type
          file
-   
+
    Description
          Path to template layouts (FE)
-   
+
    Default
          EXT:go\_maps\_ext/Resources/Private/Layouts/
 
@@ -113,13 +113,13 @@ Constants
 
    Property
          view.partialRootPath
-   
+
    Data type
          file
-   
+
    Description
          Path to template partials (FE)
-   
+
    Default
          EXT:go\_maps\_ext/Resources/Private/Partials/
 
@@ -128,10 +128,10 @@ Constants
 
    Property
          settings.storagePid
-   
+
    Data type
          integer/String
-   
+
    Description
          If integer is set, it will display all addresses from this PID and additionally from the TCA, if the string "this" is set, it will show the addresses from the current active page uid (i.e. settings.storagePid = "this")
          field
@@ -146,20 +146,20 @@ Constants
          String
 
    Description
-         Set the API key. Required for new domains. More information_. Get your apiKey_.
+         Set the default API key. Can also be set by an editor in the FlexForm of an Plugin. More information_. Get your apiKey_.
 
 
 .. container:: table-row
 
    Property
          settings.googleMapsLibrary
-   
+
    Data type
          String
-   
+
    Description
          Configure the URL form which the Google Maps JS is loaded
-   
+
    Default
          //maps.google.com/maps/api/js?v=3.28
 
@@ -168,14 +168,14 @@ Constants
 
    Property
          settings.infoWindow.openByClick
-   
+
    Data type
          boolean
-   
+
    Description
          Open InfoWindows by click instead of mouse over. Global configuration
          for all addresses.
-   
+
    Default
          0
 
@@ -184,14 +184,14 @@ Constants
 
    Property
          settings.infoWindow.closeByClick
-   
+
    Data type
          boolean
-   
+
    Description
          Close InfoWindows by click instead of mouse out. Global configuration
          for all addresses.
-   
+
    Default
          0
 
@@ -260,14 +260,14 @@ Constants
 
    Property
          forceLanguage
-   
+
    Data type
          boolean
-   
+
    Description
          Force the language of the map to be equal to the page language. If false the language depends on the
          browser settings.
-   
+
    Default
          1
 

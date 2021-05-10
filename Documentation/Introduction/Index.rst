@@ -24,6 +24,8 @@ Features
 
 - Uses Version 3 of the Google Maps API, API key needed
 
+- API keys can be set by editors using an extra table and FlexForms
+
 - Add your own markers via geocoding in the backend
 
 - Customize the content of the InfoWindow via RTE

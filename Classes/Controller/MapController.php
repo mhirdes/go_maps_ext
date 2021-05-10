@@ -29,7 +29,9 @@ namespace Clickstorm\GoMapsExt\Controller;
 
 use Clickstorm\GoMapsExt\Domain\Model\Map;
 use Clickstorm\GoMapsExt\Domain\Repository\AddressRepository;
+use Clickstorm\GoMapsExt\Domain\Repository\KeyRepository;
 use Clickstorm\GoMapsExt\Domain\Repository\MapRepository;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
@@ -59,6 +61,17 @@ class MapController extends ActionController
     protected $addressRepository;
 
     /**
+     * keyRepository
+     *
+     * @var KeyRepository
+     */
+    protected $keyRepository = null;
+    /**
+     * @var string
+     */
+    protected $googleMapsLibrary;
+
+    /**
      * Inject a mapRepository
      *
      * @param MapRepository $mapRepository
@@ -79,9 +92,14 @@ class MapController extends ActionController
     }
 
     /**
-     * @var string
+     * Inject a keyRepository
+     *
+     * @param KeyRepository $keyRepository
      */
-    protected $googleMapsLibrary;
+    public function injectKeyRepository(KeyRepository $keyRepository)
+    {
+        $this->keyRepository = $keyRepository;
+    }
 
     public function initializeAction()
     {
@@ -96,8 +114,11 @@ class MapController extends ActionController
 
         $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?? '//maps.google.com/maps/api/js?v=weekly';
 
-        if ($this->settings['apiKey']) {
-            $this->googleMapsLibrary .= '&key=' . $this->settings['apiKey'];
+        // get the apiKey
+        $apiKey = $this->getFinalApiKey();
+
+        if ($apiKey) {
+            $this->googleMapsLibrary .= '&key=' . $apiKey;
         }
 
         if ($this->settings['forceLanguage']) {
@@ -118,7 +139,7 @@ class MapController extends ActionController
             );
         }
 
-        $pathPrefix =  PathUtility::getAbsoluteWebPath(ExtensionManagementUtility::extPath($this->request->getControllerExtensionKey()));
+        $pathPrefix = PathUtility::getAbsoluteWebPath(ExtensionManagementUtility::extPath($this->request->getControllerExtensionKey()));
         if ($extConf['include_library'] === '1') {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'jQuery',
@@ -186,9 +207,27 @@ class MapController extends ActionController
 
         $this->view->assignMultiple([
             'request' => $this->request->getArguments(),
-            'map' => $map, 'addresses' => $addresses,
+            'map' => $map,
+            'addresses' => $addresses,
             'categories' => $categoriesArray,
             'googleMapsLibrary' => $this->googleMapsLibrary
         ]);
+    }
+
+    /**
+     * either apiKey from Flexform or TypoScript
+     *
+     * @return string
+     */
+    protected function getFinalApiKey(): string
+    {
+        if (is_array($this->settings['ff']) && $this->settings['ff']['apiKey']) {
+            $apiKeyRecord = $this->keyRepository->findByUid((int)$this->settings['ff']['apiKey']);
+            if ($apiKeyRecord) {
+                return $apiKeyRecord->getApiKey();
+            }
+        }
+
+        return $this->settings['apiKey'] ?: '';
     }
 }
