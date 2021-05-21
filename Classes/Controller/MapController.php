@@ -191,13 +191,15 @@ class MapController extends ActionController
         }
 
         // get categories
-        if ($map->isShowCategories()) {
+        if ($map->isShowCategories() && $addresses->count() > 0) {
             foreach ($addresses as $address) {
                 /* @var \Clickstorm\GoMapsExt\Domain\Model\Address $address */
                 $addressCategories = $address->getCategories();
-                /* @var \Clickstorm\GoMapsExt\Domain\Model\Category $addressCategory */
-                foreach ($addressCategories as $addressCategory) {
-                    $categoriesArray[$addressCategory->getSorting()] = $addressCategory;
+                if($addressCategories && $addressCategories->count() > 0) {
+                    /* @var \Clickstorm\GoMapsExt\Domain\Model\Category $addressCategory */
+                    foreach ($addressCategories as $addressCategory) {
+                        $categoriesArray[$addressCategory->getSorting()] = $addressCategory;
+                    }
                 }
             }
             if ($categoriesArray) {
