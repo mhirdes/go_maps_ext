@@ -2,6 +2,7 @@
 
 namespace Clickstorm\GoMapsExt\Controller;
 
+use Psr\Http\Message\ResponseInterface;
 /***************************************************************
  *  Copyright notice
  *
@@ -173,7 +174,7 @@ class MapController extends ActionController
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
      * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
      */
-    public function showAction(Map $map = null)
+    public function showAction(Map $map = null): ResponseInterface
     {
         $categoriesArray = [];
 
@@ -214,6 +215,7 @@ class MapController extends ActionController
             'categories' => $categoriesArray,
             'googleMapsLibrary' => $this->googleMapsLibrary
         ]);
+        return $this->htmlResponse();
     }
 
     /**
