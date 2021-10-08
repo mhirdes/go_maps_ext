@@ -1083,7 +1083,7 @@ class Map extends AbstractEntity
      */
     public function getShowForm()
     {
-        if ($this->getCalcRoute() == 1 || $this->getTravelMode() == 1 || $this->getUnitSystem() == 1) {
+        if ($this->getCalcRoute() || $this->getTravelMode() === 1 || $this->getUnitSystem() === 1 || $this->getMarkerSearch()) {
             return true;
         }
         return false;
