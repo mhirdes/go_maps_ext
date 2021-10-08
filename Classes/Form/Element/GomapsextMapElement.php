@@ -54,7 +54,7 @@ class GomapsextMapElement extends AbstractFormElement
 
         $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? ' //maps.google.com/maps/api/js?v=weekly';
 
-        if ($pluginSettings['apiKey']) {
+        if (isset($pluginSettings['apiKey']) && !empty($pluginSettings['apiKey'])) {
             $googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
         }
 
@@ -79,27 +79,24 @@ class GomapsextMapElement extends AbstractFormElement
         $zipFieldName = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['zip'] . ']';
         $cityFieldName = $dataPrefix . '[' . $this->data['parameterArray']['fieldConf']['config']['parameters']['city'] . ']';
 
-        $updateJs = "TBE_EDITOR.fieldChanged('%s','%s','%s','%s');";
+        $updateJs = 'document.querySelector(\'[name="data[%s][%s][%s]"]\').dispatchEvent(new Event(\'change\', {bubbles: true, cancelable: true}));';
         $updateLatitudeJs = sprintf(
             $updateJs,
             $this->data['tableName'],
             $this->data['databaseRow']['uid'],
-            $this->data['parameterArray']['fieldConf']['config']['parameters']['latitude'],
-            $latitudeField
+            'latitude'
         );
         $updateLongitudeJs = sprintf(
             $updateJs,
             $this->data['tableName'],
             $this->data['databaseRow']['uid'],
-            $this->data['parameterArray']['fieldConf']['config']['parameters']['longitude'],
-            $longitudeField
+            'longitude'
         );
         $updateAddressJs = sprintf(
             $updateJs,
             $this->data['tableName'],
             $this->data['databaseRow']['uid'],
-            $this->data['parameterArray']['fieldConf']['config']['parameters']['address'],
-            $addressField
+            'address'
         );
 
         $out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
@@ -226,7 +223,7 @@ TxClimbingSites.positionChanged = function() {
 }
 
 TxClimbingSites.updateValue = function(fieldName, value) {
-    document[TBE_EDITOR.formname][fieldName].value = value;
+    document['editform'][fieldName].value = value;
     window.$('[data-formengine-input-name="' + fieldName + '"]').val(value);
 }
 

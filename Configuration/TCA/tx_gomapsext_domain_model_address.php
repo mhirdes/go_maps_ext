@@ -383,5 +383,10 @@ return [
                 'MM_opposite_field' => 'map',
             ],
         ],
+        'categories' => [
+            'config' => [
+                'type' => 'category'
+            ]
+        ]
     ],
 ];

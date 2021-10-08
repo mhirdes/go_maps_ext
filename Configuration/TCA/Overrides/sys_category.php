@@ -3,6 +3,11 @@
 defined('TYPO3') or die();
 
 $tempCols = [
+    'sorting' => [
+        'config' => [
+            'type' => 'passthrough'
+        ]
+    ],
     'gme_marker' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.marker',
