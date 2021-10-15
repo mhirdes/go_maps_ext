@@ -1,5 +1,5 @@
 {
-	"name": "clickstorm/go_maps_ext",
+	"name": "clickstorm/go-maps-ext",
 	"type": "typo3-cms-extension",
 	"description": "Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route, images for markers, style maps, KML, categories, responsive and many more.",
 	"homepage": "https://www.clickstorm.de",
