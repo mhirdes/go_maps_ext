@@ -223,6 +223,10 @@
 				<source><![CDATA[Update by Position]]></source>
 				<target><![CDATA[Aktualisiere mit Position]]></target>
 			</trans-unit>
+			<trans-unit id="show_nomapfound" resname="show_nomapfound">
+				<source><![CDATA[No map available.]]></source>
+				<target><![CDATA[Keine Karte vorhanden.]]></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
