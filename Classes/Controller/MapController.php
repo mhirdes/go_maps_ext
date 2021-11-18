@@ -181,6 +181,10 @@ class MapController extends ActionController
         // get current map
         /* @var Map $map */
         $map = $map ?? $this->mapRepository->findByUid($this->settings['map']);
+        
+        if (is_null($map)) {
+            return;
+        }
 
         // find addresses
         $addresses = $map->getAddresses();
