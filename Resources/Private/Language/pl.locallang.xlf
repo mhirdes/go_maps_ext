@@ -208,6 +208,10 @@
 				<source><![CDATA[Search]]></source>
 				<target><![CDATA[Szukaj]]></target>
 			</trans-unit>
+			<trans-unit id="show_nomapfound" resname="show_nomapfound">
+				<source><![CDATA[No map available.]]></source>
+				<target><![CDATA[Brak dostępnej mapy.]]></target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
