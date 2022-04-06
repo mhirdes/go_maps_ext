@@ -30,7 +30,6 @@ namespace Clickstorm\GoMapsExt\Form\Element;
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
@@ -308,8 +307,7 @@ EOT;
      */
     private static function getSettings(): array
     {
-        return GeneralUtility::makeInstance(ObjectManager::class)
-            ->get(ConfigurationManagerInterface::class)
+        return GeneralUtility::makeInstance(ConfigurationManagerInterface::class)
             ->getConfiguration(
                 ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
             )['plugin.']['tx_gomapsext.']['settings.'] ?? [];
