@@ -190,16 +190,29 @@ class MapController extends ActionController
             $addresses = $this->addressRepository->findAllAddresses($map, $pid);
         }
 
+        // respect category param
+        $addresses = $addresses->toArray();
+        $activeCategoryByUrl = $this->request->hasArgument('category') ?
+            (int)$this->request->getArgument('category') : 0;
+
         // get categories
-        if ($map->isShowCategories() && $addresses->count() > 0) {
-            foreach ($addresses as $address) {
+        if ($map->isShowCategories() && count($addresses) > 0) {
+            foreach ($addresses as $addressKey => $address) {
                 /* @var \Clickstorm\GoMapsExt\Domain\Model\Address $address */
                 $addressCategories = $address->getCategories();
-                if($addressCategories && $addressCategories->count() > 0) {
+                $addressHasActiveCategory = false;
+                if ($addressCategories && $addressCategories->count() > 0) {
                     /* @var \Clickstorm\GoMapsExt\Domain\Model\Category $addressCategory */
                     foreach ($addressCategories as $addressCategory) {
                         $categoriesArray[$addressCategory->getSorting()] = $addressCategory;
+                        if ($activeCategoryByUrl > 0 && $addressCategory->getUid() === $activeCategoryByUrl) {
+                            $addressHasActiveCategory = true;
+                        }
                     }
+                }
+                // filter by active category
+                if ($activeCategoryByUrl > 0 && !$addressHasActiveCategory) {
+                    unset($addresses[$addressKey]);
                 }
             }
             if ($categoriesArray) {
