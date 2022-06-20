@@ -2,9 +2,17 @@
 <ul class="gme-cats">
 	<f:for each="{categories}" as="category">
 		<li>
-			<f:form.checkbox id="gme-cat-{category.uid}" name="tx_csgomapsext_show[cat]" value="{category.uid}" class="js-gme-cat" title="{category.title}"/>
+			<f:form.checkbox checked="{f:if(condition: '{request.cat} == {category.uid}',then:'checked')}" id="gme-cat-{category.uid}" name="tx_csgomapsext_show[cat]" value="{category.uid}" class="js-gme-cat" title="{category.title}"/>
 			<label for="gme-cat-{category.uid}">{category.title}</label>
 		</li>
 	</f:for>
+	<f:comment>
+		<!-- example for linking categories -->
+		<f:for each="{categories}" as="category">
+			<li{f:if(condition: '{request.category} == {category.uid}', then: ' class="active"')}>
+				<f:link.action arguments="{category:category.uid}">{category.title}</f:link.action>
+			</li>
+		</f:for>
+	</f:comment>
 </ul>
 </html>
