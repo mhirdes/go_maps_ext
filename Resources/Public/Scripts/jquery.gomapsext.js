@@ -452,7 +452,7 @@
                 geolocation: gme.mapSettings.geolocation,
                 draggable: gme.mapSettings.draggable,
                 disableDoubleClickZoom: gme.mapSettings.doubleClickZoom,
-                scrollwheel: gme.mapSettings.scrollZoom,
+                gestureHandling: gme.mapSettings.scrollZoom ? 'auto' : 'none',
                 scaleControl: gme.mapSettings.scaleControl,
                 streetViewControl: gme.mapSettings.streetviewControl,
                 fullscreenControl: gme.mapSettings.fullscreenControl,
@@ -535,7 +535,7 @@
                     var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                     myloc.setPosition(me);
                     var mycenter = {
-                        lat: pos.coords.latitude, 
+                        lat: pos.coords.latitude,
                         lng: pos.coords.longitude
                     };
                     _map.setCenter(mycenter);
