@@ -179,9 +179,11 @@ class MapController extends ActionController
         $categoriesArray = [];
 
         // get current map
-        /* @var Map $map */
-        $map = $map ?? $this->mapRepository->findByUid($this->settings['map']);
-        
+        if(is_null($map) && isset($this->settings['map'])) {
+            /* @var Map $map */
+            $map = $this->mapRepository->findByUid($this->settings['map']);
+        }
+
         if (is_null($map)) {
             return $this->htmlResponse();
         }
@@ -243,7 +245,7 @@ class MapController extends ActionController
      */
     protected function getFinalApiKey(): string
     {
-        if (is_array($this->settings['ff']) && $this->settings['ff']['apiKey']) {
+        if (isset($this->settings['ff']) && is_array($this->settings['ff']) && $this->settings['ff']['apiKey']) {
             $apiKeyRecord = $this->keyRepository->findByUid((int)$this->settings['ff']['apiKey']);
             if ($apiKeyRecord) {
                 return $apiKeyRecord->getApiKey();
