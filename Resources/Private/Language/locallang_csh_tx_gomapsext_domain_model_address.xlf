@@ -1,54 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-01T07:19:58Z">
-		<header>
-			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_address</description>
-			<type>CSH</type>
-			<csh_table>tx_gomapsext_domain_model_address</csh_table>
-			<authorName>Marc Hirdes</authorName>
-			<authorEmail>marc_hirdes@gmx.de</authorEmail>
-			<generator>LFEditor</generator>
-		</header>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_address.xlf" date="2023-03-16T09:58:26Z" product-name="go_maps_ext">
+		<header/>
 		<body>
-		<trans-unit id="address.description">
-			<source>Please enter an address or coordinates on the position field above and press update.</source>
-		</trans-unit>
-		<trans-unit id="close_by_click.description">
-			<source>Close InfoWindow by click instead of mouse out.</source>
-		</trans-unit>
-		<trans-unit id="configuration_map.description">
-			<source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
-		</trans-unit>
-		<trans-unit id="image_height.description">
-			<source>Costum image height in pixel.</source>
-		</trans-unit>
-		<trans-unit id="image_size.description">
-			<source>Check if the image has a different size then default. The image should be twice as large as indicated.</source>
-		</trans-unit>
-		<trans-unit id="image_width.description">
-			<source>Costum image width in pixel.</source>
-		</trans-unit>
-		<trans-unit id="info_window_content.description">
-			<source>This will be displayed in the InfoWindow of this marker.</source>
-		</trans-unit>
-		<trans-unit id="info_window_link.description">
-			<source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
-		</trans-unit>
-		<trans-unit id="latitude.description">
-			<source>Please enter an address or coordinates on the position field above and press update.</source>
-		</trans-unit>
-		<trans-unit id="longitude.description">
-			<source>Please enter an address or coordinates on the position field above and press update.</source>
-		</trans-unit>
-		<trans-unit id="marker.description">
-			<source>Choose a costum image for the pin.</source>
-		</trans-unit>
-		<trans-unit id="open_by_click.description">
-			<source>Open InfoWindow by click instead of mouse over.</source>
-		</trans-unit>
-		<trans-unit id="opened.description">
-			<source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
-		</trans-unit>
+			<trans-unit id="address.description" resname="address.description">
+				<source>Please enter an address or coordinates on the position field above and press update.</source>
+			</trans-unit>
+			<trans-unit id="close_by_click.description" resname="close_by_click.description">
+				<source>Close InfoWindow by click instead of mouse out.</source>
+			</trans-unit>
+			<trans-unit id="configuration_map.description" resname="configuration_map.description">
+				<source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
+			</trans-unit>
+			<trans-unit id="image_height.description" resname="image_height.description">
+				<source>Costum image height in pixel.</source>
+			</trans-unit>
+			<trans-unit id="image_size.description" resname="image_size.description">
+				<source>Check if the image has a different size then default. The image should be twice as large as indicated.</source>
+			</trans-unit>
+			<trans-unit id="image_width.description" resname="image_width.description">
+				<source>Costum image width in pixel.</source>
+			</trans-unit>
+			<trans-unit id="info_window_content.description" resname="info_window_content.description">
+				<source>This will be displayed in the InfoWindow of this marker.</source>
+			</trans-unit>
+			<trans-unit id="info_window_images.description" resname="info_window_images.description">
+				<source>This will be displayed in the InfoWindow of this marker.</source>
+			</trans-unit>
+			<trans-unit id="info_window_link.description" resname="info_window_link.description">
+				<source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
+			</trans-unit>
+			<trans-unit id="latitude.description" resname="latitude.description">
+				<source>Please enter an address or coordinates on the position field above and press update.</source>
+			</trans-unit>
+			<trans-unit id="longitude.description" resname="longitude.description">
+				<source>Please enter an address or coordinates on the position field above and press update.</source>
+			</trans-unit>
+			<trans-unit id="marker.description" resname="marker.description">
+				<source>Choose a costum image for the pin.</source>
+			</trans-unit>
+			<trans-unit id="open_by_click.description" resname="open_by_click.description">
+				<source>Open InfoWindow by click instead of mouse over.</source>
+			</trans-unit>
+			<trans-unit id="opened.description" resname="opened.description">
+				<source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
+			</trans-unit>
+			<trans-unit id="title.description" resname="title.description">
+				<source>For internal use only.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

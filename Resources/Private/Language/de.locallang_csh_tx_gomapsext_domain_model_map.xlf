@@ -1,167 +1,164 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<xliff version="1.0">
-	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2018-06-01T10:20:05Z">
-		<header>
-			<description>Context Sensitive Help (CSH) for table tx_gomapsext_domain_model_map</description>
-			<type>CSH</type>
-			<csh_table>tx_gomapsext_domain_model_map</csh_table>
-			<authorName>Marc Hirdes</authorName>
-			<authorEmail>marc_hirdes@gmx.de</authorEmail>
-			<generator>LFEditor</generator>
-		</header>
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf" date="2023-03-16T10:02:27Z" product-name="go_maps_ext">
+		<header/>
 		<body>
-		<trans-unit id="addresses.description" approved="yes">
-			<source>You can choose, create or edit an address. New addresses will be saved on the current page.</source>
-			<target>Datensätze können ausgewählt, angelegt oder bearbeitet werden. Neue Addressen werden auf der aktuellen Seite gespeichert.</target>
-		</trans-unit>
-		<trans-unit id="calc_route.description" approved="yes">
-			<source>Only 1 address used as destination. Display an text input for enter a starting point.</source>
-			<target>Nur eine Zieladresse muss angegeben werden. Zeigt einen Textinput für Startangabe.</target>
-		</trans-unit>
-		<trans-unit id="class.description" approved="yes">
-			<source>The class of the map container</source>
-			<target>Die CSS-Klasse des DIV-Containers.</target>
-		</trans-unit>
-		<trans-unit id="default_type.description" approved="yes">
-			<source>Maptype on the beginning.</source>
-			<target>Typ der Karte am Anfang.</target>
-		</trans-unit>
-		<trans-unit id="double_click_zoom.description" approved="yes">
-			<source>A double click on the map zooms in. Draggable map has to be enabled!</source>
-			<target>Bei Doppelklick wird hereingezoomt. Verschiebbare Karte muss aktiviert sein!</target>
-		</trans-unit>
-		<trans-unit id="draggable.description" approved="yes">
-			<source>Position of the map can be changed.</source>
-			<target>Die Position der Karte kann verändert werden.</target>
-		</trans-unit>
-		<trans-unit id="fullscreen_control.description" approved="yes">
-			<source>Shows an icon to enable the fullscreen.</source>
-			<target>Zeigt einen Icon zum aktivieren das Vollbild.</target>
-		</trans-unit>
-		<trans-unit id="height.description" approved="yes">
-			<source>Set the height of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
-			<target>Die Höhe der Karte Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</target>
-		</trans-unit>
-		<trans-unit id="kml_local.description" approved="yes">
-			<source>The KML file is stored on this server. The specified path is relative. Only markers appear.</source>
-			<target>Die KML Datei ist auf diesem Server gespeichert. Der angegeben Pfad ist relativ. Nur Marker werden angezeigt.</target>
-		</trans-unit>
-		<trans-unit id="kml_preserve_viewport.description" approved="yes">
-			<source>The viewport of the kml file will be ignored. Set zoom and at least one address to configure the viewport.</source>
-			<target>Der Kartenbereich der KML-Datei wird ignoriert. Mindestens eine Adresse ist erforderlich, um die Karte richtig zu zentrieren.</target>
-		</trans-unit>
-		<trans-unit id="kml_url.description" approved="yes">
-			<source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
-			<target>Geben Sie die URL einer KML-Datei an, z.B. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</target>
-		</trans-unit>
-		<trans-unit id="latitude.description" approved="yes">
-			<source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
-			<target>Überschreiben des Breitengrades vom Mittelpunkt der Karte. Normalerweise wird dieser anhand der Adressen berechnet.</target>
-		</trans-unit>
-		<trans-unit id="longitude.description" approved="yes">
-			<source>If set this longitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
-			<target>Überschreiben des Längengrades vom Mittelpunkt der Karte. Normalerweise wird dieser anhand der Adressen berechnet.</target>
-		</trans-unit>
-		<trans-unit id="map_type_control.description" approved="yes">
-			<source>Shows a control to change the map type.</source>
-			<target>Ermöglicht das Ändern der Kartentypen.</target>
-		</trans-unit>
-		<trans-unit id="map_types.description" approved="yes">
-			<source>Possible map types to choose. Map type control has to be enabled.</source>
-			<target>Mögliche Kartentypen. Kartentyp-Steuerung muss aktiviert sein.</target>
-		</trans-unit>
-		<trans-unit id="marker_cluster.description" approved="yes">
-			<source>Many markers in the same region will be summarized and appear as a cluster.</source>
-			<target>Viele Marker in der gleichen Region werden zusammengefasst und als ein Cluster dargestellt.</target>
-		</trans-unit>
-		<trans-unit id="marker_cluster_size.description" approved="yes">
-			<source>The size of the Clusters, like a radius.</source>
-			<target>Die Größe bzw. der Radius der Cluster.</target>
-		</trans-unit>
-		<trans-unit id="marker_cluster_style.description" approved="yes">
-			<source>JSON Code, for more information view details</source>
-			<target>JSON Code, mehr Informationen in der Detailansicht</target>
-		</trans-unit>
-		<trans-unit id="marker_cluster_zoom.description" approved="yes">
-			<source>Up to this zoom level the Clusters are displayed.</source>
-			<target>Bis zu diesdem Zoom-Level werden die Cluster dargsetellt.</target>
-		</trans-unit>
-		<trans-unit id="marker_search.description" approved="yes">
-			<source>Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</source>
-			<target>Zeigt ein Formular im Frontend, wo der Nutzer ein Suchwort eingeben kann. Durchsucht werden Titel und Info-Fenster Inhalt der Marker. Das Info-Fenster des zuerst gefundenen Markers öffnet sich.</target>
-		</trans-unit>
-		<trans-unit id="preview_image.description" approved="yes">
-			<source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
-			<target>Definieren Sie ein Bild, das als Vorschau der aktuellen Karte angezeigt werden soll. Wenn die Vorschau aktiviert ist, wird dieses Bild anstelle der Karte angezeigt. Erst wenn der Nutzer auf das Bild klickt, werden Daten von Google geladen und die Karte wird angezeigt.</target>
-		</trans-unit>
-		<trans-unit id="scale_control.description" approved="yes">
-			<source>Displays a measure.</source>
-			<target>Zeigt einen Maßstab.</target>
-		</trans-unit>
-		<trans-unit id="scroll_zoom.description" approved="yes">
-			<source>Enables zoom with scroll wheel. </source>
-			<target>Aktiviert die Zoomkontrolle via Scrollrad.</target>
-		</trans-unit>
-		<trans-unit id="show_addresses.description" approved="yes">
-			<source>Displays a list with all addresses incl. a link. If you click the selected address will be centered.</source>
-			<target>Zeigt eine Liste mit allen Adressen inkl. Verlinkungen. Bei Klick wird die ausgewählte Adresse zentriert.</target>
-		</trans-unit>
-		<trans-unit id="show_categories.description" approved="yes">
-			<source>Displays for each category a checkbox. Only the selected categories will be shown.</source>
-			<target>Zeigt für jede Kategorie eine Checkbox an. Nur die ausgewählten Kategorien werden angezeigt.</target>
-		</trans-unit>
-		<trans-unit id="show_route.description" approved="yes">
-			<source>2 address records needed! Shows the route between the given points.</source>
-			<target>2 Adress-Datensätze werden benötigt! Zeigt die Route zwischen den beiden Punkten.</target>
-		</trans-unit>
-		<trans-unit id="streetview_control.description" approved="yes">
-			<source>Shows an icon to enable the streetview.</source>
-			<target>Zeigt einen Icon zum aktivieren der StreetView.</target>
-		</trans-unit>
-		<trans-unit id="styled_map_code.description" approved="yes">
-			<source>JSON Code, for more view details</source>
-			<target>JSON Code, weitere Informationen in Detailansicht</target>
-		</trans-unit>
-		<trans-unit id="styled_map_name.description" approved="yes">
-			<source>Shown in the map type control.</source>
-			<target>Wird in der Kartensteuerung angezeigt.</target>
-		</trans-unit>
-		<trans-unit id="title.description" approved="yes">
-			<source>Will be used as ID (without space character, special character!).</source>
-			<target>Wird als ID genutzt (ohne Sonder- und Leerzeichen!).</target>
-		</trans-unit>
-		<trans-unit id="tooltip_title.description" approved="yes">
-			<source>Shown by mouse over.</source>
-			<target>Wird bei Mouseover angezeigt.</target>
-		</trans-unit>
-		<trans-unit id="travel_mode.description" approved="yes">
-			<source>Select a travel mode or let the frontend user select one.</source>
-			<target>Wählen Sie einen Reisemodi oder lassen Sie den Frontend Nutzer einen aussuchen.</target>
-		</trans-unit>
-		<trans-unit id="unit_system.description" approved="yes">
-			<source>Select a unit system or let the frontend user select one.</source>
-			<target>Wählen Sie eine Einheit oder lassen Sie den Frontend Nutzer eine aussuchen.</target>
-		</trans-unit>
-		<trans-unit id="width.description" approved="yes">
-			<source>Set the width of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
-			<target>Die Breite der Karte. Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</target>
-		</trans-unit>
-		<trans-unit id="zoom.description" approved="yes">
-			<source>Only need to set if default zoom is wrong.</source>
-			<target>Sollte nur gesetzt werden, wenn der Standardzoom nicht gewünscht ist.</target>
-		</trans-unit>
-		<trans-unit id="zoom_control.description" approved="yes">
-			<source>Enable buttons to change the zoom.</source>
-			<target>Zeigt Buttons zum ändern der Zoomstufe.</target>
-		</trans-unit>
-		<trans-unit id="zoom_max.description" approved="yes">
-			<source>The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.</source>
-			<target>Die maximale Zoomstufe, in der die Karte angezeigt wird. Wenn nicht angegeben oder auf null gesetzt, wird der maximale Zoom vom aktuellen Kartentyp verwendet.</target>
-		</trans-unit>
-		<trans-unit id="zoom_min.description" approved="yes">
-			<source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
-			<target>Der minimale Zoomstufe, in der die Karte angezeigt wird. Wenn nicht angegeben oder auf Null gesetzt, wird der minimale Zoom vom aktuellen Kartentyp verwendet.</target>
-		</trans-unit>
+			<trans-unit id="addresses.description" resname="addresses.description">
+				<source>You can choose, create or edit an address. New addresses will be saved on the current page.</source>
+				<target>Datensätze können ausgewählt, angelegt oder bearbeitet werden. Neue Addressen werden auf der aktuellen Seite gespeichert.</target>
+			</trans-unit>
+			<trans-unit id="calc_route.description" resname="calc_route.description">
+				<source>Only 1 address used as destination. Display an text input for enter a starting point.</source>
+				<target>Nur eine Zieladresse muss angegeben werden. Zeigt einen Textinput für Startangabe.</target>
+			</trans-unit>
+			<trans-unit id="class.description" resname="class.description">
+				<source>The class of the map container</source>
+				<target>Die CSS-Klasse des DIV-Containers.</target>
+			</trans-unit>
+			<trans-unit id="default_type.description" resname="default_type.description">
+				<source>Maptype on the beginning.</source>
+				<target>Typ der Karte am Anfang.</target>
+			</trans-unit>
+			<trans-unit id="double_click_zoom.description" resname="double_click_zoom.description">
+				<source>A double click on the map zooms in. Draggable map has to be enabled!</source>
+				<target>Bei Doppelklick wird hereingezoomt. Verschiebbare Karte muss aktiviert sein!</target>
+			</trans-unit>
+			<trans-unit id="draggable.description" resname="draggable.description">
+				<source>Position of the map can be changed.</source>
+				<target>Die Position der Karte kann verändert werden.</target>
+			</trans-unit>
+			<trans-unit id="fullscreen_control.description" resname="fullscreen_control.description">
+				<source>Shows an icon to enable the fullscreen.</source>
+				<target>Zeigt einen Icon zum aktivieren das Vollbild.</target>
+			</trans-unit>
+			<trans-unit id="height.description" resname="height.description">
+				<source>Set the height of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
+				<target>Die Höhe der Karte Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</target>
+			</trans-unit>
+			<trans-unit id="kml_local.description" resname="kml_local.description">
+				<source>The KML file is stored on this server. The specified path is relative. Only markers appear.</source>
+				<target>Die KML Datei ist auf diesem Server gespeichert. Der angegeben Pfad ist relativ. Nur Marker werden angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="kml_preserve_viewport.description" resname="kml_preserve_viewport.description">
+				<source>The viewport of the kml file will be ignored. Set zoom and at least one address to configure the viewport.</source>
+				<target>Der Kartenbereich der KML-Datei wird ignoriert. Mindestens eine Adresse ist erforderlich, um die Karte richtig zu zentrieren.</target>
+			</trans-unit>
+			<trans-unit id="kml_url.description" resname="kml_url.description">
+				<source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
+				<target>Geben Sie die URL einer KML-Datei an, z.B. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</target>
+			</trans-unit>
+			<trans-unit id="latitude.description" resname="latitude.description">
+				<source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
+				<target>Überschreiben des Breitengrades vom Mittelpunkt der Karte. Normalerweise wird dieser anhand der Adressen berechnet.</target>
+			</trans-unit>
+			<trans-unit id="longitude.description" resname="longitude.description">
+				<source>If set this longitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
+				<target>Überschreiben des Längengrades vom Mittelpunkt der Karte. Normalerweise wird dieser anhand der Adressen berechnet.</target>
+			</trans-unit>
+			<trans-unit id="geolocation.description" resname="geolocation.description">
+				<source>If set geolocation is activated. If location is possible and allowed by the user, a marker is shown representing the actual position and the map is centered to this point.</source>
+				<target></target>
+			</trans-unit>
+			<trans-unit id="map_type_control.description" resname="map_type_control.description">
+				<source>Shows a control to change the map type.</source>
+				<target>Ermöglicht das Ändern der Kartentypen.</target>
+			</trans-unit>
+			<trans-unit id="map_types.description" resname="map_types.description">
+				<source>Possible map types to choose. Map type control has to be enabled.</source>
+				<target>Mögliche Kartentypen. Kartentyp-Steuerung muss aktiviert sein.</target>
+			</trans-unit>
+			<trans-unit id="marker_cluster.description" resname="marker_cluster.description">
+				<source>Many markers in the same region will be summarized and appear as a cluster.</source>
+				<target>Viele Marker in der gleichen Region werden zusammengefasst und als ein Cluster dargestellt.</target>
+			</trans-unit>
+			<trans-unit id="marker_cluster_size.description" resname="marker_cluster_size.description">
+				<source>The size of the Clusters, like a radius.</source>
+				<target>Die Größe bzw. der Radius der Cluster.</target>
+			</trans-unit>
+			<trans-unit id="marker_cluster_style.description" resname="marker_cluster_style.description">
+				<source>JSON Code, for more information visit  https://github.com/googlemaps/js-marker-clusterer</source>
+				<target>JSON Code, mehr Informationen unter  https://github.com/googlemaps/js-marker-clusterer</target>
+			</trans-unit>
+			<trans-unit id="marker_cluster_zoom.description" resname="marker_cluster_zoom.description">
+				<source>Up to this zoom level the Clusters are displayed.</source>
+				<target>Bis zu diesdem Zoom-Level werden die Cluster dargsetellt.</target>
+			</trans-unit>
+			<trans-unit id="marker_search.description" resname="marker_search.description">
+				<source>Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</source>
+				<target>Zeigt ein Formular im Frontend, wo der Nutzer ein Suchwort eingeben kann. Durchsucht werden Titel und Info-Fenster Inhalt der Marker. Das Info-Fenster des zuerst gefundenen Markers öffnet sich.</target>
+			</trans-unit>
+			<trans-unit id="preview_image.description" resname="preview_image.description">
+				<source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
+				<target>Definieren Sie ein Bild, das als Vorschau der aktuellen Karte angezeigt werden soll. Wenn die Vorschau aktiviert ist, wird dieses Bild anstelle der Karte angezeigt. Erst wenn der Nutzer auf das Bild klickt, werden Daten von Google geladen und die Karte wird angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="scale_control.description" resname="scale_control.description">
+				<source>Displays a measure.</source>
+				<target>Zeigt einen Maßstab.</target>
+			</trans-unit>
+			<trans-unit id="scroll_zoom.description" resname="scroll_zoom.description">
+				<source>Enables zoom with scroll wheel. </source>
+				<target>Aktiviert die Zoomkontrolle via Scrollrad.</target>
+			</trans-unit>
+			<trans-unit id="show_addresses.description" resname="show_addresses.description">
+				<source>Displays a list with all addresses incl. a link. If you click the selected address will be centered.</source>
+				<target>Zeigt eine Liste mit allen Adressen inkl. Verlinkungen. Bei Klick wird die ausgewählte Adresse zentriert.</target>
+			</trans-unit>
+			<trans-unit id="show_categories.description" resname="show_categories.description">
+				<source>Displays for each category a checkbox. Only the selected categories will be shown.</source>
+				<target>Zeigt für jede Kategorie eine Checkbox an. Nur die ausgewählten Kategorien werden angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="show_route.description" resname="show_route.description">
+				<source>2 address records needed! Shows the route between the given points.</source>
+				<target>2 Adress-Datensätze werden benötigt! Zeigt die Route zwischen den beiden Punkten.</target>
+			</trans-unit>
+			<trans-unit id="streetview_control.description" resname="streetview_control.description">
+				<source>Shows an icon to enable the streetview.</source>
+				<target>Zeigt einen Icon zum aktivieren der StreetView.</target>
+			</trans-unit>
+			<trans-unit id="styled_map_code.description" resname="styled_map_code.description">
+				<source>JSON Code, for more information visit http://googlemaps.github.io/js-samples/styledmaps/wizard/index.html</source>
+				<target>JSON Code, weitere Informationen unter http://googlemaps.github.io/js-samples/styledmaps/wizard/index.html</target>
+			</trans-unit>
+			<trans-unit id="styled_map_name.description" resname="styled_map_name.description">
+				<source>Shown in the map type control.</source>
+				<target>Wird in der Kartensteuerung angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="title.description" resname="title.description">
+				<source>Will be used as ID (without space character, special character!).</source>
+				<target>Wird als ID genutzt (ohne Sonder- und Leerzeichen!).</target>
+			</trans-unit>
+			<trans-unit id="tooltip_title.description" resname="tooltip_title.description">
+				<source>Shown by mouse over.</source>
+				<target>Wird bei Mouseover angezeigt.</target>
+			</trans-unit>
+			<trans-unit id="travel_mode.description" resname="travel_mode.description">
+				<source>Select a travel mode or let the frontend user select one.</source>
+				<target>Wählen Sie einen Reisemodi oder lassen Sie den Frontend Nutzer einen aussuchen.</target>
+			</trans-unit>
+			<trans-unit id="unit_system.description" resname="unit_system.description">
+				<source>Select a unit system or let the frontend user select one.</source>
+				<target>Wählen Sie eine Einheit oder lassen Sie den Frontend Nutzer eine aussuchen.</target>
+			</trans-unit>
+			<trans-unit id="width.description" resname="width.description">
+				<source>Set the width of the map. Default in px, for percentages enter %, e.g. '100%'.</source>
+				<target>Die Breite der Karte. Standard in Pixeln, für Prozentangaben geben Sie ein '%' an, z.B. '100%'.</target>
+			</trans-unit>
+			<trans-unit id="zoom.description" resname="zoom.description">
+				<source>Only need to set if default zoom is wrong.</source>
+				<target>Sollte nur gesetzt werden, wenn der Standardzoom nicht gewünscht ist.</target>
+			</trans-unit>
+			<trans-unit id="zoom_control.description" resname="zoom_control.description">
+				<source>Enable buttons to change the zoom.</source>
+				<target>Zeigt Buttons zum ändern der Zoomstufe.</target>
+			</trans-unit>
+			<trans-unit id="zoom_max.description" resname="zoom_max.description">
+				<source>The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.</source>
+				<target>Die maximale Zoomstufe, in der die Karte angezeigt wird. Wenn nicht angegeben oder auf null gesetzt, wird der maximale Zoom vom aktuellen Kartentyp verwendet.</target>
+			</trans-unit>
+			<trans-unit id="zoom_min.description" resname="zoom_min.description">
+				<source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
+				<target>Der minimale Zoomstufe, in der die Karte angezeigt wird. Wenn nicht angegeben oder auf Null gesetzt, wird der minimale Zoom vom aktuellen Kartentyp verwendet.</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
