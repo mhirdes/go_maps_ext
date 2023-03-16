@@ -8,30 +8,30 @@ plugin.tx_gomapsext {
 		layoutRootPath = EXT:go_maps_ext/Resources/Private/Layouts/
 	}
 	settings {
-		# cat=plugin.tx_gomapsext//a; type=text+; label = Show Addresses from this PIDs
+		# cat=plugin.tx_gomapsext//a; type=text+; label = Show addresses from this PIDs
 		storagePid = this
 		# cat=plugin.tx_gomapsext//b; type=boolean; label = Category filter with logical AND (instead of logical OR)
 		logicalAnd = 0
-		# cat=plugin.tx_gomapsext//c; type=text+; label = API Key, https://developers.google.com/maps/documentation/javascript/get-api-key
+		# cat=plugin.tx_gomapsext//c; type=text+; label = API Key: see https://developers.google.com/maps/documentation/javascript/get-api-key
 		apiKey =
-        # cat=plugin.tx_gomapsext//d; type=text+; label = URL to Google Maps API: Defaults to the weekly channel
+        # cat=plugin.tx_gomapsext//d; type=text+; label = URL to Google Maps API: Defaults to the weekly channel. Don't forget to add a callback function (default is '&callback=goMapsExtLoaded').
         googleMapsLibrary = //maps.google.com/maps/api/js?v=weekly&callback=goMapsExtLoaded
-		# cat=plugin.tx_gomapsext//a; type=boolean; label = Force the language of the map to be equal to the page language
+		# cat=plugin.tx_gomapsext//e; type=boolean; label = Force the language of the map to be equal to the page language
 		forceLanguage = 1
 		infoWindow {
-			# cat=plugin.tx_gomapsext//e; type=boolean; label = Open Infowindows By Click
+			# cat=plugin.tx_gomapsext//f; type=boolean; label = Open Info Windows by click
 			openByClick = 0
-			# cat=plugin.tx_gomapsext//f; type=boolean; label = Close Infowindows By Click
+			# cat=plugin.tx_gomapsext//g; type=boolean; label = Close Info Windows by click
 			closeByClick = 0
-			# cat=plugin.tx_gomapsext//g; type=string; label = Max. width of image in infowindows
+			# cat=plugin.tx_gomapsext//h; type=string; label = Max. width of images in Info Windows
 			imageMaxWidth = 654
 		}
 		preview {
-			# cat=plugin.tx_gomapsext//h; type=boolean; label = Load map only when user accepted
+			# cat=plugin.tx_gomapsext//i; type=boolean; label = Load map only when user accepted
 			enabled = 0
-			# cat=plugin.tx_gomapsext//i; type=text+; label = URL to general preview image
+			# cat=plugin.tx_gomapsext//j; type=text+; label = URL to general preview image
 			image =
-			# cat=plugin.tx_gomapsext//j; type=boolean; label = If the user wants to see a map once, it will be saved in the session.
+			# cat=plugin.tx_gomapsext//k; type=boolean; label = If the user wants to see a map once, it will be saved in the session.
 			setCookieToShowMapAlways = 0
 		}
 	}

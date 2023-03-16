@@ -158,10 +158,12 @@ Constants
          String
 
    Description
-         Configure the URL form which the Google Maps JS is loaded
+         Configure the URL form which the Google Maps JS is loaded. If you choose another one, don't forget
+		 the callback function. If you want to use the callback function from go_maps_ext add
+		 '&callback=goMapsExtLoaded'.
 
    Default
-         //maps.google.com/maps/api/js?v=3.28
+         //maps.google.com/maps/api/js?v=weekly&callback=goMapsExtLoaded
 
 
 .. container:: table-row
