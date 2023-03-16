@@ -140,7 +140,7 @@ class MapController extends ActionController
             );
         }
 
-        $pathPrefix = PathUtility::getAbsoluteWebPath(ExtensionManagementUtility::extPath($this->request->getControllerExtensionKey()));
+        $pathPrefix = 'EXT:' . $this->request->getControllerExtensionKey() . '/';
         if ($extConf['include_library'] === '1') {
             $pageRenderer->{$addJsMethod . 'Library'}(
                 'jQuery',

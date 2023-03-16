@@ -223,7 +223,7 @@ TxClimbingSites.positionChanged = function() {
 
 TxClimbingSites.updateValue = function(fieldName, value) {
     document['editform'][fieldName].value = value;
-    window.$('[data-formengine-input-name="' + fieldName + '"]').val(value);
+    document.querySelector('[data-formengine-input-name="' + fieldName + '"]').value = value;
 }
 
 TxClimbingSites.setMarker = function(lat, lng) {
