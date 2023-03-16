@@ -3,106 +3,45 @@
 namespace Clickstorm\GoMapsExt\Controller;
 
 use Psr\Http\Message\ResponseInterface;
-/***************************************************************
- *  Copyright notice
- *
- *  (c) 2013 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
- *  (c) 2013 Mathias Brodala <mbrodala@pagemachine.de>, PAGEmachine AG
- *
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
 
 use Clickstorm\GoMapsExt\Domain\Model\Map;
 use Clickstorm\GoMapsExt\Domain\Repository\AddressRepository;
 use Clickstorm\GoMapsExt\Domain\Repository\KeyRepository;
 use Clickstorm\GoMapsExt\Domain\Repository\MapRepository;
-use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Site\Entity\SiteLanguage;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 
-/**
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- */
 class MapController extends ActionController
 {
+    protected ?MapRepository $mapRepository = null;
 
-    /**
-     * mapRepository
-     *
-     * @var MapRepository
-     */
-    protected $mapRepository;
+    protected ?AddressRepository $addressRepository = null;
 
-    /**
-     * addressRepository
-     *
-     * @var AddressRepository
-     */
-    protected $addressRepository;
+    protected ?KeyRepository $keyRepository = null;
 
-    /**
-     * keyRepository
-     *
-     * @var KeyRepository
-     */
-    protected $keyRepository = null;
-    /**
-     * @var string
-     */
-    protected $googleMapsLibrary;
+    protected string $googleMapsLibrary = '';
 
-    /**
-     * Inject a mapRepository
-     *
-     * @param MapRepository $mapRepository
-     */
-    public function injectMapRepository(MapRepository $mapRepository)
+    public function injectMapRepository(MapRepository $mapRepository): void
     {
         $this->mapRepository = $mapRepository;
     }
 
-    /**
-     * Inject a addressRepository
-     *
-     * @param AddressRepository $addressRepository
-     */
     public function injectAddressRepository(AddressRepository $addressRepository)
     {
         $this->addressRepository = $addressRepository;
     }
 
-    /**
-     * Inject a keyRepository
-     *
-     * @param KeyRepository $keyRepository
-     */
-    public function injectKeyRepository(KeyRepository $keyRepository)
+    public function injectKeyRepository(KeyRepository $keyRepository): void
     {
         $this->keyRepository = $keyRepository;
     }
 
-    public function initializeAction()
+    public function initializeAction(): void
     {
         $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('go_maps_ext');
 
@@ -171,10 +110,10 @@ class MapController extends ActionController
     /**
      * show action
      *
-     * @param Map $map
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\StopActionException
-     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\UnsupportedRequestTypeException
-     * @throws \TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException
+     * @param Map|null $map
+     * @return ResponseInterface
+     * @throws NoSuchArgumentException
+     * @throws InvalidQueryException
      */
     public function showAction(Map $map = null): ResponseInterface
     {
@@ -194,7 +133,7 @@ class MapController extends ActionController
         $addresses = $map->getAddresses();
 
         // no addresses related to the map, try to find some from the storagePid
-        if ($addresses->count() === 0 && $this->settings['storagePid']) {
+        if ($addresses->count() === 0 && !empty($this->settings['storagePid'])) {
             // @extensionScannerIgnoreLine
             $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
             $addresses = $this->addressRepository->findAllAddresses($map, $pid);
@@ -243,8 +182,6 @@ class MapController extends ActionController
 
     /**
      * either apiKey from Flexform or TypoScript
-     *
-     * @return string
      */
     protected function getFinalApiKey(): string
     {

@@ -302,8 +302,6 @@ EOT;
     /**
      * Get definitive TypoScript Settings from
      * plugin.tx_gomapsext.settings.
-     *
-     * @return array
      */
     private static function getSettings(): array
     {

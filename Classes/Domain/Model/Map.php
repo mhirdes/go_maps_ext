@@ -2,30 +2,7 @@
 
 namespace Clickstorm\GoMapsExt\Domain\Model;
 
-/***************************************************************
- *  Copyright notice
- *
- *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
- *
- *  All rights reserved
- *
- *  This script is part of the TYPO3 project. The TYPO3 project is
- *  free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  The GNU General Public License can be found at
- *  http://www.gnu.org/copyleft/gpl.html.
- *
- *  This script is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  This copyright notice MUST APPEAR in all copies of the script!
- ***************************************************************/
-
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
@@ -36,38 +13,22 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 class Map extends AbstractEntity
 {
     /**
-     * Title* (without space character, special character!)
-     *
-     * @var \string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $title;
+    protected string $title = '';
+
     /**
-     * in px or %
-     *
-     * @var \string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $width;
+    protected string $width = '';
+
     /**
-     * in px or %
-     *
-     * @var string
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
      */
-    protected $height;
-    /**
-     * zoom
-     *
-     * @var int
-     */
-    protected $zoom;
-    /**
-     * zoomMin
-     *
-     * @var int
-     */
-    protected $zoomMin;
+    protected string $height = '';
+
+    protected int $zoom = 0;
+    protected int $zoomMin = 0;
     /**
      * zoomMax
      *
@@ -302,869 +263,443 @@ class Map extends AbstractEntity
         $this->addresses = new ObjectStorage();
     }
 
-    /**
-     * Returns the title
-     *
-     * @return \string $title
-     */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * Sets the title
-     *
-     * @param \string $title
-     */
-    public function setTitle($title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * Returns the width
-     */
-    public function getWidth()
+    public function getWidth(): string
     {
         return is_numeric($this->width) ? $this->width . 'px' : $this->width;
     }
 
-    /**
-     * Sets the width
-     *
-     * @param \string $width
-     */
-    public function setWidth($width)
+    public function setWidth(string $width): void
     {
         $this->width = $width;
     }
 
-    /**
-     * Returns the height
-     *
-     * @return \string $height
-     */
-    public function getHeight()
+    public function getHeight(): string
     {
         return is_numeric($this->height) ? $this->height . 'px' : $this->height;
     }
 
-    /**
-     * Sets the height
-     *
-     * @param \string $height
-     */
-    public function setHeight($height)
+    public function setHeight(string $height): void
     {
         $this->height = $height;
     }
 
-    /**
-     * Returns the zoom
-     *
-     * @return int $zoom
-     */
-    public function getZoom()
+    public function getZoom(): int
     {
         return $this->zoom;
     }
 
-    /**
-     * Sets the zoom
-     *
-     * @param int $zoom
-     */
-    public function setZoom($zoom)
+    public function setZoom(int $zoom): void
     {
         $this->zoom = $zoom;
     }
 
-    /**
-     * Returns the zoomMin
-     *
-     * @return int $zoomMin
-     */
-    public function getZoomMin()
+    public function getZoomMin(): int
     {
         return $this->zoomMin;
     }
 
-    /**
-     * Sets the zoomMin
-     *
-     * @param int $zoomMin
-     */
-    public function setZoomMin($zoomMin)
+    public function setZoomMin(int $zoomMin): void
     {
         $this->zoomMin = $zoomMin;
     }
 
-    /**
-     * Returns the zoomMax
-     *
-     * @return int $zoomMax
-     */
-    public function getZoomMax()
+    public function getZoomMax(): int
     {
         return $this->zoomMax;
     }
 
-    /**
-     * Sets the zoomMax
-     *
-     * @param int $zoomMax
-     */
-    public function setZoomMax($zoomMax)
+    public function setZoomMax(int $zoomMax): void
     {
         $this->zoomMax = $zoomMax;
     }
 
-    /**
-     * Adds a Address
-     *
-     * @param \Clickstorm\GoMapsExt\Domain\Model\Address $address
-     */
-    public function addAddress(Address $address)
+    public function addAddress(Address $address): void
     {
         $this->addresses->attach($address);
     }
 
-    /**
-     * Removes a Address
-     *
-     * @param \Clickstorm\GoMapsExt\Domain\Model\Address $addressToRemove The Address to be removed
-     */
-    public function removeAddress(Address $addressToRemove)
+    public function removeAddress(Address $addressToRemove): void
     {
         $this->addresses->detach($addressToRemove);
     }
 
     /**
-     * Returns the addresses
-     *
-     * @return ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address> $addresses
+     * @return ObjectStorage<Address>|null $addresses
      */
-    public function getAddresses()
+    public function getAddresses(): ?ObjectStorage
     {
         return $this->addresses;
     }
 
     /**
-     * Sets the addresses
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address> $addresses
+     * @param ObjectStorage<Address> $addresses
      */
     public function setAddresses(ObjectStorage $addresses)
     {
         $this->addresses = $addresses;
     }
 
-    /**
-     * Returns the kmlUrl
-     *
-     * @return \string $kmlUrl
-     */
-    public function getKmlUrl()
+    public function getKmlUrl(): string
     {
         return $this->kmlUrl;
     }
 
-    /**
-     * Sets the kmlUrl
-     *
-     * @param \string $kmlUrl
-     */
-    public function kmlUrl($kmlUrl)
+    public function kmlUrl(string $kmlUrl): void
     {
         $this->kmlUrl = $kmlUrl;
     }
 
-    /**
-     * Returns the kmlPreserveViewport
-     *
-     * @return bool $kmlPreserveViewport
-     */
-    public function getKmlPreserveViewport()
+    public function getKmlPreserveViewport(): bool
     {
         return $this->kmlPreserveViewport;
     }
 
-    /**
-     * Returns the boolean state of kmlPreserveViewport
-     *
-     * @return bool
-     */
-    public function isKmlPreserveViewport()
+    public function isKmlPreserveViewport(): bool
     {
         return $this->getKmlPreserveViewport();
     }
 
-    /**
-     * Sets the kmlPreserveViewport
-     *
-     * @param bool $kmlPreserveViewport
-     */
-    public function setKmlPreserveViewport($kmlPreserveViewport)
+    public function setKmlPreserveViewport(bool $kmlPreserveViewport): void
     {
         $this->kmlPreserveViewport = $kmlPreserveViewport;
     }
 
-    /**
-     * Returns the kmlLocal
-     *
-     * @return bool $kmlLocal
-     */
-    public function getKmlLocal()
+    public function getKmlLocal(): bool
     {
         return $this->kmlLocal;
     }
 
-    /**
-     * Returns the boolean state of kmlLocal
-     *
-     * @return bool
-     */
-    public function isKmlLocal()
+    public function isKmlLocal(): bool
     {
         return $this->getKmlLocal();
     }
 
-    /**
-     * Sets the kmlLocal
-     *
-     * @param bool $kmlLocal
-     */
-    public function setKmlLocal($kmlLocal)
+    public function setKmlLocal(bool $kmlLocal): void
     {
         $this->kmlLocal = $kmlLocal;
     }
 
-    /**
-     * Returns the showAddresses
-     *
-     * @return bool $showAddresses
-     */
-    public function getShowAddresses()
+    public function getShowAddresses(): bool
     {
         return $this->showAddresses;
     }
 
-    /**
-     * Sets the showAddresses
-     *
-     * @param bool $showAddresses
-     */
-    public function setShowAddresses($showAddresses)
+    public function setShowAddresses(bool $showAddresses): void
     {
         $this->showAddresses = $showAddresses;
     }
 
-    /**
-     * Returns the showCategories
-     *
-     * @return bool $showCategories
-     */
-    public function getShowCategories()
+    public function getShowCategories(): bool
     {
         return $this->showCategories;
     }
 
-    /**
-     * Returns the boolean state of showCategories
-     *
-     * @return bool
-     */
-    public function isShowCategories()
+    public function isShowCategories(): bool
     {
         return $this->getShowCategories();
     }
 
-    /**
-     * Sets the showCategories
-     *
-     * @param bool $showCategories
-     */
-    public function setShowCategories($showCategories)
+    public function setShowCategories(bool $showCategories): void
     {
         $this->showCategories = $showCategories;
     }
 
-    /**
-     * Returns the scrollZoom
-     *
-     * @return bool $scrollZoom
-     */
-    public function getScrollZoom()
+    public function getScrollZoom(): bool
     {
         return $this->scrollZoom;
     }
 
-    /**
-     * Returns the boolean state of scrollZoom
-     *
-     * @return bool
-     */
-    public function isScrollZoom()
+    public function isScrollZoom(): bool
     {
         return $this->getScrollZoom();
     }
 
-    /**
-     * Sets the scrollZoom
-     *
-     * @param bool $scrollZoom
-     */
-    public function setScrollZoom($scrollZoom)
+    public function setScrollZoom(bool $scrollZoom): void
     {
         $this->scrollZoom = $scrollZoom;
     }
 
-    /**
-     * Returns the draggable
-     *
-     * @return bool $draggable
-     */
-    public function getDraggable()
+    public function getDraggable(): bool
     {
         return $this->draggable;
     }
 
-    /**
-     * Returns the boolean state of draggable
-     *
-     * @return bool
-     */
-    public function isDraggable()
+    public function isDraggable(): bool
     {
         return $this->getDraggable();
     }
 
-    /**
-     * Sets the draggable
-     *
-     * @param bool $draggable
-     */
-    public function setDraggable($draggable)
+    public function setDraggable(bool $draggable): void
     {
         $this->draggable = $draggable;
     }
 
-    /**
-     * Returns the doubleClickZoom
-     *
-     * @return bool $doubleClickZoom
-     */
-    public function getDoubleClickZoom()
+    public function getDoubleClickZoom(): bool
     {
         return $this->doubleClickZoom;
     }
 
-    /**
-     * Returns the boolean state of doubleClickZoom
-     *
-     * @return bool
-     */
-    public function isDoubleClickZoom()
+    public function isDoubleClickZoom(): bool
     {
         return $this->getDoubleClickZoom();
     }
 
-    /**
-     * Sets the doubleClickZoom
-     *
-     * @param bool $doubleClickZoom
-     */
-    public function setDoubleClickZoom($doubleClickZoom)
+    public function setDoubleClickZoom(bool $doubleClickZoom): void
     {
         $this->doubleClickZoom = $doubleClickZoom;
     }
 
-    /**
-     * Returns the markerCluster
-     *
-     * @return bool $markerCluster
-     */
-    public function getMarkerCluster()
+    public function getMarkerCluster(): bool
     {
         return $this->markerCluster;
     }
 
-    /**
-     * Returns the boolean state of markerCluster
-     *
-     * @return bool
-     */
-    public function isMarkerCluster()
+    public function isMarkerCluster(): bool
     {
         return $this->getMarkerCluster();
     }
 
-    /**
-     * Sets the markerCluster
-     *
-     * @param bool $markerCluster
-     */
-    public function setMarkerCluster($markerCluster)
+    public function setMarkerCluster(bool $markerCluster): void
     {
         $this->markerCluster = $markerCluster;
     }
 
-    /**
-     * Returns the markerClusterZoom
-     *
-     * @return int $markerClusterZoom
-     */
-    public function getMarkerClusterZoom()
+    public function getMarkerClusterZoom(): int
     {
         return $this->markerClusterZoom;
     }
 
-    /**
-     * Sets the markerClusterZoom
-     *
-     * @param int $markerClusterZoom
-     */
-    public function setMarkerClusterZoom($markerClusterZoom)
+    public function setMarkerClusterZoom(int $markerClusterZoom): void
     {
         $this->markerClusterZoom = $markerClusterZoom;
     }
 
-    /**
-     * Returns the markerClusterSize
-     *
-     * @return int $markerClusterSize
-     */
-    public function getMarkerClusterSize()
+    public function getMarkerClusterSize(): int
     {
         return $this->markerClusterSize;
     }
 
-    /**
-     * Sets the markerClusterSize
-     *
-     * @param int $markerClusterSize
-     */
-    public function setMarkerClusterSize($markerClusterSize)
+    public function setMarkerClusterSize(int $markerClusterSize): void
     {
         $this->markerClusterSize = $markerClusterSize;
     }
 
-    /**
-     * Returns the markerClusterStyle
-     *
-     * @return \string $markerClusterStyle
-     */
-    public function getMarkerClusterStyle()
+    public function getMarkerClusterStyle(): string
     {
         return $this->markerClusterStyle;
     }
 
-    /**
-     * Sets the markerClusterStyle
-     *
-     * @param \string $markerClusterStyle
-     */
-    public function setMarkerClusterStyle($markerClusterStyle)
+    public function setMarkerClusterStyle(string $markerClusterStyle): void
     {
         $this->markerClusterStyle = $markerClusterStyle;
     }
 
-    /**
-     * Returns the markerSearch
-     *
-     * @return bool $markerSearch
-     */
-    public function getMarkerSearch()
+    public function getMarkerSearch(): bool
     {
         return $this->markerSearch;
     }
 
-    /**
-     * Returns the boolean state of markerSearch
-     *
-     * @return bool
-     */
-    public function isMarkerSearch()
+    public function isMarkerSearch(): bool
     {
         return $this->getMarkerSearch();
     }
 
-    /**
-     * Sets the markerSearch
-     *
-     * @param bool $markerSearch
-     */
-    public function setMarkerSearch($markerSearch)
+    public function setMarkerSearch(bool $markerSearch): void
     {
         $this->markerSearch = $markerSearch;
     }
 
-    /**
-     * Returns the defaultType
-     *
-     * @return int $defaultType
-     */
-    public function getDefaultType()
+    public function getDefaultType(): int
     {
         return $this->defaultType;
     }
 
-    /**
-     * Sets the defaultType
-     *
-     * @param int $defaultType
-     */
-    public function setDefaultType($defaultType)
+    public function setDefaultType(int $defaultType): void
     {
         $this->defaultType = $defaultType;
     }
 
-    /**
-     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
-     */
-    public function getPreviewImage()
+    public function getPreviewImage(): ?FileReference
     {
         return $this->previewImage;
     }
 
-    /**
-     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $previewImage
-     */
-    public function setPreviewImage($previewImage)
+    public function setPreviewImage(FileReference $previewImage): void
     {
         $this->previewImage = $previewImage;
     }
 
-    /**
-     * Returns the scaleControl
-     *
-     * @return bool $scaleControl
-     */
-    public function getScaleControl()
+    public function getScaleControl(): bool
     {
         return $this->scaleControl;
     }
 
-    /**
-     * Returns the boolean state of scaleControl
-     *
-     * @return bool
-     */
-    public function isScaleControl()
+    public function isScaleControl(): bool
     {
         return $this->getScaleControl();
     }
 
-    /**
-     * Sets the scaleControl
-     *
-     * @param bool $scaleControl
-     */
-    public function setScaleControl($scaleControl)
+    public function setScaleControl(bool $scaleControl): void
     {
         $this->scaleControl = $scaleControl;
     }
 
-    /**
-     * Returns the streetviewControl
-     *
-     * @return bool $streetviewControl
-     */
-    public function getStreetviewControl()
+    public function getStreetviewControl(): bool
     {
         return $this->streetviewControl;
     }
 
-    /**
-     * Returns the boolean state of streetviewControl
-     *
-     * @return bool
-     */
-    public function isStreetviewControl()
+    public function isStreetviewControl(): bool
     {
         return $this->getStreetviewControl();
     }
 
-    /**
-     * Sets the streetviewControl
-     *
-     * @param bool $streetviewControl
-     */
-    public function setStreetviewControl($streetviewControl)
+    public function setStreetviewControl(bool $streetviewControl): void
     {
         $this->streetviewControl = $streetviewControl;
     }
 
-    /**
-     * Returns the fullscreenControl
-     *
-     * @return bool $fullscreenControl
-     */
-    public function getFullscreenControl()
+    public function getFullscreenControl(): bool
     {
         return $this->fullscreenControl;
     }
 
-    /**
-     * Returns the boolean state of fullscreenControl
-     *
-     * @return bool
-     */
-    public function isFullscreenControl()
+    public function isFullscreenControl(): bool
     {
         return $this->getFullscreenControl();
     }
 
-    /**
-     * Sets the fullscreenControl
-     *
-     * @param bool $fullscreenControl
-     */
-    public function setFullscreenControl($fullscreenControl)
+    public function setFullscreenControl(bool $fullscreenControl): void
     {
         $this->fullscreenControl = $fullscreenControl;
     }
 
-    /**
-     * Returns the zoomControl
-     *
-     * @return bool $zoomControl
-     */
-    public function getZoomControl()
+    public function getZoomControl(): bool
     {
         return $this->zoomControl;
     }
 
-    /**
-     * Returns the boolean state of zoomControl
-     *
-     * @return bool
-     */
-    public function isZoomControl()
+    public function isZoomControl(): bool
     {
         return $this->getZoomControl();
     }
 
-    /**
-     * Sets the zoomControl
-     *
-     * @param bool $zoomControl
-     */
-    public function setZoomControl($zoomControl)
+    public function setZoomControl(bool $zoomControl): void
     {
         $this->zoomControl = $zoomControl;
     }
 
-    /**
-     * Returns the mapTypeControl
-     *
-     * @return bool $mapTypeControl
-     */
-    public function getMapTypeControl()
+    public function getMapTypeControl(): bool
     {
         return $this->mapTypeControl;
     }
 
-    /**
-     * Returns the boolean state of mapTypeControl
-     *
-     * @return bool
-     */
-    public function isMapTypeControl()
+    public function isMapTypeControl(): bool
     {
         return $this->getMapTypeControl();
     }
 
-    /**
-     * Sets the mapTypeControl
-     *
-     * @param bool $mapTypeControl
-     */
-    public function setMapTypeControl($mapTypeControl)
+    public function setMapTypeControl(bool $mapTypeControl): void
     {
         $this->mapTypeControl = $mapTypeControl;
     }
 
-    /**
-     * Returns the mapTypes
-     *
-     * @return \string $mapTypes
-     */
-    public function getMapTypes()
+    public function getMapTypes(): array
     {
         return explode(',', $this->mapTypes);
     }
 
-    /**
-     * Sets the mapTypes
-     *
-     * @param \string $mapTypes
-     */
-    public function setMapTypes($mapTypes)
+    public function setMapTypes(string $mapTypes): void
     {
         $this->mapTypes = $mapTypes;
     }
 
-    /**
-     * Returns the showRoute
-     *
-     * @return bool $showRoute
-     */
-    public function getShowRoute()
+    public function getShowRoute(): bool
     {
         return $this->showRoute;
     }
 
-    /**
-     * Returns the boolean state of showRoute
-     *
-     * @return bool
-     */
-    public function isShowRoute()
+    public function isShowRoute(): bool
     {
         return $this->getShowRoute();
     }
 
-    /**
-     * Sets the showRoute
-     *
-     * @param bool $showRoute
-     */
-    public function setShowRoute($showRoute)
+    public function setShowRoute(bool $showRoute): void
     {
         $this->showRoute = $showRoute;
     }
 
-    /**
-     * Returns the styledMapName
-     *
-     * @return \string $styledMapName
-     */
-    public function getStyledMapName()
+    public function getStyledMapName(): string
     {
         return $this->styledMapName;
     }
 
-    /**
-     * Sets the styledMapName
-     *
-     * @param \string $styledMapName
-     */
-    public function setStyledMapName($styledMapName)
+    public function setStyledMapName(string $styledMapName): void
     {
         $this->styledMapName = $styledMapName;
     }
 
-    /**
-     * Returns the styledMapCode
-     *
-     * @return \string $styledMapCode
-     */
-    public function getStyledMapCode()
+    public function getStyledMapCode(): string
     {
         return $this->styledMapCode;
     }
 
-    /**
-     * Sets the styledMapCode
-     *
-     * @param \string $styledMapCode
-     */
-    public function setStyledMapCode($styledMapCode)
+    public function setStyledMapCode(string $styledMapCode): void
     {
         $this->styledMapCode = $styledMapCode;
     }
 
-    /**
-     * Returns the setForm
-     *
-     * @return bool $showForm
-     */
-    public function getShowForm()
+    public function getShowForm(): bool
     {
-        if ($this->getCalcRoute() || $this->getTravelMode() === 1 || $this->getUnitSystem() === 1 || $this->getMarkerSearch()) {
-            return true;
-        }
-        return false;
+        return $this->getCalcRoute() || $this->getTravelMode() === 1 || $this->getUnitSystem() === 1 || $this->getMarkerSearch();
     }
 
-    /**
-     * Returns the calcRoute
-     *
-     * @return bool $calcRoute
-     */
-    public function getCalcRoute()
+    public function getCalcRoute(): bool
     {
         return $this->calcRoute;
     }
 
-    /**
-     * Returns the boolean state of calcRoute
-     *
-     * @return bool
-     */
-    public function isCalcRoute()
+    public function isCalcRoute(): bool
     {
         return $this->getCalcRoute();
     }
 
-    /**
-     * Sets the calcRoute
-     *
-     * @param bool $calcRoute
-     */
-    public function setCalcRoute($calcRoute)
+    public function setCalcRoute(bool $calcRoute): void
     {
         $this->calcRoute = $calcRoute;
     }
 
-    /**
-     * Returns the travelMode
-     *
-     * @return int $travelMode
-     */
-    public function getTravelMode()
+    public function getTravelMode(): int
     {
         return $this->travelMode;
     }
 
-    /**
-     * Sets the travelMode
-     *
-     * @param int $travelMode
-     */
-    public function setTravelMode($travelMode)
+    public function setTravelMode(int $travelMode): void
     {
         $this->travelMode = $travelMode;
     }
 
-    /**
-     * Returns the unitSystem
-     *
-     * @return int $unitSystem
-     */
-    public function getUnitSystem()
+    public function getUnitSystem(): int
     {
         return $this->unitSystem;
     }
 
-    /**
-     * Sets the unitSystem
-     *
-     * @param int $unitSystem
-     */
-    public function setUnitSystem($unitSystem)
+    public function setUnitSystem(int $unitSystem): void
     {
         $this->unitSystem = $unitSystem;
     }
 
-    /**
-     * Returns the travelModes
-     *
-     * @return \array $travelModes
-     */
-    public function getTravelModes()
+    public function getTravelModes(): array
     {
         $travelModes = [];
         for ($i = 0; $i <= 4; $i++) {
@@ -1177,13 +712,9 @@ class Map extends AbstractEntity
         return $travelModes;
     }
 
-    /**
-     * Returns the unitSystems
-     *
-     * @return \array $unitSystems
-     */
-    public function getUnitSystems()
+    public function getUnitSystems(): array
     {
+        $unitSystems = [];
         for ($i = 2; $i <= 3; $i++) {
             $unitSystems[$i] = LocalizationUtility::translate(
                 'tx_gomapsext_domain_model_map.unit_system.' . $i,
@@ -1194,72 +725,37 @@ class Map extends AbstractEntity
         return $unitSystems;
     }
 
-    /**
-     * Returns the latitude
-     *
-     * @return \float $latitude
-     */
-    public function getLatitude()
+    public function getLatitude(): float
     {
         return $this->latitude;
     }
 
-    /**
-     * Sets the latitude
-     *
-     * @param \float $latitude
-     */
-    public function setLatitude($latitude)
+    public function setLatitude(float $latitude): void
     {
         $this->latitude = $latitude;
     }
 
-    /**
-     * Returns the longitude
-     *
-     * @return \float $longitude
-     */
-    public function getLongitude()
+    public function getLongitude(): float
     {
         return $this->longitude;
     }
 
-    /**
-     * Sets the longitude
-     *
-     * @param \float $longitude
-     */
-    public function setLongitude($longitude)
+    public function setLongitude(float $longitude): void
     {
         $this->longitude = $longitude;
     }
 
-    /**
-     * Returns the geolocation
-     *
-     * @return bool $geolocation
-     */
-    public function getGeolocation()
+    public function getGeolocation(): bool
     {
         return $this->geolocation;
     }
 
-    /**
-     * Returns the boolean state of geolocation
-     *
-     * @return bool
-     */
-    public function isGeolocation()
+    public function isGeolocation(): bool
     {
         return $this->getGeolocation();
     }
 
-    /**
-     * Sets the geolocation
-     *
-     * @param bool $geolocation
-     */
-    public function setGeolocation($geolocation)
+    public function setGeolocation(bool $geolocation): void
     {
         $this->geolocation = $geolocation;
     }
