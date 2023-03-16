@@ -144,6 +144,7 @@ return [
         'title' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.title',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:title.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -153,6 +154,7 @@ return [
         'width' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.width',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:width.description',
             'config' => [
                 'type' => 'input',
                 'size' => 4,
@@ -162,6 +164,7 @@ return [
         'height' => [
             'exclude' => 0,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.height',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:height.description',
             'config' => [
                 'type' => 'input',
                 'size' => 4,
@@ -171,6 +174,7 @@ return [
         'zoom' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:zoom.description',
             'config' => [
                 'type' => 'input',
                 'size' => 4,
@@ -180,6 +184,7 @@ return [
         'zoom_min' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_min',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:zoom_min.description',
             'config' => [
                 'type' => 'input',
                 'size' => 4,
@@ -189,6 +194,7 @@ return [
         'zoom_max' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_max',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:zoom_max.description',
             'config' => [
                 'type' => 'input',
                 'size' => 4,
@@ -198,6 +204,7 @@ return [
         'preview_image' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.preview_image',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:preview_image.description',
             'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
                 'preview_image',
                 [
@@ -248,6 +255,7 @@ return [
         'addresses' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.addresses',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:addresses.description',
             'config' => [
                 'type' => 'group',
                 'internal_type' => 'db',
@@ -271,6 +279,7 @@ return [
         'kml_url' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.kml_url',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:kml_url.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -282,6 +291,7 @@ return [
         'kml_local' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.kml_local',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:kml_local.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -290,6 +300,7 @@ return [
         'kml_preserve_viewport' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.kml_preserve_viewport',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:kml_preserve_viewport.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -298,6 +309,7 @@ return [
         'show_addresses' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_addresses',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:show_addresses.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -306,6 +318,7 @@ return [
         'show_categories' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_categories',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:show_categories.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -314,6 +327,7 @@ return [
         'scroll_zoom' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.scroll_zoom',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:scroll_zoom.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -322,6 +336,7 @@ return [
         'draggable' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.draggable',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:draggable.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -330,6 +345,7 @@ return [
         'double_click_zoom' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.double_click_zoom',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:double_click_zoom.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -338,6 +354,7 @@ return [
         'marker_cluster' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:marker_cluster.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -346,6 +363,7 @@ return [
         'marker_cluster_zoom' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_zoom',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:marker_cluster_zoom.description',
             'config' => [
                 'type' => 'input',
                 'size' => 4,
@@ -355,6 +373,7 @@ return [
         'marker_cluster_size' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_size',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:marker_cluster_size.description',
             'config' => [
                 'type' => 'input',
                 'size' => 4,
@@ -364,6 +383,7 @@ return [
         'marker_cluster_style' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_cluster_style',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:marker_cluster_style.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -374,6 +394,7 @@ return [
         'marker_search' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.marker_search',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:marker_search.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -382,6 +403,7 @@ return [
         'default_type' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.default_type',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:default_type.description',
             'config' => [
                 'type' => 'radio',
                 'items' => [
@@ -413,6 +435,7 @@ return [
         'scale_control' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.scale_control',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:scale_control.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -421,6 +444,7 @@ return [
         'streetview_control' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.streetview_control',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:streetview_control.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -429,6 +453,7 @@ return [
         'fullscreen_control' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.fullscreen_control',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:fullscreen_control.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -437,6 +462,7 @@ return [
         'zoom_control' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.zoom_control',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:zoom_control.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -445,6 +471,7 @@ return [
         'map_type_control' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_type_control',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:map_type_control.description',
             'config' => [
                 'type' => 'check',
                 'default' => 1
@@ -453,6 +480,7 @@ return [
         'map_types' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.map_types',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:map_types.description',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectMultipleSideBySide',
@@ -487,6 +515,7 @@ return [
         'show_route' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.show_route',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:show_route.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -495,6 +524,7 @@ return [
         'calc_route' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.calc_route',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:calc_route.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
@@ -503,6 +533,7 @@ return [
         'travel_mode' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.travel_mode',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:travel_mode.description',
             'config' => [
                 'type' => 'radio',
                 'items' => [
@@ -534,6 +565,7 @@ return [
         'unit_system' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.unit_system',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:unit_system.description',
             'config' => [
                 'type' => 'radio',
                 'items' => [
@@ -561,6 +593,7 @@ return [
         'styled_map_name' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map_name',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:styled_map_name.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -570,6 +603,7 @@ return [
         'styled_map_code' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.styled_map_code',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:styled_map_code.description',
             'config' => [
                 'type' => 'text',
                 'cols' => 40,
@@ -581,6 +615,7 @@ return [
         'latitude' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.latitude',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:latitude.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -590,6 +625,7 @@ return [
         'longitude' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.longitude',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:longitude.description',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -599,6 +635,7 @@ return [
         'geolocation' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_map.geolocation',
+            'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf:geolocation.description',
             'config' => [
                 'type' => 'check',
                 'default' => 0
