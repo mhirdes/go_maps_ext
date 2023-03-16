@@ -193,6 +193,7 @@ class MapController extends ActionController
 
         // no addresses related to the map, try to find some from the storagePid
         if ($addresses->count() === 0 && $this->settings['storagePid']) {
+            // @extensionScannerIgnoreLine
             $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
             $addresses = $this->addressRepository->findAllAddresses($map, $pid);
         }
