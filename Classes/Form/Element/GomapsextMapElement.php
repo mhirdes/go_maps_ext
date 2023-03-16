@@ -41,11 +41,9 @@ class GomapsextMapElement extends AbstractFormElement
 {
 
     /**
-     * Renders the Google map.
-     *
-     * @return array
+     * Renders the Google map
      */
-    public function render()
+    public function render(): array
     {
         $resultArray = $this->initializeResultArray();
 
