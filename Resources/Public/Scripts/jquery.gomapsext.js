@@ -1,6 +1,3 @@
-/**
- * Created by mhirdes on 27.11.13.
- */
 (function ($) {
     var GoMapsExt = window.GoMapsExt = window.GoMapsExt || {};
 
@@ -45,10 +42,6 @@
         this.element = $(element);
         this.gme = gme;
         this.data = gme;
-
-        if(typeof google !== "undefined" && typeof google.maps !== "undefined") {
-            this.initialize();
-        }
     };
 
     GoMapsExt.Controller.prototype = {
@@ -721,3 +714,10 @@
         }
     };
 }(jQuery || $));
+
+// add global callback function, see https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
+window.goMapsExtLoaded = function() {
+    jQuery('.js-map').each(function(key, el) {
+        jQuery(el).data('gomapsextcontroller').initialize();
+    });
+}

@@ -29,19 +29,9 @@ jQuery(document).ready(function ($) {
 
 	function showMap() {
 		if(typeof google === "undefined" || typeof google.maps === "undefined") {
-			$('body').append($('<script>').attr('src', $links.data('library') + '&callback=GoMapsExtLoaded'));
+			$('body').append($('<script>').attr('src', $links.data('library')));
 			$mapContainer.show();
 		}
 		$preview.remove();
 	}
-
 });
-
-/**
- * global google maps api callback
- */
-function GoMapsExtLoaded() {
-	jQuery('.js-map').each(function(key, el) {
-		jQuery(el).data('gomapsextcontroller').initialize();
-	});
-}

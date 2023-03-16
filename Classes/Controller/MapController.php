@@ -113,7 +113,7 @@ class MapController extends ActionController
             $addJsMethod = 'addJsFooter';
         }
 
-        $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?? '//maps.google.com/maps/api/js?v=weekly';
+        $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ?? '//maps.google.com/maps/api/js?v=weekly&callback=goMapsExtLoaded';
 
         // get the apiKey
         $apiKey = $this->getFinalApiKey();
@@ -136,6 +136,8 @@ class MapController extends ActionController
                 false,
                 false,
                 '',
+                true,
+                '|',
                 true
             );
         }
