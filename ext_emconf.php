@@ -2,10 +2,10 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Google Maps API Extbase',
-    'description' => 'Google Maps Extension. Simply insert a google map Version 3 inc. jQuery, calculate a route,
+    'description' => 'Google Maps Extension. Simply insert a Google Map Version 3 without jQuery, calculate a route,
 	                  images for markers, style maps, KML, categories, responsive and many more.',
     'category' => 'plugin',
-    'version' => '5.1.1-dev',
+    'version' => '6.0.0-dev',
     'state' => 'stable',
     'clearCacheOnLoad' => true,
     'author' => 'Marc Hirdes',

@@ -82,16 +82,10 @@ class MapController extends ActionController
         }
 
         $pathPrefix = 'EXT:' . $this->request->getControllerExtensionKey() . '/';
-        if ($extConf['include_library'] === '1') {
-            $pageRenderer->{$addJsMethod . 'Library'}(
-                'jQuery',
-                $pathPrefix . 'Resources/Public/Scripts/jquery.min.js'
-            );
-        }
 
         if ($extConf['include_manually'] !== '1') {
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/markerclusterer_compiled.js';
-            $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.js';
+            $scripts[] = $pathPrefix . 'Resources/Public/Scripts/gomapsext.js';
 
             if ($this->settings['preview']['enabled']) {
                 $scripts[] = $pathPrefix . 'Resources/Public/Scripts/gomapsext.preview.js';

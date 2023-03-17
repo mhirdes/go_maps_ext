@@ -2,12 +2,11 @@
       xmlns:gomapsext="http://typo3.org/ns/Clickstorm/GoMapsExt/ViewHelpers">
 
 <gomapsext:script>
-    (function ($, window, document, undefined) {
-    $(function () {
-    var gme = new Object();
+document.addEventListener("DOMContentLoaded", () => {
+    let gme = new Object();
 
-    gme.zoomTypes = new Array(0,1,2);
-    gme.defaultMapTypes = new Array("roadmap", "satellite", "hybrid", "terrain", "{map.styledMapName}");
+    gme.zoomTypes = [0,1,2];
+    gme.defaultMapTypes = ["roadmap", "satellite", "hybrid", "terrain", "{map.styledMapName}"];
 
     gme.mapSettings = <f:format.raw>{</f:format.raw>
     id: 'gme-' + {map.uid},
@@ -63,18 +62,18 @@
     defaultZoom: 11
     <f:format.raw>}</f:format.raw>
 
-    gme.mapSettings.mapTypes = new Array();
+    gme.mapSettings.mapTypes = [];
     <f:for each="{map.mapTypes}" as="type" iteration="i">
         gme.mapSettings.mapTypes[{i.index}] = gme.defaultMapTypes[{type}];
     </f:for>
 
-    gme.request = new Array();
+    gme.request = [];
 
     <f:for each="{request}" as="item" iteration="i" key="k">
         gme.request['{k}'] = '{item}';
     </f:for>
 
-    gme.addresses = new Array();
+    gme.addresses = [];
     <f:for each="{addresses}" as="address" iteration="i">
         gme.addresses[{i.index}]  = <f:format.raw>{</f:format.raw>
         uid: {address.uid},
@@ -143,15 +142,13 @@
     gme.ll.submit = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.submit" />";
     gme.ll.noSearchResults = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.noSearchResults" />";
     gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />";
-    var $element = $("#" + gme.mapSettings.id);
-    $element.gomapsext(gme);
+    const element = document.getElementById(gme.mapSettings.id);
+    element.gomapsext(gme);
     if(gme.mapSettings.width.indexOf('%') != -1) {
-        $(window).resize(function() {
-            $element.trigger('mapresize');
+        window.addEventListener('resize', () => {
+            element.dispatchEvent(new Event('mapresize'));
         });
     }
-
-    }); // end of closure
-    })(jQuery || $, window, document);
+}); // end of closure
 </gomapsext:script>
 </html>

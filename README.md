@@ -1,6 +1,6 @@
 # go_maps_ext
 
-Google Maps Extension for TYPO3. Simply insert a google map Version 3 inc. jQuery, calculate a route,
+Google Maps Extension for TYPO3. Simply insert a Google Map Version 3 without jQuery, calculate a route,
 images for markers, style maps, KML, categories, responsive and many more.
 
 ## More information

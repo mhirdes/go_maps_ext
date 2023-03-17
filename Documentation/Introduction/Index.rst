@@ -20,7 +20,7 @@ Features
 
 - Written with Extbase/Fluid
 
-- Works with jQuery
+- Works without jQuery
 
 - Uses Version 3 of the Google Maps API, API key needed
 

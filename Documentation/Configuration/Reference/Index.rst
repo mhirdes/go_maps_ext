@@ -9,20 +9,6 @@ Extension Configurations
 
 .. ### BEGIN~OF~TABLE ###
 
-.. container:: table-row
-
-   Property
-         include\_library
-
-   Data type
-         boolean
-
-   Description
-         Use JavaScript Library from Extension: jQuery
-
-   Default
-         0
-
 
 .. container:: table-row
 
