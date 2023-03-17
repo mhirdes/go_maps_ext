@@ -93,12 +93,8 @@ class MapController extends ActionController
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/markerclusterer_compiled.js';
             $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.js';
 
-            if ($this->settings['preview']['setCookieToShowMapAlways']) {
-                $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.cookie.js';
-            }
-
             if ($this->settings['preview']['enabled']) {
-                $scripts[] = $pathPrefix . 'Resources/Public/Scripts/jquery.gomapsext.preview.js';
+                $scripts[] = $pathPrefix . 'Resources/Public/Scripts/gomapsext.preview.js';
             }
 
             foreach ($scripts as $script) {

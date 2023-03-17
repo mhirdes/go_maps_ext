@@ -2,7 +2,7 @@
  *  Copyright notice
  *
  *  (c) 2012 Marc Hirdes <Marc_Hirdes@gmx.de>, clickstorm GmbH
- *  
+ *
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
@@ -22,27 +22,27 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-// Google Polylines (https://developers.google.com/maps/documentation/javascript/overlays?#Polylines)
-
-// add the Polygon to go_maps_ext-Map
-jQuery(document).ready(function() {
+// Google Polygon (https://developers.google.com/maps/documentation/javascript/overlays)
+document.addEventListener("DOMContentLoaded", () => {
 	// Get element with ID (title) of the Map
-	var element = jQuery('#Example');
-	var polylineCoords = [];
-	
+	const element = document.querySelector('#Example');
+	const polygonCoords = [];
+
 	// get positions of markers
-	jQuery.each(element.data("markers"), function(key, marker) {
-		polylineCoords.push(marker.getPosition());
-	});
-	
-	// configure the polyline
-	var polyline = new google.maps.Polyline({
-		path: polylineCoords,
+	for (const marker of element.dataset.markers) {
+		polygonCoords.push(marker.getPosition());
+	}
+
+	// configure the polygon
+	const polygon = new google.maps.Polygon({
+		paths: polygonCoords,
 		strokeColor: "#FF0000",
 		strokeOpacity: 1.0,
-		strokeWeight: 2
+		strokeWeight: 2,
+		fillColor: "#FF0000",
+		fillOpacity: 0.35
 	});
-	
-	// add the polyline to the map
-	polyline.setMap(element.data("map"));
+
+	// add the polygon to the map
+	polygon.setMap(element.dataset.map);
 });
