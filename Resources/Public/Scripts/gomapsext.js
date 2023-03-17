@@ -81,7 +81,6 @@ class GoMapsExtController {
 
     this.markers.forEach(marker => {
       let showMarker;
-      const selectedCats = []; // replace with selected categories
 
       if (selectedCats.length > 0) {
         marker.setVisible(false);
@@ -101,13 +100,13 @@ class GoMapsExtController {
       if (showMarker) {
         marker.setVisible(true);
         const addressEl = document.querySelector(`#gme-address${marker.uid}`);
-        if (addressEl.parentElement.tagName.toLowerCase() === 'del') {
+        if (addressEl && addressEl.parentElement.tagName.toLowerCase() === 'del') {
           addressEl.parentElement.replaceWith(addressEl);
         }
         return true;
       } else {
         const addressEl = document.querySelector(`#gme-address${marker.uid}`);
-        if (addressEl.parentElement.tagName.toLowerCase() !== 'del') {
+        if (addressEl && addressEl.parentElement.tagName.toLowerCase() !== 'del') {
           const delEl = document.createElement('del');
           addressEl.parentNode.insertBefore(delEl, addressEl);
           delEl.appendChild(addressEl);
@@ -137,9 +136,9 @@ class GoMapsExtController {
   }
 
   focusAddressFromRequest() {
-    const getAddress = this.getURLParameter('tx_gomapsext_show\\[address\\]');
+    const getAddress = parseInt(this.getURLParameter('tx_gomapsext_show\\[address\\]'));
     const {gme, element} = this;
-    if (getAddress) {
+    if (getAddress > 0) {
       this.focusAddress(getAddress, element, gme);
     }
   }
@@ -147,7 +146,7 @@ class GoMapsExtController {
   addMapPoint(pointDescription, Route, element, infoWindow, gme) {
     const latitude = pointDescription.latitude;
     const longitude = pointDescription.longitude;
-    const geocoder = element.dataset.geocoder;
+    const geocoder = element.gomapsext.geocoder;
     const _this = this;
 
     Route.push(pointDescription.address);
@@ -174,7 +173,7 @@ class GoMapsExtController {
     const _this = this;
     this.markers.forEach((marker) => {
       if (marker.uid === addressUid) {
-        element.dataset.center = marker.position;
+        element.gomapsext.center = marker.position;
         if (marker.infoWindow) {
           marker.infoWindow.setContent(marker.infoWindowContent);
           marker.infoWindow.open(_this.map, marker);
@@ -264,7 +263,7 @@ class GoMapsExtController {
 
     const marker = new google.maps.Marker(markerOptions);
 
-    if (gme.mapSettings.markerCluster === 1) {
+    if (gme.mapSettings.markerCluster == 1 && $element.markerCluster) {
       google.maps.event.addListener(marker, 'visible_changed', () => {
         if (marker.getVisible()) {
           $element.markerCluster.addMarker(marker, true);
@@ -311,8 +310,8 @@ class GoMapsExtController {
         });
       }
       if (pointDescription.opened) {
-
-        $element.off('openinfo').on('openinfo', () => {
+        $element.removeEventListener('openinfo', null);
+        $element.addEventListener('openinfo', () => {
           infoWindow.setContent(infoWindowContent);
           infoWindow.open(map, marker);
         });
@@ -361,8 +360,8 @@ class GoMapsExtController {
       _map.initZoom = 1;
     }
 
-    if (element.dataset.center) {
-      _map.setCenter(JSON.parse(element.dataset.center));
+    if (element.gomapsext.center) {
+      _map.setCenter(element.gomapsext.center);
     } else if (gme.mapSettings.lat && gme.mapSettings.lng) {
       _map.setCenter(
         new google.maps.LatLng(gme.mapSettings.lat, gme.mapSettings.lng));
@@ -398,7 +397,7 @@ class GoMapsExtController {
     const gme = this.data;
     const map = this.map;
 
-    element.dataset.map = map;
+    element.gomapsext.map = map;
 
     // styled map
     if (gme.mapSettings.styledMapName) {
@@ -575,16 +574,16 @@ class GoMapsExtController {
   #initializeBackendAddresses() {
     const _this = this;
     const gme = this.data;
-    const $element = this.element;
+    const element = this.element;
     const Route = this.route;
     const infoWindow = this.infoWindow;
 
     // Add backend addresses
     if (gme.mapSettings.showRoute == 0) {
-      $element.dataset.geocoder = new google.maps.Geocoder();
-      if ($element.dataset.geocoder) {
+      element.gomapsext.geocoder = new google.maps.Geocoder();
+      if (element.gomapsext.geocoder) {
         gme.addresses.forEach(address => {
-          _this.addMapPoint(address, Route, $element, infoWindow, gme);
+          _this.addMapPoint(address, Route, element, infoWindow, gme);
         });
       }
     }
@@ -636,7 +635,7 @@ class GoMapsExtController {
       }
 
       // show route from frontend
-      if (gme.mapSettings.showForm == 1) {
+      if (gme.mapSettings.calcRoute == 1) {
         const mapForm = document.getElementById(`${gme.mapSettings.id}-form`);
 
         mapForm.addEventListener('submit', function(event) {
@@ -693,16 +692,17 @@ class GoMapsExtController {
 
     // categories checkboxes
     const checkboxes = document.querySelectorAll('.js-gme-cat');
-    for (let i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].addEventListener('change', function() {
-        const selectedCats = document.querySelectorAll('.js-gme-cat:checked');
-        const selectedCatsValues = Array.from(selectedCats).
-          map(function(checkbox) {
-            return checkbox.value;
-          });
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        let selectedCatsValues = [];
+        checkboxes.forEach(checkbox => {
+          if(checkbox.checked) {
+            selectedCatsValues.push(checkbox.value);
+          }
+        });
         _this.setCategories(selectedCatsValues);
       });
-    }
+    });
   }
 
   #initializeAddressListener() {
@@ -711,20 +711,20 @@ class GoMapsExtController {
     const gme = this.gme;
 
     const addresses = document.querySelectorAll('.js-gme-address');
-    for (let i = 0; i < addresses.length; i++) {
-      addresses[i].addEventListener('click', function() {
-        const selectedAddress = [this.getAttribute('data-address')];
+    addresses.forEach(address => {
+      address.addEventListener('click', function(event) {
+        event.preventDefault();
+        const selectedAddress = parseInt(this.getAttribute('data-address'));
         _this.focusAddress(selectedAddress, element, gme);
-        return false;
       });
-    }
+    });
   }
 }
 
 // create a new Google Map
 HTMLElement.prototype.gomapsext = function(gme) {
-  if (!this.dataset.gomapsextcontroller) {
-    this.gomapsextcontroller = new GoMapsExtController(this, gme);
+  if (!this.gomapsext.controller) {
+    this.gomapsext.controller = new GoMapsExtController(this, gme);
   }
 };
 
@@ -732,6 +732,6 @@ HTMLElement.prototype.gomapsext = function(gme) {
 window.goMapsExtLoaded = function() {
   const maps = document.querySelectorAll('.js-map');
   maps.forEach(function (el) {
-    el.gomapsextcontroller.initialize();
+    el.gomapsext.controller.initialize();
   });
 }

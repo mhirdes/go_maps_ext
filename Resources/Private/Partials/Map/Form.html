@@ -9,41 +9,43 @@
 		<div class="js-gme-error"><f:translate key="partials.map.form.error" /></div>
 	</form>
 </f:if>
-<f:form id="gme-{map.uid}-form" method="post">
-	<f:if condition="{map.calcRoute}">
-		<f:form.textfield name="saddress" class="js-gme-saddress" value="{request.saddress}" />
-        <f:if condition="{f:count(subject:addresses)} > 1">
-            <select name="eaddress" class="js-gme-eaddress" value="{request.eaddress}">
-                <f:for each="{addresses}" as="address" iteration="i">
-                    <option value="{i.index}">{address.title}</option>
-                </f:for>
-            </select>
+<f:if condition="{map.calcRoute}">
+    <f:form id="gme-{map.uid}-form" method="post">
+        <f:if condition="{map.calcRoute}">
+            <f:form.textfield name="saddress" class="js-gme-saddress" value="{request.saddress}" />
+            <f:if condition="{f:count(subject:addresses)} > 1">
+                <select name="eaddress" class="js-gme-eaddress" value="{request.eaddress}">
+                    <f:for each="{addresses}" as="address" iteration="i">
+                        <option value="{i.index}">{address.title}</option>
+                    </f:for>
+                </select>
+            </f:if>
         </f:if>
-	</f:if>
-	<f:if condition="{map.travelMode} == 1">
-		<f:comment>
-			<!--
-			Possible options for the Travel Mode are
-			0:map.travelModes.0 == Driving
-			2:map.travelModes.2 == Bicycling
-			3:map.travelModes.3 == Transit
-			4:map.travelModes.4 == Walking
-			-->
-		</f:comment>
-		<f:form.select name="travelmode" value="{f:if(condition:request.travelmode,then:request.travelmode,else:2)}"
-					   class="js-gme-travelmode" options="{0:map.travelModes.0, 3:map.travelModes.3, 4:map.travelModes.4}" size="1" />
-	</f:if>
-	<f:if condition="{map.unitSystem} == 1">
-		<f:comment>
-			<!--
-			Possible options for the Unit System are
-			1:map.unitSystems.2 == Metric (km)
-			2:map.unitSystems.3 == Imperial (mil)
-			-->
-		</f:comment>
-		<f:form.select name="unitsystem" value="{f:if(condition:request.unitsystem,then:request.unitsystem,else:2)}"
-					   class="js-gme-unitsystem" options="{map.unitSystems}" size="1" />
-	</f:if>
-	<f:form.submit class="js-gme-submit" name="submit" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submit')}" />
-</f:form>
+        <f:if condition="{map.travelMode} == 1">
+            <f:comment>
+                <!--
+                Possible options for the Travel Mode are
+                0:map.travelModes.0 == Driving
+                2:map.travelModes.2 == Bicycling
+                3:map.travelModes.3 == Transit
+                4:map.travelModes.4 == Walking
+                -->
+            </f:comment>
+            <f:form.select name="travelmode" value="{f:if(condition:request.travelmode,then:request.travelmode,else:2)}"
+                           class="js-gme-travelmode" options="{0:map.travelModes.0, 3:map.travelModes.3, 4:map.travelModes.4}" size="1" />
+        </f:if>
+        <f:if condition="{map.unitSystem} == 1">
+            <f:comment>
+                <!--
+                Possible options for the Unit System are
+                1:map.unitSystems.2 == Metric (km)
+                2:map.unitSystems.3 == Imperial (mil)
+                -->
+            </f:comment>
+            <f:form.select name="unitsystem" value="{f:if(condition:request.unitsystem,then:request.unitsystem,else:2)}"
+                           class="js-gme-unitsystem" options="{map.unitSystems}" size="1" />
+        </f:if>
+        <f:form.submit class="js-gme-submit" name="submit" value="{f:translate(key:'tx_gomapsext_partials_map_assign.submit')}" />
+    </f:form>
+</f:if>
 </html>

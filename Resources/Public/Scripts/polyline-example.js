@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const polygonCoords = [];
 
 	// get positions of markers
-	for (const marker of element.dataset.markers) {
+	for (const marker of element.gomapsext.markers) {
 		polygonCoords.push(marker.getPosition());
 	}
 
@@ -44,5 +44,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	// add the polygon to the map
-	polygon.setMap(element.dataset.map);
+	polygon.setMap(element.gomapsext.map);
 });

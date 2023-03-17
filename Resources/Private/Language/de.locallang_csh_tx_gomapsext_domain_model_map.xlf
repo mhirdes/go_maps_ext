@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf" date="2023-03-16T10:02:27Z" product-name="go_maps_ext">
+	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_map.xlf" date="2023-03-17T16:05:18Z" product-name="go_maps_ext">
 		<header/>
 		<body>
 			<trans-unit id="addresses.description" resname="addresses.description">
@@ -116,8 +116,8 @@
 				<target>Zeigt einen Icon zum aktivieren der StreetView.</target>
 			</trans-unit>
 			<trans-unit id="styled_map_code.description" resname="styled_map_code.description">
-				<source>JSON Code, for more information visit http://googlemaps.github.io/js-samples/styledmaps/wizard/index.html</source>
-				<target>JSON Code, weitere Informationen unter http://googlemaps.github.io/js-samples/styledmaps/wizard/index.html</target>
+				<source>JSON Code, for more information visit https://mapstyle.withgoogle.com/</source>
+				<target>JSON Code, weitere Informationen unter https://mapstyle.withgoogle.com/</target>
 			</trans-unit>
 			<trans-unit id="styled_map_name.description" resname="styled_map_name.description">
 				<source>Shown in the map type control.</source>
