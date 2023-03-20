@@ -10,5 +10,5 @@ images for markers, style maps, KML, categories, responsive and many more.
   * [clickstorm Blog] - The API key is now required, get here more information (german)
 
 [TYPO3 Repository]: <https://typo3.org/extensions/repository/view/go_maps_ext>
-[Extension Manual]: <https://docs.typo3.org/typo3cms/extensions/go_maps_ext/>
+[Extension Manual]: <https://docs.typo3.org/p/clickstorm/go-maps-ext/main/en-us/User/Index.html>
 [clickstorm Blog]: <https://www.clickstorm.de/blog/google-maps-api-nur-noch-mit-key/>
