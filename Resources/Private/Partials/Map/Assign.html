@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     markerClusterSize: {f:if(condition:"{map.markerClusterSize} > 0", then:"{map.markerClusterSize}", else:"null")},
     <f:if condition="{map.markerClusterStyle}">
         <f:then>
-            markerClusterStyle: <f:format.html parseFuncTSPath="">{map.markerClusterStyle}</f:format.html>,
+            markerClusterStyle: <f:transform.html>{map.markerClusterStyle}</f:transform.html>,
         </f:then>
         <f:else>
             markerClusterStyle: '',
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     styledMapName: '{map.styledMapName}',
     <f:if condition="{map.styledMapCode}">
         <f:then>
-            styledMapCode: <f:format.html parseFuncTSPath="">{map.styledMapCode}</f:format.html>,
+            styledMapCode: <f:transform.html>{map.styledMapCode}</f:transform.html>,
         </f:then>
         <f:else>
             styledMapCode: '',
