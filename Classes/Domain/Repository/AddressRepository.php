@@ -33,11 +33,11 @@ class AddressRepository extends Repository
         if ($map) {
             $or[] = $query->contains('map', $map);
         }
-        $and[] = $query->logicalOr($or);
+        $and[] = $query->logicalOr(...$or);
 
         return $query->matching(
             $query->logicalAnd(
-                $and
+                ...$and
             )
         )
             ->execute();
