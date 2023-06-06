@@ -722,16 +722,22 @@ class GoMapsExtController {
 }
 
 // create a new Google Map
+let goMapsExtControllerStorage = {};
+
 HTMLElement.prototype.gomapsext = function(gme) {
-  if (!this.gomapsext.controller) {
-    this.gomapsext.controller = new GoMapsExtController(this, gme);
+  if (!goMapsExtControllerStorage[this.id]) {
+    goMapsExtControllerStorage[this.id] = new GoMapsExtController(this, gme);
   }
 };
+
+function getGoMapsExtControllerById(id) {
+  return goMapsExtControllerStorage ? goMapsExtControllerStorage[id] : undefined;
+}
 
 // add global callback function, see https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
 window.goMapsExtLoaded = function() {
   const maps = document.querySelectorAll('.js-map');
   maps.forEach(function (el) {
-    el.gomapsext.controller.initialize();
+    getGoMapsExtControllerById(el.id).initialize();
   });
 }

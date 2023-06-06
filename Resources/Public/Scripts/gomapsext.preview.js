@@ -3,14 +3,16 @@
  */
 document.addEventListener('DOMContentLoaded', () => {
 	const links = document.querySelectorAll('.js-gme-show');
-	const preview = document.querySelector('.js-gme-preview');
-	const mapContainer = document.querySelector('.js-gme-container');
-	const useCookies = preview.dataset.cookie === '1';
+	const previews = document.querySelectorAll('.js-gme-preview');
+	const mapContainers = document.querySelectorAll('.js-gme-container');
+	const useCookies = previews[0] && previews[0].dataset.cookie === '1';
 
 	if (useCookies && getCookie('tx_gomapsext_show_map')) {
 		showMap();
 	} else {
-		mapContainer.style.display = 'none';
+		mapContainers.forEach(mapContainer => {
+			mapContainer.style.display = 'none';
+		});
 
 		links.forEach(link => {
 			link.addEventListener('click', e => {
@@ -28,10 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
 			const script = document.createElement('script');
 			script.src = links[0].dataset.library;
 			document.body.appendChild(script);
-			mapContainer.style.display = 'block';
+			mapContainers.forEach(mapContainer => {
+				mapContainer.style.display = 'block';
+			});
 		}
 
-		preview.remove();
+		previews.forEach(preview => {
+			preview.remove();
+		});
 	}
 
 	function getCookie(name) {
