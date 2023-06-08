@@ -2,6 +2,7 @@
 
 namespace Clickstorm\GoMapsExt\ViewHelpers;
 
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -41,9 +42,11 @@ class ScriptViewHelper extends AbstractViewHelper
         RenderingContextInterface $renderingContext
     ): void {
         $value = $renderChildrenClosure() ?? '';
+        $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('go_maps_ext');
+        $addJsMethod = $extConf['footerJS'] === '1' ? 'addJsFooter' : 'addJs';
 
         GeneralUtility::makeInstance(PageRenderer::class)
-            ->addJsFooterFile(
+            ->{$addJsMethod . 'File'}(
                 GeneralUtility::writeJavaScriptContentToTemporaryFile($value)
             );
     }
