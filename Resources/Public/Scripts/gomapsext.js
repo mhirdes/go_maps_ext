@@ -737,7 +737,14 @@ function getGoMapsExtControllerById(id) {
 // add global callback function, see https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
 window.goMapsExtLoaded = function() {
   const maps = document.querySelectorAll('.js-map');
-  maps.forEach(function (el) {
+  maps.forEach(function(el) {
     getGoMapsExtControllerById(el.id).initialize();
+
+    if (goMapsExtController) {
+      goMapsExtController.initialize();
+    } else {
+      // if no search controller loaded, then retry
+      setTimeout(goMapsExtLoaded, 250);
+    }
   });
-}
+};
