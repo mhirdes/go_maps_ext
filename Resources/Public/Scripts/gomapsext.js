@@ -731,6 +731,8 @@ window.goMapsExtLoaded = function() {
       el.gomapsext.controller.initialize();
     });
   } else {
-    setTimeout(goMapsExtLoaded, 250);
+    document.addEventListener('DOMContentLoaded', () => {
+      window.goMapsExtLoaded();
+    })
   }
 };
