@@ -116,7 +116,7 @@ class GoMapsExtController {
 
     // Repaint marker cluster if it exists
     if (element.markerCluster) {
-      element.markerCluster.repaint();
+      this.refreshCluster(element, this.gme);
     }
   }
 
@@ -378,7 +378,16 @@ class GoMapsExtController {
       if (element.markerCluster != null) {
         element.markerCluster.clearMarkers();
       }
-      element.markerCluster = new MarkerClusterer(this.map, this.markers, {
+
+      // only add visible markers
+      let clusterMarkers = [];
+      this.markers.forEach(function (marker) {
+        if(marker.visible) {
+          clusterMarkers.push(marker);
+        }
+      });
+
+      element.markerCluster = new MarkerClusterer(this.map, clusterMarkers, {
         imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
         styles: gme.mapSettings.markerClusterStyle,
         maxZoom: gme.mapSettings.markerClusterZoom,
