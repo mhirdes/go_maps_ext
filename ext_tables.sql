@@ -17,7 +17,7 @@ CREATE TABLE tx_gomapsext_domain_model_address (
 	image_size          tinyint(1) unsigned DEFAULT '0'        NOT NULL,
 	image_width         int(11)             DEFAULT '0'        NOT NULL,
 	image_height        int(11)             DEFAULT '0'        NOT NULL,
-	info_window_content text                DEFAULT ''         NOT NULL,
+	info_window_content text,
 	info_window_link    int(11)             DEFAULT '0'        NOT NULL,
 	info_window_images  int(11) unsigned                       NOT NULL default '0',
 	close_by_click      tinyint(1) unsigned DEFAULT '0'        NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	addresses             int(11) unsigned    DEFAULT '0'        NOT NULL,
 	show_addresses        tinyint(1) unsigned DEFAULT '0'        NOT NULL,
 	show_categories       tinyint(1) unsigned DEFAULT '0'        NOT NULL,
-	kml_url               text                                   NOT NULL,
+	kml_url               text,
 	kml_preserve_viewport tinyint(1) unsigned DEFAULT '0'        NOT NULL,
 	kml_local             tinyint(1) unsigned DEFAULT '0'        NOT NULL,
 	scroll_zoom           tinyint(1) unsigned DEFAULT '0'        NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	marker_cluster        tinyint(1) unsigned DEFAULT '0'        NOT NULL,
 	marker_cluster_zoom   int(11)             DEFAULT '0'        NOT NULL,
 	marker_cluster_size   int(11)             DEFAULT '0'        NOT NULL,
-	marker_cluster_style  text                                   NOT NULL,
+	marker_cluster_style  text,
 	marker_search         tinyint(1) unsigned DEFAULT '0'        NOT NULL,
 	default_type          int(11)             DEFAULT '0'        NOT NULL,
 	scale_control         tinyint(1) unsigned DEFAULT '0'        NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE tx_gomapsext_domain_model_map (
 	travel_mode           int(11)             DEFAULT '0'        NOT NULL,
 	unit_system           int(11)             DEFAULT '0'        NOT NULL,
 	styled_map_name       varchar(255)        DEFAULT ''         NOT NULL,
-	styled_map_code       text                                   NOT NULL
+	styled_map_code       text
 );
 
 #
