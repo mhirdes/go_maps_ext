@@ -142,8 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
     gme.ll.submit = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.submit" />";
     gme.ll.noSearchResults = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.noSearchResults" />";
     gme.ll.infoWindowLinkText = "<f:translate key="LLL:EXT:go_maps_ext/Resources/Private/Language/locallang.xlf:tx_gomapsext_partials_map_assign.infoWindowLinkText" />";
-    const element = document.getElementById(gme.mapSettings.id);
-    element.gomapsext(gme);
+    let element = document.getElementById(gme.mapSettings.id);
+    element.gomapsext = {};
+    element.gomapsext.gme = gme;
     if(gme.mapSettings.width.indexOf('%') != -1) {
         window.addEventListener('resize', () => {
             element.dispatchEvent(new Event('mapresize'));

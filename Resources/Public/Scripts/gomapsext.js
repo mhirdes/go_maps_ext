@@ -721,30 +721,16 @@ class GoMapsExtController {
   }
 }
 
-// create a new Google Map
-let goMapsExtControllerStorage = {};
-
-HTMLElement.prototype.gomapsext = function(gme) {
-  if (!goMapsExtControllerStorage[this.id]) {
-    goMapsExtControllerStorage[this.id] = new GoMapsExtController(this, gme);
-  }
-};
-
-function getGoMapsExtControllerById(id) {
-  return goMapsExtControllerStorage ? goMapsExtControllerStorage[id] : undefined;
-}
-
 // add global callback function, see https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
 window.goMapsExtLoaded = function() {
-  const maps = document.querySelectorAll('.js-map');
-  maps.forEach(function(el) {
-    getGoMapsExtControllerById(el.id).initialize();
-
-    if (goMapsExtController) {
-      goMapsExtController.initialize();
-    } else {
-      // if no search controller loaded, then retry
-      setTimeout(goMapsExtLoaded, 250);
-    }
-  });
+  let state = document.readyState;
+  if(state === 'interactive' || state === 'complete') {
+    const maps = document.querySelectorAll('.js-map');
+    maps.forEach(function (el) {
+      el.gomapsext.controller = new GoMapsExtController(el, el.gomapsext.gme);
+      el.gomapsext.controller.initialize();
+    });
+  } else {
+    setTimeout(goMapsExtLoaded, 250);
+  }
 };
