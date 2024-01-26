@@ -730,18 +730,20 @@ class GoMapsExtController {
   }
 }
 
-// add global callback function, see https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
-window.goMapsExtLoaded = function() {
-  let state = document.readyState;
-  if(state === 'interactive' || state === 'complete') {
-    const maps = document.querySelectorAll('.js-map');
-    maps.forEach(function (el) {
-      el.gomapsext.controller = new GoMapsExtController(el, el.gomapsext.gme);
-      el.gomapsext.controller.initialize();
-    });
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      window.goMapsExtLoaded();
-    })
+document.addEventListener("DOMContentLoaded", () => {
+  // add global callback function, see https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
+  window.goMapsExtLoaded = function () {
+      const maps = document.querySelectorAll('.js-map');
+      maps.forEach(function (el) {
+        el.gomapsext.controller = new GoMapsExtController(el, el.gomapsext.gme);
+        el.gomapsext.controller.initialize();
+      });
+  };
+
+  if(window.txGoMapsExtLibrary) {
+    let script = document.createElement('script');
+    script.src = window.txGoMapsExtLibrary;
+    script.async = true;
+    document.head.appendChild(script);
   }
-};
+});

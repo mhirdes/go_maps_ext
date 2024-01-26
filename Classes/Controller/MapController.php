@@ -2,6 +2,7 @@
 
 namespace Clickstorm\GoMapsExt\Controller;
 
+use Clickstorm\CsTemplates\Domain\Model\Page;
 use Psr\Http\Message\ResponseInterface;
 
 use Clickstorm\GoMapsExt\Domain\Model\Map;
@@ -45,6 +46,7 @@ class MapController extends ActionController
     {
         $extConf = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('go_maps_ext');
 
+        /** @var PageRenderer $pageRenderer */
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $addJsMethod = 'addJs';
 
@@ -68,16 +70,9 @@ class MapController extends ActionController
         }
 
         if (!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
-            $pageRenderer->{$addJsMethod . 'Library'}(
-                'googleMaps',
-                $this->googleMapsLibrary,
-                'text/javascript',
-                false,
-                false,
-                '',
-                true,
-                '|',
-                true
+            $pageRenderer->addJsFooterInlineCode(
+                'txGoMapsExtLibrary',
+                'window.txGoMapsExtLibrary = "' .$this->googleMapsLibrary . '";'
             );
         }
 
