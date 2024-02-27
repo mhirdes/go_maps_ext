@@ -184,6 +184,10 @@ class GoMapsExtController {
     });
     if (element.markerCluster) {
       element.markerCluster.repaint();
+
+      if (gme.mapSettings.markerClusterZoom) {
+        this.map.setZoom(gme.mapSettings.markerClusterZoom + 1);
+      }
     }
   }
 
