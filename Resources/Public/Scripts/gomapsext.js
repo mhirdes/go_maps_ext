@@ -571,8 +571,10 @@ class GoMapsExtController {
               (index === 'title' || index === 'infoWindowContent') &&
               submitValue !== '') {
               if (val.toLowerCase().includes(submitValue)) {
-                _this.focusAddress(_this.markers[i].uid, $element, gme);
-                notFound = false;
+                if (_this.markers[i].visible) {
+                  _this.focusAddress(_this.markers[i].uid, $element, gme);
+                  notFound = false;
+                }
               }
             }
           });
