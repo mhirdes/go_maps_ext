@@ -184,6 +184,10 @@ class GoMapsExtController {
     });
     if (element.markerCluster) {
       element.markerCluster.repaint();
+
+      if (gme.mapSettings.markerClusterZoom) {
+        this.map.setZoom(gme.mapSettings.markerClusterZoom + 1);
+      }
     }
   }
 
@@ -567,8 +571,10 @@ class GoMapsExtController {
               (index === 'title' || index === 'infoWindowContent') &&
               submitValue !== '') {
               if (val.toLowerCase().includes(submitValue)) {
-                _this.focusAddress(_this.markers[i].uid, $element, gme);
-                notFound = false;
+                if (_this.markers[i].visible) {
+                  _this.focusAddress(_this.markers[i].uid, $element, gme);
+                  notFound = false;
+                }
               }
             }
           });
