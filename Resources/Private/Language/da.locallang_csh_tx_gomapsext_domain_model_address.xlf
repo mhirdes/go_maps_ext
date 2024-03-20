@@ -5,11 +5,11 @@
     <body>
       <trans-unit id="address.description" resname="address.description">
         <source>Please enter an address or coordinates on the position field above and press update.</source>
-        <target state="needs-translation">Please enter an address or coordinates on the position field above and press update.</target>
+        <target state="translated">Indtast venligst en adresse eller koordinater på positionsfeltet ovenfor, og tryk på opdatér.</target>
       </trans-unit>
       <trans-unit id="close_by_click.description" resname="close_by_click.description">
         <source>Close InfoWindow by click instead of mouse out.</source>
-        <target state="needs-translation">Close InfoWindow by click instead of mouse out.</target>
+        <target state="translated">Luk infovindue ved at klikke i stedet for at trække mussemarkør ud.</target>
       </trans-unit>
       <trans-unit id="configuration_map.description" resname="configuration_map.description">
         <source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
