@@ -5,19 +5,19 @@
     <body>
       <trans-unit id="partials.map.form.error" resname="partials.map.form.error">
         <source><![CDATA[No addresses were found.]]></source>
-        <target state="needs-translation"><![CDATA[No addresses were found.]]></target>
+        <target state="translated"><![CDATA[Ingen adresse fundet.]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address" resname="tx_gomapsext_domain_model_address">
         <source><![CDATA[Google Maps Address]]></source>
-        <target state="needs-translation"><![CDATA[Google Maps Address]]></target>
+        <target state="translated"><![CDATA[Google Maps adresse]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.address" resname="tx_gomapsext_domain_model_address.address">
         <source><![CDATA[address]]></source>
-        <target state="needs-translation"><![CDATA[address]]></target>
+        <target state="translated"><![CDATA[adresse]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.close_by_click" resname="tx_gomapsext_domain_model_address.close_by_click">
         <source><![CDATA[closeByClick]]></source>
-        <target state="needs-translation"><![CDATA[closeByClick]]></target>
+        <target state="translated"><![CDATA[closeByClick]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.configuration_map" resname="tx_gomapsext_domain_model_address.configuration_map">
         <source><![CDATA[configurationMap]]></source>
@@ -45,15 +45,15 @@
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.latitude" resname="tx_gomapsext_domain_model_address.latitude">
         <source><![CDATA[latitude]]></source>
-        <target state="needs-translation"><![CDATA[latitude]]></target>
+        <target state="translated"><![CDATA[breddegrad]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.longitude" resname="tx_gomapsext_domain_model_address.longitude">
         <source><![CDATA[longitude]]></source>
-        <target state="needs-translation"><![CDATA[longitude]]></target>
+        <target state="translated"><![CDATA[længdegrad]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.marker" resname="tx_gomapsext_domain_model_address.marker">
         <source><![CDATA[marker]]></source>
-        <target state="needs-translation"><![CDATA[marker]]></target>
+        <target state="translated"><![CDATA[markør]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.open_by_click" resname="tx_gomapsext_domain_model_address.open_by_click">
         <source><![CDATA[openByClick]]></source>
