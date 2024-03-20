@@ -61,15 +61,15 @@
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.title" resname="tx_gomapsext_domain_model_address.title">
         <source><![CDATA[title]]></source>
-        <target state="needs-translation"><![CDATA[title]]></target>
+        <target state="translated"><![CDATA[titel]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map" resname="tx_gomapsext_domain_model_map">
         <source><![CDATA[Map]]></source>
-        <target state="needs-translation"><![CDATA[Map]]></target>
+        <target state="translated"><![CDATA[Kort]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.addresses" resname="tx_gomapsext_domain_model_map.addresses">
         <source><![CDATA[addresses]]></source>
-        <target state="needs-translation"><![CDATA[addresses]]></target>
+        <target state="translated"><![CDATA[adresser]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.calc_route" resname="tx_gomapsext_domain_model_map.calc_route">
         <source><![CDATA[calcRoute]]></source>
@@ -97,7 +97,7 @@
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.height" resname="tx_gomapsext_domain_model_map.height">
         <source><![CDATA[in px]]></source>
-        <target state="needs-translation"><![CDATA[in px]]></target>
+        <target state="translated"><![CDATA[i px]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.kml_url" resname="tx_gomapsext_domain_model_map.kml_url">
         <source><![CDATA[kmlUrl]]></source>
@@ -145,35 +145,35 @@
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.travel_mode.0" resname="tx_gomapsext_domain_model_map.travel_mode.0">
         <source><![CDATA[Driving]]></source>
-        <target state="needs-translation"><![CDATA[Driving]]></target>
+        <target state="translated"><![CDATA[Kører]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.travel_mode.2" resname="tx_gomapsext_domain_model_map.travel_mode.2">
         <source><![CDATA[Bicycling]]></source>
-        <target state="needs-translation"><![CDATA[Bicycling]]></target>
+        <target state="translated"><![CDATA[Cykler]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.travel_mode.3" resname="tx_gomapsext_domain_model_map.travel_mode.3">
         <source><![CDATA[Transit]]></source>
-        <target state="needs-translation"><![CDATA[Transit]]></target>
+        <target state="translated"><![CDATA[Overgang]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.travel_mode.4" resname="tx_gomapsext_domain_model_map.travel_mode.4">
         <source><![CDATA[Walking]]></source>
-        <target state="needs-translation"><![CDATA[Walking]]></target>
+        <target state="translated"><![CDATA[Går]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.unit_system.2" resname="tx_gomapsext_domain_model_map.unit_system.2">
         <source><![CDATA[km]]></source>
-        <target state="needs-translation"><![CDATA[km]]></target>
+        <target state="translated"><![CDATA[km]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.unit_system.3" resname="tx_gomapsext_domain_model_map.unit_system.3">
         <source><![CDATA[mil]]></source>
-        <target state="needs-translation"><![CDATA[mil]]></target>
+        <target state="translated"><![CDATA[mil]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.width" resname="tx_gomapsext_domain_model_map.width">
         <source><![CDATA[in px]]></source>
-        <target state="needs-translation"><![CDATA[in px]]></target>
+        <target state="translated"><![CDATA[i px]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.zoom" resname="tx_gomapsext_domain_model_map.zoom">
         <source><![CDATA[zoom]]></source>
-        <target state="needs-translation"><![CDATA[zoom]]></target>
+        <target state="translated"><![CDATA[zoom]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map.zoom_control" resname="tx_gomapsext_domain_model_map.zoom_control">
         <source><![CDATA[zoomControl]]></source>
@@ -181,43 +181,43 @@
       </trans-unit>
       <trans-unit id="tx_gomapsext_flexform_settings" resname="tx_gomapsext_flexform_settings">
         <source><![CDATA[Settings]]></source>
-        <target state="needs-translation"><![CDATA[Settings]]></target>
+        <target state="translated"><![CDATA[Indstillinger]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_flexform_settings.map" resname="tx_gomapsext_flexform_settings.map">
         <source><![CDATA[Map]]></source>
-        <target state="needs-translation"><![CDATA[Map]]></target>
+        <target state="translated"><![CDATA[Kort]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_flexform_settings.apiKey" resname="tx_gomapsext_flexform_settings.apiKey">
         <source><![CDATA[API Key]]></source>
-        <target state="needs-translation"><![CDATA[API Key]]></target>
+        <target state="translated"><![CDATA[API-nøgle]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_partials_map_assign.alert" resname="tx_gomapsext_partials_map_assign.alert">
         <source><![CDATA[Please enter a valid address.]]></source>
-        <target state="needs-translation"><![CDATA[Please enter a valid address.]]></target>
+        <target state="translated"><![CDATA[Angiv venligst en gyldig adresse.]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_partials_map_assign.infoWindowLinkText" resname="tx_gomapsext_partials_map_assign.infoWindowLinkText">
         <source><![CDATA[Calculate Route]]></source>
-        <target state="needs-translation"><![CDATA[Calculate Route]]></target>
+        <target state="translated"><![CDATA[Beregn rute]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_partials_map_assign.noSearchResults" resname="tx_gomapsext_partials_map_assign.noSearchResults">
         <source><![CDATA[No results found.]]></source>
-        <target state="needs-translation"><![CDATA[No results found.]]></target>
+        <target state="translated"><![CDATA[Ingen resultater fundet.]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_partials_map_assign.submit" resname="tx_gomapsext_partials_map_assign.submit">
         <source><![CDATA[Calculate Route]]></source>
-        <target state="needs-translation"><![CDATA[Calculate Route]]></target>
+        <target state="translated"><![CDATA[Beregn rute]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_partials_map_assign.submitSearch" resname="tx_gomapsext_partials_map_assign.submitSearch">
         <source><![CDATA[Search]]></source>
-        <target state="needs-translation"><![CDATA[Search]]></target>
+        <target state="translated"><![CDATA[Søg]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_templates_map_preview.link" resname="tx_gomapsext_templates_map_preview.link">
         <source><![CDATA[show map]]></source>
-        <target state="needs-translation"><![CDATA[show map]]></target>
+        <target state="translated"><![CDATA[vis kort]]></target>
       </trans-unit>
       <trans-unit id="update_by_address" resname="update_by_address">
         <source><![CDATA[Update By Address]]></source>
-        <target state="needs-translation"><![CDATA[Update By Address]]></target>
+        <target state="translated"><![CDATA[Opdatèr efter adresse]]></target>
       </trans-unit>
       <trans-unit id="update_by_position" resname="update_by_position">
         <source><![CDATA[Update by Position]]></source>
