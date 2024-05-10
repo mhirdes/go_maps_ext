@@ -5,31 +5,31 @@
     <body>
       <trans-unit id="sys_category.tab.map" resname="sys_category.tab.map">
         <source><![CDATA[Google Map]]></source>
-        <target state="needs-translation"><![CDATA[Google Map]]></target>
+        <target state="translated"><![CDATA[Google Map]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address" resname="tx_gomapsext_domain_model_address">
         <source><![CDATA[Google Maps Address]]></source>
-        <target state="needs-translation"><![CDATA[Google Maps Address]]></target>
+        <target state="translated"><![CDATA[Google Maps adresse]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.address" resname="tx_gomapsext_domain_model_address.address">
         <source><![CDATA[Address]]></source>
-        <target state="needs-translation"><![CDATA[Address]]></target>
+        <target state="translated"><![CDATA[Adresse]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.categories" resname="tx_gomapsext_domain_model_address.categories">
         <source><![CDATA[Categories]]></source>
-        <target state="needs-translation"><![CDATA[Categories]]></target>
+        <target state="translated"><![CDATA[Kategorier]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.city" resname="tx_gomapsext_domain_model_address.city">
         <source><![CDATA[City]]></source>
-        <target state="needs-translation"><![CDATA[City]]></target>
+        <target state="translated"><![CDATA[By]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.close_by_click" resname="tx_gomapsext_domain_model_address.close_by_click">
         <source><![CDATA[Close InfoWindow by click]]></source>
-        <target state="needs-translation"><![CDATA[Close InfoWindow by click]]></target>
+        <target state="translated"><![CDATA[Luk infoWindow ved klik]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.configuration_map" resname="tx_gomapsext_domain_model_address.configuration_map">
         <source><![CDATA[Position]]></source>
-        <target state="needs-translation"><![CDATA[Position]]></target>
+        <target state="translated"><![CDATA[Position]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_address.image_height" resname="tx_gomapsext_domain_model_address.image_height">
         <source><![CDATA[Image height (px)]]></source>
