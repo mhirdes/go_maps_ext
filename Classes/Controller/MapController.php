@@ -66,7 +66,7 @@ class MapController extends ActionController
         if ($this->settings['forceLanguage']) {
             /** @var SiteLanguage $language */
             $language = $GLOBALS['TYPO3_REQUEST']->getAttribute('language');
-            $this->googleMapsLibrary .= '&language=' . $language->getTwoLetterIsoCode();
+            $this->googleMapsLibrary .= '&language=' . $language->getLocale()->getLanguageCode();
         }
 
         if (!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {

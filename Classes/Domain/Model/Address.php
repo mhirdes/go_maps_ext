@@ -68,6 +68,7 @@ class Address extends AbstractEntity
          */
         $this->infoWindowImages = new ObjectStorage();
         $this->categories = new ObjectStorage();
+        // @extensionScannerIgnoreLine
         $this->map = new ObjectStorage();
     }
 
@@ -317,6 +318,7 @@ class Address extends AbstractEntity
      */
     public function getMap(): ?ObjectStorage
     {
+        // @extensionScannerIgnoreLine
         return $this->map;
     }
 
@@ -327,6 +329,7 @@ class Address extends AbstractEntity
      */
     public function setMap(ObjectStorage $map): void
     {
+        // @extensionScannerIgnoreLine
         $this->map = $map;
     }
 }
