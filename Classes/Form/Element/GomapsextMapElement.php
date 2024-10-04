@@ -28,9 +28,12 @@ namespace Clickstorm\GoMapsExt\Form\Element;
  ***************************************************************/
 
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
+use TYPO3\CMS\Core\Core\RequestId;
+use TYPO3\CMS\Core\Page\AssetCollector;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\CMS\Fluid\ViewHelpers\Security\NonceViewHelper;
 
 /**
  * Google map.
@@ -49,7 +52,10 @@ class GomapsextMapElement extends AbstractFormElement
 
         $pluginSettings = static::getSettings();
 
-        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? ' //maps.google.com/maps/api/js?v=weekly';
+        // @var AssetCollector $assetCollector
+        $assetCollector = GeneralUtility::makeInstance(AssetCollector::class);
+
+        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? 'https://maps.google.com/maps/api/js?v=weekly&libraries=maps,marker';
 
         if (isset($pluginSettings['apiKey']) && !empty($pluginSettings['apiKey'])) {
             $googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
@@ -96,8 +102,13 @@ class GomapsextMapElement extends AbstractFormElement
             'address'
         );
 
-        $out[] = '<script type="text/javascript" src="' . $googleMapsLibrary . '"></script>';
-        $out[] = '<script type="text/javascript">';
+        $assetCollector->addJavaScript('go_maps_ext_lib', $googleMapsLibrary);
+
+        // CSP is required in TYPO3 Backend but not supported for inline js, so add the nonce attribute to the script
+        $nonceViewHelper = GeneralUtility::makeInstance(NonceViewHelper::class);
+        $nonce = $nonceViewHelper->render();
+
+        $out[] = '<script type="text/javascript" async nonce="' . $nonce .'">';
         $out[] = <<<EOT
 if (typeof TxClimbingSites == 'undefined') TxClimbingSites = {};
 
@@ -108,31 +119,35 @@ TxClimbingSites.init = function() {
 	var myOptions = {
 		zoom: 12,
 		center: TxClimbingSites.origin,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		mapId: 'GOMAPSEXT_MAP_ID',
 	};
 	
 	if(document.getElementsByName("{$streetFieldName}")[0] && 
 	    document.getElementsByName("{$streetFieldName}")[0] && 
 	    document.getElementsByName("{$streetFieldName}")[0]) {
-	    var button = document.getElementById('gme-btn-address').style.display = 'inline-block';
+	    var button = document.getElementById('gme-btn-address').disabled = false;
 	}
+	let map = new google.maps.Map(document.getElementById("{$mapId}"), myOptions);
 	
-	TxClimbingSites.map = new google.maps.Map(document.getElementById("{$mapId}"), myOptions);
-	TxClimbingSites.marker = new google.maps.Marker({
-		map: TxClimbingSites.map,
+	TxClimbingSites.marker = new google.maps.marker.AdvancedMarkerElement({
+		map,
 		position: TxClimbingSites.origin,
-		draggable: true
+		gmpDraggable: true,
+		title: 'This marker is draggable.'
 	});
-	google.maps.event.addListener(TxClimbingSites.marker, 'dragend', function() {
-		var lat = TxClimbingSites.marker.getPosition().lat().toFixed(6);
-		var lng = TxClimbingSites.marker.getPosition().lng().toFixed(6);
+	
+	TxClimbingSites.marker.addListener('dragend', (event) => {
+	    const markerPosition = TxClimbingSites.marker.position;
+		var lat = markerPosition.lat.toFixed(6);
+		var lng = markerPosition.lng.toFixed(6);
 
         // update fields
 		TxClimbingSites.updateValue('{$latitudeField}', lat);
         TxClimbingSites.updateValue('{$longitudeField}', lng);
 
 		// Update address
-		TxClimbingSites.reverseGeocode(TxClimbingSites.marker.getPosition().lat(), TxClimbingSites.marker.getPosition().lng());
+		TxClimbingSites.reverseGeocode(markerPosition.lat, markerPosition.lng);
 
 		// Update Position
 		var position = document.getElementById("{$addressId}");
@@ -142,6 +157,8 @@ TxClimbingSites.init = function() {
 		TxClimbingSites.positionChanged();
 	});
 	TxClimbingSites.geocoder = new google.maps.Geocoder();
+	
+	TxClimbingSites.map = map;
 
 };
 
@@ -163,7 +180,7 @@ TxClimbingSites.localize = function(address) {
 
             // Update Map
             TxClimbingSites.map.setCenter(results[0].geometry.location);
-            TxClimbingSites.marker.setPosition(results[0].geometry.location);
+            TxClimbingSites.marker.position = results[0].geometry.location;
 
             // Update fields
             TxClimbingSites.updateValue('{$latitudeField}', lat);
@@ -190,7 +207,7 @@ TxClimbingSites.codeAddress = function() {
 
 		// Update Map
 		TxClimbingSites.map.setCenter(position);
-		TxClimbingSites.marker.setPosition(position);
+		TxClimbingSites.marker.position = position;
 
 		// Update visible fields
 		TxClimbingSites.updateValue('{$latitudeField}', lat);
@@ -230,7 +247,7 @@ TxClimbingSites.setMarker = function(lat, lng) {
 	TxClimbingSites.geocoder.geocode({'latLng': latlng}, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK) {
 			TxClimbingSites.map.setCenter(results[0].geometry.location);
-			TxClimbingSites.marker.setPosition(results[0].geometry.location);
+			TxClimbingSites.marker.position = results[0].geometry.location;
 		} else {
 			alert("Geocode was not successful for the following reason: " + status);
 		}
@@ -253,7 +270,7 @@ TxClimbingSites.convertAddress = function(addressOld) {
 	TxClimbingSites.geocoder.geocode({'address':addressOld}, function(results, status) {
 		if (status == google.maps.GeocoderStatus.OK) {
 			TxClimbingSites.map.setCenter(results[0].geometry.location);
-			TxClimbingSites.marker.setPosition(results[0].geometry.location);
+			TxClimbingSites.marker.position = results[0].geometry.location;
 			var lat = TxClimbingSites.marker.getPosition().lat().toFixed(6);
 			var lng = TxClimbingSites.marker.getPosition().lng().toFixed(6);
 
@@ -269,6 +286,20 @@ TxClimbingSites.convertAddress = function(addressOld) {
 }
 
 window.onload = TxClimbingSites.init;
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.js-gomapsext-code-position').forEach(function(element) {
+        element.addEventListener('click', function() {
+            TxClimbingSites.codeAddress();
+        });
+    });
+    
+   document.querySelectorAll('.js-gomapsext-code-address').forEach(function(element) {
+        element.addEventListener('click', function() {
+            TxClimbingSites.codeByAddress();
+        });
+    });
+});
 EOT;
         $out[] = '</script>';
         $out[] = '<div id="' . $baseElementId . '">';
@@ -280,14 +311,11 @@ EOT;
 			       style="display:inline-block;width:300px">
 			<input type="button" 
 			       value="' . LocalizationUtility::translate('update_by_position', 'go_maps_ext') . '" 
-			       class="btn btn-sm btn-default"
-			       onclick="TxClimbingSites.codeAddress()">
+			       class="btn btn-sm btn-default js-gomapsext-code-position">
 			<input id="gme-btn-address"
 			       type="button" 
 			       value="' . LocalizationUtility::translate('update_by_address', 'go_maps_ext') . '" 
-			       class="btn btn-sm btn-default"
-			       style="display:none;"
-			       onclick="TxClimbingSites.codeByAddress()">
+			       class="btn btn-sm btn-default js-gomapsext-code-address" disabled>
 		';
         $out[] = '<div id="' . $mapId . '" style="height:400px;margin:10px 0;width:400px"></div>';
         $out[] = '</div>'; // id=$baseElementId

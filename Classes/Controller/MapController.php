@@ -72,7 +72,10 @@ class MapController extends ActionController
         if (!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
             $pageRenderer->addJsFooterInlineCode(
                 'txGoMapsExtLibrary',
-                'window.txGoMapsExtLibrary = "' .$this->googleMapsLibrary . '";'
+                'window.txGoMapsExtLibrary = "' .$this->googleMapsLibrary . '";',
+                true,
+                false,
+                true
             );
         }
 
