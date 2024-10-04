@@ -6,7 +6,6 @@ return [
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY title',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
@@ -63,7 +62,6 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'group',
-                'internal_type' => 'db',
                 'allowed' => 'tx_gomapsext_domain_model_address',
                 'size' => 1,
                 'maxitems' => 1,
@@ -87,42 +85,32 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'default' => 0,
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ]
-                ],
             ]
         ],
         'starttime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
-                'default' => 0
+                'type' => 'datetime',
+                'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
-            'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
         ],
         'endtime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
                 'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ]
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
+                ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
-            'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
         ],
         'title' => [
             'exclude' => 0,
@@ -131,7 +119,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'required' => true,
+                'eval' => 'trim'
             ],
         ],
         'street' => [
@@ -185,7 +174,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required,' . Clickstorm\GoMapsExt\Evaluation\Double6Evaluator::class
+                'required' => true,
+                'eval' => 'trim,' . Clickstorm\GoMapsExt\Evaluation\Double6Evaluator::class
             ],
         ],
         'longitude' => [
@@ -195,7 +185,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required,' . Clickstorm\GoMapsExt\Evaluation\Double6Evaluator::class
+                'required' => true,
+                'eval' => 'trim,' . Clickstorm\GoMapsExt\Evaluation\Double6Evaluator::class
             ],
         ],
         'address' => [
@@ -205,34 +196,19 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'required' => true,
+                'eval' => 'trim'
             ],
         ],
         'marker' => [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.marker',
             'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_address.xlf:marker.description',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'marker',
-                [
-                    'overrideChildTca' => [
-                        'types' => [
-                            '0' => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPalette,
-                                    --palette--;;filePalette'
-                            ],
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                'showitem' => '
-                                    --palette--;;imageoverlayPalette,
-                                    --palette--;;filePalette'
-                            ]
-                        ]
-                    ],
-                    'maxitems' => 1
-                ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'common-image-types'
+            ],
         ],
         'image_size' => [
             'exclude' => 1,
@@ -248,9 +224,7 @@ return [
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.image_width',
             'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_address.xlf:image_width.description',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
+                'type' => 'number',
             ],
         ],
         'image_height' => [
@@ -258,9 +232,7 @@ return [
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.image_height',
             'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_address.xlf:image_height.description',
             'config' => [
-                'type' => 'input',
-                'size' => 4,
-                'eval' => 'int'
+                'type' => 'number',
             ],
         ],
         'info_window_content' => [
@@ -284,52 +256,11 @@ return [
             'exclude' => 1,
             'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_images',
             'description' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_address.xlf:info_window_images.description',
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'tx_gomapsext_info_window_image',
-                [
-                    'appearance' => [
-                        'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
-                    ],
-                    'overrideChildTca' => [
-                        'types' => [
-                            'foreign_types' => [
-                                '0' => [
-                                    'showitem' => '
-							--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_TEXT => [
-                                    'showitem' => '
-							--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
-                                    'showitem' => '
-							--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_AUDIO => [
-                                    'showitem' => '
-							--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_VIDEO => [
-                                    'showitem' => '
-							--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-                                ],
-                                \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
-                                    'showitem' => '
-							--palette--;LLL:EXT:core/Resources/Private/Language/locallang_tca.xlf:sys_file_reference.imageoverlayPalette;imageoverlayPalette,
-							--palette--;;filePalette'
-                                ]
-                            ],
-                        ]
-                    ],
-                    'maxitems' => 1
-                ],
-                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-            ),
+            'config' => [
+                'type' => 'file',
+                'maxitems' => 1,
+                'allowed' => 'common-image-types'
+            ],
         ],
         'info_window_link' => [
             'exclude' => 1,
@@ -339,16 +270,16 @@ return [
                 'type' => 'radio',
                 'items' => [
                     [
-                        'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_link.0',
-                        0
+                        'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_link.0',
+                        'value' => 0
                     ],
                     [
-                        'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_link.1',
-                        1
+                        'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_link.1',
+                        'value' => 1
                     ],
                     [
-                        'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_link.2',
-                        2
+                        'label' => 'LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:tx_gomapsext_domain_model_address.info_window_link.2',
+                        'value' => 2
                     ]
                 ],
                 'size' => 1,

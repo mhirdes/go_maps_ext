@@ -6,7 +6,6 @@ return [
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
-        'cruser_id' => 'cruser_id',
         'default_sortby' => 'ORDER BY title',
         'versioningWS' => true,
         'origUid' => 't3_origuid',
@@ -51,7 +50,6 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'group',
-                'internal_type' => 'db',
                 'allowed' => 'tx_gomapsext_domain_model_address',
                 'size' => 1,
                 'maxitems' => 1,
@@ -75,42 +73,32 @@ return [
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'default' => 0,
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                    ]
-                ],
             ]
         ],
         'starttime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
-                'default' => 0
+                'type' => 'datetime',
+                'default' => 0,
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
-            'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
         ],
         'endtime' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
             'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
+                'type' => 'datetime',
                 'default' => 0,
                 'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ]
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038),
+                ],
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
             ],
-            'l10n_mode' => 'exclude',
-            'l10n_display' => 'defaultAsReadonly'
         ],
         'title' => [
             'exclude' => 0,
@@ -118,7 +106,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'required' => true,
+                'eval' => 'trim'
             ],
         ],
         'api_key' => [
@@ -127,7 +116,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim,required'
+                'required' => true,
+                'eval' => 'trim'
             ],
         ],
     ],
