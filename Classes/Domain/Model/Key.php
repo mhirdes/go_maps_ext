@@ -6,14 +6,10 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 class Key extends AbstractEntity
 {
-    /**
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
+    #[Extbase\Validate(['validator' => \TYPO3\CMS\Extbase\Validation\Validator\NotEmptyValidator::class])]
     protected string $title = '';
 
-    /**
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
+    #[Extbase\Validate(['validator' => \TYPO3\CMS\Extbase\Validation\Validator\NotEmptyValidator::class])]
     protected string $apiKey = '';
 
     public function getTitle(): string

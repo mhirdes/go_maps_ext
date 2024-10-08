@@ -2,6 +2,7 @@
 
 namespace Clickstorm\GoMapsExt\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -23,9 +24,9 @@ class Address extends AbstractEntity
     protected string $infoWindowContent = '';
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
      */
+    #[Lazy()]
     protected ?ObjectStorage $infoWindowImages = null;
 
     protected int $infoWindowLink = 0;
@@ -34,17 +35,15 @@ class Address extends AbstractEntity
     protected bool $opened = false;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Category>
      */
+    #[Lazy()]
     protected ?ObjectStorage $categories = null;
 
     /**
-     * map
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Map>
      */
+    #[Lazy()]
     protected ?ObjectStorage $map = null;
 
     /**

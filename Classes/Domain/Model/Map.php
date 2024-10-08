@@ -2,6 +2,7 @@
 
 namespace Clickstorm\GoMapsExt\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -12,234 +13,90 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
  */
 class Map extends AbstractEntity
 {
-    /**
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
+    #[Extbase\Validate(['validator' => \TYPO3\CMS\Extbase\Validation\Validator\NotEmptyValidator::class])]
     protected string $title = '';
 
-    /**
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
+    #[Extbase\Validate(['validator' => \TYPO3\CMS\Extbase\Validation\Validator\NotEmptyValidator::class])]
     protected string $width = '';
 
-    /**
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty")
-     */
+    #[Extbase\Validate(['validator' => \TYPO3\CMS\Extbase\Validation\Validator\NotEmptyValidator::class])]
     protected string $height = '';
 
     protected int $zoom = 0;
     protected int $zoomMin = 0;
+    protected int $zoomMax = 0;
+
     /**
-     * zoomMax
-     *
-     * @var int
+     * @var ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address>
      */
-    protected $zoomMax;
-    /**
-     * addresses
-     *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Clickstorm\GoMapsExt\Domain\Model\Address>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
-     */
-    protected $addresses;
-    /**
-     * kmlUrl
-     *
-     * @var \string
-     */
-    protected $kmlUrl;
-    /**
-     * kmlPreserveViewport
-     *
-     * @var bool
-     */
-    protected $kmlPreserveViewport = false;
-    /**
-     * kmlLocal
-     *
-     * @var bool
-     */
-    protected $kmlLocal = false;
-    /**
-     * showAddresses
-     *
-     * @var bool
-     */
-    protected $showAddresses = false;
-    /**
-     * showCategories
-     *
-     * @var bool
-     */
-    protected $showCategories = false;
-    /**
-     * scrollZoom
-     *
-     * @var bool
-     */
-    protected $scrollZoom = false;
-    /**
-     * draggable
-     *
-     * @var bool
-     */
-    protected $draggable = false;
-    /**
-     * doubleClickZoom
-     *
-     * @var bool
-     */
-    protected $doubleClickZoom = false;
-    /**
-     * markerCluster
-     *
-     * @var bool
-     */
-    protected $markerCluster = false;
-    /**
-     * markerClusterZoom
-     *
-     * @var int
-     */
-    protected $markerClusterZoom;
-    /**
-     * markerClusterSize
-     *
-     * @var int
-     */
-    protected $markerClusterSize;
-    /**
-     * markerClusterStyle
-     *
-     * @var \string
-     */
-    protected $markerClusterStyle;
-    /**
-     * markerSearch
-     *
-     * @var bool
-     */
-    protected $markerSearch = false;
-    /**
-     * defaultType
-     *
-     * @var int
-     */
-    protected $defaultType;
-    /**
-     * previewImage
-     *
-     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-     */
-    protected $previewImage;
-    /**
-     * scaleControl
-     *
-     * @var bool
-     */
-    protected $scaleControl = false;
-    /**
-     * streetviewControl
-     *
-     * @var bool
-     */
-    protected $streetviewControl = false;
-    /**
-     * fullscreenControl
-     *
-     * @var bool
-     */
-    protected $fullscreenControl = false;
-    /**
-     * zoomControl
-     *
-     * @var bool
-     */
-    protected $zoomControl = false;
-    /**
-     * mapTypeControl
-     *
-     * @var bool
-     */
-    protected $mapTypeControl = false;
-    /**
-     * mapTypes
-     *
-     * @var \string
-     */
-    protected $mapTypes;
-    /**
-     * showRoute
-     *
-     * @var bool
-     */
-    protected $showRoute = false;
-    /**
-     * calcRoute
-     *
-     * @var bool
-     */
-    protected $calcRoute = false;
-    /**
-     * travelMode
-     *
-     * @var int
-     */
-    protected $travelMode;
-    /**
-     * unitSystem
-     *
-     * @var int
-     */
-    protected $unitSystem;
-    /**
-     * styledMapName
-     *
-     * @var \string
-     */
-    protected $styledMapName;
-    /**
-     * styledMapCode
-     *
-     * @var \string
-     */
-    protected $styledMapCode;
-    /**
-     * showForm
-     *
-     * @var bool
-     */
-    protected $showForm = false;
-    /**
-     * travelModes
-     *
-     * @var \array
-     */
-    protected $travelModes = [];
-    /**
-     * unitSystems
-     *
-     * @var \array
-     */
-    protected $unitSystems = [];
-    /**
-     * latitude
-     *
-     * @var \float
-     */
-    protected $latitude;
-    /**
-     * longitude
-     *
-     * @var \float
-     */
-    protected $longitude;
-    /**
-     * geolocation
-     *
-     * @var bool
-     */
-    protected $geolocation = false;
+    #[Lazy()]
+    protected ?ObjectStorage $addresses = null;
+
+    protected string $kmlUrl = '';
+
+    protected bool $kmlPreserveViewport = false;
+
+    protected bool $kmlLocal = false;
+
+    protected bool $showAddresses = false;
+
+    protected bool $showCategories = false;
+
+    protected bool $scrollZoom = false;
+
+    protected bool $draggable = false;
+
+    protected bool $doubleClickZoom = false;
+
+    protected bool $markerCluster = false;
+
+    protected int $markerClusterZoom = 0;
+
+    protected int $markerClusterSize = 0;
+
+    protected string $markerClusterStyle = '';
+
+    protected bool $markerSearch = false;
+
+    protected int $defaultType = 0;
+
+    protected ?FileReference $previewImage = null;
+
+    protected bool $scaleControl = false;
+
+    protected bool $streetviewControl = false;
+
+    protected bool $fullscreenControl = false;
+
+    protected bool $zoomControl = false;
+
+    protected bool $mapTypeControl = false;
+
+    protected string $mapTypes = '';
+
+    protected bool $showRoute = false;
+
+    protected bool $calcRoute = false;
+
+    protected int $travelMode = 0;
+
+    protected int $unitSystem = 0;
+
+    protected string $styledMapName = '';
+
+    protected string $styledMapCode = '';
+
+    protected bool $showForm = false;
+
+    protected array $travelModes = [];
+
+    protected array $unitSystems = [];
+
+    protected float $latitude = 0.00;
+
+    protected float $longitude = 0.00;
+
+    protected bool $geolocation = false;
 
     /**
      * __construct
