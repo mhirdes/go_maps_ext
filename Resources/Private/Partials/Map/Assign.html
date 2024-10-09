@@ -1,7 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true"
       xmlns:gomapsext="http://typo3.org/ns/Clickstorm/GoMapsExt/ViewHelpers">
 
-<gomapsext:script>
+<f:asset.script identifier="goMapsExtAssign" useNonce="1">
 document.addEventListener("DOMContentLoaded", () => {
     let gme = new Object();
 
@@ -151,5 +151,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 }); // end of closure
-</gomapsext:script>
+</f:asset.script>
 </html>
