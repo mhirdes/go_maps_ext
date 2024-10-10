@@ -15,7 +15,7 @@ plugin.tx_gomapsext {
 		# cat=plugin.tx_gomapsext//c; type=text+; label = API Key: see https://developers.google.com/maps/documentation/javascript/get-api-key
 		apiKey =
         # cat=plugin.tx_gomapsext//d; type=text+; label = URL to Google Maps API: Defaults to the weekly channel. Don't forget to add a callback function (default is '&callback=goMapsExtLoaded').
-        googleMapsLibrary = //maps.google.com/maps/api/js?v=weekly&libraries=maps,marker&callback=goMapsExtLoaded
+        googleMapsLibrary = https://maps.google.com/maps/api/js?v=weekly&libraries=maps,marker&callback=goMapsExtLoaded
 		# cat=plugin.tx_gomapsext//e; type=boolean; label = Force the language of the map to be equal to the page language
 		forceLanguage = 1
 		infoWindow {

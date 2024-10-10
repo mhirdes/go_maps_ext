@@ -55,7 +55,7 @@ class GomapsextMapElement extends AbstractFormElement
         // @var AssetCollector $assetCollector
         $assetCollector = GeneralUtility::makeInstance(AssetCollector::class);
 
-        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? '//maps.google.com/maps/api/js?v=weekly&libraries=maps,marker';
+        $googleMapsLibrary = $pluginSettings['googleMapsLibrary'] ?? 'https://maps.google.com/maps/api/js?v=weekly&libraries=maps,marker';
 
         if (isset($pluginSettings['apiKey']) && !empty($pluginSettings['apiKey'])) {
             $googleMapsLibrary .= '&key=' . $pluginSettings['apiKey'];
