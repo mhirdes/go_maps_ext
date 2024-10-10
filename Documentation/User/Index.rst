@@ -132,9 +132,8 @@ field.
          kmlUrl
 
    Description
-         Enter an URL of a KML file, e.g. `http://gmaps-
-         samples.googlecode.com/svn/trunk/ggeoxml/cta.kml <http://gmaps-
-         samples.googlecode.com/svn/trunk/ggeoxml/cta.kml>`_
+         Enter an URL of a KML file, e.g. `https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml
+         <https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml>`_
 
 
 .. container:: table-row

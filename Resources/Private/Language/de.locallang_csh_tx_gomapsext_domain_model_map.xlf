@@ -44,8 +44,8 @@
 				<target>Der Kartenbereich der KML-Datei wird ignoriert. Mindestens eine Adresse ist erforderlich, um die Karte richtig zu zentrieren.</target>
 			</trans-unit>
 			<trans-unit id="kml_url.description" resname="kml_url.description">
-				<source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
-				<target>Geben Sie die URL einer KML-Datei an, z.B. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</target>
+				<source>Enter an URL of a KML file, e.g. &quot;https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml&quot;.</source>
+				<target>Geben Sie die URL einer KML-Datei an, z.B. &quot;https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml&quot;.</target>
 			</trans-unit>
 			<trans-unit id="latitude.description" resname="latitude.description">
 				<source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
