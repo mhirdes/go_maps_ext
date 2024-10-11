@@ -44,8 +44,8 @@
         <target state="translated">Obszar widzenia pliku kml będzie ignorowany. Ustaw przybliżenie Ustaw przybliżenie i przynajmniej jeden adres aby skonfigurować obszar widzenia.</target>
       </trans-unit>
       <trans-unit id="kml_url.description" resname="kml_url.description">
-        <source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
-        <target state="translated">Podaj adres URL do pliku KML, np. "http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml".</target>
+        <source>Enter an URL of a KML file, e.g. &quot;https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml&quot;.</source>
+        <target state="translated">Podaj adres URL do pliku KML, np. "https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml".</target>
       </trans-unit>
       <trans-unit id="latitude.description" resname="latitude.description">
         <source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
@@ -76,8 +76,8 @@
         <target state="needs-translation">The size of the Clusters, like a radius.</target>
       </trans-unit>
       <trans-unit id="marker_cluster_style.description" resname="marker_cluster_style.description">
-        <source>JSON Code, for more information visit  https://github.com/googlemaps/js-marker-clusterer</source>
-        <target state="needs-translation">JSON Code, for more information visit  https://github.com/googlemaps/js-marker-clusterer</target>
+        <source>JSON Code, for more information visit  https://github.com/googlemaps/js-markerclusterer</source>
+        <target state="needs-translation">JSON Code, for more information visit  https://github.com/googlemaps/js-markerclusterer</target>
       </trans-unit>
       <trans-unit id="marker_cluster_zoom.description" resname="marker_cluster_zoom.description">
         <source>Up to this zoom level the Clusters are displayed.</source>
