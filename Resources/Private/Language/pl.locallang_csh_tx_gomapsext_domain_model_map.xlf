@@ -76,7 +76,7 @@
 				<target></target>
 			</trans-unit>
 			<trans-unit id="marker_cluster_style.description" resname="marker_cluster_style.description">
-				<source>JSON Code, for more information visit  https://github.com/googlemaps/js-marker-clusterer</source>
+				<source>JSON Code, for more information visit  https://github.com/googlemaps/js-markerclusterer</source>
 				<target></target>
 			</trans-unit>
 			<trans-unit id="marker_cluster_zoom.description" resname="marker_cluster_zoom.description">

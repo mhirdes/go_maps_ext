@@ -404,7 +404,7 @@ field.
          markerClusterStyle
 
    Description
-         JSON code for the cluster style, for more information look here `https://github.com/googlemaps/js-marker-clusterer <https://github.com/googlemaps/js-marker-clusterer>`_
+         JSON code for the cluster style, for more information look here `https://github.com/googlemaps/js-markerclusterer <https://github.com/googlemaps/js-markerclusterer>`_
 
 
 .. ###### END~OF~TABLE ######
