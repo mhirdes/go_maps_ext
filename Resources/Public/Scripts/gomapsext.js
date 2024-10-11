@@ -481,8 +481,9 @@ class GoMapsExtController {
             const coords = placemark.getElementsByTagName(
               'coordinates')[0].textContent;
             const place = placemark.getElementsByTagName('name')[0].textContent;
-            const description = placemark.getElementsByTagName(
-              'description')[0].textContent;
+            let description = placemark.getElementsByTagName(
+                'description');
+            description = description[0] ? description[0].textContent : '';
             const c = coords.split(',');
             const address = {
               title: place,
