@@ -44,8 +44,8 @@
         <target state="translated">Der Kartenbereich der KML-Datei wird ignoriert. Mindestens eine Adresse ist erforderlich, um die Karte richtig zu zentrieren.</target>
       </trans-unit>
       <trans-unit id="kml_url.description" resname="kml_url.description">
-        <source>Enter an URL of a KML file, e.g. &quot;http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml&quot;.</source>
-        <target state="translated">Geben Sie die URL einer KML-Datei an, z.B. "http://gmaps-samples.googlecode.com/svn/trunk/ggeoxml/cta.kml".</target>
+        <source>Enter an URL of a KML file, e.g. &quot;https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml&quot;.</source>
+        <target state="translated">Geben Sie die URL einer KML-Datei an, z.B. "https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml".</target>
       </trans-unit>
       <trans-unit id="latitude.description" resname="latitude.description">
         <source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
@@ -76,8 +76,8 @@
         <target state="translated">Die Größe bzw. der Radius der Cluster.</target>
       </trans-unit>
       <trans-unit id="marker_cluster_style.description" resname="marker_cluster_style.description">
-        <source>JSON Code, for more information visit  https://github.com/googlemaps/js-marker-clusterer</source>
-        <target state="translated">JSON Code, mehr Informationen unter  https://github.com/googlemaps/js-marker-clusterer</target>
+        <source>JSON Code, for more information visit  https://github.com/googlemaps/js-markerclusterer</source>
+        <target state="translated">JSON Code, mehr Informationen unter  https://github.com/googlemaps/js-markerclusterer</target>
       </trans-unit>
       <trans-unit id="marker_cluster_zoom.description" resname="marker_cluster_zoom.description">
         <source>Up to this zoom level the Clusters are displayed.</source>
