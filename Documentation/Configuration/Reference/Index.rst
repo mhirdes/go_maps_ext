@@ -149,7 +149,7 @@ Constants
 		 '&callback=goMapsExtLoaded'.
 
    Default
-         https://maps.google.com/maps/api/js?v=weekly&callback=goMapsExtLoaded
+         https://maps.google.com/maps/api/js?v=weekly&libraries=maps,marker&callback=goMapsExtLoaded
 
 
 .. container:: table-row

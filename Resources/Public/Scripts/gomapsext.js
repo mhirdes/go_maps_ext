@@ -83,7 +83,7 @@ class GoMapsExtController {
       let showMarker;
 
       if (selectedCats.length > 0) {
-        marker.setVisible(false);
+        marker.map = null;
         let matches = 0;
         marker.categories.forEach(category => {
           if (selectedCats.includes(category)) {
@@ -98,7 +98,7 @@ class GoMapsExtController {
         showMarker = true;
       }
       if (showMarker) {
-        marker.setVisible(true);
+        marker.map = this.map;
         const addressEl = document.querySelector(`#gme-address${marker.uid}`);
         if (addressEl && addressEl.parentElement.tagName.toLowerCase() === 'del') {
           addressEl.parentElement.replaceWith(addressEl);
@@ -153,7 +153,7 @@ class GoMapsExtController {
 
     if (Math.round(latitude) === 0 && Math.round(longitude) === 0) {
       geocoder.geocode({'address': pointDescription.address},
-        function(point, status) {
+        function (point, status) {
           const latitude = point[0].geometry.location.lat();
           const longitude = point[0].geometry.location.lng();
           const position = new google.maps.LatLng(latitude, longitude);
@@ -229,43 +229,23 @@ class GoMapsExtController {
   setMapPoint(pointDescription, Route, $element, infoWindow, position, gme) {
     const map = this.map;
     const markerOptions = {
+      map,
       position: position,
-      map: map,
       title: pointDescription.title,
     };
-    if (pointDescription.marker !== '') {
-      if (pointDescription.imageSize === 1) {
-        const Icon = {
-          url: pointDescription.marker,
-          size: new google.maps.Size(pointDescription.imageWidth * 2,
-            pointDescription.imageHeight * 2),
-          scaledSize: new google.maps.Size(pointDescription.imageWidth,
-            pointDescription.imageHeight),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(pointDescription.imageWidth / 2,
-            pointDescription.imageHeight),
-        };
+    if (pointDescription.marker) {
+      let markerImage = document.createElement("img");
 
-        const Shape = {
-          type: 'rect',
-          coord: [
-            0,
-            0,
-            pointDescription.imageWidth,
-            pointDescription.imageHeight],
-        };
-
-        const anchorPoint = new google.maps.Point(0,
-          -pointDescription.imageHeight);
-
-        Object.assign(markerOptions,
-          {icon: Icon, shape: Shape, anchorPoint: anchorPoint});
-      } else {
-        Object.assign(markerOptions, {icon: pointDescription.marker});
+      if (pointDescription.image_size) {
+        markerImage.style.height = pointDescription.image_height;
+        markerImage.style.width = pointDescription.image_width;
       }
+
+      markerImage.src = pointDescription.marker;
+      markerOptions.content = markerImage;
     }
 
-    const marker = new google.maps.Marker(markerOptions);
+    const marker = new google.maps.marker.AdvancedMarkerElement(markerOptions);
 
     if (gme.mapSettings.markerCluster == 1 && $element.markerCluster) {
       google.maps.event.addListener(marker, 'visible_changed', () => {
@@ -386,7 +366,7 @@ class GoMapsExtController {
       // only add visible markers
       let clusterMarkers = [];
       this.markers.forEach(function (marker) {
-        if(marker.visible) {
+        if (marker.visible) {
           clusterMarkers.push(marker);
         }
       });
@@ -434,6 +414,7 @@ class GoMapsExtController {
   #createMapOptions() {
     const gme = this.gme;
     return {
+      mapId: gme.mapSettings.id,
       zoom: gme.mapSettings.defaultZoom,
       minZoom: gme.mapSettings.minZoom,
       maxZoom: gme.mapSettings.maxZoom,
@@ -468,44 +449,41 @@ class GoMapsExtController {
 
     // KML import local
     if (gme.mapSettings.kmlUrl !== '' && gme.mapSettings.kmlLocal === 1) {
-      fetch(gme.mapSettings.kmlUrl).
-        then(response => response.text()).
-        then(data => {
-          // loop through placemarks tags
-          const parser = new DOMParser();
-          const xmlDoc = parser.parseFromString(data, 'text/xml');
-          const placemarks = xmlDoc.getElementsByTagName('Placemark');
-          for (let i = 0; i < placemarks.length; i++) {
-            const placemark = placemarks[i];
-            // get coordinates and place name
-            const coords = placemark.getElementsByTagName(
-              'coordinates')[0].textContent;
-            const place = placemark.getElementsByTagName('name')[0].textContent;
-            let description = placemark.getElementsByTagName(
-                'description');
-            description = description[0] ? description[0].textContent : '';
-            const c = coords.split(',');
-            const address = {
-              title: place,
-              latitude: c[1],
-              longitude: c[0],
-              address: place,
-              marker: '',
-              imageSize: 0,
-              imageWidth: 0,
-              imageHeight: 0,
-              infoWindowContent: description,
-              infoWindowLink: 0,
-              openByClick: 1,
-              closeByClick: 1,
-              opened: 0,
-              categories: '',
-            };
-            _this.addMapPoint(address, Route, $element, _this.infoWindow, gme);
-            gme.addresses.push(address);
-          }
-        }).
-        catch(error => console.error(error));
+      fetch(gme.mapSettings.kmlUrl).then(response => response.text()).then(data => {
+        // loop through placemarks tags
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, 'text/xml');
+        const placemarks = xmlDoc.getElementsByTagName('Placemark');
+        for (let i = 0; i < placemarks.length; i++) {
+          const placemark = placemarks[i];
+          // get coordinates and place name
+          const coords = placemark.getElementsByTagName(
+            'coordinates')[0].textContent;
+          const place = placemark.getElementsByTagName('name')[0].textContent;
+          let description = placemark.getElementsByTagName(
+            'description');
+          description = description[0] ? description[0].textContent : '';
+          const c = coords.split(',');
+          const address = {
+            title: place,
+            latitude: c[1],
+            longitude: c[0],
+            address: place,
+            marker: '',
+            imageSize: 0,
+            imageWidth: 0,
+            imageHeight: 0,
+            infoWindowContent: description,
+            infoWindowLink: 0,
+            openByClick: 1,
+            closeByClick: 1,
+            opened: 0,
+            categories: '',
+          };
+          _this.addMapPoint(address, Route, $element, _this.infoWindow, gme);
+          gme.addresses.push(address);
+        }
+      }).catch(error => console.error(error));
     }
   }
 
@@ -516,7 +494,7 @@ class GoMapsExtController {
 
     // geolocation
     if (gme.mapSettings.geolocation === 1) {
-      const myloc = new google.maps.Marker({
+      const myloc = new google.maps.marker.AdvancedMarkerElement({
         clickable: false,
         icon: {
           path: google.maps.SymbolPath.CIRCLE,
@@ -562,7 +540,7 @@ class GoMapsExtController {
 
       $myForm.querySelector('.js-gme-error').style.display = 'none';
 
-      $myForm.addEventListener('submit', function(event) {
+      $myForm.addEventListener('submit', function (event) {
         event.preventDefault();
         const submitValue = searchIn.value.toLowerCase();
         let notFound = true;
@@ -572,7 +550,7 @@ class GoMapsExtController {
               (index === 'title' || index === 'infoWindowContent') &&
               submitValue !== '') {
               if (val.toLowerCase().includes(submitValue)) {
-                if (_this.markers[i].visible) {
+                if (_this.markers[i].map) {
                   _this.focusAddress(_this.markers[i].uid, $element, gme);
                   notFound = false;
                 }
@@ -620,7 +598,7 @@ class GoMapsExtController {
 
       element.parentNode.insertBefore(panelHtml, element.nextSibling);
 
-      const renderRoute = function(start, end, travelMode, unitSystem) {
+      const renderRoute = function (start, end, travelMode, unitSystem) {
         const req = {
           origin: start,
           destination: end,
@@ -635,7 +613,7 @@ class GoMapsExtController {
           req.unitSystem = _this.getUnitSystem(unitSystem);
         }
 
-        directionsService.route(req, function(response, status) {
+        directionsService.route(req, function (response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(response);
           } else {
@@ -654,7 +632,7 @@ class GoMapsExtController {
       if (gme.mapSettings.calcRoute == 1) {
         const mapForm = document.getElementById(`${gme.mapSettings.id}-form`);
 
-        mapForm.addEventListener('submit', function(event) {
+        mapForm.addEventListener('submit', function (event) {
           event.preventDefault();
           let formStartAddress = mapForm.querySelector('.js-gme-saddress').value;
 
@@ -662,7 +640,7 @@ class GoMapsExtController {
           let endAddressIndex = '';
 
           options.forEach(option => {
-            if(option.selected) {
+            if (option.selected) {
               endAddressIndex = option.value;
             }
           });
@@ -671,8 +649,8 @@ class GoMapsExtController {
             gme.addresses[parseInt(endAddressIndex)].address :
             gme.addresses[0].address;
 
-          const formTravelModeSelector =  mapForm.querySelector('.js-gme-travelmode');
-          const formUnitSystemSelector =  mapForm.querySelector('.js-gme-unitsystem');
+          const formTravelModeSelector = mapForm.querySelector('.js-gme-travelmode');
+          const formUnitSystemSelector = mapForm.querySelector('.js-gme-unitsystem');
 
           let formTravelMode = formTravelModeSelector ? parseInt(formTravelModeSelector.value) : gme.mapSettings.travelMode;
           let formUnitSystem = formUnitSystemSelector ? parseInt(formUnitSystemSelector.value) : gme.mapSettings.unitSystem;
@@ -694,7 +672,7 @@ class GoMapsExtController {
     let width = this.element.offsetWidth;
 
     // eventHandler resize can be used
-    this.element.addEventListener('mapresize', function() {
+    this.element.addEventListener('mapresize', function () {
       // resize only when the window width changes, not while hiding a browser bar
       if (_this.element.offsetWidth !== width) {
         width = _this.element.offsetWidth;
@@ -709,10 +687,10 @@ class GoMapsExtController {
     // categories checkboxes
     const checkboxes = document.querySelectorAll('.js-gme-cat');
     checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', function() {
+      checkbox.addEventListener('change', function () {
         let selectedCatsValues = [];
         checkboxes.forEach(checkbox => {
-          if(checkbox.checked) {
+          if (checkbox.checked) {
             selectedCatsValues.push(checkbox.value);
           }
         });
@@ -728,7 +706,7 @@ class GoMapsExtController {
 
     const addresses = document.querySelectorAll('.js-gme-address');
     addresses.forEach(address => {
-      address.addEventListener('click', function(event) {
+      address.addEventListener('click', function (event) {
         event.preventDefault();
         const selectedAddress = parseInt(this.getAttribute('data-address'));
         _this.focusAddress(selectedAddress, element, gme);
@@ -740,14 +718,14 @@ class GoMapsExtController {
 document.addEventListener("DOMContentLoaded", () => {
   // add global callback function, see https://developers.google.com/maps/documentation/javascript/overview#Loading_the_Maps_API
   window.goMapsExtLoaded = function () {
-      const maps = document.querySelectorAll('.js-map');
-      maps.forEach(function (el) {
-        el.gomapsext.controller = new GoMapsExtController(el, el.gomapsext.gme);
-        el.gomapsext.controller.initialize();
-      });
+    const maps = document.querySelectorAll('.js-map');
+    maps.forEach(function (el) {
+      el.gomapsext.controller = new GoMapsExtController(el, el.gomapsext.gme);
+      el.gomapsext.controller.initialize();
+    });
   };
 
-  if(window.txGoMapsExtLibrary) {
+  if (window.txGoMapsExtLibrary) {
     let script = document.createElement('script');
     script.src = window.txGoMapsExtLibrary;
     script.async = true;
