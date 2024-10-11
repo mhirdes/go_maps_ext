@@ -55,7 +55,7 @@ class MapController extends ActionController
         }
 
         $this->googleMapsLibrary = $this->settings['googleMapsLibrary'] ??
-            'https://maps.google.com/maps/api/js?v=weekly&libraries=maps,marker&callback=goMapsExtLoaded';
+            'https://maps.google.com/maps/api/js?loading=async&v=weekly&libraries=maps,marker&callback=goMapsExtLoaded';
 
         // get the apiKey
         $apiKey = $this->getFinalApiKey();
