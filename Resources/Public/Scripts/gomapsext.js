@@ -277,7 +277,6 @@ class GoMapsExtController {
             infoWindow.setContent(infoWindowContent);
             infoWindow.open(map, marker);
             gme.infoWindow = marker.position;
-            debugger;
           }
         });
       } else {
