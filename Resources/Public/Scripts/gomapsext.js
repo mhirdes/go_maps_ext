@@ -249,10 +249,10 @@ class GoMapsExtController {
 
     if (gme.mapSettings.markerCluster == 1 && $element.markerCluster) {
       google.maps.event.addListener(marker, 'visible_changed', () => {
-        if (marker.getVisible()) {
-          $element.markerCluster.addMarker(marker, true);
-        } else {
+        if (marker.hidden) {
           $element.markerCluster.removeMarker(marker, true);
+        } else {
+          $element.markerCluster.addMarker(marker, true);
         }
       });
     }
@@ -273,18 +273,19 @@ class GoMapsExtController {
 
       if (pointDescription.openByClick) {
         google.maps.event.addListener(marker, 'click', () => {
-          if (!infoWindow.getMap() || gme.infoWindow !== marker.getPosition()) {
+          if (!infoWindow.getMap() || gme.infoWindow !== marker.position) {
             infoWindow.setContent(infoWindowContent);
             infoWindow.open(map, marker);
-            gme.infoWindow = marker.getPosition();
+            gme.infoWindow = marker.position;
+            debugger;
           }
         });
       } else {
         google.maps.event.addListener(marker, 'mouseover', () => {
-          if (!infoWindow.getMap() || gme.infoWindow !== marker.getPosition()) {
+          if (!infoWindow.getMap() || gme.infoWindow !== marker.position) {
             infoWindow.setContent(infoWindowContent);
             infoWindow.open(map, marker);
-            gme.infoWindow = marker.getPosition();
+            gme.infoWindow = marker.position;
           }
         });
       }
@@ -299,7 +300,7 @@ class GoMapsExtController {
           infoWindow.setContent(infoWindowContent);
           infoWindow.open(map, marker);
         });
-        gme.infoWindow = marker.getPosition();
+        gme.infoWindow = marker.position;
       }
 
       infoWindow.setContent(infoWindowContent);
@@ -366,7 +367,7 @@ class GoMapsExtController {
       // only add visible markers
       let clusterMarkers = [];
       this.markers.forEach(function (marker) {
-        if (marker.visible) {
+        if (!marker.hidden) {
           clusterMarkers.push(marker);
         }
       });
