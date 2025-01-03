@@ -83,7 +83,7 @@ class GoMapsExtController {
       let showMarker;
 
       if (selectedCats.length > 0) {
-        marker.map = null;
+        marker.hidden = true;
         let matches = 0;
         marker.categories.forEach(category => {
           if (selectedCats.includes(category)) {
@@ -97,8 +97,9 @@ class GoMapsExtController {
       } else {
         showMarker = true;
       }
+
       if (showMarker) {
-        marker.map = this.map;
+        marker.hidden = false;
         const addressEl = document.querySelector(`#gme-address${marker.uid}`);
         if (addressEl && addressEl.parentElement.tagName.toLowerCase() === 'del') {
           addressEl.parentElement.replaceWith(addressEl);
@@ -183,7 +184,7 @@ class GoMapsExtController {
       }
     });
     if (element.markerCluster) {
-      element.markerCluster.repaint();
+      element.markerCluster.render();
 
       if (gme.mapSettings.markerClusterZoom) {
         this.map.setZoom(gme.mapSettings.markerClusterZoom + 1);
@@ -371,12 +372,14 @@ class GoMapsExtController {
         }
       });
 
-      element.markerCluster = new MarkerClusterer(this.map, clusterMarkers, {
-        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m',
-        styles: gme.mapSettings.markerClusterStyle,
+      element.markerCluster = new markerClusterer.MarkerClusterer({
+        map: element.gomapsext.map,
+        markers: clusterMarkers,
         maxZoom: gme.mapSettings.markerClusterZoom,
-        gridSize: gme.mapSettings.markerClusterSize,
+        gridSize: gme.mapSettings.markerClusterSize
       });
+
+      element.markerCluster.render();
     }
   }
 
