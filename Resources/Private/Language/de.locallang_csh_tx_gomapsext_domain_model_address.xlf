@@ -3,65 +3,65 @@
   <file source-language="en" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_address.xlf" date="2023-03-16T09:58:26Z" product-name="go_maps_ext" target-language="de">
     <header/>
     <body>
-      <trans-unit id="address.description" resname="address.description">
+      <trans-unit id="address.description" resname="address.description" approved="yes">
         <source>Please enter an address or coordinates on the position field above and press update.</source>
-        <target state="translated">Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
+        <target state="final">Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
       </trans-unit>
-      <trans-unit id="close_by_click.description" resname="close_by_click.description">
+      <trans-unit id="close_by_click.description" resname="close_by_click.description" approved="yes">
         <source>Close InfoWindow by click instead of mouse out.</source>
-        <target state="translated">Info-Fenster mit Klicken statt Mouseout schließen.</target>
+        <target state="final">Info-Fenster mit Klicken statt Mouseout schließen.</target>
       </trans-unit>
-      <trans-unit id="configuration_map.description" resname="configuration_map.description">
+      <trans-unit id="configuration_map.description" resname="configuration_map.description" approved="yes">
         <source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
-        <target state="translated">Geben Sie eine Adresse [Straße Nr., PLZ Ort] oder Koordinaten [Latitude,Longitude] ein und drücken Sie 'Update' oder verschieben Sie den Marker.</target>
+        <target state="final">Geben Sie eine Adresse [Straße Nr., PLZ Ort] oder Koordinaten [Latitude,Longitude] ein und drücken Sie 'Update' oder verschieben Sie den Marker.</target>
       </trans-unit>
-      <trans-unit id="image_height.description" resname="image_height.description">
+      <trans-unit id="image_height.description" resname="image_height.description" approved="yes">
         <source>Costum image height in pixel.</source>
-        <target state="translated">Benutzerdefinierte Höhe des Markers in Pixeln.</target>
+        <target state="final">Benutzerdefinierte Höhe des Markers in Pixeln.</target>
       </trans-unit>
-      <trans-unit id="image_size.description" resname="image_size.description">
+      <trans-unit id="image_size.description" resname="image_size.description" approved="yes">
         <source>Check if the image has a different size then default. The image should be twice as large as indicated.</source>
-        <target state="translated">Aktivieren Sie die Checkbox, wenn die Größe des Markers von der Standardgröße abweicht. Das Bild sollte doppelt so groß sein wie angegeben.</target>
+        <target state="final">Aktivieren Sie die Checkbox, wenn die Größe des Markers von der Standardgröße abweicht. Das Bild sollte doppelt so groß sein wie angegeben.</target>
       </trans-unit>
-      <trans-unit id="image_width.description" resname="image_width.description">
+      <trans-unit id="image_width.description" resname="image_width.description" approved="yes">
         <source>Costum image width in pixel.</source>
-        <target state="translated">Benutzerdefinierte Breite des Markers in Pixeln.</target>
+        <target state="final">Benutzerdefinierte Breite des Markers in Pixeln.</target>
       </trans-unit>
-      <trans-unit id="info_window_content.description" resname="info_window_content.description">
+      <trans-unit id="info_window_content.description" resname="info_window_content.description" approved="yes">
         <source>This will be displayed in the InfoWindow of this marker.</source>
-        <target state="translated">Der Text, welcher im Info-Fenster dargstellt wird.</target>
+        <target state="final">Der Text, welcher im Info-Fenster dargestellt wird.</target>
       </trans-unit>
-      <trans-unit id="info_window_images.description" resname="info_window_images.description">
+      <trans-unit id="info_window_images.description" resname="info_window_images.description" approved="yes">
         <source>This will be displayed in the InfoWindow of this marker.</source>
-        <target state="translated">Die Bilder, welche im Info-Fenster dargstellt werden.</target>
+        <target state="final">Die Bilder, welche im Info-Fenster dargestellt werden.</target>
       </trans-unit>
-      <trans-unit id="info_window_link.description" resname="info_window_link.description">
+      <trans-unit id="info_window_link.description" resname="info_window_link.description" approved="yes">
         <source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
-        <target state="translated">Link zur Routenberechnung auf Google Maps wird an das Ende des Info-Fenster-Texts angehängt.</target>
+        <target state="final">Link zur Routenberechnung auf Google Maps wird an das Ende des Info-Fenster-Texts angehängt.</target>
       </trans-unit>
-      <trans-unit id="latitude.description" resname="latitude.description">
+      <trans-unit id="latitude.description" resname="latitude.description" approved="yes">
         <source>Please enter an address or coordinates on the position field above and press update.</source>
-        <target state="translated">Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
+        <target state="final">Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
       </trans-unit>
-      <trans-unit id="longitude.description" resname="longitude.description">
+      <trans-unit id="longitude.description" resname="longitude.description" approved="yes">
         <source>Please enter an address or coordinates on the position field above and press update.</source>
-        <target state="translated">Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
+        <target state="final">Bitte geben Sie eine Adresse oder Koordinaten in das Feld 'Postion' ein und drücken Sie 'Update'.</target>
       </trans-unit>
-      <trans-unit id="marker.description" resname="marker.description">
+      <trans-unit id="marker.description" resname="marker.description" approved="yes">
         <source>Choose a costum image for the pin.</source>
-        <target state="translated">Wählen Sie ein indiduelles Bild für den Marker.</target>
+        <target state="final">Wählen Sie ein individuelles Bild für den Marker.</target>
       </trans-unit>
-      <trans-unit id="open_by_click.description" resname="open_by_click.description">
+      <trans-unit id="open_by_click.description" resname="open_by_click.description" approved="yes">
         <source>Open InfoWindow by click instead of mouse over.</source>
-        <target state="translated">Info-Fenster mit Klicken statt Mouseover öffnen.</target>
+        <target state="final">Info-Fenster mit Klicken statt Mouseover öffnen.</target>
       </trans-unit>
-      <trans-unit id="opened.description" resname="opened.description">
+      <trans-unit id="opened.description" resname="opened.description" approved="yes">
         <source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
-        <target state="translated">Das Info-Fenster ist geöffnet, wenn die Karte erscheint. Es wird je Karte nur ein Info-Fenster geöffnet erscheinen.</target>
+        <target state="final">Das Info-Fenster ist geöffnet, wenn die Karte erscheint. Es wird je Karte nur ein Info-Fenster geöffnet erscheinen.</target>
       </trans-unit>
-      <trans-unit id="title.description" resname="title.description">
+      <trans-unit id="title.description" resname="title.description" approved="yes">
         <source>For internal use only.</source>
-        <target state="translated">Nur für die interne Verwendung.</target>
+        <target state="final">Nur für die interne Verwendung.</target>
       </trans-unit>
     </body>
   </file>
