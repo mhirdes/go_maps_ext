@@ -55,7 +55,6 @@ return Map::fromEntries([
         new Mutation(
             MutationMode::Extend,
             Directive::StyleSrcElem,
-            SourceKeyword::nonceProxy,
             new UriValue('https://maps.google.com'),
             new UriValue('https://fonts.gstatic.com'),
             new UriValue('*.google.com'),
