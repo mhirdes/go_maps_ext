@@ -104,7 +104,7 @@ class MapController extends ActionController
      * @throws NoSuchArgumentException
      * @throws InvalidQueryException
      */
-    public function showAction(Map $map = null): ResponseInterface
+    public function showAction(?Map $map = null): ResponseInterface
     {
         $categoriesArray = [];
 
