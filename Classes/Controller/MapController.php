@@ -2,9 +2,7 @@
 
 namespace Clickstorm\GoMapsExt\Controller;
 
-use Clickstorm\CsTemplates\Domain\Model\Page;
 use Psr\Http\Message\ResponseInterface;
-
 use Clickstorm\GoMapsExt\Domain\Model\Map;
 use Clickstorm\GoMapsExt\Domain\Repository\AddressRepository;
 use Clickstorm\GoMapsExt\Domain\Repository\KeyRepository;
@@ -69,6 +67,15 @@ class MapController extends ActionController
             $language = $GLOBALS['TYPO3_REQUEST']->getAttribute('language');
             $this->googleMapsLibrary .= '&language=' . $language->getLocale()->getLanguageCode();
         }
+
+        // add a csp nonce to the header, so that the maps api can be loaded also with frontend csp
+        $pageRenderer->addCssInlineBlock(
+            'txGoMapsExtLibrary',
+            '.no-map-found {color: red}',
+            true,
+            false,
+            true
+        );
 
         if (!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
             $pageRenderer->addJsFooterInlineCode(

@@ -729,9 +729,12 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if (window.txGoMapsExtLibrary) {
+    const existingNonce = document.querySelector('script[nonce]')?.nonce;
+
     let script = document.createElement('script');
     script.src = window.txGoMapsExtLibrary;
     script.async = true;
+    script.nonce = existingNonce;
     document.head.appendChild(script);
   }
 });
