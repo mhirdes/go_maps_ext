@@ -497,16 +497,15 @@ class GoMapsExtController {
 
     // geolocation
     if (gme.mapSettings.geolocation === 1) {
+      const pin = new google.maps.marker.PinElement({
+        background: '#4285F4',
+        borderColor: '#4285F4',
+        glyphColor: '#FFFFFF',
+        glyph: '⦿'
+      });
+
       const myloc = new google.maps.marker.AdvancedMarkerElement({
-        clickable: false,
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          scale: 9,
-          fillColor: '#408fff',
-          fillOpacity: 1,
-          strokeColor: 'white',
-          strokeWeight: 3,
-        },
+        content: pin.element,
         zIndex: 999,
         map: _map,
       });
@@ -516,7 +515,7 @@ class GoMapsExtController {
           pos => {
             const me = new google.maps.LatLng(pos.coords.latitude,
               pos.coords.longitude);
-            myloc.setPosition(me);
+            myloc.position = me;
             const mycenter = {
               lat: pos.coords.latitude,
               lng: pos.coords.longitude,
@@ -524,7 +523,7 @@ class GoMapsExtController {
             _map.setCenter(mycenter);
           },
           error => {
-            console.error('could not get position');
+            console.error('Could not get position');
           },
         );
       }
