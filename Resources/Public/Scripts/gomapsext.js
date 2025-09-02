@@ -237,9 +237,9 @@ class GoMapsExtController {
     if (pointDescription.marker) {
       let markerImage = document.createElement("img");
 
-      if (pointDescription.image_size) {
-        markerImage.style.height = pointDescription.image_height;
-        markerImage.style.width = pointDescription.image_width;
+      if (pointDescription.imageSize) {
+        markerImage.style.height = pointDescription.imageHeight + 'px';
+        markerImage.style.width = pointDescription.imageWidth + 'px';
       }
 
       markerImage.src = pointDescription.marker;
