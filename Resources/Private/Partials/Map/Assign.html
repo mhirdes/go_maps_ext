@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </f:else>
     </f:if>
     defaultZoom: 11
-    <f:format.raw>}</f:format.raw>
+    <f:format.raw>};</f:format.raw>
 
     gme.mapSettings.mapTypes = [];
     <f:for each="{map.mapTypes}" as="type" iteration="i">
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </f:if>
         opened: {f:if(condition:"{address.opened}", then:"1", else:"0")},
         categories: '<f:for each="{address.categories}" as="category" iteration="icat">{category.uid}{f:if(condition:icat.isLast,then:'',else:',')}</f:for>'
-        <f:format.raw>}</f:format.raw>
+        <f:format.raw>};</f:format.raw>
     </f:for>
 
     gme.ll = {};
