@@ -501,7 +501,7 @@ class GoMapsExtController {
         background: '#4285F4',
         borderColor: '#4285F4',
         glyphColor: '#FFFFFF',
-        glyph: '⦿'
+        glyphText: '⦿'
       });
 
       const myloc = new google.maps.marker.AdvancedMarkerElement({
