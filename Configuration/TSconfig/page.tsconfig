@@ -1,0 +1,16 @@
+mod.wizards.newContentElement.wizardItems.ext-gomapsext {
+  header = LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:wizard.group
+  after = common
+  elements {
+    gomapsext_show {
+      iconIdentifier = ext-gomapsext-plugin-show
+      title = LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:plugin.show.title
+      description = LLL:EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf:plugin.show.description
+      tt_content_defValues {
+        CType = gomapsext_show
+      }
+    }
+  }
+
+  show = *
+}

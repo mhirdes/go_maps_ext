@@ -10,7 +10,8 @@ defined('TYPO3') or die();
             \Clickstorm\GoMapsExt\Controller\MapController::class => 'show, preview'
         ],
         // non-cacheable actions
-        []
+        [],
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['cms']['db_layout']['addTables']['tx_gomapsext_domain_model_map'][0] = [
