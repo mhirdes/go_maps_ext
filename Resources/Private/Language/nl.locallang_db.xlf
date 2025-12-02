@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf" date="2021-05-10T07:32:49Z" product-name="go_maps_ext" target-language="nl">
+  <file source-language="en" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_db.xlf" date="2025-12-02T14:41:04Z" product-name="go_maps_ext" target-language="nl">
     <header/>
     <body>
+      <trans-unit id="plugin.show.description" resname="plugin.show.description">
+        <source>Select a map and display it here</source>
+        <target state="needs-translation">Select a map and display it here</target>
+      </trans-unit>
+      <trans-unit id="plugin.show.title" resname="plugin.show.title">
+        <source>Show Map</source>
+        <target state="needs-translation">Show Map</target>
+      </trans-unit>
       <trans-unit id="sys_category.tab.map" resname="sys_category.tab.map">
         <source><![CDATA[Google Map]]></source>
         <target state="needs-translation"><![CDATA[Google Map]]></target>
@@ -135,13 +143,13 @@
         <source><![CDATA[Google Maps API Key]]></source>
         <target state="needs-translation"><![CDATA[Google Maps API Key]]></target>
       </trans-unit>
-      <trans-unit id="tx_gomapsext_domain_model_key.title" resname="tx_gomapsext_domain_model_key.title">
-        <source><![CDATA[Title]]></source>
-        <target state="needs-translation"><![CDATA[Title]]></target>
-      </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_key.api_key" resname="tx_gomapsext_domain_model_key.api_key">
         <source><![CDATA[API Key]]></source>
         <target state="needs-translation"><![CDATA[API Key]]></target>
+      </trans-unit>
+      <trans-unit id="tx_gomapsext_domain_model_key.title" resname="tx_gomapsext_domain_model_key.title">
+        <source><![CDATA[Title]]></source>
+        <target state="needs-translation"><![CDATA[Title]]></target>
       </trans-unit>
       <trans-unit id="tx_gomapsext_domain_model_map" resname="tx_gomapsext_domain_model_map">
         <source><![CDATA[Map]]></source>
@@ -450,6 +458,10 @@
       <trans-unit id="tx_gomapsext_domain_model_map.zoom_min" resname="tx_gomapsext_domain_model_map.zoom_min">
         <source><![CDATA[Zoom min]]></source>
         <target state="needs-translation"><![CDATA[Zoom min]]></target>
+      </trans-unit>
+      <trans-unit id="wizard.group" resname="wizard.group">
+        <source>Google Maps</source>
+        <target state="needs-translation">Google Maps</target>
       </trans-unit>
     </body>
   </file>
