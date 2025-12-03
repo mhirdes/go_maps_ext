@@ -14,25 +14,33 @@ class AddressRepository extends Repository
      * Finds all addresses by the specified map or the storage pid
      *
      * @param Map $map The map
-     * @param int $pid The Storage Pid
+     * @param string $pids The Storage Pid
      * @return QueryResultInterface The addresses
      * @throws InvalidQueryException
      */
-    public function findAllAddresses(Map $map, int $pid): QueryResultInterface
+    public function findAllAddresses(Map $map, string $pids = '', bool $ignoreSysLanguage = false): QueryResultInterface
     {
         $query = $this->createQuery();
-        $query->getQuerySettings()->setRespectStoragePage(false);
-        $query->getQuerySettings()->setRespectSysLanguage(false);
+        $querySettings = $query->getQuerySettings();
+
+        $querySettings->setRespectStoragePage(false);
+
+        if ($ignoreSysLanguage) {
+            $querySettings->setRespectSysLanguage(false);
+        }
+
+        $query->setQuerySettings($querySettings);
 
         $or = [];
         $and = [];
 
-        foreach (explode(',', $pid) as $p) {
-            $or[] = $query->equals('pid', $p);
+        if ($pids !== '') {
+            foreach (explode(',', $pids) as $pid) {
+                $or[] = $query->equals('pid', $pid);
+            }
         }
-        if ($map) {
-            $or[] = $query->contains('map', $map);
-        }
+
+        $or[] = $query->contains('map', $map);
         $and[] = $query->logicalOr(...$or);
 
         return $query->matching(

@@ -16,6 +16,7 @@ plugin.tx_gomapsext {
 		apiKey = {$plugin.tx_gomapsext.settings.apiKey}
 		googleMapsLibrary = {$plugin.tx_gomapsext.settings.googleMapsLibrary}
 		forceLanguage = {$plugin.tx_gomapsext.settings.forceLanguage}
+    ignoreSysLanguageForAddresses = {$plugin.tx_gomapsext.settings.ignoreSysLanguageForAddresses}
 		infoWindow {
 			openByClick = {$plugin.tx_gomapsext.settings.infoWindow.openByClick}
 			closeByClick = {$plugin.tx_gomapsext.settings.infoWindow.closeByClick}

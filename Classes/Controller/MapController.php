@@ -80,7 +80,7 @@ class MapController extends ActionController
         if (!$this->settings['preview']['enabled'] && !$extConf['include_google_api_manually']) {
             $pageRenderer->addJsFooterInlineCode(
                 'txGoMapsExtLibrary',
-                'window.txGoMapsExtLibrary = "' .$this->googleMapsLibrary . '";',
+                'window.txGoMapsExtLibrary = "' . $this->googleMapsLibrary . '";',
                 true,
                 false,
                 true
@@ -114,9 +114,10 @@ class MapController extends ActionController
     public function showAction(?Map $map = null): ResponseInterface
     {
         $categoriesArray = [];
+        $pids = '';
 
         // get current map
-        if(is_null($map) && isset($this->settings['map'])) {
+        if (is_null($map) && isset($this->settings['map'])) {
             /* @var Map $map */
             $map = $this->mapRepository->findByUid($this->settings['map']);
         }
@@ -125,15 +126,18 @@ class MapController extends ActionController
             return $this->htmlResponse();
         }
 
-        // find addresses
-        $addresses = $map->getAddresses();
-
-        // no addresses related to the map, try to find some from the storagePid
-        if ($addresses->count() === 0 && !empty($this->settings['storagePid'])) {
-            // @extensionScannerIgnoreLine
-            $pid = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
-            $addresses = $this->addressRepository->findAllAddresses($map, $pid);
+        // @extensionScannerIgnoreLine
+        if (!empty($this->settings['storagePid'])) {
+            $pids = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
         }
+
+        $ignoreSysLanguageForAddresses = (bool)($this->settings['ignoreSysLanguageForAddresses'] ?? false);
+
+        $addresses = $this->addressRepository->findAllAddresses(
+            $map,
+            $pids,
+            $ignoreSysLanguageForAddresses
+        );
 
         // respect category param
         $addresses = $addresses->toArray();

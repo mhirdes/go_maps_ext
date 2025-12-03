@@ -18,6 +18,8 @@ plugin.tx_gomapsext {
         googleMapsLibrary = https://maps.google.com/maps/api/js?loading=async&v=weekly&libraries=maps,marker&callback=goMapsExtLoaded
 		# cat=plugin.tx_gomapsext//e; type=boolean; label = Force the language of the map to be equal to the page language
 		forceLanguage = 1
+    # cat=plugin.tx_gomapsext//e; type=boolean; label = Show addresses of all languages
+    ignoreSysLanguageForAddresses = 0
 		infoWindow {
 			# cat=plugin.tx_gomapsext//f; type=boolean; label = Open Info Windows by click
 			openByClick = 0
