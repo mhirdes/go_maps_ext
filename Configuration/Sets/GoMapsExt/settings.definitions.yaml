@@ -1,0 +1,72 @@
+categories:
+  gme: ~
+  gme.view:
+    parent: gme
+  gme.settings:
+    parent: gme
+  gme.settings.infoWindow:
+    parent: gme.settings
+  gme.settings.preview:
+    parent: gme.settings
+
+settings:
+  plugin.tx_gomapsext.view.templateRootPath:
+    default: 'EXT:go_maps_ext/Resources/Private/Templates/'
+    type: string
+    category: gme.view
+  plugin.tx_gomapsext.view.partialRootPath:
+    default: 'EXT:go_maps_ext/Resources/Private/Partials/'
+    type: string
+    category: gme.view
+  plugin.tx_gomapsext.view.layoutRootPath:
+    default: 'EXT:go_maps_ext/Resources/Private/Layouts/'
+    type: string
+    category: gme.view
+  plugin.tx_gomapsext.settings.apiKey:
+    default: ''
+    type: string
+    category: gme.settings
+  plugin.tx_gomapsext.settings.googleMapsLibrary:
+    default: 'https://maps.google.com/maps/api/js?loading=async&v=weekly&libraries=maps,marker&callback=goMapsExtLoaded'
+    type: string
+    category: gme.settings
+  plugin.tx_gomapsext.settings.storagePid:
+    default: 'this'
+    type: string
+    category: gme.settings
+  plugin.tx_gomapsext.settings.logicalAnd:
+    default: false
+    type: bool
+    category: gme.settings
+  plugin.tx_gomapsext.settings.forceLanguage:
+    default: true
+    type: bool
+    category: gme.settings
+  plugin.tx_gomapsext.settings.ignoreSysLanguageForAddresses:
+    default: false
+    type: bool
+    category: gme.settings
+  plugin.tx_gomapsext.settings.infoWindow.openByClick:
+    default: false
+    type: bool
+    category: gme.settings.infoWindow
+  plugin.tx_gomapsext.settings.infoWindow.closeByClick:
+    default: false
+    type: bool
+    category: gme.settings.infoWindow
+  plugin.tx_gomapsext.settings.infoWindow.imageMaxWidth:
+    default: 654
+    type: int
+    category: gme.settings.infoWindow
+  plugin.tx_gomapsext.settings.preview.enabled:
+    default: false
+    type: bool
+    category: gme.settings.preview
+  plugin.tx_gomapsext.settings.preview.image:
+    default: ''
+    type: string
+    category: gme.settings.preview
+  plugin.tx_gomapsext.settings.preview.setCookieToShowMapAlways:
+    default: false
+    type: bool
+    category: gme.settings.preview

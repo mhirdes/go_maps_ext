@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:go_maps_ext/Configuration/Sets/GoMapsExt/labels.xlf" date="2024-09-05T08:00:00Z" product-name="fluid_styled_content">
+    <header/>
+    <body>
+      <trans-unit id="label">
+        <source>Google Maps Extbase</source>
+      </trans-unit>
+      <trans-unit id="categories.gme">
+        <source>Google Maps Extbase</source>
+      </trans-unit>
+      <trans-unit id="categories.gme.view">
+        <source>Template Paths</source>
+      </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.view.templateRootPath">
+	    <source>Path to template root (FE)</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.view.partialRootPath">
+	    <source>Path to template partials (FE)</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.view.layoutRootPath">
+	    <source>Path to template layouts (FE)</source>
+	  </trans-unit>
+      <trans-unit id="categories.gme.settings">
+	    <source>Settings</source>
+	  </trans-unit>
+      <trans-unit id="categories.gme.settings.infoWindow">
+	    <source>Info Window</source>
+	  </trans-unit>
+      <trans-unit id="categories.gme.settings.preview">
+	    <source>Preview</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.apiKey">
+	    <source>API Key: see https://developers.google.com/maps/documentation/javascript/get-api-key</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.storagePid">
+	    <source>Show addresses from this PIDs</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.logicalAnd">
+	    <source>Category filter with logical AND (instead of logical OR)</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.googleMapsLibrary">
+	    <source>URL to Google Maps API: Defaults to the weekly channel. Don't forget to add a callback function (default is '&amp;callback=goMapsExtLoaded')</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.forceLanguage">
+	    <source>Force the language of the map to be equal to the page language</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.ignoreSysLanguageForAddresses">
+	    <source>Show addresses of all languages</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.infoWindow.openByClick">
+	    <source>Open Info Windows by click</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.infoWindow.closeByClick">
+	    <source>Close Info Windows by click</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.infoWindow.imageMaxWidth">
+	    <source>Max. width of images in Info Windows</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.preview.enabled">
+	    <source>Load map only when user accepted</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.preview.image">
+	    <source>URL to general preview image</source>
+	  </trans-unit>
+      <trans-unit id="settings.plugin.tx_gomapsext.settings.preview.setCookieToShowMapAlways">
+	    <source>If the user wants to see a map once, it will be saved in the session</source>
+	  </trans-unit>
+    </body>
+  </file>
+</xliff>

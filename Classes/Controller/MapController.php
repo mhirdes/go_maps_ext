@@ -198,6 +198,8 @@ class MapController extends ActionController
             }
         }
 
-        return $this->settings['apiKey'] ?: '';
+        // retrieve apiKey from site settings or TypoScript
+        return $this->request->getAttribute('site')->getConfiguration()['settings']['plugin']['tx_gomapsext']['settings']['apiKey'] ??
+            $this->settings['apiKey'] ?: '';
     }
 }

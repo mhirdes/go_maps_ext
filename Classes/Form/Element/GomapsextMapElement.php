@@ -27,10 +27,14 @@ namespace Clickstorm\GoMapsExt\Form\Element;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Form\Element\AbstractFormElement;
-use TYPO3\CMS\Core\Core\RequestId;
+use TYPO3\CMS\Core\Domain\ConsumableString;
 use TYPO3\CMS\Core\Page\AssetCollector;
+use TYPO3\CMS\Core\Security\ContentSecurityPolicy\ConsumableNonce;
+use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Configuration\BackendConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3\CMS\Fluid\ViewHelpers\Security\NonceViewHelper;
@@ -42,6 +46,12 @@ use TYPO3\CMS\Fluid\ViewHelpers\Security\NonceViewHelper;
  */
 class GomapsextMapElement extends AbstractFormElement
 {
+
+    public function __construct(
+        protected BackendConfigurationManager $backendConfigurationManager,
+        protected SiteFinder $siteFinder,
+    )
+    {}
 
     /**
      * Renders the Google map
@@ -105,14 +115,17 @@ class GomapsextMapElement extends AbstractFormElement
         $assetCollector->addJavaScript('go_maps_ext_lib', $googleMapsLibrary);
 
         // CSP is required in TYPO3 Backend but not supported for inline js, so add the nonce attribute to the script
-        $nonceViewHelper = GeneralUtility::makeInstance(NonceViewHelper::class);
-        $nonce = $nonceViewHelper->render();
+        $nonce = '';
+        $nonceAttribute = $GLOBALS['TYPO3_REQUEST']->getAttribute('nonce');
+        if ($nonceAttribute instanceof ConsumableNonce) {
+            $nonce = $nonceAttribute->consume();
+        }
 
-        $out[] = '<script type="text/javascript" async nonce="' . $nonce .'">';
+        $out[] = '<script type="text/javascript" async nonce="' . htmlspecialchars($nonce) .'">';
         $out[] = <<<EOT
 if (typeof TxClimbingSites == 'undefined') TxClimbingSites = {};
 
-String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); } 
+String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); }
 
 TxClimbingSites.init = function() {
 	TxClimbingSites.origin = new google.maps.LatLng({$latitude}, {$longitude});
@@ -122,21 +135,21 @@ TxClimbingSites.init = function() {
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 		mapId: 'GOMAPSEXT_MAP_ID',
 	};
-	
-	if(document.getElementsByName("{$streetFieldName}")[0] && 
-	    document.getElementsByName("{$streetFieldName}")[0] && 
+
+	if(document.getElementsByName("{$streetFieldName}")[0] &&
+	    document.getElementsByName("{$streetFieldName}")[0] &&
 	    document.getElementsByName("{$streetFieldName}")[0]) {
 	    var button = document.getElementById('gme-btn-address').disabled = false;
 	}
 	let map = new google.maps.Map(document.getElementById("{$mapId}"), myOptions);
-	
+
 	TxClimbingSites.marker = new google.maps.marker.AdvancedMarkerElement({
 		map,
 		position: TxClimbingSites.origin,
 		gmpDraggable: true,
 		title: 'This marker is draggable.'
 	});
-	
+
 	TxClimbingSites.marker.addListener('dragend', (event) => {
 	    const markerPosition = TxClimbingSites.marker.position;
 		var lat = markerPosition.lat.toFixed(6);
@@ -157,7 +170,7 @@ TxClimbingSites.init = function() {
 		TxClimbingSites.positionChanged();
 	});
 	TxClimbingSites.geocoder = new google.maps.Geocoder();
-	
+
 	TxClimbingSites.map = map;
 
 };
@@ -225,7 +238,7 @@ TxClimbingSites.codeByAddress = function() {
 	    zip = document.getElementsByName("{$zipFieldName}")[0].value,
 	    city = document.getElementsByName("{$cityFieldName}")[0].value,
 	    address = street + ',' + zip + ' ' + city;
-	    	
+
     TxClimbingSites.localize(address);
 }
 
@@ -293,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
             TxClimbingSites.codeAddress();
         });
     });
-    
+
    document.querySelectorAll('.js-gomapsext-code-address').forEach(function(element) {
         element.addEventListener('click', function() {
             TxClimbingSites.codeByAddress();
@@ -304,17 +317,17 @@ EOT;
         $out[] = '</script>';
         $out[] = '<div id="' . $baseElementId . '">';
         $out[] = '
-			<input type="text" 
-			       class="form-control" 
-			       value="' . $address . '" 
-			       id="' . $addressId . '" 
+			<input type="text"
+			       class="form-control"
+			       value="' . $address . '"
+			       id="' . $addressId . '"
 			       style="display:inline-block;width:300px">
-			<input type="button" 
-			       value="' . LocalizationUtility::translate('update_by_position', 'go_maps_ext') . '" 
+			<input type="button"
+			       value="' . LocalizationUtility::translate('update_by_position', 'go_maps_ext') . '"
 			       class="btn btn-sm btn-default js-gomapsext-code-position">
 			<input id="gme-btn-address"
-			       type="button" 
-			       value="' . LocalizationUtility::translate('update_by_address', 'go_maps_ext') . '" 
+			       type="button"
+			       value="' . LocalizationUtility::translate('update_by_address', 'go_maps_ext') . '"
 			       class="btn btn-sm btn-default js-gomapsext-code-address" disabled>
 		';
         $out[] = '<div id="' . $mapId . '" style="height:400px;margin:10px 0;width:400px"></div>';
@@ -328,12 +341,28 @@ EOT;
     /**
      * Get definitive TypoScript Settings from
      * plugin.tx_gomapsext.settings.
+     *
+     * in future TYPO3 versions just get the site setting
      */
-    private static function getSettings(): array
+    private function getSettings(): array
     {
-        return GeneralUtility::makeInstance(ConfigurationManagerInterface::class)
-            ->getConfiguration(
-                ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT
-            )['plugin.']['tx_gomapsext.']['settings.'] ?? [];
+        // In FormEngine usually present:
+        $pid = (int)($this->data['databaseRow']['pid'] ?? 0);
+
+        /** @var ServerRequestInterface $request */
+        $request = $GLOBALS['TYPO3_REQUEST'];
+
+        // Ensure site + language are set for this pid (important for multi-site / conditions / settings)
+        if ($pid > 0) {
+            $site = $this->siteFinder->getSiteByPageId($pid);
+            $request = $request
+                ->withAttribute('site', $site)
+                ->withAttribute('language', $site->getDefaultLanguage());
+        }
+
+        $tsSetup = $this->backendConfigurationManager
+            ->getTypoScriptSetup($request);
+
+        return $tsSetup['plugin.']['tx_gomapsext.']['settings.'] ?? [];
     }
 }
