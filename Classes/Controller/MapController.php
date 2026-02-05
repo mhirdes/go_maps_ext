@@ -128,7 +128,13 @@ class MapController extends ActionController
 
         // @extensionScannerIgnoreLine
         if (!empty($this->settings['storagePid'])) {
-            $pids = str_ireplace('this', $GLOBALS['TSFE']->id, $this->settings['storagePid']);
+            if (isset($GLOBALS['TSFE'])) {
+                $pageId = $GLOBALS['TSFE']->id;
+            } else {
+                $pageId = $this->request->getAttribute('frontend.page.information')->getId();
+            }
+
+            $pids = str_ireplace('this', $pageId, $this->settings['storagePid']);
         }
 
         $ignoreSysLanguageForAddresses = (bool)($this->settings['ignoreSysLanguageForAddresses'] ?? false);
