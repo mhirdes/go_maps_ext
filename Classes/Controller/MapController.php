@@ -126,14 +126,8 @@ class MapController extends ActionController
             return $this->htmlResponse();
         }
 
-        // @extensionScannerIgnoreLine
         if (!empty($this->settings['storagePid'])) {
-            if (isset($GLOBALS['TSFE'])) {
-                $pageId = $GLOBALS['TSFE']->id;
-            } else {
-                $pageId = $this->request->getAttribute('frontend.page.information')->getId();
-            }
-
+            $pageId = $this->request->getAttribute('frontend.page.information')->getId();
             $pids = str_ireplace('this', $pageId, $this->settings['storagePid']);
         }
 
