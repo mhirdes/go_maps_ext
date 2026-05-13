@@ -25,7 +25,7 @@
 		"extbase"
 	],
 	"require": {
-		"typo3/cms-core": "^12 || ^13 || ^14"
+		"typo3/cms-core": "^13 || ^14"
 	},
 	"extra": {
 		"typo3/cms": {

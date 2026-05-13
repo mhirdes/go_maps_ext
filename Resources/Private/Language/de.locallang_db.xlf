@@ -205,7 +205,7 @@
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.geolocation" resname="tx_gomapsext_domain_model_map.geolocation">
 				<source><![CDATA[Activate Geolocation]]></source>
-				<target></target>
+				<target><![CDATA[Geolokalisierung aktivieren]]></target>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.height" resname="tx_gomapsext_domain_model_map.height">
 				<source><![CDATA[Height]]></source>
@@ -301,7 +301,7 @@
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.palettes.geolocation" resname="tx_gomapsext_domain_model_map.palettes.geolocation">
 				<source><![CDATA[Geolocation]]></source>
-				<target></target>
+				<target><![CDATA[Geolokalisierung]]></target>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.palettes.interaction" resname="tx_gomapsext_domain_model_map.palettes.interaction">
 				<source><![CDATA[Map Interaction]]></source>
@@ -381,7 +381,7 @@
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.tab.route" resname="tx_gomapsext_domain_model_map.tab.route">
 				<source><![CDATA[Route]]></source>
-				<target></target>
+				<target><![CDATA[Route]]></target>
 			</trans-unit>
 			<trans-unit id="tx_gomapsext_domain_model_map.tab.style" resname="tx_gomapsext_domain_model_map.tab.style">
 				<source><![CDATA[Style]]></source>

@@ -57,7 +57,7 @@
 			</trans-unit>
 			<trans-unit id="geolocation.description" resname="geolocation.description">
 				<source>If set geolocation is activated. If location is possible and allowed by the user, a marker is shown representing the actual position and the map is centered to this point.</source>
-				<target></target>
+				<target>Wenn aktiviert, wird die Geolokalisierung eingeschaltet. Sofern die Ortung möglich und vom Nutzer erlaubt ist, wird ein Marker an der aktuellen Position angezeigt und die Karte darauf zentriert.</target>
 			</trans-unit>
 			<trans-unit id="map_type_control.description" resname="map_type_control.description">
 				<source>Shows a control to change the map type.</source>
