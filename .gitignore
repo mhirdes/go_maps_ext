@@ -1,3 +1,9 @@
 .idea/
 Build/
 .php_cs.cache
+node_modules/
+playwright-report/
+test-results/
+.playwright/
+.env
+.auth/

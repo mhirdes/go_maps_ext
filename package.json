@@ -1,0 +1,14 @@
+{
+  "name": "go-maps-ext-tests",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:backend": "playwright test Tests/Acceptance/Backend",
+    "test:frontend": "playwright test Tests/Acceptance/Frontend",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "dotenv": "^16.4.0"
+  }
+}

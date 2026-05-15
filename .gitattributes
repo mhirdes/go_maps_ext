@@ -1,3 +1,11 @@
 /.gitattributes export-ignore
 /.gitignore export-ignore
 /Build/ export-ignore
+/Tests/ export-ignore
+/node_modules/ export-ignore
+/playwright-report/ export-ignore
+/test-results/ export-ignore
+/package.json export-ignore
+/package-lock.json export-ignore
+/playwright.config.ts export-ignore
+/.github/ export-ignore

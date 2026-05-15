@@ -1,0 +1,1448 @@
+{
+  "config": {
+    "configFile": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/playwright.config.ts",
+    "rootDir": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance",
+        "testIgnore": [],
+        "testMatch": [
+          "/auth\\.setup\\.ts/"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "backend",
+        "name": "backend",
+        "testDir": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "frontend",
+        "name": "frontend",
+        "testDir": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "auth.setup.ts",
+      "file": "auth.setup.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "authenticate",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "setup",
+              "projectName": "setup",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3111,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-15T07:40:46.964Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "17e3fe6f4d9d8bd79c6b-60f085b113a677673906",
+          "file": "auth.setup.ts",
+          "line": 6,
+          "column": 6
+        }
+      ]
+    },
+    {
+      "title": "Backend/FunctionalTest.spec.ts",
+      "file": "Backend/FunctionalTest.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Go Maps Ext - Backend Functional Tests",
+          "file": "Backend/FunctionalTest.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "geolocation fills coordinates from address fields",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "backend",
+                  "projectName": "backend",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7360,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:28:26",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                          "column": 26,
+                          "line": 28
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[90m// Assert the address was actually saved\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m         expect(addr)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m     test(\u001b[32m'debug: create single address and verify UID'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                            "column": 26,
+                            "line": 28
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n\u001b[0m \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m         \u001b[90m// Assert the address was actually saved\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 28 |\u001b[39m         expect(addr)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 29 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 30 |\u001b[39m\n \u001b[90m 31 |\u001b[39m     test(\u001b[32m'debug: create single address and verify UID'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:28:26\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce03017a1555474978][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce03017a1555474978][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce03017a1555474978][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce03017a1555474978][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce03017a1555474978][latitude]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[geolocation test] Returned UID: \u001b[1mnull\u001b[22m\n"
+                        },
+                        {
+                          "text": "[geolocation test] Page URL: https://typodummy-14.ddev.site/typo3/module/dashboard\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:40:50.461Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-dcc07-dinates-from-address-fields-backend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-dcc07-dinates-from-address-fields-backend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-dcc07-dinates-from-address-fields-backend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-dcc07-dinates-from-address-fields-backend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                        "column": 26,
+                        "line": 28
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-9759a9ac4d14d4980c76",
+              "file": "Backend/FunctionalTest.spec.ts",
+              "line": 15,
+              "column": 9
+            },
+            {
+              "title": "debug: create single address and verify UID",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "backend",
+                  "projectName": "backend",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6336,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:41:26",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                          "column": 26,
+                          "line": 41
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 39 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[32m'Returned UID:'\u001b[39m\u001b[33m,\u001b[39m addr)\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[32m'Page URL:'\u001b[39m\u001b[33m,\u001b[39m page\u001b[33m.\u001b[39murl())\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 41 |\u001b[39m         expect(addr)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 42 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m\n \u001b[90m 44 |\u001b[39m     test(\u001b[32m'create three addresses with different categories'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                            "column": 26,
+                            "line": 41
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n\u001b[0m \u001b[90m 39 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[32m'Returned UID:'\u001b[39m\u001b[33m,\u001b[39m addr)\u001b[33m;\u001b[39m\n \u001b[90m 40 |\u001b[39m         console\u001b[33m.\u001b[39mlog(\u001b[32m'Page URL:'\u001b[39m\u001b[33m,\u001b[39m page\u001b[33m.\u001b[39murl())\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 41 |\u001b[39m         expect(addr)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 42 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m\n \u001b[90m 44 |\u001b[39m     test(\u001b[32m'create three addresses with different categories'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:41:26\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce0ac73a3005428392][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce0ac73a3005428392][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce0ac73a3005428392][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce0ac73a3005428392][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce0ac73a3005428392][latitude]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "Returned UID: \u001b[1mnull\u001b[22m\n"
+                        },
+                        {
+                          "text": "Page URL: https://typodummy-14.ddev.site/typo3/module/dashboard\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:40:58.392Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-e2f76-ngle-address-and-verify-UID-backend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-e2f76-ngle-address-and-verify-UID-backend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-e2f76-ngle-address-and-verify-UID-backend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-e2f76-ngle-address-and-verify-UID-backend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                        "column": 26,
+                        "line": 41
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-bf6dec9dae1a34698226",
+              "file": "Backend/FunctionalTest.spec.ts",
+              "line": 31,
+              "column": 9
+            },
+            {
+              "title": "create three addresses with different categories",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "backend",
+                  "projectName": "backend",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 30123,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:82:27",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                          "column": 27,
+                          "line": 82
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 80 |\u001b[39m         )\u001b[33m;\u001b[39m\n \u001b[90m 81 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m         expect(addr1)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 83 |\u001b[39m         expect(addr2)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m 84 |\u001b[39m         expect(addr3)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m 85 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                            "column": 27,
+                            "line": 82
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeNull\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n\u001b[0m \u001b[90m 80 |\u001b[39m         )\u001b[33m;\u001b[39m\n \u001b[90m 81 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m         expect(addr1)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 83 |\u001b[39m         expect(addr2)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m 84 |\u001b[39m         expect(addr3)\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeNull()\u001b[33m;\u001b[39m\n \u001b[90m 85 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:82:27\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B63%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B63%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B63%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=sys_category, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B63%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B63%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B63%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[sys_category][63][title]'\u001b[39m,\n  \u001b[32m'data[sys_category][63][parent]'\u001b[39m,\n  \u001b[32m'data[sys_category][63][items]'\u001b[39m,\n  \u001b[32m'data[sys_category][63][sys_language_uid]'\u001b[39m,\n  \u001b[32m'data[sys_category][63][hidden]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B64%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B64%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B64%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=sys_category, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B64%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B64%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B64%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[sys_category][64][title]'\u001b[39m,\n  \u001b[32m'data[sys_category][64][parent]'\u001b[39m,\n  \u001b[32m'data[sys_category][64][items]'\u001b[39m,\n  \u001b[32m'data[sys_category][64][sys_language_uid]'\u001b[39m,\n  \u001b[32m'data[sys_category][64][hidden]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B65%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B65%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B65%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=sys_category, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B65%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B65%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B65%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[sys_category][65][title]'\u001b[39m,\n  \u001b[32m'data[sys_category][65][parent]'\u001b[39m,\n  \u001b[32m'data[sys_category][65][items]'\u001b[39m,\n  \u001b[32m'data[sys_category][65][sys_language_uid]'\u001b[39m,\n  \u001b[32m'data[sys_category][65][hidden]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce1d0994f446073619][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce1d0994f446073619][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce1d0994f446073619][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce1d0994f446073619][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce1d0994f446073619][latitude]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2355e12274122918][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2355e12274122918][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2355e12274122918][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2355e12274122918][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2355e12274122918][latitude]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2931625324950736][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2931625324950736][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2931625324950736][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2931625324950736][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce2931625324950736][latitude]'\u001b[39m\n]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:41:05.338Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-070ff-s-with-different-categories-backend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-070ff-s-with-different-categories-backend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-070ff-s-with-different-categories-backend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-070ff-s-with-different-categories-backend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                        "column": 27,
+                        "line": 82
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-9e4de3437677421a8b68",
+              "file": "Backend/FunctionalTest.spec.ts",
+              "line": 44,
+              "column": 9
+            },
+            {
+              "title": "create map with search, categories, route and styled map",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "backend",
+                  "projectName": "backend",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 31635,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:123:34",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                          "column": 34,
+                          "line": 123
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 121 |\u001b[39m         \u001b[36mif\u001b[39m (addr3) addresses\u001b[33m.\u001b[39mpush(addr3)\u001b[33m;\u001b[39m\n \u001b[90m 122 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m         expect(addresses\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m\n \u001b[90m 125 |\u001b[39m         \u001b[90m// Create map with all features enabled\u001b[39m\n \u001b[90m 126 |\u001b[39m         \u001b[36mconst\u001b[39m mapUid \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m createMapWithConfig(page\u001b[33m,\u001b[39m \u001b[32m`Functional_Test_Map_${ts}`\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                            "column": 34,
+                            "line": 123
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n\u001b[0m \u001b[90m 121 |\u001b[39m         \u001b[36mif\u001b[39m (addr3) addresses\u001b[33m.\u001b[39mpush(addr3)\u001b[33m;\u001b[39m\n \u001b[90m 122 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m         expect(addresses\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m\n \u001b[90m 125 |\u001b[39m         \u001b[90m// Create map with all features enabled\u001b[39m\n \u001b[90m 126 |\u001b[39m         \u001b[36mconst\u001b[39m mapUid \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m createMapWithConfig(page\u001b[33m,\u001b[39m \u001b[32m`Functional_Test_Map_${ts}`\u001b[39m\u001b[33m,\u001b[39m {\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts:123:34\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B66%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B66%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B66%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=sys_category, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B66%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B66%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B66%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[sys_category][66][title]'\u001b[39m,\n  \u001b[32m'data[sys_category][66][parent]'\u001b[39m,\n  \u001b[32m'data[sys_category][66][items]'\u001b[39m,\n  \u001b[32m'data[sys_category][66][sys_language_uid]'\u001b[39m,\n  \u001b[32m'data[sys_category][66][hidden]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B67%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B67%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B67%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=sys_category, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B67%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Bsys_category%5D%5B67%5D=edit&returnUrl=%2Ftypo3%2Fmodule%2Fdashboard%3Ftoken%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Bsys_category%5D%5B67%5D=edit&returnUrl=/typo3/module/dashboard?token%3Dc12ed14e13f4fbe8f90bbfbe2d2a6ab261e1566aca4282c3dd27b725b4a249b3\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[sys_category][67][title]'\u001b[39m,\n  \u001b[32m'data[sys_category][67][parent]'\u001b[39m,\n  \u001b[32m'data[sys_category][67][items]'\u001b[39m,\n  \u001b[32m'data[sys_category][67][sys_language_uid]'\u001b[39m,\n  \u001b[32m'data[sys_category][67][hidden]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce38a3525166557165][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce38a3525166557165][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce38a3525166557165][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce38a3525166557165][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce38a3525166557165][latitude]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4341f27248804239][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4341f27248804239][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4341f27248804239][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4341f27248804239][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4341f27248804239][latitude]'\u001b[39m\n]\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] BEFORE click: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[saveRecord] role-based button found: true\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[saveRecord] AFTER save: frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] table=tx_gomapsext_domain_model_address, page.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=https://typodummy-14.ddev.site/typo3/record/edit?token=3b5135dbde8c3e231206f841fc126cf7a2b41a8b2959f3b231f171fa6c902ac0&edit%5Btx_gomapsext_domain_model_address%5D%5B1%5D=new\n"
+                        },
+                        {
+                          "text": "[extractSavedUid]   frame.url()=about:blank\n"
+                        },
+                        {
+                          "text": "[extractSavedUid] sample data[] names found: [\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4a20499818345169][title]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4a20499818345169][street]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4a20499818345169][zip]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4a20499818345169][city]'\u001b[39m,\n  \u001b[32m'data[tx_gomapsext_domain_model_address][NEW6a06ce4a20499818345169][latitude]'\u001b[39m\n]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:41:36.659Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-6dd0c-gories-route-and-styled-map-backend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-6dd0c-gories-route-and-styled-map-backend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-6dd0c-gories-route-and-styled-map-backend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-6dd0c-gories-route-and-styled-map-backend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Backend/FunctionalTest.spec.ts",
+                        "column": 34,
+                        "line": 123
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-5487419f6c847d308842",
+              "file": "Backend/FunctionalTest.spec.ts",
+              "line": 87,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Frontend/FunctionalTest.spec.ts",
+      "file": "Frontend/FunctionalTest.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Go Maps Ext - Frontend Functional Tests",
+          "file": "Frontend/FunctionalTest.spec.ts",
+          "line": 9,
+          "column": 6,
+          "specs": [
+            {
+              "title": "map renders multiple markers for addresses",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "frontend",
+                  "projectName": "frontend",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8309,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[id^=\"tx-gomapsext-map-\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[id^=\"tx-gomapsext-map-\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[id^=\"tx-gomapsext-map-\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[id^=\"tx-gomapsext-map-\"]').first()\u001b[22m\n\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:19:36",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                          "column": 36,
+                          "line": 19
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 17 |\u001b[39m         \u001b[90m// Check map container exists\u001b[39m\n \u001b[90m 18 |\u001b[39m         \u001b[36mconst\u001b[39m mapContainer \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[id^=\"tx-gomapsext-map-\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m         \u001b[36mawait\u001b[39m expect(mapContainer)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m         \u001b[90m// Check markers are present (marker elements or canvas indicators)\u001b[39m\n \u001b[90m 22 |\u001b[39m         \u001b[90m// go_maps_ext renders markers as DOM elements or Google Maps markers\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                            "column": 36,
+                            "line": 19
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[id^=\"tx-gomapsext-map-\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[id^=\"tx-gomapsext-map-\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 17 |\u001b[39m         \u001b[90m// Check map container exists\u001b[39m\n \u001b[90m 18 |\u001b[39m         \u001b[36mconst\u001b[39m mapContainer \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[id^=\"tx-gomapsext-map-\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 19 |\u001b[39m         \u001b[36mawait\u001b[39m expect(mapContainer)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 20 |\u001b[39m\n \u001b[90m 21 |\u001b[39m         \u001b[90m// Check markers are present (marker elements or canvas indicators)\u001b[39m\n \u001b[90m 22 |\u001b[39m         \u001b[90m// go_maps_ext renders markers as DOM elements or Google Maps markers\u001b[39m\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:19:36\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:42:09.354Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-2562f-tiple-markers-for-addresses-frontend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-2562f-tiple-markers-for-addresses-frontend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-2562f-tiple-markers-for-addresses-frontend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-2562f-tiple-markers-for-addresses-frontend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                        "column": 36,
+                        "line": 19
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-2e2e34257121f63c3e18",
+              "file": "Frontend/FunctionalTest.spec.ts",
+              "line": 11,
+              "column": 9
+            },
+            {
+              "title": "search function filters addresses",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "frontend",
+                  "projectName": "frontend",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7286,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]').first()\u001b[22m\n\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:38:35",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                          "column": 35,
+                          "line": 38
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 36 |\u001b[39m         \u001b[90m// Find search input\u001b[39m\n \u001b[90m 37 |\u001b[39m         \u001b[36mconst\u001b[39m searchInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchInput)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m\n \u001b[90m 40 |\u001b[39m         \u001b[90m// Enter search term\u001b[39m\n \u001b[90m 41 |\u001b[39m         \u001b[36mawait\u001b[39m searchInput\u001b[33m.\u001b[39mfill(\u001b[32m'Restaurant'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                            "column": 35,
+                            "line": 38
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 36 |\u001b[39m         \u001b[90m// Find search input\u001b[39m\n \u001b[90m 37 |\u001b[39m         \u001b[36mconst\u001b[39m searchInput \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.tx-gomapsext-search input, [class*=\"gomapsext\"] input[type=\"text\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 38 |\u001b[39m         \u001b[36mawait\u001b[39m expect(searchInput)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 39 |\u001b[39m\n \u001b[90m 40 |\u001b[39m         \u001b[90m// Enter search term\u001b[39m\n \u001b[90m 41 |\u001b[39m         \u001b[36mawait\u001b[39m searchInput\u001b[33m.\u001b[39mfill(\u001b[32m'Restaurant'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:38:35\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:42:18.084Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-803af--function-filters-addresses-frontend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-803af--function-filters-addresses-frontend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-803af--function-filters-addresses-frontend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-803af--function-filters-addresses-frontend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                        "column": 35,
+                        "line": 38
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-37e4f7225b38a4c611ca",
+              "file": "Frontend/FunctionalTest.spec.ts",
+              "line": 30,
+              "column": 9
+            },
+            {
+              "title": "category filter shows/hides addresses",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "frontend",
+                  "projectName": "frontend",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7293,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.tx-gomapsext-categories select, select[name*=\"category\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.tx-gomapsext-categories select, select[name*=\"category\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.tx-gomapsext-categories select, select[name*=\"category\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.tx-gomapsext-categories select, select[name*=\"category\"]').first()\u001b[22m\n\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:75:38",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                          "column": 38,
+                          "line": 75
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 73 |\u001b[39m         \u001b[90m// Find category select/dropdown\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mconst\u001b[39m categorySelect \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.tx-gomapsext-categories select, select[name*=\"category\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m         \u001b[36mawait\u001b[39m expect(categorySelect)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m\n \u001b[90m 77 |\u001b[39m         \u001b[90m// Get initial marker count (if accessible)\u001b[39m\n \u001b[90m 78 |\u001b[39m         \u001b[36mconst\u001b[39m initialMarkerCount \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.tx-gomapsext-marker'\u001b[39m)\u001b[33m.\u001b[39mcount()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                            "column": 38,
+                            "line": 75
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.tx-gomapsext-categories select, select[name*=\"category\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.tx-gomapsext-categories select, select[name*=\"category\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 73 |\u001b[39m         \u001b[90m// Find category select/dropdown\u001b[39m\n \u001b[90m 74 |\u001b[39m         \u001b[36mconst\u001b[39m categorySelect \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.tx-gomapsext-categories select, select[name*=\"category\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m         \u001b[36mawait\u001b[39m expect(categorySelect)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m\n \u001b[90m 77 |\u001b[39m         \u001b[90m// Get initial marker count (if accessible)\u001b[39m\n \u001b[90m 78 |\u001b[39m         \u001b[36mconst\u001b[39m initialMarkerCount \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.tx-gomapsext-marker'\u001b[39m)\u001b[33m.\u001b[39mcount()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:75:38\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:42:25.789Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-9c77e-ilter-shows-hides-addresses-frontend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-9c77e-ilter-shows-hides-addresses-frontend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-9c77e-ilter-shows-hides-addresses-frontend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-9c77e-ilter-shows-hides-addresses-frontend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                        "column": 38,
+                        "line": 75
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-266d9389ebff62a54d8f",
+              "file": "Frontend/FunctionalTest.spec.ts",
+              "line": 68,
+              "column": 9
+            },
+            {
+              "title": "route calculation displays route on map",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "frontend",
+                  "projectName": "frontend",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2200,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:42:33.513Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-5b96c0cec298a948e6b0",
+              "file": "Frontend/FunctionalTest.spec.ts",
+              "line": 95,
+              "column": 9
+            },
+            {
+              "title": "styled map renders with custom styles",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "frontend",
+                  "projectName": "frontend",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8328,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[id^=\"tx-gomapsext-map-\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[id^=\"tx-gomapsext-map-\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[id^=\"tx-gomapsext-map-\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[id^=\"tx-gomapsext-map-\"]').first()\u001b[22m\n\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:139:36",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                          "column": 36,
+                          "line": 139
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 137 |\u001b[39m         \u001b[90m// Check map container\u001b[39m\n \u001b[90m 138 |\u001b[39m         \u001b[36mconst\u001b[39m mapContainer \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[id^=\"tx-gomapsext-map-\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 139 |\u001b[39m         \u001b[36mawait\u001b[39m expect(mapContainer)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 140 |\u001b[39m\n \u001b[90m 141 |\u001b[39m         \u001b[90m// Check for styled map indicator\u001b[39m\n \u001b[90m 142 |\u001b[39m         \u001b[90m// This could be a specific class, data attribute, or custom map style\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                            "column": 36,
+                            "line": 139
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[id^=\"tx-gomapsext-map-\"]').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('[id^=\"tx-gomapsext-map-\"]').first()\u001b[22m\n\n\n\u001b[0m \u001b[90m 137 |\u001b[39m         \u001b[90m// Check map container\u001b[39m\n \u001b[90m 138 |\u001b[39m         \u001b[36mconst\u001b[39m mapContainer \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[id^=\"tx-gomapsext-map-\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 139 |\u001b[39m         \u001b[36mawait\u001b[39m expect(mapContainer)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 140 |\u001b[39m\n \u001b[90m 141 |\u001b[39m         \u001b[90m// Check for styled map indicator\u001b[39m\n \u001b[90m 142 |\u001b[39m         \u001b[90m// This could be a specific class, data attribute, or custom map style\u001b[39m\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:139:36\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:42:35.799Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-8d653--renders-with-custom-styles-frontend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-8d653--renders-with-custom-styles-frontend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-8d653--renders-with-custom-styles-frontend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-8d653--renders-with-custom-styles-frontend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                        "column": 36,
+                        "line": 139
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-6310b9f1548ea82fb513",
+              "file": "Frontend/FunctionalTest.spec.ts",
+              "line": 132,
+              "column": 9
+            },
+            {
+              "title": "no JavaScript errors during map operations",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "frontend",
+                  "projectName": "frontend",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3235,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[\"Failed to load resource: the server responded with a status of 404 ()\"]\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[\"Failed to load resource: the server responded with a status of 404 ()\"]\u001b[39m\n    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:195:39",
+                        "location": {
+                          "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                          "column": 39,
+                          "line": 195
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 193 |\u001b[39m\n \u001b[90m 194 |\u001b[39m         expect(relevantErrors)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 195 |\u001b[39m         expect(relevantConsoleErrors)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 196 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 197 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 198 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                            "column": 39,
+                            "line": 195
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[\"Failed to load resource: the server responded with a status of 404 ()\"]\u001b[39m\n\n\u001b[0m \u001b[90m 193 |\u001b[39m\n \u001b[90m 194 |\u001b[39m         expect(relevantErrors)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 195 |\u001b[39m         expect(relevantConsoleErrors)\u001b[33m.\u001b[39mtoHaveLength(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 196 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 197 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 198 |\u001b[39m\u001b[0m\n\u001b[2m    at /home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts:195:39\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-05-15T07:42:44.469Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-33dfd-rrors-during-map-operations-frontend/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-33dfd-rrors-during-map-operations-frontend/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-33dfd-rrors-during-map-operations-frontend/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/test-results/FunctionalTest-Go-Maps-Ext-33dfd-rrors-during-map-operations-frontend/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/mhirdes/projects/typodummy-14/vendor/clickstorm/go-maps-ext/Tests/Acceptance/Frontend/FunctionalTest.spec.ts",
+                        "column": 39,
+                        "line": 195
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5f39ff6353ee59240d23-91c996e3b199dd9d94df",
+              "file": "Frontend/FunctionalTest.spec.ts",
+              "line": 159,
+              "column": 9
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-15T07:40:46.669Z",
+    "duration": 121188.808,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}
