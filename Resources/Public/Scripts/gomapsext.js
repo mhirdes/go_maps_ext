@@ -115,9 +115,19 @@ class GoMapsExtController {
       }
     });
 
-    // Repaint marker cluster if it exists
-    if (element.markerCluster) {
-      this.refreshCluster(element, this.gme);
+    // refresh bounds
+    this.bounds = new google.maps.LatLngBounds();
+    let hasVisibleMarker = false;
+    this.markers.forEach(marker => {
+      if (!marker.hidden) {
+        this.bounds.extend(marker.position);
+        hasVisibleMarker = true;
+      }
+    });
+
+    // repaint the map
+    if (hasVisibleMarker) {
+      this.refreshMap(element, this.gme);
     }
   }
 
