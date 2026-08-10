@@ -5,63 +5,63 @@
     <body>
       <trans-unit id="address.description" resname="address.description">
         <source>Please enter an address or coordinates on the position field above and press update.</source>
-        <target state="needs-translation">Please enter an address or coordinates on the position field above and press update.</target>
+        <target state="translated">Kérjük, írjon be egy címet vagy koordinátákat a fenti pozíció mezőbe, és nyomja meg a frissítést.</target>
       </trans-unit>
       <trans-unit id="close_by_click.description" resname="close_by_click.description">
         <source>Close InfoWindow by click instead of mouse out.</source>
-        <target state="needs-translation">Close InfoWindow by click instead of mouse out.</target>
+        <target state="translated">Az InfoWindow bezárása kattintással az egér kilépése helyett.</target>
       </trans-unit>
       <trans-unit id="configuration_map.description" resname="configuration_map.description">
         <source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
-        <target state="needs-translation">Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</target>
+        <target state="translated">Írjon be egy címet [utca szám, irányítószám város] vagy koordinátákat [szélesség,hosszúság], és nyomja meg a „Frissítés” gombot, vagy húzza a markert.</target>
       </trans-unit>
       <trans-unit id="image_height.description" resname="image_height.description">
         <source>Costum image height in pixel.</source>
-        <target state="needs-translation">Costum image height in pixel.</target>
+        <target state="translated">Egyedi kép magasság pixelben.</target>
       </trans-unit>
       <trans-unit id="image_size.description" resname="image_size.description">
         <source>Check if the image has a different size then default. The image should be twice as large as indicated.</source>
-        <target state="needs-translation">Check if the image has a different size then default. The image should be twice as large as indicated.</target>
+        <target state="translated">Jelölje be, ha a kép mérete eltér az alapértelmezettől. A képnek kétszer akkorának kell lennie, mint a megadott.</target>
       </trans-unit>
       <trans-unit id="image_width.description" resname="image_width.description">
         <source>Costum image width in pixel.</source>
-        <target state="needs-translation">Costum image width in pixel.</target>
+        <target state="translated">Egyedi kép szélesség pixelben.</target>
       </trans-unit>
       <trans-unit id="info_window_content.description" resname="info_window_content.description">
         <source>This will be displayed in the InfoWindow of this marker.</source>
-        <target state="needs-translation">This will be displayed in the InfoWindow of this marker.</target>
+        <target state="translated">Ez fog megjelenni a marker InfoWindow ablakában.</target>
       </trans-unit>
       <trans-unit id="info_window_images.description" resname="info_window_images.description">
         <source>This will be displayed in the InfoWindow of this marker.</source>
-        <target state="needs-translation">This will be displayed in the InfoWindow of this marker.</target>
+        <target state="translated">Ez fog megjelenni a marker InfoWindow ablakában.</target>
       </trans-unit>
       <trans-unit id="info_window_link.description" resname="info_window_link.description">
         <source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
-        <target state="needs-translation">Attachs an optional automatic generated link to calculate a route on Google Maps.</target>
+        <target state="translated">Opcionális, automatikusan generált hivatkozást csatol az útvonal kiszámításához a Google Maps-en.</target>
       </trans-unit>
       <trans-unit id="latitude.description" resname="latitude.description">
         <source>Please enter an address or coordinates on the position field above and press update.</source>
-        <target state="needs-translation">Please enter an address or coordinates on the position field above and press update.</target>
+        <target state="translated">Kérjük, írjon be egy címet vagy koordinátákat a fenti pozíció mezőbe, és nyomja meg a frissítést.</target>
       </trans-unit>
       <trans-unit id="longitude.description" resname="longitude.description">
         <source>Please enter an address or coordinates on the position field above and press update.</source>
-        <target state="needs-translation">Please enter an address or coordinates on the position field above and press update.</target>
+        <target state="translated">Kérjük, írjon be egy címet vagy koordinátákat a fenti pozíció mezőbe, és nyomja meg a frissítést.</target>
       </trans-unit>
       <trans-unit id="marker.description" resname="marker.description">
         <source>Choose a costum image for the pin.</source>
-        <target state="needs-translation">Choose a costum image for the pin.</target>
+        <target state="translated">Válasszon egyedi képet a pinhez.</target>
       </trans-unit>
       <trans-unit id="open_by_click.description" resname="open_by_click.description">
         <source>Open InfoWindow by click instead of mouse over.</source>
-        <target state="needs-translation">Open InfoWindow by click instead of mouse over.</target>
+        <target state="translated">Az InfoWindow megnyitása kattintással az egér rámozgatása helyett.</target>
       </trans-unit>
       <trans-unit id="opened.description" resname="opened.description">
         <source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
-        <target state="needs-translation">The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</target>
+        <target state="translated">Az InfoWindow a térkép megjelenésekor nyílik meg. Minden térképhez csak egy megnyitott InfoWindow tartozik.</target>
       </trans-unit>
       <trans-unit id="title.description" resname="title.description">
         <source>For internal use only.</source>
-        <target state="needs-translation">For internal use only.</target>
+        <target state="translated">Csak belső használatra.</target>
       </trans-unit>
     </body>
   </file>
