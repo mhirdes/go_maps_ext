@@ -461,7 +461,7 @@
 			</trans-unit>
 			<trans-unit id="wizard.group" resname="wizard.group">
 				<source>Google Maps</source>
-				<target></target>
+				<target>Google Maps</target>
 			</trans-unit>
 		</body>
 	</file>
