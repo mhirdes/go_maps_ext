@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" datatype="plaintext" original="EXT:go_maps_ext/Resources/Private/Language/locallang_csh_tx_gomapsext_domain_model_address.xlf" date="2023-03-16T09:58:26Z" product-name="go_maps_ext" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="address.description" resname="address.description">
+        <source>Please enter an address or coordinates on the position field above and press update.</source>
+        <target>crwdns313308:0crwdne313308:0</target>
+      </trans-unit>
+      <trans-unit id="close_by_click.description" resname="close_by_click.description">
+        <source>Close InfoWindow by click instead of mouse out.</source>
+        <target>crwdns313310:0crwdne313310:0</target>
+      </trans-unit>
+      <trans-unit id="configuration_map.description" resname="configuration_map.description">
+        <source>Enter an address [street number, zip city] or coordinates [latitude,longitude] and press 'Update' or drag and drop the marker.</source>
+        <target>crwdns313312:0crwdne313312:0</target>
+      </trans-unit>
+      <trans-unit id="image_height.description" resname="image_height.description">
+        <source>Costum image height in pixel.</source>
+        <target>crwdns313314:0crwdne313314:0</target>
+      </trans-unit>
+      <trans-unit id="image_size.description" resname="image_size.description">
+        <source>Check if the image has a different size then default. The image should be twice as large as indicated.</source>
+        <target>crwdns313316:0crwdne313316:0</target>
+      </trans-unit>
+      <trans-unit id="image_width.description" resname="image_width.description">
+        <source>Costum image width in pixel.</source>
+        <target>crwdns313318:0crwdne313318:0</target>
+      </trans-unit>
+      <trans-unit id="info_window_content.description" resname="info_window_content.description">
+        <source>This will be displayed in the InfoWindow of this marker.</source>
+        <target>crwdns313320:0crwdne313320:0</target>
+      </trans-unit>
+      <trans-unit id="info_window_images.description" resname="info_window_images.description">
+        <source>This will be displayed in the InfoWindow of this marker.</source>
+        <target>crwdns313322:0crwdne313322:0</target>
+      </trans-unit>
+      <trans-unit id="info_window_link.description" resname="info_window_link.description">
+        <source>Attachs an optional automatic generated link to calculate a route on Google Maps.</source>
+        <target>crwdns313324:0crwdne313324:0</target>
+      </trans-unit>
+      <trans-unit id="latitude.description" resname="latitude.description">
+        <source>Please enter an address or coordinates on the position field above and press update.</source>
+        <target>crwdns313326:0crwdne313326:0</target>
+      </trans-unit>
+      <trans-unit id="longitude.description" resname="longitude.description">
+        <source>Please enter an address or coordinates on the position field above and press update.</source>
+        <target>crwdns313328:0crwdne313328:0</target>
+      </trans-unit>
+      <trans-unit id="marker.description" resname="marker.description">
+        <source>Choose a costum image for the pin.</source>
+        <target>crwdns313330:0crwdne313330:0</target>
+      </trans-unit>
+      <trans-unit id="open_by_click.description" resname="open_by_click.description">
+        <source>Open InfoWindow by click instead of mouse over.</source>
+        <target>crwdns313332:0crwdne313332:0</target>
+      </trans-unit>
+      <trans-unit id="opened.description" resname="opened.description">
+        <source>The InfoWindow is opened when the map appears. For each map there will be only one opened InfoWindow.</source>
+        <target>crwdns313334:0crwdne313334:0</target>
+      </trans-unit>
+      <trans-unit id="title.description" resname="title.description">
+        <source>For internal use only.</source>
+        <target>crwdns313336:0crwdne313336:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
