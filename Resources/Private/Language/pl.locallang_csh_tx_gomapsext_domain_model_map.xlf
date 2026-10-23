@@ -37,7 +37,7 @@
       </trans-unit>
       <trans-unit id="kml_local.description" resname="kml_local.description">
         <source>The KML file is stored on this server. The specified path is relative. Only markers appear.</source>
-        <target state="needs-translation">The KML file is stored on this server. The specified path is relative. Only markers appear.</target>
+        <target state="translated">Plik KML jest przechowywany na tym serwerze. Podana ścieżka jest względna. Wyświetlane są tylko markery.</target>
       </trans-unit>
       <trans-unit id="kml_preserve_viewport.description" resname="kml_preserve_viewport.description">
         <source>The viewport of the kml file will be ignored. Set zoom and at least one address to configure the viewport.</source>
@@ -49,15 +49,15 @@
       </trans-unit>
       <trans-unit id="latitude.description" resname="latitude.description">
         <source>If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
-        <target state="needs-translation">If set this latitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</target>
+        <target state="translated">Jeśli ustawione, ta szerokość geograficzna zostanie użyta do wyśrodkowania mapy. W przeciwnym razie środek jest obliczany tak, aby wszystkie adresy mieściły się na mapie.</target>
       </trans-unit>
       <trans-unit id="longitude.description" resname="longitude.description">
         <source>If set this longitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</source>
-        <target state="needs-translation">If set this longitude will be used to center the map. Otherwise the center is calculated so that all addresses fit in the map.</target>
+        <target state="translated">Jeśli ustawione, ta długość geograficzna zostanie użyta do wyśrodkowania mapy. W przeciwnym razie środek jest obliczany tak, aby wszystkie adresy mieściły się na mapie.</target>
       </trans-unit>
       <trans-unit id="geolocation.description" resname="geolocation.description">
         <source>If set geolocation is activated. If location is possible and allowed by the user, a marker is shown representing the actual position and the map is centered to this point.</source>
-        <target state="needs-translation">If set geolocation is activated. If location is possible and allowed by the user, a marker is shown representing the actual position and the map is centered to this point.</target>
+        <target state="translated">Wenn aktiviert, ist die Geolokalisierung eingeschaltet. Sofern die Ortung möglich und vom Nutzer erlaubt ist, wird ein Marker an der aktuellen Position angezeigt und die Karte darauf zentriert.</target>
       </trans-unit>
       <trans-unit id="map_type_control.description" resname="map_type_control.description">
         <source>Shows a control to change the map type.</source>
@@ -69,23 +69,23 @@
       </trans-unit>
       <trans-unit id="marker_cluster.description" resname="marker_cluster.description">
         <source>Many markers in the same region will be summarized and appear as a cluster.</source>
-        <target state="needs-translation">Many markers in the same region will be summarized and appear as a cluster.</target>
+        <target state="translated">Wiele markerów w tym samym regionie zostanie zsumowanych i wyświetlonych jako klaster.</target>
       </trans-unit>
       <trans-unit id="marker_cluster_size.description" resname="marker_cluster_size.description">
         <source>The size of the Clusters, like a radius.</source>
-        <target state="needs-translation">The size of the Clusters, like a radius.</target>
+        <target state="translated">Rozmiar klastrów, jak promień.</target>
       </trans-unit>
       <trans-unit id="marker_cluster_style.description" resname="marker_cluster_style.description">
         <source>JSON Code, for more information visit  https://github.com/googlemaps/js-markerclusterer</source>
-        <target state="needs-translation">JSON Code, for more information visit  https://github.com/googlemaps/js-markerclusterer</target>
+        <target state="translated">Kod JSON, więcej informacji pod adresem https://github.com/googlemaps/js-markerclusterer</target>
       </trans-unit>
       <trans-unit id="marker_cluster_zoom.description" resname="marker_cluster_zoom.description">
         <source>Up to this zoom level the Clusters are displayed.</source>
-        <target state="needs-translation">Up to this zoom level the Clusters are displayed.</target>
+        <target state="translated">Do tego poziomu przybliżenia wyświetlane są klastry.</target>
       </trans-unit>
       <trans-unit id="marker_search.description" resname="marker_search.description">
         <source>Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</source>
-        <target state="needs-translation">Displays a form on the frontend, were the user can enter a search word. Searchs for InfoWindow content and title of a marker. The InfoWindow of the first found marker opens.</target>
+        <target state="translated">Wyświetla formularz na stronie, w którym użytkownik może wpisać słowo wyszukiwania. Przeszukiwana jest zawartość okna informacyjnego i tytuł markera. Otwiera się okno informacyjne pierwszego znalezionego markera.</target>
       </trans-unit>
       <trans-unit id="preview_image.description" resname="preview_image.description">
         <source>Define an image to show as preview of the current map. If previews are enabled, this image will be shown instead of the map. Only when the user clicks on the image, data from Google will be loaded and the map will be displayed.</source>
@@ -101,11 +101,11 @@
       </trans-unit>
       <trans-unit id="show_addresses.description" resname="show_addresses.description">
         <source>Displays a list with all addresses incl. a link. If you click the selected address will be centered.</source>
-        <target state="needs-translation">Displays a list with all addresses incl. a link. If you click the selected address will be centered.</target>
+        <target state="translated">Wyświetla listę wszystkich adresów wraz z linkiem. Po kliknięciu wybrany adres zostanie wyśrodkowany.</target>
       </trans-unit>
       <trans-unit id="show_categories.description" resname="show_categories.description">
         <source>Displays for each category a checkbox. Only the selected categories will be shown.</source>
-        <target state="needs-translation">Displays for each category a checkbox. Only the selected categories will be shown.</target>
+        <target state="translated">Wyświetla dla każdej kategorii pole wyboru. Pokazywane są tylko wybrane kategorie.</target>
       </trans-unit>
       <trans-unit id="show_route.description" resname="show_route.description">
         <source>2 address records needed! Shows the route between the given points.</source>
@@ -153,11 +153,11 @@
       </trans-unit>
       <trans-unit id="zoom_max.description" resname="zoom_max.description">
         <source>The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.</source>
-        <target state="needs-translation">The maximum zoom level which will be displayed on the map. If omitted, or set to null, the maximum zoom from the current map type is used instead.</target>
+        <target state="translated">Maksymalny poziom przybliżenia wyświetlany na mapie. Jeśli pominięte lub ustawione na null, używany jest maksymalny zoom bieżącego typu mapy.</target>
       </trans-unit>
       <trans-unit id="zoom_min.description" resname="zoom_min.description">
         <source>The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</source>
-        <target state="needs-translation">The minimum zoom level which will be displayed on the map. If omitted, or set to null, the minimum zoom from the current map type is used instead.</target>
+        <target state="translated">Minimalny poziom przybliżenia wyświetlany na mapie. Jeśli pominięte lub ustawione na null, używany jest minimalny zoom bieżącego typu mapy.</target>
       </trans-unit>
     </body>
   </file>
